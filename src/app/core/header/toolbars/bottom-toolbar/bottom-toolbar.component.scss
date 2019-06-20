@@ -1,0 +1,36 @@
+.mat-menu-item {
+  white-space: normal !important;
+  height: auto !important;
+}
+
+.mat-menu-buttons-wrapper {
+
+  button {
+    line-height: inherit !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+}
+
+.nav-main-menu {
+  font-family: bpg_glaho, serif;
+}
+
+.nav-sub-menu-wrapper {
+  max-width: 750px !important;
+  width: 750px;
+
+  .category-header-wrapper {
+    h3 {
+      display: inline-block;
+    }
+  }
+
+  .sub-categories-wrapper {
+    a {
+      display: block;
+      text-align: left;
+    }
+  }
+}

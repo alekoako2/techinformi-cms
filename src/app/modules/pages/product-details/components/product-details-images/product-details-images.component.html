@@ -1,0 +1,17 @@
+<div fxFlex="100">
+  <div class="image-list" fxFlex="20" fxLayoutAlign="center">
+    <div>
+      <div class="image-wrapper margin-bottom-3" *ngFor="let image of images">
+        <img [src]="image.src" alt="" (click)="chooseImage(image.src)">
+      </div>
+    </div>
+  </div>
+  <div class="chosen-image" fxFlex="80">
+    <div fxLayoutAlign="center">
+      <div fxFlex="90">
+        <img [src]="chosenImageSrc" alt="">
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+#shopping-cart-menu {
+  width: 280px;
+
+  .shopping-cart-list-wrapper {
+    max-height: 150px;
+    overflow-y: auto;
+
+    .shopping-cart-list-item {
+      margin: 11px;
+    }
+
+    .img-wrapper {
+      overflow: hidden;
+      width: 70px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .text-wrapper {
+      * {
+        margin: 0;
+      }
+
+      h4:hover {
+        text-decoration: underline;
+      }
+
+      p {
+        color: gray;
+      }
+    }
+  }
+
+  #checkout {
+    margin: 10px 0;
+  }
+}

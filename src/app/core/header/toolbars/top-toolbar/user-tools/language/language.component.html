@@ -1,0 +1,12 @@
+<button mat-mini-fab [matMenuTriggerFor]="languages" id="tools-button" class="overflow-hidden">
+  <img src="./assets/images/content/languages/ge.svg" alt="" width="100%" *ngIf="localeId=='ka'">
+  <img src="./assets/images/content/languages/us.svg" alt="" width="100%" *ngIf="localeId=='en'">
+</button>
+<mat-menu #languages="matMenu">
+  <a mat-menu-item href="/en" class="mtavruli" *ngIf="localeId=='ka'">
+    English
+  </a>
+  <a mat-menu-item href="/ka" class="mtavruli" *ngIf="localeId=='en'">
+    ქართული
+  </a>
+</mat-menu>

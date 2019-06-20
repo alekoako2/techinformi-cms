@@ -1,0 +1,22 @@
+<div fxLayoutAlign="center" class="categories-wrapper margin-y-3 margin-x-2">
+  <div fxLayout="column" fxFlex="80" fxFlex.lt-md="100">
+    <div fxLayoutAlign="flex-start" class="margin-bottom-3">
+      <img src="http://embryo.theironnetwork.org/assets/images/log-in-user.jpg" alt=""
+           class="border-radius-100 margin-right-5"
+           width="100px" height="100px">
+      <div class="mtavruli">
+        <h3>ზაზა ლომიძე</h3>
+        <p class="color-gray">zazalomidze@gmail.com</p>
+      </div>
+    </div>
+    <div fxFlex="100" fxFlex.lt-md="100" fxLayout="row" fxLayout.lt-md="column">
+      <div fxFlex="20" fxFlex.lt-md="100" class="mat-elevation-z1 padding-2 border-radius-1 bg-white margin-bottom-3">
+        <app-left-nav></app-left-nav>
+      </div>
+      <div fxFlex="79" fxFlex.lt-md="100" fxFlexOffset="1"
+           class="mat-elevation-z1 padding-x-4 padding-y-3 border-radius-1 bg-white margin-bottom-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

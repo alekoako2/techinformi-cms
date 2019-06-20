@@ -1,0 +1,12 @@
+<app-page-title-bar title="სამეცნიერო მიმართულებები" i18n-title="@@scientific_directions"></app-page-title-bar>
+<app-layout-container>
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <ngx-slick-carousel class="carousel"
+                      #slickModal="slick-carousel"
+                      [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <h2 class="mtavruli">{{slide['title']}}</h2>
+      <p [innerHTML]="slide.content"></p>
+    </div>
+  </ngx-slick-carousel>
+</app-layout-container>

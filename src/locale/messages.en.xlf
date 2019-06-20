@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="ka" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="about_us" datatype="html">
+        <source>ჩვენს შესახებ</source>
+        <target state="final">About Us</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="general" datatype="html">
+        <source>ზოგადი</source>
+        <target state="final">General</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="regulation" datatype="html">
+        <source>დებულება</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <target state="final">Regulation</target>
+      </trans-unit>
+      <trans-unit id="structure" datatype="html">
+        <source>სტრუქტურა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <target state="final">Structure</target>
+      </trans-unit>
+      <trans-unit id="employees" datatype="html">
+        <source>თანამშრომლები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <target state="final">Employees</target>
+      </trans-unit>
+      <trans-unit id="normative_documentation" datatype="html">
+        <source>ნორმატიული დოკუმენტაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <target state="final">Normative Documentation</target>
+      </trans-unit>
+      <trans-unit id="scientific_activity" datatype="html">
+        <source>სამეცნიერო საქმიანობა
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <target state="final">Scientific Activity</target>
+      </trans-unit>
+      <trans-unit id="scientific_directions" datatype="html">
+        <source>სამეცნიერო მიმართულებები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target state="final">Scientific Directions</target>
+      </trans-unit>
+      <trans-unit id="projects" datatype="html">
+        <source>პროექტები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <target state="final">Projects</target>
+      </trans-unit>
+      <trans-unit id="publications" datatype="html">
+        <source>პუბლიკაციები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <target state="final">Publications</target>
+      </trans-unit>
+      <trans-unit id="resources" datatype="html">
+        <source>რესურსები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <target state="final">Resources</target>
+      </trans-unit>
+      <trans-unit id="electronic_resources" datatype="html">
+        <source>ელექტრონული რესურსები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <target state="final">Electronic Resources</target>
+      </trans-unit>
+      <trans-unit id="printed_resources" datatype="html">
+        <source>ბეჭდური რესურსები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <target state="final">Printed Resources</target>
+      </trans-unit>
+      <trans-unit id="databases" datatype="html">
+        <source>მონაცემთა ბაზები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <target state="final">Databases</target>
+      </trans-unit>
+      <trans-unit id="electronic_collections" datatype="html">
+        <source>ელექტრონული ფონდები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <target state="final">Electronic Collections</target>
+      </trans-unit>
+      <trans-unit id="ram_discs" datatype="html">
+        <source>ელექტრონული დისკები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <target state="final">RAM Disks</target>
+      </trans-unit>
+      <trans-unit id="research_projects" datatype="html">
+        <source>სამეცნიერო-კვლევითი პროექტები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <target state="final">Research Projects</target>
+      </trans-unit>
+      <trans-unit id="scientists_experts" datatype="html">
+        <source>მეცნიერები/ექსპერტები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <target state="final">Scientists/Experts</target>
+      </trans-unit>
+      <trans-unit id="georgian_scientific_publications" datatype="html">
+        <source>საქართველოს სამეცნიერო პუბლიკაციები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <target state="final">Georgian Scientific Publications</target>
+      </trans-unit>
+      <trans-unit id="research_organizations" datatype="html">
+        <source>სამეცნიერო ორგანიზაციები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <target state="final">Research Organizations</target>
+      </trans-unit>
+      <trans-unit id="georgian_scientists_publications_in_high_ranking_foreign_journals" datatype="html">
+        <source>
+          საქართველოს
+          მეცნიერთა პუბლიკაციები მაღალი რეიტინგის უცხოურ ჟურნალებში
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <target state="final">Georgian Scientists’ Publication in High-Ranking Foreign Journals</target>
+      </trans-unit>
+      <trans-unit id="abstracts_of_theses_defended_in_georgia" datatype="html">
+        <source>საქართველოში დაცული დისერტაციების
+          ავტორეფერატები (ბიბლიოგრაფია,
+          ხელმძღვანელები,
+          ოპონენტები)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <target state="final">Abstracts of theses defended in Georgia (bibliography, leaders, opponents)</target>
+      </trans-unit>
+      <trans-unit id="deposited_works_of_georgian_scientists" datatype="html">
+        <source>საქართველოს მეცნიერთა დეპონირებული შრომები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <target state="final">Deposited works of Georgian scientists</target>
+      </trans-unit>
+      <trans-unit id="service" datatype="html">
+        <source>მომსახურება</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <target state="final">Service</target>
+      </trans-unit>
+      <trans-unit id="partnership" datatype="html">
+        <source>თანამშრომლობა
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <target state="final">Partnership</target>
+      </trans-unit>
+      <trans-unit id="contact" datatype="html">
+        <source>კონტაქტი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/toolbars/bottom-toolbar/bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <target state="final">Contact</target>
+      </trans-unit>
+      <trans-unit id="news" datatype="html">
+        <source>სიახლეები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/home/components/news/news.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <target state="final">News</target>
+      </trans-unit>
+      <trans-unit id="georgian_engineering_news" datatype="html">
+        <source>
+          საქართველოს საინჟინრო სიახლენი (GEN)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/home/components/vertical-nav-list/vertical-nav-list.component.html
+          </context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <target state="final">GEORGIAN ENGINEERING NEWS (GEN)</target>
+      </trans-unit>
+      <trans-unit id="classifiers_international_databases_of_scientific_publications" datatype="html">
+        <source>
+          სამეცნიერო პუბლიკაციების საერთაშორისო ბაზების კლასიფიკატორები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/home/components/vertical-nav-list/vertical-nav-list.component.html
+          </context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <target state="final">Classifiers International Databases of Scientific Publications</target>
+      </trans-unit>
+      <trans-unit id="list_of_scientific_publications_reflected_in_georgian_abstracts_journal" datatype="html">
+        <source>
+          ქართულ რეფერატულ ჟურნალში ასახული სამეცნიერო გამოცემების ჩამონათვალი
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/home/components/vertical-nav-list/vertical-nav-list.component.html
+          </context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <target state="final">List of Scientific Publications Reflected in Georgian Abstracts Journal</target>
+      </trans-unit>
+      <trans-unit id="technology_transfer_centers" datatype="html">
+        <source>
+          ტექნოლოგიის ტრანსფერის ცენტრები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/home/components/vertical-nav-list/vertical-nav-list.component.html
+          </context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <target state="final">Technology Transfer Centers</target>
+      </trans-unit>
+      <trans-unit id="international_scientific_databases" datatype="html">
+        <source>
+          საერთაშორისო სამეცნიერო ბაზები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/home/components/vertical-nav-list/vertical-nav-list.component.html
+          </context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <target state="final">International Scientific Databases</target>
+      </trans-unit>
+
+      <trans-unit id="institute_techinformi" datatype="html">
+        <source>ინსტიტუტი ტექინფორმი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/about-us/pages/general/general.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <target state="final">Institute Techinformi</target>
+      </trans-unit>
+      <trans-unit id="normative_1" datatype="html">
+        <source>
+          საქართველოს კანონი მეცნიერების, ტექნოლოგიებისა და მათი
+          განვითარების შესახებ
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/about-us/pages/normative-documentation/normative-documentation.component.html
+          </context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <target>LAW OF GEORGIA ON SCIENCE, TECHNOLOGY AND THEIR DEVELOPMENT</target>
+      </trans-unit>
+      <trans-unit id="normative_2" datatype="html">
+        <source>
+          საქართველოს კანონი უმაღლესი განათლების შესახებ
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/about-us/pages/normative-documentation/normative-documentation.component.html
+          </context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <target>LAW OF GEORGIAON HIGHER EDUCATION</target>
+      </trans-unit>
+      <trans-unit id="normative_3" datatype="html">
+        <source>
+          სსიპ საქართველოს ტექნიკური უნივერსიტეტის წესდება
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/about-us/pages/normative-documentation/normative-documentation.component.html
+          </context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <target>LEGAL ENTITY OF PUBLIC LAW-GEORGIAN TECHNICAL UNIVERSITY</target>
+      </trans-unit>
+      <trans-unit id="international_organizations" datatype="html">
+        <source>
+          საერთაშორისო ორგანიზაციები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/partnership/pages/partnership/partnership.component.html
+          </context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <target>International Organizations</target>
+      </trans-unit>
+      <trans-unit id="foreign_organizations" datatype="html">
+        <source>
+          უცხოური ორგანიზაციები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/partnership/pages/partnership/partnership.component.html
+          </context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <target>Foreign Organizations</target>
+      </trans-unit>
+      <trans-unit id="local_organizations" datatype="html">
+        <source>
+          ადგილობრივი ორგანიზაციები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/partnership/pages/partnership/partnership.component.html
+          </context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <target>Local Organizations</target>
+      </trans-unit>
+      <trans-unit id="close" datatype="html">
+        <source>დახურვა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/pages/partnership/components/dialog/dialog.component.html
+          </context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <target>close</target>
+      </trans-unit>
+      <trans-unit id="qrj" datatype="html">
+        <source>ქრჟ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/footer/fixed-bottom-toolbar/fixed-bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <target>QRJ</target>
+      </trans-unit>
+      <trans-unit id="agro_information" datatype="html">
+        <source>აგროინფორმაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/footer/fixed-bottom-toolbar/fixed-bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <target>Agroinformation</target>
+      </trans-unit>
+      <trans-unit id="old_website" datatype="html">
+        <source>ძველი საიტი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/footer/fixed-bottom-toolbar/fixed-bottom-toolbar.component.html
+          </context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <target>Old Website</target>
+      </trans-unit>
+      <trans-unit id="contact_information" datatype="html">
+        <source>საკონტაქტო ინფორმაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-info/contact-info.component.html
+          </context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <target>Contact Information</target>
+      </trans-unit>
+      <trans-unit id="tel_number" datatype="html">
+        <source>ნომერი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-info/contact-info.component.html
+          </context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <target>Contact Number</target>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>ელ.ფოსტა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-info/contact-info.component.html
+          </context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="address" datatype="html">
+        <source>მისამართი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-info/contact-info.component.html
+          </context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <target>Address</target>
+      </trans-unit>
+      <trans-unit id="kostavas" datatype="html">
+        <source>0179 თბილისი, კოსტავას ქ. 47</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-info/contact-info.component.html
+          </context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <target>0179 Tbilisi, Kostava str. 47</target>
+      </trans-unit>
+      <trans-unit id="your_text" datatype="html">
+        <source>თქვენი ტექსტი...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-form/contact-form.component.html
+          </context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <target>Your Text...</target>
+      </trans-unit>
+      <trans-unit id="send" datatype="html">
+        <source>გაგზავნა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-form/contact-form.component.html
+          </context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <target>Send</target>
+      </trans-unit>
+      <trans-unit id="topic" datatype="html">
+        <source>თემა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-form/contact-form.component.html
+          </context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <target>Topic</target>
+      </trans-unit>
+      <trans-unit id="scientific_and_business_information" datatype="html">
+        <source>სამეცნიერო და ბიზნეს ინფორმაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-form/contact-form.component.html
+          </context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <target>Scientific and Business Information</target>
+      </trans-unit>
+      <trans-unit id="informational_service" datatype="html">
+        <source>საცნობარო მომსახურება</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-form/contact-form.component.html
+          </context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <target>Informational Service</target>
+      </trans-unit>
+      <trans-unit id="translate" datatype="html">
+        <source>თარგმნა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-form/contact-form.component.html
+          </context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <target>Translate</target>
+      </trans-unit>
+      <trans-unit id="other" datatype="html">
+        <source>სხვადასხვა...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/modules/pages/contact/components/contact-form/contact-form.component.html
+          </context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <target>Other...</target>
+      </trans-unit>
+      <trans-unit id="georgian_abstract_journal" datatype="html">
+        <source>ქართული რეფერატული ჟურნალი (ქრჟ)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/pages/qrj/pages/qrj/qrj.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <target>GEORGIAN ABSTRACTS JOURNAL (GAJ)</target>
+      </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>ძიება</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/pages/qrj/components/qrj-dialog/qrj-dialog.component.html
+          </context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <target>search</target>
+      </trans-unit>
+      <trans-unit id="sign_in" datatype="html">
+        <source>შესვლა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <target>Sign In</target>
+      </trans-unit>
+      <trans-unit id="username" datatype="html">
+        <source>მომხმარებლის სახელი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="enter_username" datatype="html">
+        <source>შეიყვანეთ მომხმარებლის სახელი...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <target>Enter Username...</target>
+      </trans-unit>
+      <trans-unit id="password" datatype="html">
+        <source>პაროლი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="enter_password" datatype="html">
+        <source>შეიყვანეთ პაროლი...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <target>Enter Password...</target>
+      </trans-unit>
+      <trans-unit id="remember_me" datatype="html">
+        <source>დამიმახსოვრე</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <target>Remember Me</target>
+      </trans-unit>
+      <trans-unit id="forgot_password" datatype="html">
+        <source>პაროლი
+          დაგავიწყდა?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <target>Forgot Password?</target>
+      </trans-unit>
+      <trans-unit id="not_registered" datatype="html">
+        <source>არ ხარ
+          რეგისტრირებული? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/login/login.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <target>Not Signed Up?</target>
+      </trans-unit>
+      <trans-unit id="sign_up" datatype="html">
+        <source>რეგისტრაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/register/register.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/register/register.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <target>Sign Up</target>
+      </trans-unit>
+      <trans-unit id="first_name" datatype="html">
+        <source>სახელი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/register/register.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/pages/contact/components/contact-form/contact-form.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <target>First Name</target>
+      </trans-unit>
+      <trans-unit id="last_name" datatype="html">
+        <source>გვარი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/register/register.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/pages/contact/components/contact-form/contact-form.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <target>Last Name</target>
+      </trans-unit>
+      <trans-unit id="enter_email" datatype="html">
+        <source>ელ.ფოსტა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/register/register.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="already_signed_up" datatype="html">
+        <source>უკვე რეგისტრირებული
+          ხარ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/register/register.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <target>Signed Up?</target>
+      </trans-unit>
+      <trans-unit id="reset_password" datatype="html">
+        <source>პაროლის აღდგენა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/authentication/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <target>Reset Password</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

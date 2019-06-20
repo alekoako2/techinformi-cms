@@ -1,0 +1,28 @@
+<ngx-slick-carousel class="carousel bg-white padding-y-5"
+                    #slickModal="slick-carousel"
+                    [config]="slideConfig">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <div ngxSlickItem *ngFor="let slide of slides"
+       class="slide margin-5 border-radius-1 mat-elevation-z1 animate-3 box-shadow-h-2">
+    <div class="slide-content-wrapper">
+      <div class="slide-content" fxLayout="column" fxLayoutAlign="center">
+        <div fxLayout="row" fxLayout.lt-sm="column" class="padding-3">
+          <div class="img-wrapper padding-3" [fxFlex]="slide.breakpoint">
+            <img [src]="slide.imgUrl" alt="" class="border-radius-1" width="100%" fxHide.lt-md>
+          </div>
+          <div class="slide-info-wrapper" [fxFlex]="100-slide.breakpoint">
+            <div class="mtavruli">
+              <h2>
+                <button mat-button [routerLink]="slide.url" color="primary"
+                        tabindex="0">{{slide.translatedData.title}}</button>
+              </h2>
+
+              <div [innerHTML]="slide.translatedData.text|sanitizeHtml"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ngx-slick-carousel>
+<mat-divider></mat-divider>

@@ -1,0 +1,12 @@
+#tools-button {
+  overflow: hidden;
+
+  &::ng-deep .mat-button-wrapper {
+    display: initial;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

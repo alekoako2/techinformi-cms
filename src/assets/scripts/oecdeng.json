@@ -1,0 +1,751 @@
+{
+  "en": [
+    {
+      "name": "Natural sciences"
+    },
+    {
+      "name": "Computer & information sciences "
+    },
+    {
+      "name": "Mathematics"
+    },
+    {
+      "name": "Pure mathematics"
+    },
+    {
+      "name": "Applied mathematics"
+    },
+    {
+      "name": "Statistics & probability"
+    },
+    {
+      "name": "Computer sciences, information science & bioinformatics "
+    },
+    {
+      "name": "Physical sciences "
+    },
+    {
+      "name": "Atomic, molecular & chemical physics (physics of atoms & molecules incl. collision, interaction with radiation; magnetic resonances; Moessbauer effect)"
+    },
+    {
+      "name": "Condensed matter physics (incl. formerly solid state physics, superconductivity)"
+    },
+    {
+      "name": "Particles & fields physics"
+    },
+    {
+      "name": "Nuclear physics"
+    },
+    {
+      "name": "Fluids & plasma physics (incl. surface physics)"
+    },
+    {
+      "name": "Optics (incl. laser optics & quantum optics)"
+    },
+    {
+      "name": "Acoustics"
+    },
+    {
+      "name": "Astronomy (incl. astrophysics, space science)"
+    },
+    {
+      "name": "Chemical sciences"
+    },
+    {
+      "name": "Organic chemistry"
+    },
+    {
+      "name": "Inorganic & nuclear chemistry"
+    },
+    {
+      "name": "Physical chemistry, polymer science, electrochemistry (dry cells, batteries, fuel cells, corrosion metals, electrolysis)"
+    },
+    {
+      "name": "Colloid chemistry"
+    },
+    {
+      "name": "Analytical chemistry"
+    },
+    {
+      "name": "Earth & related environmental sciences "
+    },
+    {
+      "name": "Geosciences, multidisciplinary"
+    },
+    {
+      "name": "Mineralogy"
+    },
+    {
+      "name": "Palaeontology"
+    },
+    {
+      "name": "Geochemistry & geophysics"
+    },
+    {
+      "name": "Physical geography"
+    },
+    {
+      "name": "Geology"
+    },
+    {
+      "name": "Volcanology"
+    },
+    {
+      "name": "Environmental sciences"
+    },
+    {
+      "name": "Meteorology & atmospheric sciences"
+    },
+    {
+      "name": "Climatic research"
+    },
+    {
+      "name": "Oceanography, hydrology, water resource"
+    },
+    {
+      "name": "Biological sciences"
+    },
+    {
+      "name": "Cell biology, microbiology"
+    },
+    {
+      "name": "Virology"
+    },
+    {
+      "name": "Biochemistry & molecular biology "
+    },
+    {
+      "name": "Biochemical research methods"
+    },
+    {
+      "name": "Mycology"
+    },
+    {
+      "name": "Biophysics"
+    },
+    {
+      "name": "Genetics & heredity "
+    },
+    {
+      "name": "Reproductive biology "
+    },
+    {
+      "name": "Developmental biology"
+    },
+    {
+      "name": "Plant sciences, botany"
+    },
+    {
+      "name": "Automation & control systems"
+    },
+    {
+      "name": "Marine biology, freshwater biology, limnology"
+    },
+    {
+      "name": "Ecology"
+    },
+    {
+      "name": "Biodiversity conservation"
+    },
+    {
+      "name": "Biology (theoretical, mathematical, thermal, cryobiology, biological rhythm), evolutionary biology"
+    },
+    {
+      "name": "Other biological topics"
+    },
+    {
+      "name": "Other natural sciences "
+    },
+    {
+      "name": "Engineering & technology"
+    },
+    {
+      "name": "Civil engineering "
+    },
+    {
+      "name": "Civil engineering"
+    },
+    {
+      "name": "Architecture engineering"
+    },
+    {
+      "name": "Construction engineering, municipal & structural engineering"
+    },
+    {
+      "name": "Transport engineering"
+    },
+    {
+      "name": "Electrical engineering, electronic engineering, information engineering "
+    },
+    {
+      "name": "Electrical & electronic engineering"
+    },
+    {
+      "name": "Robotics & automatic control"
+    },
+    {
+      "name": "Thermodynamics"
+    },
+    {
+      "name": "Aerospace engineering"
+    },
+    {
+      "name": "Nuclear related engineering"
+    },
+    {
+      "name": "Audio engineering, reliability analysis"
+    },
+    {
+      "name": "Chemical engineering "
+    },
+    {
+      "name": "Mechanical engineering"
+    },
+    {
+      "name": "Applied mechanics"
+    },
+    {
+      "name": "Chemical process engineering"
+    },
+    {
+      "name": "Materials engineering "
+    },
+    {
+      "name": "Materials engineering"
+    },
+    {
+      "name": "Chemical engineering (plants, products)"
+    },
+    {
+      "name": "Ceramics"
+    },
+    {
+      "name": "Coating & films"
+    },
+    {
+      "name": "Composites (inc. laminates, reinforced plastics, cermets, combined natural & synthetic fibre fabrics; filled composites)"
+    },
+    {
+      "name": "Paper & wood"
+    },
+    {
+      "name": "Textiles incl. synthetic dyes, colours, fibres"
+    },
+    {
+      "name": "Medical engineering "
+    },
+    {
+      "name": "Medical engineering"
+    },
+    {
+      "name": "Medical laboratory technology (incl. laboratory samples analysis; diagnostic technologies)"
+    },
+    {
+      "name": "Environmental engineering "
+    },
+    {
+      "name": "Petroleum engineering (fuel, oils)"
+    },
+    {
+      "name": "Energy & fuels"
+    },
+    {
+      "name": "Zoology, ornithology, entomology, behavioural sciences biology"
+    },
+    {
+      "name": "Mining & mineral processing"
+    },
+    {
+      "name": "Marine engineering, sea vessels"
+    },
+    {
+      "name": "Ocean engineering"
+    },
+    {
+      "name": "Environmental biotechnology "
+    },
+    {
+      "name": "Environmental biotechnology"
+    },
+    {
+      "name": "Bioremediation, diagnostic biotechnologies (DNA chips & biosensing devices) in environmental management"
+    },
+    {
+      "name": "Environmental biotechnology related ethics"
+    },
+    {
+      "name": "Industrial biotechnology "
+    },
+    {
+      "name": "Industrial biotechnology"
+    },
+    {
+      "name": "Bioprocessing technologies (industrial processes relying on biological agents to drive the process), biocatalysis, fermentation"
+    },
+    {
+      "name": "Bioproducts (products that are manufactured using biological material as feedstock), biomaterials, bioplastics, biofuels, bioderived bulk & fine chemicals, bio-derived novel materials"
+    },
+    {
+      "name": "Nano-technology "
+    },
+    {
+      "name": "Nano-materials (production & properties)"
+    },
+    {
+      "name": "Nano-processes (applications on nano-scale)"
+    },
+    {
+      "name": "Other engineering & technologies "
+    },
+    {
+      "name": "Food & beverages"
+    },
+    {
+      "name": "Other engineering & technologies"
+    },
+    {
+      "name": "Medical & health sciences"
+    },
+    {
+      "name": "Basic medicine "
+    },
+    {
+      "name": "Anatomy & morphology "
+    },
+    {
+      "name": "Human genetics"
+    },
+    {
+      "name": "Immunology"
+    },
+    {
+      "name": "Neurosciences (incl. psychophysiology)"
+    },
+    {
+      "name": "Pharmacology & pharmacy"
+    },
+    {
+      "name": "Medicinal chemistry"
+    },
+    {
+      "name": "Toxicology"
+    },
+    {
+      "name": "Physiology (incl. cytology)"
+    },
+    {
+      "name": "Pathology"
+    },
+    {
+      "name": "Clinical medicine "
+    },
+    {
+      "name": "Andrology"
+    },
+    {
+      "name": "Obstetrics & gynaecology"
+    },
+    {
+      "name": "Paediatrics"
+    },
+    {
+      "name": "Cardiac & cardiovascular systems"
+    },
+    {
+      "name": "Peripheral vascular disease"
+    },
+    {
+      "name": "Hematology"
+    },
+    {
+      "name": "Respiratory systems"
+    },
+    {
+      "name": "Critical care medicine & emergency medicine"
+    },
+    {
+      "name": "Anaesthesiology"
+    },
+    {
+      "name": "Orthopaedics"
+    },
+    {
+      "name": "Surgery"
+    },
+    {
+      "name": "Radiology, nuclear medicine & medical imaging"
+    },
+    {
+      "name": "Transplantation"
+    },
+    {
+      "name": "Dentistry, oral surgery & medicine"
+    },
+    {
+      "name": "Dermatology & venereal diseases"
+    },
+    {
+      "name": "Allergy"
+    },
+    {
+      "name": "Rheumatology"
+    },
+    {
+      "name": "Endocrinology & metabolism (incl. diabetes, hormones)"
+    },
+    {
+      "name": "Gastroenterology & hepatology"
+    },
+    {
+      "name": "Urology & nephrology"
+    },
+    {
+      "name": "Ophthalmology"
+    },
+    {
+      "name": "Otorhinolaryngology"
+    },
+    {
+      "name": "Psychiatry"
+    },
+    {
+      "name": "Clinical neurology"
+    },
+    {
+      "name": "Geriatrics & gerontology"
+    },
+    {
+      "name": "General & internal medicine"
+    },
+    {
+      "name": "Other clinical medicine subjects"
+    },
+    {
+      "name": "Integrative & complementary medicine (alternative practice systems)"
+    },
+    {
+      "name": "Health sciences "
+    },
+    {
+      "name": "Health care sciences & services (incl. hospital administration, health care financing)"
+    },
+    {
+      "name": "Health policy & services"
+    },
+    {
+      "name": "Nursing"
+    },
+    {
+      "name": "Nutrition, dietetics"
+    },
+    {
+      "name": "Public & environmental health "
+    },
+    {
+      "name": "Tropical medicine"
+    },
+    {
+      "name": "Parasitology"
+    },
+    {
+      "name": "Infectious diseases"
+    },
+    {
+      "name": "Epidemiology"
+    },
+    {
+      "name": "Occupational health"
+    },
+    {
+      "name": "Sport & fitness sciences"
+    },
+    {
+      "name": "Social biomedical sciences (incl. family planning, sexual health, psycho-oncology, political & social effects of biomedical research)"
+    },
+    {
+      "name": "Medical ethics"
+    },
+    {
+      "name": "Substance abuse"
+    },
+    {
+      "name": "Medical biotechnology "
+    },
+    {
+      "name": "Health-related biotechnology"
+    },
+    {
+      "name": "Technologies involving the manipulation of cells, tissues, organs or the whole organism (assisted reproduction)"
+    },
+    {
+      "name": "Technologies involving identifying the functioning of DNA, proteins & enzymes & how they influence the onset of disease & maintenance of well-being (gene-based diagnostics & therapeutic interventions (pharmacogenomics, gene-based therapeutics)"
+    },
+    {
+      "name": "Biomaterials (as related to medical implants, devices, sensors)"
+    },
+    {
+      "name": "Medical biotechnology related ethics"
+    },
+    {
+      "name": "Other medical sciences "
+    },
+    {
+      "name": "Forensic science"
+    },
+    {
+      "name": "Other medical sciences"
+    },
+    {
+      "name": "Agricultural sciences"
+    },
+    {
+      "name": "Agriculture, forestry & fisheries "
+    },
+    {
+      "name": "Agriculture "
+    },
+    {
+      "name": "Forestry"
+    },
+    {
+      "name": "Fishery"
+    },
+    {
+      "name": "Soil science"
+    },
+    {
+      "name": "Horticulture, viticulture"
+    },
+    {
+      "name": "Agronomy, plant breeding & plant protection "
+    },
+    {
+      "name": "Animal & dairy science "
+    },
+    {
+      "name": "Husbandry"
+    },
+    {
+      "name": "Pets"
+    },
+    {
+      "name": "Veterinary science "
+    },
+    {
+      "name": "Agricultural biotechnology "
+    },
+    {
+      "name": "Agricultural biotechnology & food biotechnology"
+    },
+    {
+      "name": "GM technology (crops & livestock), livestock cloning, marker assisted selection, diagnostics (DNA chips & biosensing devices for the early/accurate detection of diseases)"
+    },
+    {
+      "name": "Biomass feedstock production technologies, biopharming"
+    },
+    {
+      "name": "Agricultural biotechnology related ethics"
+    },
+    {
+      "name": "Other agricultural sciences "
+    },
+    {
+      "name": "Social sciences"
+    },
+    {
+      "name": "Psychology "
+    },
+    {
+      "name": "Psychology (incl. human - machine relations)"
+    },
+    {
+      "name": "Economics & business "
+    },
+    {
+      "name": "Economics, econometrics"
+    },
+    {
+      "name": "Industrial relations"
+    },
+    {
+      "name": "Business & management"
+    },
+    {
+      "name": "Educational sciences "
+    },
+    {
+      "name": "Education, general incl. training, pedagogy, didactics"
+    },
+    {
+      "name": "Education, special (to gifted persons, those with learning disabilities)"
+    },
+    {
+      "name": "Sociology "
+    },
+    {
+      "name": "Sociology"
+    },
+    {
+      "name": "Demography"
+    },
+    {
+      "name": "Anthropology, ethnology"
+    },
+    {
+      "name": "Social topics (women’s & gender studies; social issues; family studies, social work)"
+    },
+    {
+      "name": "Law "
+    },
+    {
+      "name": "Law, criminology, penology"
+    },
+    {
+      "name": "Political science "
+    },
+    {
+      "name": "Political science"
+    },
+    {
+      "name": "Public administration"
+    },
+    {
+      "name": "Organisation theory"
+    },
+    {
+      "name": "Social & economic geography "
+    },
+    {
+      "name": "Environmental sciences (social aspects)"
+    },
+    {
+      "name": "Cultural & economic geography"
+    },
+    {
+      "name": "Urban studies (planning & development)"
+    },
+    {
+      "name": "Transport planning & social aspects of transport"
+    },
+    {
+      "name": "Media & communications "
+    },
+    {
+      "name": "Journalism"
+    },
+    {
+      "name": "Information science (social aspects)"
+    },
+    {
+      "name": "Library science"
+    },
+    {
+      "name": "Media & socio-cultural communication"
+    },
+    {
+      "name": "Other social sciences "
+    },
+    {
+      "name": "Social sciences, interdisciplinary"
+    },
+    {
+      "name": "Other social sciences"
+    },
+    {
+      "name": "Humanities"
+    },
+    {
+      "name": "History & archaeology "
+    },
+    {
+      "name": "History "
+    },
+    {
+      "name": "Archaeology"
+    },
+    {
+      "name": "Languages & literature "
+    },
+    {
+      "name": "General language studies"
+    },
+    {
+      "name": "Specific languages"
+    },
+    {
+      "name": "General literature studies"
+    },
+    {
+      "name": "Literary theory"
+    },
+    {
+      "name": "Specific literatures"
+    },
+    {
+      "name": "Linguistics"
+    },
+    {
+      "name": "Philosophy, ethics & religion "
+    },
+    {
+      "name": "Philosophy, history & philosophy of science & technology"
+    },
+    {
+      "name": "Ethics (except ethics related to specific subfields)"
+    },
+    {
+      "name": "Theology"
+    },
+    {
+      "name": "Religious studies"
+    },
+    {
+      "name": "Arts (arts, history of arts, performing arts, music) "
+    },
+    {
+      "name": "Arts, art history"
+    },
+    {
+      "name": "Architectural design"
+    },
+    {
+      "name": "Performing arts studies (musicology, theater science, dramaturgy)"
+    },
+    {
+      "name": "Folklore studies"
+    },
+    {
+      "name": "Studies on film, radio & television"
+    },
+    {
+      "name": "Other humanities"
+    },
+    {
+      "name": "Communication engineering & systems"
+    },
+    {
+      "name": "Telecommunications"
+    },
+    {
+      "name": "Computer hardware & architecture"
+    },
+    {
+      "name": "Mechanical engineering "
+    },
+    {
+      "name": "Environmental & geological engineering, geotechnics"
+    },
+    {
+      "name": "Remote sensing"
+    },
+    {
+      "name": "Oncology"
+    },
+    {
+      "name": "Psychology, special (incl. therapy for learning, speech, hearing, visual & other physical & mental disabilities)"
+    },
+    {
+      "name": "Animal & dairy science  "
+    }
+  ]
+}

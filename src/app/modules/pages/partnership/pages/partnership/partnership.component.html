@@ -1,0 +1,21 @@
+<app-page-title-bar title="თანამშრომლობა" i18n-title="@@partnership"></app-page-title-bar>
+<app-layout-container layoutStyle="column">
+  <button mat-flat-button
+          color="primary" class="mtavruli margin-y-3 padding-5"
+          i18n="@@international_organizations"
+          (click)="openDialog('international_organizations')">
+    საერთაშორისო ორგანიზაციები
+  </button>
+  <button mat-flat-button
+          color="primary" class="mtavruli margin-y-3 padding-5"
+          i18n="@@foreign_organizations"
+          (click)="openDialog('foreign organizations')">
+    უცხოური ორგანიზაციები
+  </button>
+  <button mat-flat-button
+          color="primary" class="mtavruli margin-y-3 padding-5"
+          i18n="@@local_organizations"
+          (click)="openDialog('local_organizations')">
+    ადგილობრივი ორგანიზაციები
+  </button>
+</app-layout-container>

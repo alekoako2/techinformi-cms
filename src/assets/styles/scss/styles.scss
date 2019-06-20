@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+  font-family: acadmtavr;
+  src: url(../fonts/acadmtavr.ttf);
+}
+
+@font-face {
+  font-family: bpg_glaho;
+  src: url(../fonts/bpg_glaho.ttf);
+}
+
+@font-face {
+  font-family: mtavruli;
+  src: url(../fonts/bpg_nino_mtavruli_normal.ttf);
+}
+
+body{
+  background: #fafafa;
+}
+
+@import "border-radius";
+@import "margin";
+@import "padding";
+@import "shadow";
+@import "animate";
+@import "background";
+@import "overflow";
+@import "text-decoration";
+@import "color";
+@import "font";
+@import "outline";
+@import "cursor";
+@import "snackbar";
+@import "text-align";
+@import "list";
+@import "dimension";
+
+body {
+  margin: 0;
+}
+
+button {
+  font-family: mtavruli, serif !important;
+}

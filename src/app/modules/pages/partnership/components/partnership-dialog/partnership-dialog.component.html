@@ -1,0 +1,13 @@
+<app-dialog>
+  <div header>{{data.title}}</div>
+  <div body>
+    <app-spinner *ngIf="showSpinner"></app-spinner>
+    <ul class="mtavruli padding-0" style="list-style: none">
+      <li *ngFor="let item of data.list" class="margin-y-3">
+        <a [href]="item.url|sanitizeHtml:'url'" mat-stroked-button target="_blank"
+           [innerHTML]="item.title|sanitizeHtml"></a>
+      </li>
+    </ul>
+    <mat-divider></mat-divider>
+  </div>
+</app-dialog>

@@ -1,0 +1,64 @@
+.head {
+  display: block;
+  width: 100%;
+  height: 170px;
+  background-image: url("http://embryo.theironnetwork.org/page-title-bar.3ed966eb51701c5d4904.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 7rem 0;
+  background-position: center center;
+
+
+  h1 {
+    font-size: 3.25rem;
+    color: #fff;
+    font-weight: 500;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+  }
+
+  p {
+    font-size: 140% !important;
+    text-align: center;
+    color: #fff;
+  }
+
+}
+
+.main {
+  margin: auto;
+
+  h2 {
+    font-size: 2rem;
+    color: rgba(0, 0, 0, .87);
+    font-weight: 700;
+    text-align: left;
+
+  }
+
+  p {
+    text-align: left;
+    line-height: 1.5;
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    font-size: .875rem;
+    color: #3a405b;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, .87);
+    font-weight: 500;
+  }
+
+  //mat-expansion-panel-header {
+  //  background: #6e5985;
+  //}
+}
+
+
+
+
+

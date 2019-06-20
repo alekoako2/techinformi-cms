@@ -1,0 +1,28 @@
+<div class="head">
+  <h1 class="mtavruli">ხშირად დასმული კითხვები</h1>
+  <p>ამ სექციაში ჩვენ მოხემული გვაქვს ზოგადი კითხვა-პასუხი</p>
+</div>
+<div class="main" style="width:70%">
+  <h2 class="mtavruli">მიიღეთ სწრაფი პასუხი ყველაზე ხშირად დასმულ კითხვებზე</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, aspernatur minus voluptatibus quaerat officiis,
+    incidunt maiores, tempora nam eaque ab consequatur tenetur explicabo voluptatem vel voluptatum perspiciatis
+    accusantium. Illum, nemo?
+  </p>
+  <div class="padding-top-3">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let panel of config.panels">
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h5 class="mtavruli">{{ panel.name }}</h5>
+          </mat-panel-title>
+          <!--      <mat-panel-description>-->
+          <!--        {{ panel.description }}-->
+          <!--      </mat-panel-description>-->
+        </mat-expansion-panel-header>
+        <p>{{ panel.answer }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

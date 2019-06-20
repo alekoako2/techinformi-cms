@@ -1,0 +1,23 @@
+<app-dialog>
+  <div header>OECD</div>
+  <div body>
+    <div>
+      <div>
+        <mat-form-field fxFlex="100">
+          <input matInput placeholder="ძიება" i18n-placeholder="@@search" class="mtavruli"
+                 [(ngModel)]="searchOecd">
+        </mat-form-field>
+      </div>
+      <div class="oecd-list-wrapper overflow-auto">
+        <app-spinner *ngIf="showSpinner"></app-spinner>
+
+        <div *ngFor="let oecd of oecds|filterOecd:searchOecd" class="margin-bottom-3">
+          <strong>{{oecd.code}}</strong>
+          -
+          {{oecd.translatedData.name}}
+          <mat-divider class="margin-top-3"></mat-divider>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-dialog>

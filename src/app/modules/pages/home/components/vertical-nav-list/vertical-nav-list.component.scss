@@ -1,0 +1,12 @@
+.vertical-nav-list-wrapper {
+  overflow-y: auto;
+  height: 470px;
+
+  button {
+    font-size: 22px !important;
+  }
+
+  .mat-stroked-button:not([disabled]) {
+    border-color: inherit !important;
+  }
+}

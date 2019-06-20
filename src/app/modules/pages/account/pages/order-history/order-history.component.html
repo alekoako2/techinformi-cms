@@ -1,0 +1,41 @@
+<h1 class="margin-0 margin-bottom-3 mtavruli">შეკვეთები</h1>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="ძიება...">
+</mat-form-field>
+
+<div class="mat-elevation-z0 overflow-auto">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Order ID Column -->
+    <ng-container matColumnDef="order_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="mtavruli"> შეკვეთის ნომერი</th>
+      <td mat-cell *matCellDef="let row"> {{row.order_id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="mtavruli">დასახელება</th>
+      <td mat-cell *matCellDef="let row"> {{row.product_name}} </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="mtavruli">ფასი</th>
+      <td mat-cell *matCellDef="let row"> {{row.price|currency:'GEL':'symbol-narrow'}} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="mtavruli">სტატუსი</th>
+      <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
