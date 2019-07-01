@@ -1,33 +1,36 @@
-<button mat-mini-fab [matMenuTriggerFor]="userToolsMenu" id="tools-button">
-  <img src="http://embryo.theironnetwork.org/assets/images/log-in-user.jpg" alt=""
-       *ngIf="authService.isAuthenticated()">
-  <mat-icon aria-label="Example icon-button with a heart icon" *ngIf="!authService.isAuthenticated()">account_circle
+<button mat-button [matMenuTriggerFor]="userToolsMenu" id="tools-button"
+        class="border-right-1 border-radius-0 border-grey padding-x-2">
+
+  <!--  <img src="http://embryo.theironnetwork.org/assets/images/log-in-user.jpg" alt=""-->
+  <!--       class="border-radius-100"-->
+  <!--       *ngIf="authService.isLoggedIn()">-->
+
+  <mat-icon aria-label="Example icon-button with a heart icon" *ngIf="authService.isLoggedIn()">
+    account_circle
   </mat-icon>
+
+  <span
+    class="margin-left-3 margin-right-2">{{authService.getUser().translation[0].firstName}} {{authService.getUser().translation[0].lastName}}</span>
+
+  <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_down</mat-icon>
+
 </button>
 <mat-menu #userToolsMenu="matMenu">
   <div style="width: 200px">
     <div>
-      <button mat-menu-item routerLink="/auth/login" class="mtavruli">
-        შესვლა
-      </button>
-      <button mat-menu-item routerLink="/auth/register" class="mtavruli">
-        რეგისტრაცია
-      </button>
-    </div>
-    <div *ngIf="false">
       <button mat-menu-item routerLink="/account/profile" class="mtavruli">
         <mat-icon>account_circle</mat-icon>
         პროფილი
       </button>
-      <button mat-menu-item routerLink="/account/order-history" class="mtavruli">
-        <mat-icon>history</mat-icon>
-        შეკვეთების სია
+      <!--      <button mat-menu-item routerLink="/account/order-history" class="mtavruli">-->
+      <!--        <mat-icon>history</mat-icon>-->
+      <!--        შეკვეთების სია-->
+      <!--      </button>-->
+      <button mat-menu-item routerLink="/account/profile" class="mtavruli">
+        <mat-icon>local_post_office</mat-icon>
+        შეტყობინებები
       </button>
-      <!--    <button mat-menu-item routerLink="/account/profile" class="mtavruli">-->
-      <!--      <mat-icon>local_post_office</mat-icon>-->
-      <!--      შეტყობინებები-->
-      <!--    </button>-->
-      <button mat-menu-item routerLink="/home" class="mtavruli">
+      <button mat-menu-item routerLink="/home" class="mtavruli" (click)="logout()">
         <mat-icon>power_settings_new</mat-icon>
         გამოსვლა
       </button>

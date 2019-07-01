@@ -1,47 +1,40 @@
-<app-layout-container>
-
+<form (ngSubmit)="login(f)" #f='ngForm'>
+  <div>
+    <h1 class="mtavruli" i18n="@@sign_in">შესვლა</h1>
+  </div>
   <div fxLayoutAlign="center">
-    <div fxFlex="40" fxFlex.lt-md="90" fxLayout="column">
-      <form (ngSubmit)="login(f)" #f='ngForm'>
-        <div>
-          <h1 class="mtavruli" i18n="@@sign_in">შესვლა</h1>
-        </div>
-        <div fxLayoutAlign="center">
-          <mat-form-field appearance="outline" fxFlex="100" class="mtavruli" color="warn">
-            <mat-label i18n="@@username">მომხმარებლის სახელი</mat-label>
-            <input matInput placeholder="შეიყვანეთ მომხმარებლის სახელი..." ngModel name="username"
-                   i18n-placeholder="@@enter_username">
-            <mat-icon matSuffix>account_circle</mat-icon>
-          </mat-form-field>
-        </div>
-        <div fxLayoutAlign="center">
-          <mat-form-field appearance="outline" fxFlex="100" class="mtavruli" color="warn">
-            <mat-label i18n="@@password">პაროლი</mat-label>
-            <input matInput placeholder="შეიყვანეთ პაროლი..." type="password" ngModel name="password"
-                   i18n-placeholder="@@enter_password">
-            <mat-icon matSuffix>lock</mat-icon>
-          </mat-form-field>
-        </div>
-        <div>
-          <div>
-            <mat-checkbox fxFlex="100" class="mtavruli" checked color="primary" i18n="@@remember_me">დამიმახსოვრე
-            </mat-checkbox>
-            <a fxFlex="100" fxLayoutAlign="end" class="color-black mtavruli" routerLink="/auth/forgot-password"
-               i18n="@@forgot_password">პაროლი
-              დაგავიწყდა?</a>
-          </div>
-        </div>
-        <div class="margin-top-3">
-          <button fxFlex="30" mat-raised-button color="warn" class="padding-1 mtavruli" type="submit" i18n="@@sign_in">
-            შესვლა
-          </button>
-        </div>
-        <div class="margin-top-4">
-          <a fxFlex="100" class="text-decoration-none color-gray mtavruli" routerLink="/auth/register"
-             i18n="@@not_registered">არ ხარ
-            რეგისტრირებული? </a>
-        </div>
-      </form>
+    <mat-form-field appearance="outline" fxFlex="100" class="mtavruli" color="warn">
+      <mat-label i18n="@@username">მომხმარებლის სახელი</mat-label>
+      <input matInput placeholder="შეიყვანეთ მომხმარებლის სახელი..." ngModel name="username"
+             i18n-placeholder="@@enter_username">
+      <mat-icon matSuffix>account_circle</mat-icon>
+    </mat-form-field>
+  </div>
+  <div fxLayoutAlign="center">
+    <mat-form-field appearance="outline" fxFlex="100" class="mtavruli" color="warn">
+      <mat-label i18n="@@password">პაროლი</mat-label>
+      <input matInput placeholder="შეიყვანეთ პაროლი..." type="password" ngModel name="password"
+             i18n-placeholder="@@enter_password">
+      <mat-icon matSuffix>lock</mat-icon>
+    </mat-form-field>
+  </div>
+  <div>
+    <div>
+      <mat-checkbox fxFlex="100" class="mtavruli" checked color="primary" i18n="@@remember_me">დამიმახსოვრე
+      </mat-checkbox>
+      <a fxFlex="100" fxLayoutAlign="end" class="color-black mtavruli" routerLink="/auth/forgot-password"
+         i18n="@@forgot_password">პაროლი
+        დაგავიწყდა?</a>
     </div>
   </div>
-</app-layout-container>
+  <div class="margin-top-3">
+    <button fxFlex="30" mat-raised-button color="warn" class="padding-1 mtavruli" type="submit" i18n="@@sign_in">
+      შესვლა
+    </button>
+  </div>
+  <div class="margin-top-4">
+    <a fxFlex="100" class="text-decoration-none color-gray mtavruli" routerLink="/auth/register"
+       i18n="@@not_registered">არ ხარ
+      რეგისტრირებული? </a>
+  </div>
+</form>

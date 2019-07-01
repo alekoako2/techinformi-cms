@@ -15,11 +15,13 @@
   src: url(../fonts/bpg_nino_mtavruli_normal.ttf);
 }
 
-body{
+body {
   background: #fafafa;
 }
 
 @import "border-radius";
+@import "border";
+@import "border-color";
 @import "margin";
 @import "padding";
 @import "shadow";

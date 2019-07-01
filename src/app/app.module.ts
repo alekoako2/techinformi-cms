@@ -16,8 +16,9 @@ import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {registerLocaleData} from '@angular/common';
 import localeKa from '@angular/common/locales/ka';
+import {GraphQLModule} from './graphql.module';
 
-registerLocaleData(localeKa, 'ka');
+registerLocaleData(localeKa, 'KA');
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ registerLocaleData(localeKa, 'ka');
     SlickCarouselModule,
     AppRoutingModule,
     HeaderModule,
-    HideMissingLanguageElementModule
+    HideMissingLanguageElementModule,
+    GraphQLModule
   ],
   providers: [],
   bootstrap: [AppComponent]

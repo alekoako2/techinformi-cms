@@ -1,0 +1,11 @@
+#tools-button {
+  height: 64px;
+
+  &::ng-deep .mat-button-wrapper {
+    display: initial;
+  }
+
+  img {
+    width: 40px;
+  }
+}

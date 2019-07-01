@@ -10,9 +10,21 @@ import {QrjDialogComponent} from './components/qrj-dialog/qrj-dialog.component';
 import {DialogModule} from '../../../shared/modules/dialog/dialog.module';
 import {FormsModule} from '@angular/forms';
 import {FilterOecdPipe} from './components/qrj-dialog/pipes/filter-oecd.pipe';
+import {IndexComponent} from './pages/index/index.component';
+import {PublicationsComponent} from './pages/publications/publications.component';
+import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
-  declarations: [QrjComponent, DescriptionComponent, QrjDialogComponent, FilterOecdPipe, FilterOecdPipe],
+  declarations: [
+    QrjComponent,
+    DescriptionComponent,
+    QrjDialogComponent,
+    FilterOecdPipe,
+    FilterOecdPipe,
+    IndexComponent,
+    PublicationsComponent,
+    MainComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,
@@ -21,7 +33,9 @@ import {FilterOecdPipe} from './components/qrj-dialog/pipes/filter-oecd.pipe';
     DialogModule,
     FormsModule,
   ],
-  entryComponents: [QrjDialogComponent]
+  entryComponents: [
+    QrjDialogComponent
+  ]
 })
 export class QrjModule {
 }

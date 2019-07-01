@@ -1,51 +1,45 @@
-<app-layout-container>
-  <div fxLayoutAlign="center">
-    <div fxFlex="40" fxFlex.lt-md="90" fxLayout="column">
-      <div>
-        <h1 class="mtavruli" i18n="@@sign_up">რეგისტრაცია</h1>
-      </div>
-      <div fxLayoutAlign="center">
-        <mat-form-field fxFlex="100" class="mtavruli">
-          <input matInput placeholder="სახელი" required i18n-placeholder="@@first_name">
-          <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
-        </mat-form-field>
-      </div>
-      <div fxLayoutAlign="center">
-        <mat-form-field fxFlex="100" class="mtavruli">
-          <input matInput placeholder="გვარი" required i18n-placeholder="@@last_name">
-          <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
-        </mat-form-field>
-      </div>
-      <div fxLayoutAlign="center">
-        <mat-form-field fxFlex="100" class="mtavruli">
-          <input matInput placeholder="ელ.ფოსტა" required i18n-placeholder="@@enter_email">
-          <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
-        </mat-form-field>
-      </div>
-      <div fxLayoutAlign="center">
-        <mat-form-field fxFlex="100" class="mtavruli">
-          <input matInput placeholder="პაროლი" [type]="hide ? 'password' : 'text'" required>
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
-        </mat-form-field>
-      </div>
-      <div fxLayoutAlign="center">
-        <mat-form-field fxFlex="100" class="mtavruli">
-          <input matInput placeholder="გაიმეორეთ პაროლი" [type]="hideConfirm ? 'password' : 'text'" required>
-          <mat-icon matSuffix
-                    (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
-          <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
-        </mat-form-field>
-      </div>
-      <div class="margin-top-3">
-        <button fxFlex="30" mat-raised-button color="warn" class="padding-1 mtavruli" i18n="@@sign_up">რეგისტრაცია
-        </button>
-      </div>
-      <div class="margin-top-4">
-        <a fxFlex="100" class="text-decoration-none color-gray mtavruli" routerLink="/auth/login"
-           i18n="@@already_signed_up">უკვე რეგისტრირებული
-          ხარ?</a>
-      </div>
-    </div>
-  </div>
-</app-layout-container>
+<div>
+  <h1 class="mtavruli" i18n="@@sign_up">რეგისტრაცია</h1>
+</div>
+<div fxLayoutAlign="center">
+  <mat-form-field fxFlex="100" class="mtavruli">
+    <input matInput placeholder="სახელი" required i18n-placeholder="@@first_name">
+    <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+  </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+  <mat-form-field fxFlex="100" class="mtavruli">
+    <input matInput placeholder="გვარი" required i18n-placeholder="@@last_name">
+    <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+  </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+  <mat-form-field fxFlex="100" class="mtavruli">
+    <input matInput placeholder="ელ.ფოსტა" required i18n-placeholder="@@enter_email">
+    <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+  </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+  <mat-form-field fxFlex="100" class="mtavruli">
+    <input matInput placeholder="პაროლი" [type]="hide ? 'password' : 'text'" required>
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+  </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+  <mat-form-field fxFlex="100" class="mtavruli">
+    <input matInput placeholder="გაიმეორეთ პაროლი" [type]="hideConfirm ? 'password' : 'text'" required>
+    <mat-icon matSuffix
+              (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+  </mat-form-field>
+</div>
+<div class="margin-top-3">
+  <button fxFlex="30" mat-raised-button color="warn" class="padding-1 mtavruli" i18n="@@sign_up">რეგისტრაცია
+  </button>
+</div>
+<div class="margin-top-4">
+  <a fxFlex="100" class="text-decoration-none color-gray mtavruli" routerLink="/auth/login"
+     i18n="@@already_signed_up">უკვე რეგისტრირებული
+    ხარ?</a>
+</div>

@@ -1,31 +1,15 @@
-<app-slick-carousel></app-slick-carousel>
-
-<!--<div class="container">-->
-<app-layout-container>
-  <div fxLayout.lt-sm="column" class="padding-2">
-    <app-news fxFlex="65" fxFlex.lt-sm="100"></app-news>
-    <app-vertical-nav-list fxFlex="30" fxFlexOffset="5"></app-vertical-nav-list>
-  </div>
-  <mat-divider class="margin-y-5"></mat-divider>
-
-  <div fxLayoutAlign="center">
-    <div class="margin-x-2">
-      <button mat-stroked-button class="padding-3 border-radius-100">
-        <img src="./assets/images/content/partnership/gtu.png" alt="" width="50px">
+<app-layout-container [flexWidth]="100">
+  <div class="padding-5" fxLayoutAlign="center">
+    <div fxLayout="column" fxFlex="60" class="buttons-wrapper">
+      <button mat-raised-button i18n="@@georgian_scientific_publications" routerLink="/geoPublications">საქართველოს
+        სამეცნიერო პუბლიკაციები
       </button>
-    </div>
-    <div class="margin-x-2">
-      <button mat-stroked-button class="padding-3 border-radius-100">
-        <img src="./assets/images/content/partnership/mes.png" alt="" width="50px">
-      </button>
-    </div>
-    <div class="margin-x-2">
-      <button mat-stroked-button class="padding-3 border-radius-100">
-        <img src="./assets/images/content/partnership/shotar.jpg" alt="" width="50px">
-      </button>
+      <button mat-raised-button i18n="@@research_projects">სამეცნიერო-კვლევითი პროექტები</button>
+      <button mat-raised-button i18n="@@scientists_experts">მეცნიერები/ექსპერტები</button>
+      <button mat-raised-button>სამეცნიერო მიმართულება (OECD)</button>
+      <button mat-raised-button i18n="@@news">სიახლეები</button>
     </div>
   </div>
-  <!--</div>-->
 </app-layout-container>
 
 

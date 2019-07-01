@@ -14,7 +14,6 @@ export class PartnershipDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.data.title);
     this.loadLists(this.data.title)
       .subscribe((data) => {
         this.showSpinner = false;

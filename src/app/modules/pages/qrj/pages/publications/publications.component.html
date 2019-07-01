@@ -1,0 +1,27 @@
+<div>
+  <app-page-title-bar title="გამოცემები" i18n-title="@@publications"></app-page-title-bar>
+
+  <div class="padding-5 padding-top-0">
+    <div class="margin-bottom-5">
+      <div fxLayoutAlign="start" fxFlex="100" fxFlexAlign="end">
+        <button mat-raised-button color="primary" style="height: auto !important;">ახლის დამატება</button>
+      </div>
+      <div fxLayoutAlign="end" fxFlex="100">
+        <mat-form-field fxFlex="50">
+          <input matInput placeholder="ძიება...">
+          <mat-hint align="start"><strong>ჩაწერეთ საძიებო სიტყვა</strong></mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+
+
+  <div>
+    <div *ngFor="let publication of publications">
+
+      {{publication.index}}
+    </div>
+  </div>
+
+</div>

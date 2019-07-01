@@ -1,12 +1,18 @@
-<app-layout-container [ltLg]="100" [backgroundColor]="'bg-primary'">
+<app-layout-container [flexWidth]="100" [ltLg]="100">
 
-  <mat-toolbar color="primary">
+  <mat-toolbar>
 
-    <mat-toolbar-row fxLayoutAlign="center" id="top-toolbar">
-      <div fxFlex="100" fxFlexAlign="center" fxLayoutGap="25px">
-        <app-logo></app-logo>
-        <app-search fxLayoutAlign="center" fxFlex="100" fxHide.lt-lg></app-search>
-        <app-user-tools fxLayoutAlign="end" fxFlex.lt-lg="100"></app-user-tools>
+    <mat-toolbar-row fxLayoutAlign="center" id="top-toolbar" class="padding-0">
+      <div fxFlex="100" fxFlexAlign="center">
+        <div fxFlex="50">
+          <div style="height: 100%">
+            <button mat-button aria-label="Expend left navigation bar" style="height: 100%"
+                    (click)="onToggleSidenav()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+        </div>
+        <app-user-tools fxLayoutAlign="end" fxFlex="50"></app-user-tools>
       </div>
     </mat-toolbar-row>
 

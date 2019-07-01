@@ -1,0 +1,7 @@
+<button mat-raised-button [matMenuTriggerFor]="languages" id="tools-button" class="overflow-hidden padding-0">
+  <img src="./assets/images/content/languages/ge.svg" alt="" width="100%" *ngIf="localeId=='ka'">
+  <img src="./assets/images/content/languages/us.svg" alt="" width="100%" *ngIf="localeId=='en'">
+</button>
+<mat-menu #languages="matMenu">
+
+</mat-menu>

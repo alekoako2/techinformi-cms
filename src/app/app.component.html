@@ -6,15 +6,15 @@
 
   <mat-sidenav-content>
     <div class="mat-elevation-z3 toolbars-wrapper">
-      <app-top-toolbar (sidenavToggle)="sidenav.toggle()"></app-top-toolbar>
+      <app-top-toolbar (sidenavToggle)="sidenav.toggle()" *ngIf="authService.isLoggedIn()"></app-top-toolbar>
 
-<!--      <app-bottom-toolbar fxHide.lt-lg></app-bottom-toolbar>-->
+      <!--      <app-bottom-toolbar fxHide.lt-lg></app-bottom-toolbar>-->
     </div>
     <div class="margin-bottom-3 main-outlet-wrapper">
       <router-outlet></router-outlet>
     </div>
 
-<!--    <app-footer class="margin-top-5" fxHide.lt-lg></app-footer>-->
+    <!--    <app-footer class="margin-top-5" fxHide.lt-lg></app-footer>-->
 
   </mat-sidenav-content>
 
