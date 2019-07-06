@@ -1,0 +1,10 @@
+<mat-form-field fxFlex="100">
+  <input type="text" placeholder="კლასიფიკატორი (OECD)" aria-label="OECD" matInput [formControl]="oecdControl"
+         [matAutocomplete]="oecdAuto">
+  <mat-hint align="start"><strong>აირჩიეთ კლასიფიკატორი</strong></mat-hint>
+  <mat-autocomplete #oecdAuto="matAutocomplete">
+    <mat-option *ngFor="let oecd of filteredOecdOptions | async" [value]="oecd.code">
+      {{oecd.code}} - {{oecd.translation[0].name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

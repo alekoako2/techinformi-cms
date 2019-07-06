@@ -1,0 +1,11 @@
+<mat-form-field fxFlex="100">
+  <input type="text" placeholder="ჟურნალის დასახელება" aria-label="ჟურნალი" matInput
+         [formControl]="journalControl"
+         [matAutocomplete]="auto">
+  <mat-hint align="start"><strong>აირჩიეთ ჟურნალი</strong></mat-hint>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let qrjJournal of filteredJournalOptions | async" [value]="qrjJournal.code">
+      {{qrjJournal.code}} - {{qrjJournal.translation[0]?.name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

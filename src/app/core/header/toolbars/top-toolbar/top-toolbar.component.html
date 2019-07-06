@@ -16,23 +16,5 @@
       </div>
     </mat-toolbar-row>
 
-    <mat-toolbar-row fxLayoutAlign="center" fxHide.gt-md>
-      <div fxFlex="100" fxFlexAlign="center">
-        <div fxFlex="100" *ngIf="hidden">
-          <div fxLayoutAlign="start" fxFlex="50">
-            <button mat-icon-button aria-label="Expend left navigation bar" (click)="onToggleSidenav()">
-              <mat-icon>menu</mat-icon>
-            </button>
-          </div>
-          <div fxLayoutAlign="end" fxFlex="50">
-            <button mat-mini-fab color="warn" (click)="hidden=!hidden">
-              <mat-icon>search</mat-icon>
-            </button>
-          </div>
-        </div>
-        <app-responsive-search fxFlex="100" [hidden]="hidden" (closeSearch)="hidden=!hidden"></app-responsive-search>
-      </div>
-    </mat-toolbar-row>
-
   </mat-toolbar>
 </app-layout-container>

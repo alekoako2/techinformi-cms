@@ -5,6 +5,7 @@ import {MaterialModule} from '../material/material.module';
 import {LayoutContainerModule} from '../layout-container/layout-container.module';
 import {SpinnerModule} from '../spinner/spinner.module';
 import {FirebaseModule} from '../firebase/firebase.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -14,13 +15,15 @@ import {FirebaseModule} from '../firebase/firebase.module';
     MaterialModule,
     LayoutContainerModule,
     SpinnerModule,
-    FirebaseModule
+    FirebaseModule,
+    ReactiveFormsModule
   ],
   exports: [
     FlexLayoutModule,
     MaterialModule,
     LayoutContainerModule,
-    SpinnerModule
+    SpinnerModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {

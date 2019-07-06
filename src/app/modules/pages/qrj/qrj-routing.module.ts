@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {QrjComponent} from './pages/qrj/qrj.component';
 import {IndexComponent} from './pages/index/index.component';
 import {PublicationsComponent} from './pages/publications/publications.component';
 import {MainComponent} from './pages/main/main.component';
@@ -8,7 +7,6 @@ import {MainComponent} from './pages/main/main.component';
 const routes: Routes = [{
   path: '', component: IndexComponent, children: [
     {path: '', component: MainComponent},
-    {path: 'qrj', component: QrjComponent},
     {path: 'publications', component: PublicationsComponent}
   ]
 }

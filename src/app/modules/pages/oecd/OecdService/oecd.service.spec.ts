@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PublicationService } from './publication.service';
+import { OecdService } from './oecd.service';
 
-describe('PublicationService', () => {
+describe('OecdService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: PublicationService = TestBed.get(PublicationService);
+    const service: OecdService = TestBed.get(OecdService);
     expect(service).toBeTruthy();
   });
 });

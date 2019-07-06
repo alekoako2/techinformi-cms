@@ -14,26 +14,6 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.apollo
-    // .query({
-    //   query: gql`
-    //     query {
-    //       me{
-    //         id
-    //         role
-    //         news(language:KA){
-    //           translation{
-    //             title
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `
-    // })
-    // .subscribe(res => {
-    //   console.log(res);
-    // this.doLoginUser(res.data.login.user.name, res.data.login.token);
-    // });
   }
 
 }
