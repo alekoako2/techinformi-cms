@@ -12,7 +12,6 @@ import {FixedBottomToolbarComponent} from './core/footer/fixed-bottom-toolbar/fi
 import {MaterialModule} from './shared/modules/material/material.module';
 import {HeaderModule} from './core/header/header.module';
 import {HideMissingLanguageElementModule} from './shared/modules/hide-missing-language-element/hide-missing-language-element.module';
-import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {registerLocaleData} from '@angular/common';
 import localeKa from '@angular/common/locales/ka';
@@ -34,7 +33,6 @@ registerLocaleData(localeKa, 'KA');
     FlexLayoutModule,
     MaterialModule,
     HttpClientModule,
-    SlickCarouselModule,
     AppRoutingModule,
     HeaderModule,
     HideMissingLanguageElementModule,
