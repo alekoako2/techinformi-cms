@@ -16,6 +16,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {registerLocaleData} from '@angular/common';
 import localeKa from '@angular/common/locales/ka';
 import {GraphQLModule} from './graphql.module';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
 
 registerLocaleData(localeKa, 'KA');
 
@@ -36,7 +38,11 @@ registerLocaleData(localeKa, 'KA');
     AppRoutingModule,
     HeaderModule,
     HideMissingLanguageElementModule,
-    GraphQLModule
+    GraphQLModule,
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
