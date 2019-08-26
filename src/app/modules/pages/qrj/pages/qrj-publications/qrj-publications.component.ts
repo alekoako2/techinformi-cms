@@ -5,11 +5,10 @@ import {
   QrjPublicationQuery_qrjPublication,
   QrjPublicationsQuery_qrjPublications
 } from '../../../../../types/operation-result-types';
-import {QrjPublicationService} from '../../services/qrj-publications.service';
 import {Select, Store} from '@ngxs/store';
 import {Observable} from 'rxjs';
 import {CountQrjPublications, DeleteQrjPublication, GetQrjPublication, LoadQrjPublications} from './state/qrj-publications.actions';
-import {take} from 'rxjs/operators';
+import {DeleteQrjPublicationDialogComponent} from '../../components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component';
 
 
 @Component({
@@ -28,7 +27,7 @@ export class QrjPublicationsComponent implements OnInit {
 
   title = 'al';
 
-  constructor(private store: Store, private qrjPublicationService: QrjPublicationService, public dialog: MatDialog) {
+  constructor(private store: Store, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -49,26 +48,26 @@ export class QrjPublicationsComponent implements OnInit {
     this.store.dispatch(new LoadQrjPublications({searchText: this.searchText, index: this.pageIndex, limit: this.pageSize}));
   }
 
-  openDialog(data?: QrjPublicationQuery_qrjPublication): void {
-    this.dialog.open(QrjPublicationDialogComponent,
+  openDialog(dialogComponent: any, data?: QrjPublicationQuery_qrjPublication, width = '900px',): void {
+    this.dialog.open(dialogComponent,
       {
-        width: '900px',
+        width,
         data: data ? data : null
       }
     );
   }
 
   createQrjPublication() {
-    this.openDialog();
+    this.openDialog(QrjPublicationDialogComponent);
   }
 
   deleteQrjPublication(id) {
-    this.store.dispatch(new DeleteQrjPublication({id}));
+    this.openDialog(DeleteQrjPublicationDialogComponent, id, '450px');
   }
 
   updateQrjPublication(pub) {
     this.store.dispatch(new GetQrjPublication({id: pub})).subscribe((res) => {
-      this.openDialog(res.qrjPublications.qrjPublication);
+      this.openDialog(QrjPublicationDialogComponent, res.qrjPublications.qrjPublication);
     });
   }
 

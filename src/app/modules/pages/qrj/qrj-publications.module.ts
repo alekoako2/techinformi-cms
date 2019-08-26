@@ -17,6 +17,7 @@ import {QrjPublicationsState} from './pages/qrj-publications/state/qrj-publicati
 import {InputTextComponent} from './components/input-text/input-text.component';
 import {InputSelectComponent} from './components/input-select/input-select.component';
 import {InputTextAreaComponent} from './components/input-text-area/input-text-area.component';
+import {DeleteQrjPublicationDialogComponent} from './components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {InputTextAreaComponent} from './components/input-text-area/input-text-ar
     QrjPublicationDialogComponent,
     InputTextComponent,
     InputSelectComponent,
-    InputTextAreaComponent
+    InputTextAreaComponent,
+    DeleteQrjPublicationDialogComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import {InputTextAreaComponent} from './components/input-text-area/input-text-ar
     JournalModule
   ],
   entryComponents: [
-    QrjPublicationDialogComponent
+    QrjPublicationDialogComponent,
+    DeleteQrjPublicationDialogComponent
   ]
 })
 export class QrjPublicationsModule {

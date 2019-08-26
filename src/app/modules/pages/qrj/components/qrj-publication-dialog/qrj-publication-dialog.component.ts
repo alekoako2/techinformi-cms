@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 
-import {MAT_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {QrjPublicationService} from '../../services/qrj-publications.service';
 import {
   CreateQrjPublicationMutation,
@@ -23,7 +23,7 @@ export class QrjPublicationDialogComponent implements OnInit {
 
   publicationData: QrjPublicationQuery_qrjPublication;
 
-  constructor(private store: Store, private qrjPublicationService: QrjPublicationService, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
+  constructor(private store: Store, private qrjPublicationService: QrjPublicationService, public dialogRef: MatDialogRef<QrjPublicationDialogComponent>, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
     this.publicationData = {
       id: '',
       index: '',
@@ -81,15 +81,15 @@ export class QrjPublicationDialogComponent implements OnInit {
   }
 
   create() {
-    console.log(this.publicationData);
-
     this.store.dispatch(new AddQrjPublication(this.publicationData));
 
+    this.dialogRef.close();
   }
 
   update() {
-    console.log(this.publicationData);
     this.store.dispatch(new UpdateQrjPublication(this.publicationData));
+
+    this.dialogRef.close();
   }
 
 }
