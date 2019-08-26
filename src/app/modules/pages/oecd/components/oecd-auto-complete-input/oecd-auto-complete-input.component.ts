@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -12,7 +12,8 @@ import {OecdsQuery, OecdsQuery_oecds} from '../../../../../types/operation-resul
 })
 export class OecdAutoCompleteInputComponent implements OnInit {
 
-  @Input() oecd: OecdsQuery_oecds;
+  @Input() oecdModel: string;
+  @Output() oecdModelChange = new EventEmitter<string>();
 
   oecdControl = new FormControl();
   filteredOecdOptions: Observable<OecdsQuery_oecds[]>;
@@ -30,11 +31,15 @@ export class OecdAutoCompleteInputComponent implements OnInit {
             map(value => this._filter(value, res.oecds))
           );
 
-        if (this.oecd) {
-          this.oecdControl.setValue(this.oecd.code);
+        if (this.oecdModel) {
+          this.oecdControl.setValue(this.oecdModel);
         }
 
       });
+  }
+
+  test() {
+    console.log('aleko');
   }
 
   private _filter(value: string, array): any[] {

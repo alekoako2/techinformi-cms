@@ -1,4 +1,3 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
@@ -16,8 +15,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {registerLocaleData} from '@angular/common';
 import localeKa from '@angular/common/locales/ka';
 import {GraphQLModule} from './graphql.module';
-import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-import {environment} from '../environments/environment';
+import {NgxsFormPluginModule} from '@ngxs/form-plugin';
+import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
+import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
+import {NgxsModule} from '@ngxs/store';
 
 registerLocaleData(localeKa, 'KA');
 
@@ -30,7 +31,6 @@ registerLocaleData(localeKa, 'KA');
     FixedBottomToolbarComponent,
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
@@ -39,10 +39,10 @@ registerLocaleData(localeKa, 'KA');
     HeaderModule,
     HideMissingLanguageElementModule,
     GraphQLModule,
-    StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: environment.production, // Restrict extension to log-only mode
-    }),
+    NgxsModule.forRoot([]),
+    NgxsFormPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

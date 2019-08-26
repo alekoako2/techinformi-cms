@@ -3,7 +3,7 @@
          [formControl]="journalControl"
          [matAutocomplete]="auto">
   <mat-hint align="start"><strong>აირჩიეთ ჟურნალი</strong></mat-hint>
-  <mat-autocomplete #auto="matAutocomplete">
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="qrjJournalModelChange.emit($event.option.value)">
     <mat-option *ngFor="let qrjJournal of filteredJournalOptions | async" [value]="qrjJournal.code">
       {{qrjJournal.code}} - {{qrjJournal.translation[0]?.name}}
     </mat-option>

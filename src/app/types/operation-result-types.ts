@@ -55,6 +55,73 @@ export interface OecdsQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateQrjPublicationMutation
+// ====================================================
+
+export interface UpdateQrjPublicationMutation_updateQrjPublication_journal_translation {
+  name: string | null;
+}
+
+export interface UpdateQrjPublicationMutation_updateQrjPublication_journal {
+  code: string | null;
+  translation: (UpdateQrjPublicationMutation_updateQrjPublication_journal_translation | null)[] | null;
+}
+
+export interface UpdateQrjPublicationMutation_updateQrjPublication_oecd_translation {
+  name: string | null;
+}
+
+export interface UpdateQrjPublicationMutation_updateQrjPublication_oecd {
+  code: string | null;
+  translation: (UpdateQrjPublicationMutation_updateQrjPublication_oecd_translation | null)[] | null;
+}
+
+export interface UpdateQrjPublicationMutation_updateQrjPublication_translation {
+  title: string | null;
+  publicationAuthor: string | null;
+  publicationLang: string | null;
+  abstract: string | null;
+}
+
+export interface UpdateQrjPublicationMutation_updateQrjPublication {
+  id: string;
+  index: string | null;
+  year: string | null;
+  number: string | null;
+  pages: string | null;
+  inputDate: string | null;
+  journal: UpdateQrjPublicationMutation_updateQrjPublication_journal | null;
+  oecd: UpdateQrjPublicationMutation_updateQrjPublication_oecd | null;
+  translation: (UpdateQrjPublicationMutation_updateQrjPublication_translation | null)[] | null;
+}
+
+export interface UpdateQrjPublicationMutation {
+  updateQrjPublication: UpdateQrjPublicationMutation_updateQrjPublication | null;
+}
+
+export interface UpdateQrjPublicationMutationVariables {
+  id: string;
+  index?: string | null;
+  year?: string | null;
+  number?: string | null;
+  pages?: string | null;
+  oecd?: string | null;
+  journal?: string | null;
+  title?: string | null;
+  publicationAuthor?: string | null;
+  publicationLang?: string | null;
+  abstract?: string | null;
+  titleEng?: string | null;
+  publicationAuthorEng?: string | null;
+  publicationLangEng?: string | null;
+  abstractEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: CreateQrjPublicationMutation
 // ====================================================
 
@@ -114,6 +181,26 @@ export interface CreateQrjPublicationMutationVariables {
   publicationAuthorEng?: string | null;
   publicationLangEng?: string | null;
   abstractEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteQrjPublicationMutation
+// ====================================================
+
+export interface DeleteQrjPublicationMutation_deleteQrjPublication {
+  index: string | null;
+}
+
+export interface DeleteQrjPublicationMutation {
+  deleteQrjPublication: DeleteQrjPublicationMutation_deleteQrjPublication | null;
+}
+
+export interface DeleteQrjPublicationMutationVariables {
+  id?: string | null;
 }
 
 

@@ -3,109 +3,168 @@
   <div body>
     <div class="overflow-auto publication-input-wrapper">
       <div>
-        <mat-form-field fxFlex="50" class="margin-right-2">
-          <input matInput placeholder="ინდექსი" [(ngModel)]="publicationData.index">
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ინდექსი"
+          [(inputModel)]="publicationData.index"
+          hintText="ჩაწერეთ ინდექსი"
+        ></app-input-text>
 
-          <mat-hint align="start"><strong>ჩაწერეთ ინდექსი</strong></mat-hint>
-        </mat-form-field>
-        <app-oecd-auto-complete-input fxFlex="50" class="margin-left-2"
-                                      [oecd]="publicationData.oecd"></app-oecd-auto-complete-input>
+        <app-oecd-auto-complete-input
+          fxFlex="50"
+          class="margin-left-2"
+          [oecdModel]="publicationData.oecd?.code"
+          (oecdModelChange)="publicationData.oecd.code=$event"
+        >
+        </app-oecd-auto-complete-input>
+
       </div>
+
       <div>
-        <app-qrj-journal-auto-complete-input fxFlex="50" class="margin-right-2"
-                                             [qrjJournal]="publicationData.journal"></app-qrj-journal-auto-complete-input>
-        <mat-form-field fxFlex="50" class="margin-left-2">
-          <mat-label>წელი</mat-label>
-          <mat-select [(value)]="publicationData.year">
-            <mat-option [value]="i.toString()" *ngFor="let i of arrayThree(25, 2000)">{{i}}</mat-option>
-          </mat-select>
-        </mat-form-field>
+
+        <app-qrj-journal-auto-complete-input
+          fxFlex="50"
+          class="margin-right-2"
+          [qrjJournalModel]="publicationData.journal?.code"
+          (qrjJournalModelChange)="publicationData.journal.code=$event"
+        >
+        </app-qrj-journal-auto-complete-input>
+
+        <app-input-select
+          fxFlex="50"
+          class="margin-left-2"
+          label="წელი"
+          [(valueModel)]="publicationData.year"
+          [array]="arrayThree(25, 2000)"
+        >
+        </app-input-select>
+
       </div>
+
       <div>
-        <mat-form-field fxFlex="50" class="margin-right-2">
-          <input matInput placeholder="ნომერი" [(ngModel)]="publicationData.number">
 
-          <mat-hint align="start"><strong>ჩაწერეთ ნომერი</strong></mat-hint>
-        </mat-form-field>
-        <mat-form-field fxFlex="50" class="margin-left-2">
-          <input matInput placeholder="გვერდები" [(ngModel)]="publicationData.pages">
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ნომერი"
+          [(inputModel)]="publicationData.number"
+          hintText="ჩაწერეთ ნომერი"
+        ></app-input-text>
 
-          <mat-hint align="start"><strong>ჩაწერეთ გვერდები</strong></mat-hint>
-        </mat-form-field>
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="გვერდები"
+          [(inputModel)]="publicationData.pages"
+          hintText="ჩაწერეთ გვერდები"
+        ></app-input-text>
+
       </div>
+
       <div class="margin-top-2">
         <mat-tab-group>
           <mat-tab label="ქართული">
+
             <div>
-              <mat-form-field fxFlex="100">
-                <input matInput placeholder="სათაური" [(ngModel)]="publicationData.translation[0].title">
-                <mat-hint align="start"><strong>ჩაწერეთ სათაური</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text
+                fxFlex="100"
+                placeholder="სათაური"
+                [(inputModel)]="publicationData.translation[0].title"
+                hintText="ჩაწერეთ სათაური"
+              ></app-input-text>
+
             </div>
+
             <div>
-              <mat-form-field fxFlex="100">
-                <input matInput placeholder="ავტორი" [(ngModel)]="publicationData.translation[0].publicationAuthor">
-                <mat-hint align="start"><strong>ჩაწერეთ ავტორი</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text
+                fxFlex="100"
+                placeholder="ავტორი"
+                [(inputModel)]="publicationData.translation[0].publicationAuthor"
+                hintText="ჩაწერეთ ავტორი"
+              ></app-input-text>
             </div>
+
             <div>
-              <mat-form-field fxFlex="100">
-                <input matInput placeholder="ენები" [(ngModel)]="publicationData.translation[0].publicationLang">
-                <mat-hint align="start"><strong>ჩაწერეთ ენები</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text
+                fxFlex="100"
+                placeholder="ენები"
+                [(inputModel)]="publicationData.translation[0].publicationLang"
+                hintText="ჩაწერეთ ენები"
+              ></app-input-text>
             </div>
+
             <div>
-              <mat-form-field fxFlex="100">
-                <textarea matInput
-                          placeholder="რეფერატი"
-                          cdkTextareaAutosize
-                          #autosize="cdkTextareaAutosize"
-                          cdkAutosizeMinRows="1"
-                          cdkAutosizeMaxRows="5"
-                          [(ngModel)]="publicationData.translation[0].abstract">
-                </textarea>
-                <mat-hint align="start"><strong>სიმაღლე ავტომატურად გაიზრდება</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text-area
+                fxFlex="100"
+                placeholder="რეფერატი"
+                [(inputModel)]="publicationData.translation[0].abstract"
+                hintText="სიმაღლე ავტომატურად გაიზრდება"
+              ></app-input-text-area>
             </div>
+
           </mat-tab>
+
           <mat-tab label="English">
+
             <div>
-              <mat-form-field fxFlex="100">
-                <input matInput placeholder="Title" [(ngModel)]="publicationData.translation[1].title">
-                <mat-hint align="start"><strong>Enter Title</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text
+                fxFlex="100"
+                placeholder="Title"
+                [(inputModel)]="publicationData.translation[1].title"
+                hintText="Enter Title"
+              ></app-input-text>
             </div>
+
             <div>
-              <mat-form-field fxFlex="100">
-                <input matInput placeholder="Author" [(ngModel)]="publicationData.translation[1].publicationAuthor">
-                <mat-hint align="start"><strong>Enter Author</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text
+                fxFlex="100"
+                placeholder="Author"
+                [(inputModel)]="publicationData.translation[1].publicationAuthor"
+                hintText="Enter Author"
+              ></app-input-text>
             </div>
+
             <div>
-              <mat-form-field fxFlex="100">
-                <input matInput placeholder="Languages" [(ngModel)]="publicationData.translation[1].publicationLang">
-                <mat-hint align="start"><strong>Enter Languages</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text
+                fxFlex="100"
+                placeholder="Languages"
+                [(inputModel)]="publicationData.translation[1].publicationLang"
+                hintText="Enter Languages"
+              ></app-input-text>
             </div>
+
             <div>
-              <mat-form-field fxFlex="100">
-                <textarea matInput
-                          placeholder="Abstract"
-                          cdkTextareaAutosize
-                          #autosize="cdkTextareaAutosize"
-                          cdkAutosizeMinRows="1"
-                          cdkAutosizeMaxRows="5"
-                          [(ngModel)]="publicationData.translation[1].abstract">
-                </textarea>
-                <mat-hint align="start"><strong>Auto resizable</strong></mat-hint>
-              </mat-form-field>
+              <app-input-text-area
+                fxFlex="100"
+                placeholder="Abstract"
+                [(inputModel)]="publicationData.translation[1].abstract"
+                hintText="Auto resizable"
+              ></app-input-text-area>
             </div>
+
           </mat-tab>
         </mat-tab-group>
+
       </div>
     </div>
   </div>
   <div footer class="margin-left-4">
-    <button mat-raised-button color="accent" (click)="save()">შენახვა</button>
+    <button mat-raised-button
+            color="accent"
+            type="submit"
+            *ngIf="!showCreate"
+            (click)="update()"
+    >
+      შენახვა
+    </button>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            *ngIf="showCreate"
+            (click)="create()"
+    >
+      დამატება
+    </button>
   </div>
 </app-dialog>

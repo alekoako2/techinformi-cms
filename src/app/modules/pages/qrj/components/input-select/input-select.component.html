@@ -1,0 +1,11 @@
+<mat-form-field fxFlex="100">
+  <mat-label>{{label}}</mat-label>
+  <mat-select [value]="valueModel" (selectionChange)="valueModelChange.emit($event.value)">
+    <mat-option
+      [value]="i.toString()"
+      *ngFor="let i of array"
+    >
+      {{i}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

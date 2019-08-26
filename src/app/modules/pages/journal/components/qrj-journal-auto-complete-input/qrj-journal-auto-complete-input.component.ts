@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {QrjJournalsQuery, QrjJournalsQuery_qrjJournals} from '../../../../../types/operation-result-types';
 import {map, startWith} from 'rxjs/operators';
 import {QrjJournalService} from '../../JournalService/qrj-journal.service';
@@ -11,7 +11,8 @@ import {Observable} from 'rxjs';
   styleUrls: ['./qrj-journal-auto-complete-input.component.scss']
 })
 export class QrjJournalAutoCompleteInputComponent implements OnInit {
-  @Input() qrjJournal: QrjJournalsQuery_qrjJournals;
+  @Input() qrjJournalModel: string;
+  @Output() qrjJournalModelChange = new EventEmitter<string>();
 
   journalControl = new FormControl();
   filteredJournalOptions: Observable<QrjJournalsQuery_qrjJournals[]>;
@@ -30,8 +31,8 @@ export class QrjJournalAutoCompleteInputComponent implements OnInit {
           );
 
 
-        if (this.qrjJournal) {
-          this.journalControl.setValue(this.qrjJournal.code);
+        if (this.qrjJournalModel) {
+          this.journalControl.setValue(this.qrjJournalModel);
         }
       });
   }

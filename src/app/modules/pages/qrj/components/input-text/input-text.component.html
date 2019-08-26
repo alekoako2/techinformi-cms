@@ -1,0 +1,14 @@
+<mat-form-field fxFlex="100">
+
+  <input
+    matInput
+    [placeholder]="placeholder"
+    [(ngModel)]="inputModel"
+    (ngModelChange)="inputModelChange.emit(inputModel)"
+  >
+
+  <mat-hint align="start">
+    <strong>{{hintText}}</strong>
+  </mat-hint>
+
+</mat-form-field>

@@ -10,6 +10,7 @@ const uri = 'http://localhost:4000/graphql';
 
 export function createApollo(httpLink: HttpLink) {
   let link: ApolloLink = httpLink.create({uri});
+
   if (localStorage.getItem('JWT_TOKEN')) {
     const middleware = new ApolloLink((operation, forward) => {
       operation.setContext({

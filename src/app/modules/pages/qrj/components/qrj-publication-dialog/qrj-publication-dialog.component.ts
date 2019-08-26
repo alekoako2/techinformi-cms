@@ -1,77 +1,95 @@
 import {Component, Inject, OnInit} from '@angular/core';
 
 import {MAT_DIALOG_DATA} from '@angular/material';
-import {QrjPublicationService} from '../../services/qrjPublication.service';
+import {QrjPublicationService} from '../../services/qrj-publications.service';
 import {
   CreateQrjPublicationMutation,
   CreateQrjPublicationMutation_createQrjPublication,
   QrjPublicationQuery_qrjPublication
 } from '../../../../../types/operation-result-types';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Store} from '@ngxs/store';
+import {AddQrjPublication, UpdateQrjPublication} from '../../pages/qrj-publications/state/qrj-publications.actions';
 
 @Component({
   selector: 'app-qrj-publication-dialog',
   templateUrl: './qrj-publication-dialog.component.html',
   styleUrls: ['./qrj-publication-dialog.component.scss']
 })
+
 export class QrjPublicationDialogComponent implements OnInit {
 
-  publicationData: QrjPublicationQuery_qrjPublication = {
-    id: '',
-    index: '',
-    inputDate: '',
-    journal: {
-      code: '',
-      translation: [
-        {
-          name: ''
-        }
-      ]
-    },
-    number: '',
-    oecd: {
-      code: '',
-      translation: [
-        {
-          name: ''
-        }
-      ]
-    },
-    pages: '',
-    translation: [
-      {
-        title: '',
-        publicationAuthor: '',
-        publicationLang: '',
-        abstract: ''
-      },
-      {
-        title: '',
-        publicationAuthor: '',
-        publicationLang: '',
-        abstract: ''
-      }
-    ],
-    year: ''
-  };
+  showCreate: boolean = true;
 
-  constructor(private qrjPublicationService: QrjPublicationService, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
+  publicationData: QrjPublicationQuery_qrjPublication;
+
+  constructor(private store: Store, private qrjPublicationService: QrjPublicationService, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
+    this.publicationData = {
+      id: '',
+      index: '',
+      inputDate: '',
+      journal: {
+        code: '',
+        translation: [
+          {
+            name: ''
+          }
+        ]
+      },
+      number: '',
+      oecd:
+        {
+          code: '',
+          translation: [
+            {
+              name: ''
+            }
+          ]
+        },
+      pages: '',
+      translation: [
+        {
+          abstract: '',
+          publicationAuthor: '',
+          publicationLang: '',
+          title: ''
+        },
+        {
+          abstract: '',
+          publicationAuthor: '',
+          publicationLang: '',
+          title: ''
+        }
+      ],
+      year: ''
+    };
+
     if (data) {
+      this.showCreate = false;
       this.publicationData = data;
     }
   }
 
-  ngOnInit() {
-  }
+  title = new FormControl('', [Validators.required]);
 
-  save() {
-    this.qrjPublicationService.createQrjPublication(this.publicationData)
-      .subscribe((res: CreateQrjPublicationMutation) => {
-        // this.console.log(res.createQrjPublication.index);
-      });
+  ngOnInit() {
+
   }
 
   arrayThree(n: number, startFrom: number): number[] {
     return [...Array(n).keys()].map(i => i + startFrom);
+  }
+
+  create() {
+    console.log(this.publicationData);
+
+    this.store.dispatch(new AddQrjPublication(this.publicationData));
+
+  }
+
+  update() {
+    console.log(this.publicationData);
+    this.store.dispatch(new UpdateQrjPublication(this.publicationData));
   }
 
 }

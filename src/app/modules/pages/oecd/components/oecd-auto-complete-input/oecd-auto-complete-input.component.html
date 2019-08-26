@@ -2,7 +2,8 @@
   <input type="text" placeholder="კლასიფიკატორი (OECD)" aria-label="OECD" matInput [formControl]="oecdControl"
          [matAutocomplete]="oecdAuto">
   <mat-hint align="start"><strong>აირჩიეთ კლასიფიკატორი</strong></mat-hint>
-  <mat-autocomplete #oecdAuto="matAutocomplete">
+  <!--  <mat-autocomplete #oecdAuto="matAutocomplete" (change)="selectedOecd.emit(this.oecdControl.value)">-->
+  <mat-autocomplete #oecdAuto="matAutocomplete" (optionSelected)="oecdModelChange.emit($event.option.value)">
     <mat-option *ngFor="let oecd of filteredOecdOptions | async" [value]="oecd.code">
       {{oecd.code}} - {{oecd.translation[0].name}}
     </mat-option>

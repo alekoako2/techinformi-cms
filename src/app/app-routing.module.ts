@@ -22,8 +22,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'geoPublications', loadChildren:
-      () => import( './modules/pages/qrj/qrj.module')
-        .then(mod => mod.QrjModule),
+      () => import( './modules/pages/qrj/qrj-publications.module')
+        .then(mod => mod.QrjPublicationsModule),
     canActivate: [AuthGuard]
   },
 
