@@ -1,6 +1,13 @@
 <mat-form-field fxFlex="100">
   <mat-label>{{label}}</mat-label>
-  <mat-select [value]="valueModel" (selectionChange)="valueModelChange.emit($event.value)">
+  <mat-select
+    [(ngModel)]="inputSelectModel"
+    (ngModelChange)="inputSelectModelChange.emit(inputSelectModel)"
+    [required]="required"
+    [name]="name"
+    #input="ngModel"
+
+  >
     <mat-option
       [value]="i.toString()"
       *ngFor="let i of array"
@@ -8,4 +15,10 @@
       {{i}}
     </mat-option>
   </mat-select>
+
+  <mat-error *ngIf="!input.valid && input.touched">
+    გთხოვთ შეავსოთ ველი
+  </mat-error>
+
 </mat-form-field>
+

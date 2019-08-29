@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {ControlContainer, FormControl, FormGroup, NgForm} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {OecdService} from '../../OecdService/oecd.service';
@@ -8,12 +8,17 @@ import {OecdsQuery, OecdsQuery_oecds} from '../../../../../types/operation-resul
 @Component({
   selector: 'app-oecd-auto-complete-input',
   templateUrl: './oecd-auto-complete-input.component.html',
-  styleUrls: ['./oecd-auto-complete-input.component.scss']
+  styleUrls: ['./oecd-auto-complete-input.component.scss'],
+  viewProviders: [{provide: ControlContainer, useExisting: NgForm}]
+
 })
 export class OecdAutoCompleteInputComponent implements OnInit {
 
   @Input() oecdModel: string;
   @Output() oecdModelChange = new EventEmitter<string>();
+
+  @Input() name: string;
+  @Input() required: boolean = false;
 
   oecdControl = new FormControl();
   filteredOecdOptions: Observable<OecdsQuery_oecds[]>;
@@ -22,6 +27,7 @@ export class OecdAutoCompleteInputComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.oecdService.getOecds()
       .subscribe((res: OecdsQuery) => {
 
@@ -31,15 +37,7 @@ export class OecdAutoCompleteInputComponent implements OnInit {
             map(value => this._filter(value, res.oecds))
           );
 
-        if (this.oecdModel) {
-          this.oecdControl.setValue(this.oecdModel);
-        }
-
       });
-  }
-
-  test() {
-    console.log('aleko');
   }
 
   private _filter(value: string, array): any[] {

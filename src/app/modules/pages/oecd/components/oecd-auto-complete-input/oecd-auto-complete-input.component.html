@@ -1,11 +1,30 @@
 <mat-form-field fxFlex="100">
-  <input type="text" placeholder="კლასიფიკატორი (OECD)" aria-label="OECD" matInput [formControl]="oecdControl"
-         [matAutocomplete]="oecdAuto">
-  <mat-hint align="start"><strong>აირჩიეთ კლასიფიკატორი</strong></mat-hint>
-  <!--  <mat-autocomplete #oecdAuto="matAutocomplete" (change)="selectedOecd.emit(this.oecdControl.value)">-->
-  <mat-autocomplete #oecdAuto="matAutocomplete" (optionSelected)="oecdModelChange.emit($event.option.value)">
-    <mat-option *ngFor="let oecd of filteredOecdOptions | async" [value]="oecd.code">
+  <input
+    placeholder="კლასიფიკატორი (OECD)"
+    aria-label="OECD"
+    matInput
+    [name]="name"
+    [required]="required"
+    [(ngModel)]="oecdModel"
+    (ngModelChange)="oecdModelChange.emit(oecdModel)"
+    #input="ngModel"
+    [matAutocomplete]="oecdAuto"
+  >
+
+  <mat-autocomplete
+      #oecdAuto="matAutocomplete"
+  >
+    <mat-option
+      *ngFor="let oecd of filteredOecdOptions | async"
+      [value]="oecd.code"
+    >
       {{oecd.code}} - {{oecd.translation[0].name}}
     </mat-option>
   </mat-autocomplete>
+
+  <mat-error *ngIf="!input.valid && input.touched">
+    გთხოვთ შეავსოთ ველი
+  </mat-error>
+
 </mat-form-field>
+

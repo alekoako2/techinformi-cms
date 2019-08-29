@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
 
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {QrjPublicationService} from '../../services/qrj-publications.service';
@@ -7,7 +7,7 @@ import {
   CreateQrjPublicationMutation_createQrjPublication,
   QrjPublicationQuery_qrjPublication
 } from '../../../../../types/operation-result-types';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngxs/store';
 import {AddQrjPublication, UpdateQrjPublication} from '../../pages/qrj-publications/state/qrj-publications.actions';
 
@@ -20,10 +20,10 @@ import {AddQrjPublication, UpdateQrjPublication} from '../../pages/qrj-publicati
 export class QrjPublicationDialogComponent implements OnInit {
 
   showCreate: boolean = true;
-
+  // formGroup: FormGroup;
   publicationData: QrjPublicationQuery_qrjPublication;
 
-  constructor(private store: Store, private qrjPublicationService: QrjPublicationService, public dialogRef: MatDialogRef<QrjPublicationDialogComponent>, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
+  constructor(private cdr: ChangeDetectorRef, private formBuilder: FormBuilder, private store: Store, private qrjPublicationService: QrjPublicationService, public dialogRef: MatDialogRef<QrjPublicationDialogComponent>, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
     this.publicationData = {
       id: '',
       index: '',
@@ -70,11 +70,9 @@ export class QrjPublicationDialogComponent implements OnInit {
     }
   }
 
-  title = new FormControl('', [Validators.required]);
-
   ngOnInit() {
-
   }
+
 
   arrayThree(n: number, startFrom: number): number[] {
     return [...Array(n).keys()].map(i => i + startFrom);
@@ -82,14 +80,14 @@ export class QrjPublicationDialogComponent implements OnInit {
 
   create() {
     this.store.dispatch(new AddQrjPublication(this.publicationData));
-
+    // this.formGroup.reset();
     this.dialogRef.close();
   }
 
   update() {
     this.store.dispatch(new UpdateQrjPublication(this.publicationData));
-
     this.dialogRef.close();
+    // this.formGroup.reset();
   }
 
 }
