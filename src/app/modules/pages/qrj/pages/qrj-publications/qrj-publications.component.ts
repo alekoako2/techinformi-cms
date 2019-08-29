@@ -25,50 +25,17 @@ export class QrjPublicationsComponent implements OnInit {
   pageIndex = 0;
   searchText;
 
+  QrjPublicationDialogComponent = QrjPublicationDialogComponent;
+  DeleteQrjPublicationDialogComponent = DeleteQrjPublicationDialogComponent;
+  CountQrjPublications = CountQrjPublications;
+  LoadQrjPublications = LoadQrjPublications;
+
   title = 'al';
 
   constructor(private store: Store, public dialog: MatDialog) {
   }
 
   ngOnInit() {
-    this.store.dispatch(new CountQrjPublications());
-    this.store.dispatch(new LoadQrjPublications({searchText: null, index: 0, limit: 12}));
-  }
-
-  pageChanged(event) {
-
-    this.pageIndex = event.pageIndex;
-    this.pageSize = event.pageSize;
-
-    this.store.dispatch(new LoadQrjPublications({searchText: null, index: event.pageIndex, limit: event.pageSize}));
-
-  }
-
-  searchQrjPublication() {
-    this.store.dispatch(new LoadQrjPublications({searchText: this.searchText, index: this.pageIndex, limit: this.pageSize}));
-  }
-
-  openDialog(dialogComponent: any, data?: QrjPublicationQuery_qrjPublication, width = '900px',): void {
-    this.dialog.open(dialogComponent,
-      {
-        width,
-        data: data ? data : null
-      }
-    );
-  }
-
-  createQrjPublication() {
-    this.openDialog(QrjPublicationDialogComponent);
-  }
-
-  deleteQrjPublication(id) {
-    this.openDialog(DeleteQrjPublicationDialogComponent, id, '450px');
-  }
-
-  updateQrjPublication(pub) {
-    this.store.dispatch(new GetQrjPublication({id: pub})).subscribe((res) => {
-      this.openDialog(QrjPublicationDialogComponent, res.qrjPublications.qrjPublication);
-    });
   }
 
 }

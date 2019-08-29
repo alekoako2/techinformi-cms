@@ -1,0 +1,15 @@
+.flex-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+  .publication-wrapper {
+    margin: 20px;
+    height: 200px;
+    overflow: hidden;
+
+    h4 {
+      height: 40px;
+      overflow: hidden;
+    }
+  }
+}

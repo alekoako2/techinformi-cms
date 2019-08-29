@@ -18,6 +18,7 @@ import {InputTextComponent} from './components/input-text/input-text.component';
 import {InputSelectComponent} from './components/input-select/input-select.component';
 import {InputTextAreaComponent} from './components/input-text-area/input-text-area.component';
 import {DeleteQrjPublicationDialogComponent} from './components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component';
+import {CrudBasicModule} from '../../../shared/modules/crud-basic/crud-basic.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {DeleteQrjPublicationDialogComponent} from './components/delete-qrj-publi
     NgxsModule.forFeature([QrjPublicationsState]),
     FormsModule,
     OecdModule,
-    JournalModule
+    JournalModule,
+    CrudBasicModule
   ],
   entryComponents: [
     QrjPublicationDialogComponent,

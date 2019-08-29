@@ -20,7 +20,6 @@ import {AddQrjPublication, UpdateQrjPublication} from '../../pages/qrj-publicati
 export class QrjPublicationDialogComponent implements OnInit {
 
   showCreate: boolean = true;
-  // formGroup: FormGroup;
   publicationData: QrjPublicationQuery_qrjPublication;
 
   constructor(private cdr: ChangeDetectorRef, private formBuilder: FormBuilder, private store: Store, private qrjPublicationService: QrjPublicationService, public dialogRef: MatDialogRef<QrjPublicationDialogComponent>, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
@@ -80,14 +79,12 @@ export class QrjPublicationDialogComponent implements OnInit {
 
   create() {
     this.store.dispatch(new AddQrjPublication(this.publicationData));
-    // this.formGroup.reset();
     this.dialogRef.close();
   }
 
   update() {
     this.store.dispatch(new UpdateQrjPublication(this.publicationData));
     this.dialogRef.close();
-    // this.formGroup.reset();
   }
 
 }
