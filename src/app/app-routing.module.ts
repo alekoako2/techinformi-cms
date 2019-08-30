@@ -21,9 +21,15 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'geoPublications', loadChildren:
+    path: 'qrjPublications', loadChildren:
       () => import( './modules/pages/qrj/qrj-publications.module')
         .then(mod => mod.QrjPublicationsModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'oecd', loadChildren:
+      () => import( './modules/pages/oecd/oecd.module')
+        .then(mod => mod.OecdModule),
     canActivate: [AuthGuard]
   },
 

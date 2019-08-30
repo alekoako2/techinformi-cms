@@ -1,0 +1,19 @@
+<app-layout-container [flexWidth]="100">
+  <app-page-title-bar title="სამეცნიერო მიმართულება (OECD)"></app-page-title-bar>
+  <app-crud-basic
+    [length]="countOecds$"
+    [create_update_dialog_component]="OecdUpdateCreateDialogComponent"
+    [delete_dialog_component]="OecdDeleteDialogComponent"
+    [list]="oecds$"
+    [schema]="
+      {
+        header:'code',
+        title:'name',
+        description:''
+      }"
+    [loadState]="LoadOecds"
+    [getSingleItemState]="GetOecd"
+    [countState]="CountOecds"
+  >
+  </app-crud-basic>
+</app-layout-container>

@@ -14,10 +14,9 @@ import {OecdModule} from '../oecd/oecd.module';
 import {JournalModule} from '../journal/journal.module';
 import {NgxsModule} from '@ngxs/store';
 import {QrjPublicationsState} from './pages/qrj-publications/state/qrj-publications.state';
-import {InputTextComponent} from './components/input-text/input-text.component';
-import {InputSelectComponent} from './components/input-select/input-select.component';
-import {InputTextAreaComponent} from './components/input-text-area/input-text-area.component';
 import {DeleteQrjPublicationDialogComponent} from './components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component';
+import {CrudBasicModule} from '../../../shared/modules/crud-basic/crud-basic.module';
+import {CustomInputsModule} from '../../../shared/modules/custom-inputs/custom-inputs.module';
 
 @NgModule({
   declarations: [
@@ -25,9 +24,6 @@ import {DeleteQrjPublicationDialogComponent} from './components/delete-qrj-publi
     QrjPublicationsComponent,
     MainComponent,
     QrjPublicationDialogComponent,
-    InputTextComponent,
-    InputSelectComponent,
-    InputTextAreaComponent,
     DeleteQrjPublicationDialogComponent
   ],
   imports: [
@@ -36,10 +32,13 @@ import {DeleteQrjPublicationDialogComponent} from './components/delete-qrj-publi
     QrjPublicationsRoutingModule,
     PageTitleBarModule,
     DialogModule,
-    NgxsModule.forFeature([QrjPublicationsState]),
+    NgxsModule.forFeature([
+      QrjPublicationsState
+    ]),
     FormsModule,
     OecdModule,
-    JournalModule
+    JournalModule,
+    CrudBasicModule,
   ],
   entryComponents: [
     QrjPublicationDialogComponent,

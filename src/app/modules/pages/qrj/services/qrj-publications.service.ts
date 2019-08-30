@@ -3,7 +3,7 @@ import {Apollo} from 'apollo-angular';
 import {map} from 'rxjs/operators';
 import {
   CountQrjPublicationsQuery, CreateQrjPublicationMutation, CreateQrjPublicationMutation_createQrjPublication, DeleteQrjPublicationMutation,
-  QrjPublicationQuery, QrjPublicationsQuery, UpdateQrjPublicationMutation
+  QrjPublicationQuery, QrjPublicationsQuery, UpdateQrjPublicationMutation, UpdateQrjPublicationMutation_updateQrjPublication
 } from '../../../../types/operation-result-types';
 import {createQrjPublicationMutation, deleteQrjPublicationMutation, updateQrjPublicationMutation} from './qrj-publications-mutations';
 import {countQrjPublicationsQuery, qrjPublicationQuery, qrjPublicationsQuery} from './qrj-publications-query';
@@ -76,7 +76,7 @@ export class QrjPublicationService {
       );
   }
 
-  updateQrjPublication(input: CreateQrjPublicationMutation_createQrjPublication) {
+  updateQrjPublication(input: UpdateQrjPublicationMutation_updateQrjPublication) {
     return this.apollo
       .mutate<UpdateQrjPublicationMutation>({
         variables: {

@@ -5,6 +5,7 @@ import {MaterialModule} from '../material/material.module';
 import {LayoutContainerModule} from '../layout-container/layout-container.module';
 import {SpinnerModule} from '../spinner/spinner.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {CustomInputsModule} from '../custom-inputs/custom-inputs.module';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MaterialModule,
     LayoutContainerModule,
     SpinnerModule,
+    CustomInputsModule,
     ReactiveFormsModule
   ],
   exports: [
@@ -21,6 +23,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MaterialModule,
     LayoutContainerModule,
     SpinnerModule,
+    CustomInputsModule,
     ReactiveFormsModule
   ]
 })

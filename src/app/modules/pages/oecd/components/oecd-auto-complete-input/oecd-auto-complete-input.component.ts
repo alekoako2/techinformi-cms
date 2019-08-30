@@ -28,7 +28,7 @@ export class OecdAutoCompleteInputComponent implements OnInit {
 
   ngOnInit() {
 
-    this.oecdService.getOecds()
+    this.oecdService.loadOecds()
       .subscribe((res: OecdsQuery) => {
 
         this.filteredOecdOptions = this.oecdControl.valueChanges
