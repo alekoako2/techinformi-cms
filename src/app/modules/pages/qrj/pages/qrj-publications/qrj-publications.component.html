@@ -3,8 +3,6 @@
 
   <app-crud-basic
     [length]="countQrjPublications$"
-    [pageIndex]="pageIndex"
-    [pageSize]="pageSize"
     [create_update_dialog_component]="QrjPublicationDialogComponent"
     [delete_dialog_component]="DeleteQrjPublicationDialogComponent"
     [list]="qrjPublications$"
@@ -15,6 +13,7 @@
         description:'abstract'
       }"
     [loadState]="LoadQrjPublications"
+    [getSingleItemState]="GetQrjPublication"
     [countState]="CountQrjPublications"
   >
   </app-crud-basic>

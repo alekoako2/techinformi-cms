@@ -34,10 +34,10 @@
       </div>
     </div>
     <mat-divider></mat-divider>
-    <h4>
+    <h4 *ngIf="schema.title!==''">
       {{item?.translation[0][schema.title]?.length > 50 ? item?.translation[0][schema.title].substr(0, 50) + '...' : item?.translation[0][schema.title]}}
     </h4>
-    <p>
+    <p *ngIf="schema.description!==''">
       {{ item?.translation[0][schema.description].length > 100 ? item?.translation[0][schema.description].substr(0, 100) + '...' : item?.translation[0][schema.description]}}
     </p>
   </div>

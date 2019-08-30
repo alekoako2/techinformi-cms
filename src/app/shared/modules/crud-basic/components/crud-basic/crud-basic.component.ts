@@ -1,14 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {
-  CountQrjPublications,
   GetQrjPublication,
-  LoadQrjPublications
 } from '../../../../../modules/pages/qrj/pages/qrj-publications/state/qrj-publications.actions';
 import {Store} from '@ngxs/store';
-import {QrjPublicationDialogComponent} from '../../../../../modules/pages/qrj/components/qrj-publication-dialog/qrj-publication-dialog.component';
-import {QrjPublicationQuery_qrjPublication} from '../../../../../types/operation-result-types';
 import {MatDialog} from '@angular/material';
-import {DeleteQrjPublicationDialogComponent} from '../../../../../modules/pages/qrj/components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component';
 
 @Component({
   selector: 'app-crud-basic',
@@ -18,8 +13,8 @@ import {DeleteQrjPublicationDialogComponent} from '../../../../../modules/pages/
 export class CrudBasicComponent implements OnInit {
 
   @Input() length;
-  @Input() pageIndex;
-  @Input() pageSize;
+  @Input() pageIndex = 0;
+  @Input() pageSize = 12;
 
   @Input() create_update_dialog_component;
   @Input() delete_dialog_component;
@@ -29,6 +24,7 @@ export class CrudBasicComponent implements OnInit {
   @Input() schema: { header, title, description };
 
   @Input() loadState;
+  @Input() getSingleItemState;
   @Input() countState;
 
   searchText;
@@ -69,8 +65,8 @@ export class CrudBasicComponent implements OnInit {
   }
 
   openDialogForUpdate(pub) {
-    this.store.dispatch(new GetQrjPublication({id: pub})).subscribe((res) => {
-      this.openDialog(this.create_update_dialog_component, res.qrjPublications.qrjPublication);
+    this.store.dispatch(new this.getSingleItemState({id: pub})).subscribe((res) => {
+      this.openDialog(this.create_update_dialog_component, res);
     });
   }
 

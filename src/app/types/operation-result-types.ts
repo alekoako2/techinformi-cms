@@ -30,6 +30,121 @@ export interface QrjJournalsQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateOecdMutation
+// ====================================================
+
+export interface UpdateOecdMutation_updateOecd_translation {
+  name: string | null;
+}
+
+export interface UpdateOecdMutation_updateOecd {
+  id: string;
+  code: string | null;
+  translation: (UpdateOecdMutation_updateOecd_translation | null)[] | null;
+}
+
+export interface UpdateOecdMutation {
+  updateOecd: UpdateOecdMutation_updateOecd | null;
+}
+
+export interface UpdateOecdMutationVariables {
+  id: string;
+  code?: string | null;
+  name?: string | null;
+  nameEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateOecdMutation
+// ====================================================
+
+export interface CreateOecdMutation_createOecd_translation {
+  name: string | null;
+}
+
+export interface CreateOecdMutation_createOecd {
+  id: string;
+  code: string | null;
+  translation: (CreateOecdMutation_createOecd_translation | null)[] | null;
+}
+
+export interface CreateOecdMutation {
+  createOecd: CreateOecdMutation_createOecd | null;
+}
+
+export interface CreateOecdMutationVariables {
+  code?: string | null;
+  name?: string | null;
+  nameEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteOecdMutation
+// ====================================================
+
+export interface DeleteOecdMutation_deleteOecd {
+  code: string | null;
+}
+
+export interface DeleteOecdMutation {
+  deleteOecd: DeleteOecdMutation_deleteOecd | null;
+}
+
+export interface DeleteOecdMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountOecdsQuery
+// ====================================================
+
+export interface CountOecdsQuery {
+  countOecds: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: OecdQuery
+// ====================================================
+
+export interface OecdQuery_oecd_translation {
+  name: string | null;
+}
+
+export interface OecdQuery_oecd {
+  id: string;
+  code: string | null;
+  translation: (OecdQuery_oecd_translation | null)[] | null;
+}
+
+export interface OecdQuery {
+  oecd: OecdQuery_oecd;
+}
+
+export interface OecdQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: OecdsQuery
 // ====================================================
 
@@ -38,6 +153,7 @@ export interface OecdsQuery_oecds_translation {
 }
 
 export interface OecdsQuery_oecds {
+  id: string;
   code: string | null;
   translation: (OecdsQuery_oecds_translation | null)[] | null;
 }
@@ -48,6 +164,9 @@ export interface OecdsQuery {
 
 export interface OecdsQueryVariables {
   languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
 }
 
 

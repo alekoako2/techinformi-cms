@@ -1,13 +1,12 @@
-import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {QrjPublicationService} from '../../services/qrj-publications.service';
 import {
-  CreateQrjPublicationMutation,
-  CreateQrjPublicationMutation_createQrjPublication,
-  QrjPublicationQuery_qrjPublication
+  QrjPublicationQuery_qrjPublication,
+  QrjPublicationQuery_qrjPublication_journal,
+  QrjPublicationQuery_qrjPublication_oecd,
+  QrjPublicationQuery_qrjPublication_translation
 } from '../../../../../types/operation-result-types';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngxs/store';
 import {AddQrjPublication, UpdateQrjPublication} from '../../pages/qrj-publications/state/qrj-publications.actions';
 
@@ -22,50 +21,22 @@ export class QrjPublicationDialogComponent implements OnInit {
   showCreate: boolean = true;
   publicationData: QrjPublicationQuery_qrjPublication;
 
-  constructor(private cdr: ChangeDetectorRef, private formBuilder: FormBuilder, private store: Store, private qrjPublicationService: QrjPublicationService, public dialogRef: MatDialogRef<QrjPublicationDialogComponent>, @Inject(MAT_DIALOG_DATA) data?: QrjPublicationQuery_qrjPublication) {
-    this.publicationData = {
-      id: '',
-      index: '',
-      inputDate: '',
-      journal: {
-        code: '',
-        translation: [
-          {
-            name: ''
-          }
-        ]
-      },
-      number: '',
-      oecd:
-        {
-          code: '',
-          translation: [
-            {
-              name: ''
-            }
-          ]
-        },
-      pages: '',
-      translation: [
-        {
-          abstract: '',
-          publicationAuthor: '',
-          publicationLang: '',
-          title: ''
-        },
-        {
-          abstract: '',
-          publicationAuthor: '',
-          publicationLang: '',
-          title: ''
-        }
-      ],
-      year: ''
-    };
+  constructor(
+    private store: Store,
+    public dialogRef: MatDialogRef<QrjPublicationDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) data?
+  ) {
+
+    this.publicationData = <QrjPublicationQuery_qrjPublication> {};
+    this.publicationData.journal = <QrjPublicationQuery_qrjPublication_journal> {};
+    this.publicationData.oecd = <QrjPublicationQuery_qrjPublication_oecd> {};
+    this.publicationData.translation = <QrjPublicationQuery_qrjPublication_translation[]> {};
+    this.publicationData.translation[0] = <QrjPublicationQuery_qrjPublication_translation> {};
+    this.publicationData.translation[1] = <QrjPublicationQuery_qrjPublication_translation> {};
 
     if (data) {
       this.showCreate = false;
-      this.publicationData = data;
+      this.publicationData = data.qrjPublications.qrjPublication;
     }
   }
 
