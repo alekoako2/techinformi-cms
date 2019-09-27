@@ -30,7 +30,17 @@
                 [inputModel]="qrjJournalData.translation[0]?.name"
                 (inputModelChange)="qrjJournalData.translation[0].name=$event"
               ></app-input-text>
+            </div>
 
+            <div>
+              <app-input-text
+                fxFlex="100"
+                placeholder="მისამართი"
+                name="address"
+                required="true"
+                [inputModel]="qrjJournalData.translation[0]?.address"
+                (inputModelChange)="qrjJournalData.translation[0].address=$event"
+              ></app-input-text>
             </div>
 
           </mat-tab>
@@ -45,6 +55,17 @@
                 required="true"
                 [inputModel]="qrjJournalData.translation[1]?.name"
                 (inputModelChange)="qrjJournalData.translation[1].name=$event"
+              ></app-input-text>
+            </div>
+
+            <div>
+              <app-input-text
+                fxFlex="100"
+                placeholder="Title"
+                name="addressEng"
+                required="true"
+                [inputModel]="qrjJournalData.translation[1]?.address"
+                (inputModelChange)="qrjJournalData.translation[1].address=$event"
               ></app-input-text>
             </div>
 

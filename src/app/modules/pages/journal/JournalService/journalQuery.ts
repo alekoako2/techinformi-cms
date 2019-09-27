@@ -13,6 +13,7 @@ export const qrjJournalQuery = gql`
             code
             translation{
                 name
+                address
             }
         }
     }
@@ -25,6 +26,7 @@ export const qrjJournalsQuery = gql`
             code
             translation(language: $languageCode){
                 name
+                address
             }
         }
     }`;

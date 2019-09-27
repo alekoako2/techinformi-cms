@@ -21,6 +21,7 @@ export interface CountQrjJournalsQuery {
 
 export interface QrjJournalQuery_qrjJournal_translation {
   name: string | null;
+  address: string | null;
 }
 
 export interface QrjJournalQuery_qrjJournal {
@@ -47,6 +48,7 @@ export interface QrjJournalQueryVariables {
 
 export interface QrjJournalsQuery_qrjJournals_translation {
   name: string | null;
+  address: string | null;
 }
 
 export interface QrjJournalsQuery_qrjJournals {
@@ -76,6 +78,7 @@ export interface QrjJournalsQueryVariables {
 
 export interface UpdateQrjJournalMutation_updateQrjJournal_translation {
   name: string | null;
+  address: string | null;
 }
 
 export interface UpdateQrjJournalMutation_updateQrjJournal {
@@ -92,7 +95,9 @@ export interface UpdateQrjJournalMutationVariables {
   id: string;
   code?: string | null;
   name?: string | null;
+  address?: string | null;
   nameEng?: string | null;
+  addressEng?: string | null;
 }
 
 
@@ -105,6 +110,7 @@ export interface UpdateQrjJournalMutationVariables {
 
 export interface CreateQrjJournalMutation_createQrjJournal_translation {
   name: string | null;
+  address: string | null;
 }
 
 export interface CreateQrjJournalMutation_createQrjJournal {
@@ -120,7 +126,9 @@ export interface CreateQrjJournalMutation {
 export interface CreateQrjJournalMutationVariables {
   code?: string | null;
   name?: string | null;
+  address?: string | null;
   nameEng?: string | null;
+  addressEng?: string | null;
 }
 
 
