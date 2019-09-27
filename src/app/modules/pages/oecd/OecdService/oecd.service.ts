@@ -24,7 +24,10 @@ export class OecdService {
     return this.apollo
       .watchQuery<CountOecdsQuery>({
         query: countOecdsQuery
-      }).valueChanges.pipe(map(count => count.data));
+      }).valueChanges
+      .pipe(
+        map(count => count.data)
+      );
   }
 
   loadOecds(searchText = '', index = 0, limit = 10) {
@@ -53,7 +56,6 @@ export class OecdService {
         map(oecdData => oecdData.data)
       );
   }
-
 
   createOecd(input: CreateOecdMutation_createOecd) {
     return this.apollo

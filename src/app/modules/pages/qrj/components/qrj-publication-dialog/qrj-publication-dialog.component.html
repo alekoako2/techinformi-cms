@@ -15,29 +15,45 @@
           [(inputModel)]="publicationData.index"
         ></app-input-text>
 
-        <app-oecd-auto-complete-input
+        <!--        <app-input-auto-complete-->
+        <!--          fxFlex="50"-->
+        <!--          class="margin-left-2"-->
+        <!--          name="oecd"-->
+        <!--          required="true"-->
+        <!--          [inputModel]="publicationData.oecd?.code"-->
+        <!--          (inputModelChange)="publicationData.oecd.code=$event"-->
+        <!--          [list]="oecdList"-->
+        <!--        >-->
+        <!--        </app-input-auto-complete>-->
+
+        <app-input-auto-complete
           fxFlex="50"
           class="margin-left-2"
           name="oecd"
           required="true"
-          [oecdModel]="publicationData.oecd?.code"
-          (oecdModelChange)="publicationData.oecd.code=$event"
+          placeholder="კლასიფიკატორი (OECD)"
+          [inputModel]="publicationData.oecd?.code"
+          (inputModelChange)="publicationData.oecd.code=$event"
+          [list]="oecdList"
         >
-        </app-oecd-auto-complete-input>
+
+        </app-input-auto-complete>
 
       </div>
 
       <div>
-
-        <app-qrj-journal-auto-complete-input
+        <app-input-auto-complete
           fxFlex="50"
           class="margin-right-2"
-          name="journal"
+          name="oecd"
           required="true"
-          [journalModel]="publicationData.journal?.code"
+          placeholder="ჟურნალის დასახელება"
           (journalModelChange)="publicationData.journal.code=$event"
+          [inputModel]="publicationData.journal?.code"
+          (inputModelChange)="publicationData.journal.code=$event"
+          [list]="qrjJournalList"
         >
-        </app-qrj-journal-auto-complete-input>
+        </app-input-auto-complete>
 
         <app-input-select
           fxFlex="50"

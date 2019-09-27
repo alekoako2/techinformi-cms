@@ -7,18 +7,21 @@ import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../material/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {LayoutContainerModule} from '../layout-container/layout-container.module';
+import {InputAutoCompleteComponent} from './input-auto-complete/input-auto-complete.component';
 
 
 @NgModule({
   declarations: [
     InputTextComponent,
     InputTextAreaComponent,
-    InputSelectComponent
+    InputSelectComponent,
+    InputAutoCompleteComponent
   ],
   exports: [
     InputTextComponent,
     InputTextAreaComponent,
-    InputSelectComponent
+    InputSelectComponent,
+    InputAutoCompleteComponent
   ],
   imports: [
     CommonModule,

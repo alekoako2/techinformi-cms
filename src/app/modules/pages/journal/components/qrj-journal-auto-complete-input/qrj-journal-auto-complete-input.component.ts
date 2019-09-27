@@ -28,7 +28,7 @@ export class QrjJournalAutoCompleteInputComponent implements OnInit {
 
   ngOnInit() {
 
-    this.qrjJournalService.getQrjJournals()
+    this.qrjJournalService.loadQrjJournals()
       .subscribe((res: QrjJournalsQuery) => {
 
         this.filteredJournalOptions = this.journalControl.valueChanges

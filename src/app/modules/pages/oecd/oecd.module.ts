@@ -28,9 +28,6 @@ import {DialogModule} from '../../../shared/modules/dialog/dialog.module';
     CrudBasicModule,
     DialogModule
   ],
-  exports: [
-    OecdAutoCompleteInputComponent
-  ],
   entryComponents: [
     OecdUpdateCreateDialogComponent,
     OecdDeleteDialogComponent

@@ -9,7 +9,6 @@ export class OecdStateModel {
   public oecds: OecdsQuery_oecds[];
   public count: number;
   public oecd: OecdQuery_oecd;
-
 }
 
 @State<OecdStateModel>({

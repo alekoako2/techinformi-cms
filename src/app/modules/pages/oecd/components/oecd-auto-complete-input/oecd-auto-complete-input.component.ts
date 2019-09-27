@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ControlContainer, FormControl, FormGroup, NgForm} from '@angular/forms';
+import {ControlContainer, FormControl, NgForm} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {OecdService} from '../../OecdService/oecd.service';
-import {OecdsQuery, OecdsQuery_oecds} from '../../../../../types/operation-result-types';
+import {OecdsQuery_oecds} from '../../../../../types/operation-result-types';
 
 @Component({
   selector: 'app-oecd-auto-complete-input',
@@ -19,30 +19,41 @@ export class OecdAutoCompleteInputComponent implements OnInit {
 
   @Input() name: string;
   @Input() required: boolean = false;
-
+  @Input() list;
   oecdControl = new FormControl();
   filteredOecdOptions: Observable<OecdsQuery_oecds[]>;
 
   constructor(private oecdService: OecdService) {
+
   }
 
   ngOnInit() {
+    // this.res.oecds = <OecdsQuery_oecds[]> [];
+    // this.list.subscribe((res) => {
+    this.list.subscribe((res) => {
+      console.log(res);
+    });
+    // this.filteredOecdOptions = this
+    //   .oecdControl
+    //   .valueChanges
+    //   .pipe(
+    //     startWith(''),
+    //     map(value => this._filter(value, this.list))
+    //   );
+    // });
+    // console.log('aleko', this.res.oecds);
+    // this.oecdService.loadOecds()
+    //   .subscribe((res: OecdsQuery) => {
 
-    this.oecdService.loadOecds()
-      .subscribe((res: OecdsQuery) => {
-
-        this.filteredOecdOptions = this.oecdControl.valueChanges
-          .pipe(
-            startWith(''),
-            map(value => this._filter(value, res.oecds))
-          );
-
-      });
+    // });
   }
 
   private _filter(value: string, array): any[] {
-
-    const filterValue = value.toLowerCase();
-    return array.filter(item => item.code.toLowerCase().includes(filterValue));
+    console.log(array);
+    if (array) {
+      const filterValue = value.toLowerCase();
+      return array.filter(item => item.code.toLowerCase().includes(filterValue));
+    }
   }
+
 }
