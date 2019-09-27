@@ -2,12 +2,9 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {
   OecdQuery_oecd,
   OecdQuery_oecd_translation,
-  QrjPublicationQuery_qrjPublication,
-  QrjPublicationQuery_qrjPublication_translation
 } from '../../../../../types/operation-result-types';
 import {Store} from '@ngxs/store';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {AddQrjPublication, UpdateQrjPublication} from '../../../qrj/pages/qrj-publications/state/qrj-publications.actions';
 import {CreateOecd, UpdateOecd} from '../../state/oecd.actions';
 
 @Component({
