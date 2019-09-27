@@ -4,15 +4,53 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: CountQrjJournalsQuery
+// ====================================================
+
+export interface CountQrjJournalsQuery {
+  countQrjJournals: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: QrjJournalQuery
+// ====================================================
+
+export interface QrjJournalQuery_qrjJournal_translation {
+  name: string | null;
+}
+
+export interface QrjJournalQuery_qrjJournal {
+  id: string;
+  code: string | null;
+  translation: (QrjJournalQuery_qrjJournal_translation | null)[] | null;
+}
+
+export interface QrjJournalQuery {
+  qrjJournal: QrjJournalQuery_qrjJournal;
+}
+
+export interface QrjJournalQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: QrjJournalsQuery
 // ====================================================
 
 export interface QrjJournalsQuery_qrjJournals_translation {
   name: string | null;
-  address: string | null;
 }
 
 export interface QrjJournalsQuery_qrjJournals {
+  id: string;
   code: string | null;
   translation: (QrjJournalsQuery_qrjJournals_translation | null)[] | null;
 }
@@ -23,6 +61,86 @@ export interface QrjJournalsQuery {
 
 export interface QrjJournalsQueryVariables {
   languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: UpdateQrjJournalMutation
+// ====================================================
+
+export interface UpdateQrjJournalMutation_updateQrjJournal_translation {
+  name: string | null;
+}
+
+export interface UpdateQrjJournalMutation_updateQrjJournal {
+  id: string;
+  code: string | null;
+  translation: (UpdateQrjJournalMutation_updateQrjJournal_translation | null)[] | null;
+}
+
+export interface UpdateQrjJournalMutation {
+  updateQrjJournal: UpdateQrjJournalMutation_updateQrjJournal | null;
+}
+
+export interface UpdateQrjJournalMutationVariables {
+  id: string;
+  code?: string | null;
+  name?: string | null;
+  nameEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateQrjJournalMutation
+// ====================================================
+
+export interface CreateQrjJournalMutation_createQrjJournal_translation {
+  name: string | null;
+}
+
+export interface CreateQrjJournalMutation_createQrjJournal {
+  id: string;
+  code: string | null;
+  translation: (CreateQrjJournalMutation_createQrjJournal_translation | null)[] | null;
+}
+
+export interface CreateQrjJournalMutation {
+  createQrjJournal: CreateQrjJournalMutation_createQrjJournal | null;
+}
+
+export interface CreateQrjJournalMutationVariables {
+  code?: string | null;
+  name?: string | null;
+  nameEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteQrjJournalMutation
+// ====================================================
+
+export interface DeleteQrjJournalMutation_deleteQrjJournal {
+  code: string | null;
+}
+
+export interface DeleteQrjJournalMutation {
+  deleteQrjJournal: DeleteQrjJournalMutation_deleteQrjJournal | null;
+}
+
+export interface DeleteQrjJournalMutationVariables {
+  id?: string | null;
 }
 
 

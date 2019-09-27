@@ -3,13 +3,6 @@ import {
   UpdateOecdMutation_updateOecd
 } from '../../../../types/operation-result-types';
 
-export class OecdAction {
-  static readonly type = '[Oecd] Add item';
-
-  constructor(public payload: string) {
-  }
-}
-
 export class CountOecds {
   static readonly type = '[Oecd] Count oecds';
 

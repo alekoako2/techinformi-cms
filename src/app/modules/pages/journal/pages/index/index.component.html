@@ -1,0 +1,19 @@
+<app-layout-container [flexWidth]="100">
+  <app-page-title-bar title="სამეცნიერო მიმართულება (OECD)"></app-page-title-bar>
+  <app-crud-basic
+    [length]="countQrjJournals$"
+    [create_update_dialog_component]="QrjJournalUpdateCreateDialogComponent"
+    [delete_dialog_component]="QrjJournalDeleteDialogComponent"
+    [list]="qrjJournals$"
+    [schema]="
+      {
+        header:'code',
+        title:'name',
+        description:''
+      }"
+    [loadState]="LoadQrjJournals"
+    [getSingleItemState]="GetQrjJournal"
+    [countState]="CountQrjJournals"
+  >
+  </app-crud-basic>
+</app-layout-container>

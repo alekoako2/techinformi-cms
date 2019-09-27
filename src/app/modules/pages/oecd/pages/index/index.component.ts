@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {OecdQuery_oecd, OecdsQuery_oecds} from '../../../../../types/operation-result-types';
 import {OecdUpdateCreateDialogComponent} from '../../components/oecd-update-create-dialog/oecd-update-create-dialog.component';
 import {OecdDeleteDialogComponent} from '../../components/oecd-delete-dialog/oecd-delete-dialog.component';
-import {CountOecds, GetOecd, LoadOecds, UpdateOecd} from '../../state/oecd.actions';
+import {CountOecds, GetOecd, LoadOecds} from '../../state/oecd.actions';
 
 @Component({
   selector: 'app-index',
