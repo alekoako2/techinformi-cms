@@ -5,7 +5,9 @@ export const updateQrjJournalMutation = gql`
         $id:ID!
         $code:String
         $name:String
+        $address:String
         $nameEng:String
+        $addressEng:String
     ){
         updateQrjJournal(
             id:$id,
@@ -14,10 +16,12 @@ export const updateQrjJournalMutation = gql`
                 translation:[
                     {
                         name:$name
+                        address:$address
                         language:KA
                     },
                     {
                         name:$nameEng
+                        address:$addressEng
                         language:EN
                     }
                 ]
@@ -27,6 +31,7 @@ export const updateQrjJournalMutation = gql`
             code
             translation{
                 name
+                address
             }
         }
     }`;
@@ -35,7 +40,9 @@ export const createQrjJournalMutation = gql`
     mutation CreateQrjJournalMutation(
         $code:String
         $name:String
+        $address:String
         $nameEng:String
+        $addressEng:String
     ){
         createQrjJournal(
             input:{
@@ -43,10 +50,12 @@ export const createQrjJournalMutation = gql`
                 translation:[
                     {
                         name:$name
+                        address:$address
                         language:KA
                     },
                     {
                         name:$nameEng
+                        address:$addressEng
                         language:EN
                     }
                 ]
@@ -56,6 +65,7 @@ export const createQrjJournalMutation = gql`
             code
             translation{
                 name
+                address
             }
         }
     }`;

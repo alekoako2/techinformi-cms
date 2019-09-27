@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {Store} from '@ngxs/store';
-import {DeleteOecd} from '../../../oecd/state/oecd.actions';
 import {DeleteQrjJournal} from '../../state/qrj-journal.actions';
 
 @Component({
