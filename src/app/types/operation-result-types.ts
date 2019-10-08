@@ -746,6 +746,143 @@ export interface QrjsQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateTechnologyTransferAndInnovationOrganizationMutation
+// ====================================================
+
+export interface UpdateTechnologyTransferAndInnovationOrganizationMutation_updateTechnologyTransferAndInnovationOrganization {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface UpdateTechnologyTransferAndInnovationOrganizationMutation {
+  updateTechnologyTransferAndInnovationOrganization: UpdateTechnologyTransferAndInnovationOrganizationMutation_updateTechnologyTransferAndInnovationOrganization | null;
+}
+
+export interface UpdateTechnologyTransferAndInnovationOrganizationMutationVariables {
+  id: string;
+  url?: string | null;
+  title?: string | null;
+  text?: string | null;
+  region?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateTechnologyTransferAndInnovationOrganizationMutation
+// ====================================================
+
+export interface CreateTechnologyTransferAndInnovationOrganizationMutation_createTechnologyTransferAndInnovationOrganization {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface CreateTechnologyTransferAndInnovationOrganizationMutation {
+  createTechnologyTransferAndInnovationOrganization: CreateTechnologyTransferAndInnovationOrganizationMutation_createTechnologyTransferAndInnovationOrganization | null;
+}
+
+export interface CreateTechnologyTransferAndInnovationOrganizationMutationVariables {
+  url?: string | null;
+  title?: string | null;
+  text?: string | null;
+  region?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteTechnologyTransferAndInnovationOrganizationMutation
+// ====================================================
+
+export interface DeleteTechnologyTransferAndInnovationOrganizationMutation_deleteTechnologyTransferAndInnovationOrganization {
+  id: string;
+}
+
+export interface DeleteTechnologyTransferAndInnovationOrganizationMutation {
+  deleteTechnologyTransferAndInnovationOrganization: DeleteTechnologyTransferAndInnovationOrganizationMutation_deleteTechnologyTransferAndInnovationOrganization | null;
+}
+
+export interface DeleteTechnologyTransferAndInnovationOrganizationMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountTechnologyTransferAndInnovationOrganizationsQuery
+// ====================================================
+
+export interface CountTechnologyTransferAndInnovationOrganizationsQuery {
+  countTechnologyTransferAndInnovationOrganizations: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: TechnologyTransferAndInnovationOrganizationQuery
+// ====================================================
+
+export interface TechnologyTransferAndInnovationOrganizationQuery_technologyTransferAndInnovationOrganization {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface TechnologyTransferAndInnovationOrganizationQuery {
+  technologyTransferAndInnovationOrganization: TechnologyTransferAndInnovationOrganizationQuery_technologyTransferAndInnovationOrganization;
+}
+
+export interface TechnologyTransferAndInnovationOrganizationQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: TechnologyTransferAndInnovationOrganizationsQuery
+// ====================================================
+
+export interface TechnologyTransferAndInnovationOrganizationsQuery_technologyTransferAndInnovationOrganizations {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface TechnologyTransferAndInnovationOrganizationsQuery {
+  technologyTransferAndInnovationOrganizations: TechnologyTransferAndInnovationOrganizationsQuery_technologyTransferAndInnovationOrganizations[];
+}
+
+export interface TechnologyTransferAndInnovationOrganizationsQueryVariables {
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: UpdateTechnologyTransferNetworkMutation
 // ====================================================
 

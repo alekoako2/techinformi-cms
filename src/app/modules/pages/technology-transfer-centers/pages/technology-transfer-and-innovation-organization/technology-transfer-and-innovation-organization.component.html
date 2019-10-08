@@ -1,0 +1,18 @@
+<app-layout-container [flexWidth]="100">
+  <app-page-title-bar title="ტექნოლოგიის ტრანსფერისა და ინოვაციების ხელშემწყობი ორგანიზაციები"></app-page-title-bar>
+  <app-crud-basic
+    [length]="countTechnologyTransferAndInnovationOrganizations$"
+    [create_update_dialog_component]="TechnologyTransferAndInnovationOrganizationUpdateCreateDialogComponent"
+    [delete_dialog_component]="TechnologyTransferAndInnovationOrganizationDeleteDialogComponent"
+    [list]="technologyTransferAndInnovationOrganizations$"
+    [schema]="
+      {
+        header:'title',
+        nonTranslated:{title:'url',description:'text'}
+      }"
+    [loadState]="LoadTechnologyTransferAndInnovationOrganizations"
+    [getSingleItemState]="GetTechnologyTransferAndInnovationOrganization"
+    [countState]="CountTechnologyTransferAndInnovationOrganizations"
+  >
+  </app-crud-basic>
+</app-layout-container>
