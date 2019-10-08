@@ -24,6 +24,7 @@ export class TechnologyTransferNetworkStateModel {
 @State<TechnologyTransferNetworkStateModel>({
   name: 'technologyTransferNetwork',
 })
+
 export class TechnologyTransferNetworkState {
   constructor(private store: Store, private technologyTransferNetworkService: TechnologyTransferNetworkService) {
   }
