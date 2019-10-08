@@ -29,6 +29,7 @@ export class QrjPublicationsState {
 
   @Action(CountQrjPublications)
   countAll({patchState}: StateContext<QrjPublicationsStateModel>) {
+
     return this.qrjPublicationsService.publicationsCount().pipe(take(1), tap(res => {
 
       patchState({count: res.countQrjPublications});

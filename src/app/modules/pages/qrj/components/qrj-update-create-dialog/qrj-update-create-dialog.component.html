@@ -1,0 +1,156 @@
+<app-dialog>
+  <div header>ახალი სამეცნიერო მიმართულების დამატება</div>
+  <div body>
+
+    <form #myForm="ngForm" novalidate>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="წელი"
+          name="year"
+          required="true"
+          [(inputModel)]="qrjData.year"
+        ></app-input-text>
+
+      </div>
+
+      <div class="margin-top-2">
+
+        <mat-tab-group>
+
+          <mat-tab [label]="qrjData.journal[0]?.pubNumber?qrjData.journal[0].pubNumber:'N'">
+
+            <div>
+              <div>
+                <app-input-text
+                  fxFlex="100"
+                  placeholder="პუბლიკაციის ნომერი"
+                  name="pubNumber1"
+                  required="true"
+                  [inputModel]="qrjData.journal[0]?.pubNumber"
+                  (inputModelChange)="qrjData.journal[0].pubNumber=$event"
+                ></app-input-text>
+              </div>
+              <mat-tab-group>
+
+                <mat-tab label="ქართული მისამართი">
+
+                  <div>
+
+                    <app-input-text
+                      fxFlex="100"
+                      placeholder="ქართული მისამართი"
+                      name="addressKa1"
+                      required="true"
+                      [inputModel]="qrjData.journal[0]?.translation[0]?.address"
+                      (inputModelChange)="qrjData.journal[0]?.translation[0].address=$event"
+                    ></app-input-text>
+
+                  </div>
+
+                </mat-tab>
+
+                <mat-tab label="English Address">
+
+                  <div>
+                    <app-input-text
+                      fxFlex="100"
+                      placeholder="English Address"
+                      name="addressEng1"
+                      required="true"
+                      [inputModel]="qrjData.journal[0]?.translation[1]?.address"
+                      (inputModelChange)="qrjData.journal[0].translation[1].address=$event"
+                    ></app-input-text>
+                  </div>
+
+
+                </mat-tab>
+
+              </mat-tab-group>
+            </div>
+
+          </mat-tab>
+
+          <mat-tab [label]="qrjData.journal[1]?.pubNumber?qrjData.journal[1].pubNumber:'N'">
+
+            <div>
+              <div>
+                <app-input-text
+                  fxFlex="100"
+                  placeholder="პუბლიკაციის ნომერი"
+                  name="pubNumber2"
+                  required="true"
+                  [inputModel]="qrjData.journal[1]?.pubNumber"
+                  (inputModelChange)="qrjData.journal[1].pubNumber=$event"
+                ></app-input-text>
+              </div>
+              <mat-tab-group>
+
+                <mat-tab label="ქართული მისამართი">
+
+                  <div>
+                    <app-input-text
+                      fxFlex="100"
+                      placeholder="სათაური"
+                      name="addressKa2"
+                      required="true"
+                      [inputModel]="qrjData.journal[1]?.translation[0]?.address"
+                      (inputModelChange)="qrjData.journal[1].translation[0].address=$event"
+                    ></app-input-text>
+
+                  </div>
+
+                </mat-tab>
+
+                <mat-tab label="English Address">
+
+                  <div>
+                    <app-input-text
+                      fxFlex="100"
+                      placeholder="Title"
+                      name="addressEng2"
+                      required="true"
+                      [inputModel]="qrjData.journal[1]?.translation[1]?.address"
+                      (inputModelChange)="qrjData.journal[1].translation[1].address=$event"
+                    ></app-input-text>
+                  </div>
+
+
+                </mat-tab>
+
+              </mat-tab-group>
+            </div>
+
+          </mat-tab>
+
+        </mat-tab-group>
+
+      </div>
+
+    </form>
+
+  </div>
+  <div footer class="margin-left-4">
+    <button mat-raised-button
+            color="accent"
+            type="submit"
+            *ngIf="!showCreate"
+            (click)="update()"
+            [disabled]="!myForm.valid"
+    >
+      შენახვა
+    </button>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            *ngIf="showCreate"
+            (click)="create()"
+            [disabled]="!myForm.valid"
+    >
+      დამატება
+    </button>
+  </div>
+</app-dialog>

@@ -13,7 +13,7 @@ import {AddQrjPublication, UpdateQrjPublication} from '../../pages/qrj-publicati
 import {map, startWith} from 'rxjs/operators';
 import {OecdService} from '../../../oecd/OecdService/oecd.service';
 import {Observable, Observer} from 'rxjs';
-import {QrjJournalService} from '../../../journal/JournalService/qrj-journal.service';
+import {QrjJournalService} from '../../../qrj-journal/JournalService/qrj-journal.service';
 
 @Component({
   selector: 'app-qrj-publication-dialog',

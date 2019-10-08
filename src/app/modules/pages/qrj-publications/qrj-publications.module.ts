@@ -11,12 +11,11 @@ import {QrjPublicationsComponent} from './pages/qrj-publications/qrj-publication
 import {MainComponent} from './pages/main/main.component';
 import {QrjPublicationDialogComponent} from './components/qrj-publication-dialog/qrj-publication-dialog.component';
 import {OecdModule} from '../oecd/oecd.module';
-import {JournalModule} from '../journal/journal.module';
+import {JournalModule} from '../qrj-journal/journal.module';
 import {NgxsModule} from '@ngxs/store';
 import {QrjPublicationsState} from './pages/qrj-publications/state/qrj-publications.state';
 import {DeleteQrjPublicationDialogComponent} from './components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component';
 import {CrudBasicModule} from '../../../shared/modules/crud-basic/crud-basic.module';
-import {CustomInputsModule} from '../../../shared/modules/custom-inputs/custom-inputs.module';
 
 @NgModule({
   declarations: [

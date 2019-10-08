@@ -34,12 +34,21 @@
       </div>
     </div>
     <mat-divider></mat-divider>
-    <h4 *ngIf="schema.title!==''">
+
+    <h4 *ngIf="schema.title!==undefined">
       {{item?.translation[0][schema.title]?.length > 50 ? item?.translation[0][schema.title].substr(0, 50) + '...' : item?.translation[0][schema.title]}}
     </h4>
-    <p *ngIf="schema.description!==''">
+
+    <h4 *ngIf="schema.nested!==undefined">
+      <div *ngFor="let subItem of item[schema.nested.name]">
+        {{subItem[schema.nested.title]}}
+      </div>
+    </h4>
+
+    <p *ngIf="schema.description!==undefined">
       {{ item?.translation[0][schema.description].length > 100 ? item?.translation[0][schema.description].substr(0, 100) + '...' : item?.translation[0][schema.description]}}
     </p>
+
   </div>
 </div>
 
