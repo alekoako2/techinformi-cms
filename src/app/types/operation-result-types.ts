@@ -4,6 +4,150 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateOecdMutation
+// ====================================================
+
+export interface UpdateOecdMutation_updateOecd_translation {
+  name: string | null;
+}
+
+export interface UpdateOecdMutation_updateOecd {
+  id: string;
+  code: string | null;
+  translation: (UpdateOecdMutation_updateOecd_translation | null)[] | null;
+}
+
+export interface UpdateOecdMutation {
+  updateOecd: UpdateOecdMutation_updateOecd | null;
+}
+
+export interface UpdateOecdMutationVariables {
+  id: string;
+  code?: string | null;
+  name?: string | null;
+  nameEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateOecdMutation
+// ====================================================
+
+export interface CreateOecdMutation_createOecd_translation {
+  name: string | null;
+}
+
+export interface CreateOecdMutation_createOecd {
+  id: string;
+  code: string | null;
+  translation: (CreateOecdMutation_createOecd_translation | null)[] | null;
+}
+
+export interface CreateOecdMutation {
+  createOecd: CreateOecdMutation_createOecd | null;
+}
+
+export interface CreateOecdMutationVariables {
+  code?: string | null;
+  name?: string | null;
+  nameEng?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteOecdMutation
+// ====================================================
+
+export interface DeleteOecdMutation_deleteOecd {
+  code: string | null;
+}
+
+export interface DeleteOecdMutation {
+  deleteOecd: DeleteOecdMutation_deleteOecd | null;
+}
+
+export interface DeleteOecdMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountOecdsQuery
+// ====================================================
+
+export interface CountOecdsQuery {
+  countOecds: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: OecdQuery
+// ====================================================
+
+export interface OecdQuery_oecd_translation {
+  name: string | null;
+}
+
+export interface OecdQuery_oecd {
+  id: string;
+  code: string | null;
+  translation: (OecdQuery_oecd_translation | null)[] | null;
+}
+
+export interface OecdQuery {
+  oecd: OecdQuery_oecd;
+}
+
+export interface OecdQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: OecdsQuery
+// ====================================================
+
+export interface OecdsQuery_oecds_translation {
+  name: string | null;
+}
+
+export interface OecdsQuery_oecds {
+  id: string;
+  code: string | null;
+  translation: (OecdsQuery_oecds_translation | null)[] | null;
+}
+
+export interface OecdsQuery {
+  oecds: OecdsQuery_oecds[];
+}
+
+export interface OecdsQueryVariables {
+  languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: CountQrjJournalsQuery
 // ====================================================
 
@@ -149,150 +293,6 @@ export interface DeleteQrjJournalMutation {
 
 export interface DeleteQrjJournalMutationVariables {
   id?: string | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL mutation operation: UpdateOecdMutation
-// ====================================================
-
-export interface UpdateOecdMutation_updateOecd_translation {
-  name: string | null;
-}
-
-export interface UpdateOecdMutation_updateOecd {
-  id: string;
-  code: string | null;
-  translation: (UpdateOecdMutation_updateOecd_translation | null)[] | null;
-}
-
-export interface UpdateOecdMutation {
-  updateOecd: UpdateOecdMutation_updateOecd | null;
-}
-
-export interface UpdateOecdMutationVariables {
-  id: string;
-  code?: string | null;
-  name?: string | null;
-  nameEng?: string | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL mutation operation: CreateOecdMutation
-// ====================================================
-
-export interface CreateOecdMutation_createOecd_translation {
-  name: string | null;
-}
-
-export interface CreateOecdMutation_createOecd {
-  id: string;
-  code: string | null;
-  translation: (CreateOecdMutation_createOecd_translation | null)[] | null;
-}
-
-export interface CreateOecdMutation {
-  createOecd: CreateOecdMutation_createOecd | null;
-}
-
-export interface CreateOecdMutationVariables {
-  code?: string | null;
-  name?: string | null;
-  nameEng?: string | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL mutation operation: DeleteOecdMutation
-// ====================================================
-
-export interface DeleteOecdMutation_deleteOecd {
-  code: string | null;
-}
-
-export interface DeleteOecdMutation {
-  deleteOecd: DeleteOecdMutation_deleteOecd | null;
-}
-
-export interface DeleteOecdMutationVariables {
-  id?: string | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: CountOecdsQuery
-// ====================================================
-
-export interface CountOecdsQuery {
-  countOecds: number | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: OecdQuery
-// ====================================================
-
-export interface OecdQuery_oecd_translation {
-  name: string | null;
-}
-
-export interface OecdQuery_oecd {
-  id: string;
-  code: string | null;
-  translation: (OecdQuery_oecd_translation | null)[] | null;
-}
-
-export interface OecdQuery {
-  oecd: OecdQuery_oecd;
-}
-
-export interface OecdQueryVariables {
-  id: string;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: OecdsQuery
-// ====================================================
-
-export interface OecdsQuery_oecds_translation {
-  name: string | null;
-}
-
-export interface OecdsQuery_oecds {
-  id: string;
-  code: string | null;
-  translation: (OecdsQuery_oecds_translation | null)[] | null;
-}
-
-export interface OecdsQuery {
-  oecds: OecdsQuery_oecds[];
-}
-
-export interface OecdsQueryVariables {
-  languageCode?: LanguageCode | null;
-  first?: number | null;
-  skip?: number | null;
-  query?: string | null;
 }
 
 
@@ -563,6 +563,178 @@ export interface QrjPublicationsQuery {
 }
 
 export interface QrjPublicationsQueryVariables {
+  languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: UpdateQrjMutation
+// ====================================================
+
+export interface UpdateQrjMutation_updateQrj_journal_translation {
+  address: string | null;
+}
+
+export interface UpdateQrjMutation_updateQrj_journal {
+  pubNumber: string | null;
+  translation: (UpdateQrjMutation_updateQrj_journal_translation | null)[] | null;
+}
+
+export interface UpdateQrjMutation_updateQrj {
+  id: string;
+  year: string | null;
+  journal: (UpdateQrjMutation_updateQrj_journal | null)[] | null;
+}
+
+export interface UpdateQrjMutation {
+  updateQrj: UpdateQrjMutation_updateQrj | null;
+}
+
+export interface UpdateQrjMutationVariables {
+  id: string;
+  year?: string | null;
+  pub_num1?: string | null;
+  pub_num1_address_ka?: string | null;
+  pub_num1_address_en?: string | null;
+  pub_num2?: string | null;
+  pub_num2_address_ka?: string | null;
+  pub_num2_address_en?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateQrjMutation
+// ====================================================
+
+export interface CreateQrjMutation_createQrj_journal_translation {
+  address: string | null;
+}
+
+export interface CreateQrjMutation_createQrj_journal {
+  pubNumber: string | null;
+  translation: (CreateQrjMutation_createQrj_journal_translation | null)[] | null;
+}
+
+export interface CreateQrjMutation_createQrj {
+  id: string;
+  year: string | null;
+  journal: (CreateQrjMutation_createQrj_journal | null)[] | null;
+}
+
+export interface CreateQrjMutation {
+  createQrj: CreateQrjMutation_createQrj | null;
+}
+
+export interface CreateQrjMutationVariables {
+  year?: string | null;
+  pub_num1?: string | null;
+  pub_num1_address_ka?: string | null;
+  pub_num1_address_en?: string | null;
+  pub_num2?: string | null;
+  pub_num2_address_ka?: string | null;
+  pub_num2_address_en?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteQrjMutation
+// ====================================================
+
+export interface DeleteQrjMutation_deleteQrj {
+  id: string;
+}
+
+export interface DeleteQrjMutation {
+  deleteQrj: DeleteQrjMutation_deleteQrj | null;
+}
+
+export interface DeleteQrjMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountQrjsQuery
+// ====================================================
+
+export interface CountQrjsQuery {
+  countQrjs: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: QrjQuery
+// ====================================================
+
+export interface QrjQuery_qrj_journal_translation {
+  address: string | null;
+}
+
+export interface QrjQuery_qrj_journal {
+  pubNumber: string | null;
+  translation: (QrjQuery_qrj_journal_translation | null)[] | null;
+}
+
+export interface QrjQuery_qrj {
+  id: string;
+  year: string | null;
+  journal: (QrjQuery_qrj_journal | null)[] | null;
+}
+
+export interface QrjQuery {
+  qrj: QrjQuery_qrj;
+}
+
+export interface QrjQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: QrjsQuery
+// ====================================================
+
+export interface QrjsQuery_qrjs_journal_translation {
+  address: string | null;
+}
+
+export interface QrjsQuery_qrjs_journal {
+  pubNumber: string | null;
+  translation: (QrjsQuery_qrjs_journal_translation | null)[] | null;
+}
+
+export interface QrjsQuery_qrjs {
+  id: string;
+  year: string | null;
+  journal: (QrjsQuery_qrjs_journal | null)[] | null;
+}
+
+export interface QrjsQuery {
+  qrjs: QrjsQuery_qrjs[];
+}
+
+export interface QrjsQueryVariables {
   languageCode?: LanguageCode | null;
   first?: number | null;
   skip?: number | null;

@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'qrjPublications', loadChildren:
-      () => import( './modules/pages/qrj/qrj-publications.module')
+      () => import( './modules/pages/qrj-publications/qrj-publications.module')
         .then(mod => mod.QrjPublicationsModule),
     canActivate: [AuthGuard]
   },
@@ -30,6 +30,12 @@ const appRoutes: Routes = [
     path: 'oecd', loadChildren:
       () => import( './modules/pages/oecd/oecd.module')
         .then(mod => mod.OecdModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'technology_transfer_centers', loadChildren:
+      () => import( './modules/pages/technology-transfer-centers/technology-transfer-centers.module')
+        .then(mod => mod.TechnologyTransferCentersModule),
     canActivate: [AuthGuard]
   },
 

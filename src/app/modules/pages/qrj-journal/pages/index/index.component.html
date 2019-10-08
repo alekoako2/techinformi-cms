@@ -1,5 +1,6 @@
 <app-layout-container [flexWidth]="100">
-  <app-page-title-bar title="სამეცნიერო მიმართულება (OECD)"></app-page-title-bar>
+  <app-page-title-bar
+    title="ქართულ რეფერატულ ჟურნალში ასახული სამეცნიერო გამოცემების ჩამონათვალი "></app-page-title-bar>
   <app-crud-basic
     [length]="countQrjJournals$"
     [create_update_dialog_component]="QrjJournalUpdateCreateDialogComponent"
@@ -8,8 +9,7 @@
     [schema]="
       {
         header:'code',
-        title:'name',
-        description:''
+        title:'name'
       }"
     [loadState]="LoadQrjJournals"
     [getSingleItemState]="GetQrjJournal"

@@ -1,9 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {
   GetQrjPublication,
-} from '../../../../../modules/pages/qrj/pages/qrj-publications/state/qrj-publications.actions';
+} from '../../../../../modules/pages/qrj-publications/pages/qrj-publications/state/qrj-publications.actions';
 import {Store} from '@ngxs/store';
 import {MatDialog} from '@angular/material';
+
+export interface NestedArray {
+  name: string,
+  title: string
+}
 
 @Component({
   selector: 'app-crud-basic',
@@ -21,7 +26,7 @@ export class CrudBasicComponent implements OnInit {
 
   @Input() list;
 
-  @Input() schema: { header, title, description };
+  @Input() schema: { header, title?, description?, nested?: NestedArray };
 
   @Input() loadState;
   @Input() getSingleItemState;
