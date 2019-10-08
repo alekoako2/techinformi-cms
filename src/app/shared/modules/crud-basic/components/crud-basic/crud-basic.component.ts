@@ -10,6 +10,11 @@ export interface NestedArray {
   title: string
 }
 
+export interface NonTranslated {
+  title: string,
+  description
+}
+
 @Component({
   selector: 'app-crud-basic',
   templateUrl: './crud-basic.component.html',
@@ -26,7 +31,7 @@ export class CrudBasicComponent implements OnInit {
 
   @Input() list;
 
-  @Input() schema: { header, title?, description?, nested?: NestedArray };
+  @Input() schema: { header, title?, description?, nested?: NestedArray, nonTranslated?: NonTranslated };
 
   @Input() loadState;
   @Input() getSingleItemState;

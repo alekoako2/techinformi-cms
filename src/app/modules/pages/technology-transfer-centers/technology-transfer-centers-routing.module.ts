@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {IndexComponent} from './pages/index/index.component';
 import {MainComponent} from './pages/main/main.component';
-import {TechnologyTransferNetworksComponent} from './pages/technology-transfer-networks/technology-transfer-networks.component';
+import {TechnologyTransferNetworkComponent} from './pages/technology-transfer-network/technology-transfer-network.component';
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'technology_transfer_networks',
-        component: TechnologyTransferNetworksComponent
+        component: TechnologyTransferNetworkComponent
       }
     ]
   }
