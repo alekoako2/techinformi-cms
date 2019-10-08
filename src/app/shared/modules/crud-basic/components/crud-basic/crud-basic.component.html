@@ -21,10 +21,10 @@
   <div *ngFor="let item of list | async"
        class="publication-wrapper mat-elevation-z1 padding-2 padding-bottom-5 padding-top-0 border-radius-1">
     <div>
-      <div class="index-wrapper" fxLayoutAlign="start" fxFlex="100">
-        <h3>{{item[schema.header] }}</h3>
+      <div class="index-wrapper" fxLayoutAlign="start" fxFlex="80">
+        <h3>{{item[schema.header].length > 25 ? item[schema.header].substr(0, 25) + '...' : item[schema.header] }}</h3>
       </div>
-      <div fxLayoutAlign="end" fxFlex="100">
+      <div fxLayoutAlign="end" fxFlex="20">
         <button mat-icon-button color="primary" fxFlexAlign="center" (click)="openDialogForUpdate(item.id)">
           <mat-icon>edit</mat-icon>
         </button>
@@ -33,6 +33,7 @@
         </button>
       </div>
     </div>
+
     <mat-divider></mat-divider>
 
     <h4 *ngIf="schema.title!==undefined">
@@ -44,6 +45,18 @@
         {{subItem[schema.nested.title]}}
       </div>
     </h4>
+
+    <div *ngIf="schema.nonTranslated!==undefined">
+
+      <h4 *ngIf="schema.nonTranslated.title!==undefined">
+        {{item[schema.nonTranslated.title]}}
+      </h4>
+
+      <p *ngIf="schema.nonTranslated.description!==undefined">
+        {{item[schema.nonTranslated.description].length > 100 ? item[schema.nonTranslated.description].substr(0, 100) + '...' : item[schema.nonTranslated.description]}}
+      </p>
+
+    </div>
 
     <p *ngIf="schema.description!==undefined">
       {{ item?.translation[0][schema.description].length > 100 ? item?.translation[0][schema.description].substr(0, 100) + '...' : item?.translation[0][schema.description]}}

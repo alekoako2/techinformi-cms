@@ -741,6 +741,143 @@ export interface QrjsQueryVariables {
   query?: string | null;
 }
 
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: UpdateTechnologyTransferNetworkMutation
+// ====================================================
+
+export interface UpdateTechnologyTransferNetworkMutation_updateTechnologyTransferNetwork {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface UpdateTechnologyTransferNetworkMutation {
+  updateTechnologyTransferNetwork: UpdateTechnologyTransferNetworkMutation_updateTechnologyTransferNetwork | null;
+}
+
+export interface UpdateTechnologyTransferNetworkMutationVariables {
+  id: string;
+  url?: string | null;
+  title?: string | null;
+  text?: string | null;
+  region?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateTechnologyTransferNetworkMutation
+// ====================================================
+
+export interface CreateTechnologyTransferNetworkMutation_createTechnologyTransferNetwork {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface CreateTechnologyTransferNetworkMutation {
+  createTechnologyTransferNetwork: CreateTechnologyTransferNetworkMutation_createTechnologyTransferNetwork | null;
+}
+
+export interface CreateTechnologyTransferNetworkMutationVariables {
+  url?: string | null;
+  title?: string | null;
+  text?: string | null;
+  region?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteTechnologyTransferNetworkMutation
+// ====================================================
+
+export interface DeleteTechnologyTransferNetworkMutation_deleteTechnologyTransferNetwork {
+  id: string;
+}
+
+export interface DeleteTechnologyTransferNetworkMutation {
+  deleteTechnologyTransferNetwork: DeleteTechnologyTransferNetworkMutation_deleteTechnologyTransferNetwork | null;
+}
+
+export interface DeleteTechnologyTransferNetworkMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountTechnologyTransferNetworksQuery
+// ====================================================
+
+export interface CountTechnologyTransferNetworksQuery {
+  countTechnologyTransferNetworks: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: TechnologyTransferNetworkQuery
+// ====================================================
+
+export interface TechnologyTransferNetworkQuery_technologyTransferNetwork {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface TechnologyTransferNetworkQuery {
+  technologyTransferNetwork: TechnologyTransferNetworkQuery_technologyTransferNetwork;
+}
+
+export interface TechnologyTransferNetworkQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: TechnologyTransferNetworksQuery
+// ====================================================
+
+export interface TechnologyTransferNetworksQuery_technologyTransferNetworks {
+  id: string;
+  url: string | null;
+  title: string | null;
+  text: string | null;
+  region: string | null;
+}
+
+export interface TechnologyTransferNetworksQuery {
+  technologyTransferNetworks: TechnologyTransferNetworksQuery_technologyTransferNetworks[];
+}
+
+export interface TechnologyTransferNetworksQueryVariables {
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
