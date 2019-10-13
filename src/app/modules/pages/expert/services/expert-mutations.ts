@@ -1,0 +1,113 @@
+import gql from 'graphql-tag';
+
+export const updateExpertMutation = gql`
+    mutation UpdateExpertMutation(
+        $id:ID!
+        $inpDate:String
+        $email:String
+        $web:String
+        $tel:String
+        $mobile:String
+        $publications:String
+        $translation:[ExpertTranslationInput]
+        $oecds:[OecdInput]
+        $languages:[LanguageInput]
+    ){
+        updateExpert(
+            id:$id,
+            input:{
+                inpDate:$inpDate
+                email:$email
+                web:$web
+                tel:$tel
+                mobile:$mobile
+                publications:$publications
+                translation:$translation
+                oecds:$oecds
+                languages:$languages
+            }
+        ){
+            id
+            inpDate
+            email
+            web
+            tel
+            mobile
+            publications
+            translation{
+                fullName
+                qualification
+                academicDegree
+                specialization
+                workingPlace
+                position
+            }
+            oecds{
+                code
+            }
+            languages{
+                code
+            }
+        }
+    }`;
+
+export const createExpertMutation = gql`
+    mutation CreateExpertMutation(
+        $inpDate:String
+        $email:String
+        $web:String
+        $tel:String
+        $mobile:String
+        $publications:String
+        $translation:[ExpertTranslationInput]
+        $oecds:[OecdInput]
+        $languages:[LanguageInput]
+    ){
+        createExpert(
+            input:{
+                inpDate:$inpDate
+                email:$email
+                web:$web
+                tel:$tel
+                mobile:$mobile
+                publications:$publications
+                translation:$translation
+                oecds:$oecds
+                languages:$languages
+            }
+        ){
+            id
+            inpDate
+            email
+            web
+            tel
+            mobile
+            publications
+            translation{
+                fullName
+                qualification
+                academicDegree
+                specialization
+                workingPlace
+                position
+            }
+            oecds{
+                code
+            }
+            languages{
+                code
+            }
+        }
+    }`;
+
+export const deleteExpertMutation = gql`
+    mutation DeleteExpertMutation(
+        $id:ID
+    ){
+        deleteExpert(
+            id:$id
+        ){
+            id
+        }
+    }
+`;

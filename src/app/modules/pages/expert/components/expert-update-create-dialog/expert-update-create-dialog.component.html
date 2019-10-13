@@ -1,0 +1,289 @@
+<app-dialog>
+  <div header *ngIf="!showCreate">მეცნიერი/ექსპერტის ცვლილება</div>
+  <div header *ngIf="showCreate">ახალი მეცნიერები/ექსპერტების დამატება</div>
+  <div body>
+
+    <form #myForm="ngForm" novalidate>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="შეტანის თარიღი"
+          name="inpDate"
+          required="true"
+          [(inputModel)]="expertData.inpDate"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ელ.ფოსტა"
+          name="email"
+          required="true"
+          [(inputModel)]="expertData.email"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ვებ გვერდი"
+          name="web"
+          required="true"
+          [(inputModel)]="expertData.web"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ტელ."
+          name="tel"
+          required="true"
+          [(inputModel)]="expertData.tel"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="მობილური"
+          name="mobile"
+          required="true"
+          [(inputModel)]="expertData.mobile"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="პუბლიკაციები"
+          name="publications"
+          required="true"
+          [(inputModel)]="expertData.publications"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-multiple-select
+          fxFlex="50"
+          class="margin-right-2"
+          name="oecds"
+          required="true"
+          placeholder="კლასიფიკატორი (OECD)"
+          listFieldName="code"
+          listFieldValueName="code"
+          [inputModel]="expertData.oecds"
+          (inputModelChange)="expertData.oecds=$event"
+          [list]="oecdList"
+        >
+
+        </app-input-multiple-select>
+
+        <app-input-multiple-select
+          fxFlex="50"
+          class="margin-left-2"
+          name="languages"
+          required="true"
+          placeholder="ენები"
+          listFieldName="name"
+          listFieldValueName="code"
+          [inputModel]="expertData.languages"
+          (inputModelChange)="expertData.languages=$event"
+          [list]="languageList"
+        >
+
+        </app-input-multiple-select>
+      </div>
+
+      <div class="margin-top-2">
+
+        <mat-tab-group>
+          <mat-tab label="ქართული">
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="სახელი,გვარი"
+                name="fullName"
+                required="true"
+                [inputModel]="expertData.translation[0]?.fullName"
+                (inputModelChange)="expertData.translation[0].fullName=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="კვალიფიკაცია"
+                name="qualification"
+                required="true"
+                [inputModel]="expertData.translation[0]?.qualification"
+                (inputModelChange)="expertData.translation[0].qualification=$event"
+              ></app-input-text>
+
+            </div>
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="ხარისხი"
+                name="academicDegree"
+                required="true"
+                [inputModel]="expertData.translation[0]?.academicDegree"
+                (inputModelChange)="expertData.translation[0].academicDegree=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="სპეციალიზაცია"
+                name="specialization"
+                required="true"
+                [inputModel]="expertData.translation[0]?.specialization"
+                (inputModelChange)="expertData.translation[0].specialization=$event"
+              ></app-input-text>
+
+            </div>
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="სამუშაო ადგილი"
+                name="workingPlace"
+                required="true"
+                [inputModel]="expertData.translation[0]?.workingPlace"
+                (inputModelChange)="expertData.translation[0].workingPlace=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="თანამდებობა"
+                name="position"
+                required="true"
+                [inputModel]="expertData.translation[0]?.position"
+                (inputModelChange)="expertData.translation[0].position=$event"
+              ></app-input-text>
+
+            </div>
+
+          </mat-tab>
+
+          <mat-tab label="English">
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="Full Name"
+                name="fullNameEng"
+                required="true"
+                [inputModel]="expertData.translation[1]?.fullName"
+                (inputModelChange)="expertData.translation[1].fullName=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="Qualification"
+                name="qualificationEng"
+                required="true"
+                [inputModel]="expertData.translation[1]?.qualification"
+                (inputModelChange)="expertData.translation[1].qualification=$event"
+              ></app-input-text>
+
+            </div>
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="Academic Degree"
+                name="academicDegreeEng"
+                required="true"
+                [inputModel]="expertData.translation[1]?.academicDegree"
+                (inputModelChange)="expertData.translation[1].academicDegree=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="Specialization"
+                name="specializationEng"
+                required="true"
+                [inputModel]="expertData.translation[1]?.specialization"
+                (inputModelChange)="expertData.translation[1].specialization=$event"
+              ></app-input-text>
+
+            </div>
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="Working Place"
+                name="workingPlaceEng"
+                required="true"
+                [inputModel]="expertData.translation[1]?.workingPlace"
+                (inputModelChange)="expertData.translation[1].workingPlace=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="Position"
+                name="positionEng"
+                required="true"
+                [inputModel]="expertData.translation[1]?.position"
+                (inputModelChange)="expertData.translation[1].position=$event"
+              ></app-input-text>
+
+            </div>
+
+
+          </mat-tab>
+        </mat-tab-group>
+
+      </div>
+
+    </form>
+
+  </div>
+  <div footer class="margin-left-4">
+    <button mat-raised-button
+            color="accent"
+            type="submit"
+            *ngIf="!showCreate"
+            (click)="update()"
+            [disabled]="!myForm.valid"
+    >
+      შენახვა
+    </button>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            *ngIf="showCreate"
+            (click)="create()"
+            [disabled]="!myForm.valid"
+    >
+      დამატება
+    </button>
+  </div>
+</app-dialog>
