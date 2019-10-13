@@ -4,6 +4,242 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateExpertMutation
+// ====================================================
+
+export interface UpdateExpertMutation_updateExpert_translation {
+  fullName: string | null;
+  qualification: string | null;
+  academicDegree: string | null;
+  specialization: string | null;
+  workingPlace: string | null;
+  position: string | null;
+}
+
+export interface UpdateExpertMutation_updateExpert_oecds {
+  code: string | null;
+}
+
+export interface UpdateExpertMutation_updateExpert_languages {
+  code: LanguageCode | null;
+}
+
+export interface UpdateExpertMutation_updateExpert {
+  id: string;
+  inpDate: string | null;
+  email: string | null;
+  web: string | null;
+  tel: string | null;
+  mobile: string | null;
+  publications: string | null;
+  translation: (UpdateExpertMutation_updateExpert_translation | null)[] | null;
+  oecds: (UpdateExpertMutation_updateExpert_oecds | null)[] | null;
+  languages: (UpdateExpertMutation_updateExpert_languages | null)[] | null;
+}
+
+export interface UpdateExpertMutation {
+  updateExpert: UpdateExpertMutation_updateExpert | null;
+}
+
+export interface UpdateExpertMutationVariables {
+  id: string;
+  inpDate?: string | null;
+  email?: string | null;
+  web?: string | null;
+  tel?: string | null;
+  mobile?: string | null;
+  publications?: string | null;
+  translation?: (ExpertTranslationInput | null)[] | null;
+  oecds?: (OecdInput | null)[] | null;
+  languages?: (LanguageInput | null)[] | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateExpertMutation
+// ====================================================
+
+export interface CreateExpertMutation_createExpert_translation {
+  fullName: string | null;
+  qualification: string | null;
+  academicDegree: string | null;
+  specialization: string | null;
+  workingPlace: string | null;
+  position: string | null;
+}
+
+export interface CreateExpertMutation_createExpert_oecds {
+  code: string | null;
+}
+
+export interface CreateExpertMutation_createExpert_languages {
+  code: LanguageCode | null;
+}
+
+export interface CreateExpertMutation_createExpert {
+  id: string;
+  inpDate: string | null;
+  email: string | null;
+  web: string | null;
+  tel: string | null;
+  mobile: string | null;
+  publications: string | null;
+  translation: (CreateExpertMutation_createExpert_translation | null)[] | null;
+  oecds: (CreateExpertMutation_createExpert_oecds | null)[] | null;
+  languages: (CreateExpertMutation_createExpert_languages | null)[] | null;
+}
+
+export interface CreateExpertMutation {
+  createExpert: CreateExpertMutation_createExpert | null;
+}
+
+export interface CreateExpertMutationVariables {
+  inpDate?: string | null;
+  email?: string | null;
+  web?: string | null;
+  tel?: string | null;
+  mobile?: string | null;
+  publications?: string | null;
+  translation?: (ExpertTranslationInput | null)[] | null;
+  oecds?: (OecdInput | null)[] | null;
+  languages?: (LanguageInput | null)[] | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteExpertMutation
+// ====================================================
+
+export interface DeleteExpertMutation_deleteExpert {
+  id: string;
+}
+
+export interface DeleteExpertMutation {
+  deleteExpert: DeleteExpertMutation_deleteExpert | null;
+}
+
+export interface DeleteExpertMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountExpertsQuery
+// ====================================================
+
+export interface CountExpertsQuery {
+  countExperts: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ExpertQuery
+// ====================================================
+
+export interface ExpertQuery_expert_translation {
+  fullName: string | null;
+  qualification: string | null;
+  academicDegree: string | null;
+  specialization: string | null;
+  workingPlace: string | null;
+  position: string | null;
+}
+
+export interface ExpertQuery_expert_oecds {
+  code: string | null;
+}
+
+export interface ExpertQuery_expert_languages {
+  code: LanguageCode | null;
+}
+
+export interface ExpertQuery_expert {
+  id: string;
+  inpDate: string | null;
+  email: string | null;
+  web: string | null;
+  tel: string | null;
+  mobile: string | null;
+  publications: string | null;
+  translation: (ExpertQuery_expert_translation | null)[] | null;
+  oecds: (ExpertQuery_expert_oecds | null)[] | null;
+  languages: (ExpertQuery_expert_languages | null)[] | null;
+}
+
+export interface ExpertQuery {
+  expert: ExpertQuery_expert;
+}
+
+export interface ExpertQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ExpertsQuery
+// ====================================================
+
+export interface ExpertsQuery_experts_translation {
+  fullName: string | null;
+  qualification: string | null;
+  academicDegree: string | null;
+  specialization: string | null;
+  workingPlace: string | null;
+  position: string | null;
+}
+
+export interface ExpertsQuery_experts_oecds {
+  code: string | null;
+}
+
+export interface ExpertsQuery_experts_languages {
+  code: LanguageCode | null;
+}
+
+export interface ExpertsQuery_experts {
+  id: string;
+  inpDate: string | null;
+  email: string | null;
+  web: string | null;
+  tel: string | null;
+  mobile: string | null;
+  publications: string | null;
+  translation: (ExpertsQuery_experts_translation | null)[] | null;
+  oecds: (ExpertsQuery_experts_oecds | null)[] | null;
+  languages: (ExpertsQuery_experts_languages | null)[] | null;
+}
+
+export interface ExpertsQuery {
+  experts: ExpertsQuery_experts[];
+}
+
+export interface ExpertsQueryVariables {
+  languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: UpdateOecdMutation
 // ====================================================
 
@@ -636,12 +872,7 @@ export interface CreateQrjMutation {
 
 export interface CreateQrjMutationVariables {
   year?: string | null;
-  pub_num1?: string | null;
-  pub_num1_address_ka?: string | null;
-  pub_num1_address_en?: string | null;
-  pub_num2?: string | null;
-  pub_num2_address_ka?: string | null;
-  pub_num2_address_en?: string | null;
+  journal?: (JournalInput | null)[] | null;
 }
 
 
@@ -1023,8 +1254,54 @@ export interface TechnologyTransferNetworksQueryVariables {
 //==============================================================
 
 export enum LanguageCode {
+  DE = "DE",
   EN = "EN",
+  ES = "ES",
+  FR = "FR",
+  IT = "IT",
   KA = "KA",
+  RU = "RU",
+}
+
+// null
+export interface ExpertTranslationInput {
+  fullName?: string | null;
+  qualification?: string | null;
+  academicDegree?: string | null;
+  specialization?: string | null;
+  workingPlace?: string | null;
+  position?: string | null;
+  language?: LanguageCode | null;
+}
+
+// null
+export interface OecdInput {
+  code?: string | null;
+  translation?: OecdTranslationInput[] | null;
+}
+
+// null
+export interface OecdTranslationInput {
+  name?: string | null;
+  language?: LanguageCode | null;
+}
+
+// null
+export interface LanguageInput {
+  code?: string | null;
+}
+
+// null
+export interface JournalInput {
+  id?: string | null;
+  pub_num?: string | null;
+  translation?: QrjTranslationInput[] | null;
+}
+
+// null
+export interface QrjTranslationInput {
+  address?: string | null;
+  language?: LanguageCode | null;
 }
 
 //==============================================================

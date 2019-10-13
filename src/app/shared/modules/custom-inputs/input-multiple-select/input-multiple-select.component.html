@@ -1,1 +1,24 @@
-<p>input-multiple-select works!</p>
+<mat-form-field fxFlex="100">
+  <mat-label>{{placeholder}}</mat-label>
+  <mat-select
+    [(ngModel)]="inputModel2"
+    (ngModelChange)="onChange($event)"
+    [required]="required"
+    [name]="name"
+    #input="ngModel"
+    multiple>
+
+    <mat-option
+      *ngFor="let item of list"
+      [value]='item[listFieldValueName]'
+    >
+      {{item[listFieldName]}}
+    </mat-option>
+
+  </mat-select>
+
+  <mat-error *ngIf="!input.valid && input.touched">
+    გთხოვთ შეავსოთ ველი
+  </mat-error>
+
+</mat-form-field>

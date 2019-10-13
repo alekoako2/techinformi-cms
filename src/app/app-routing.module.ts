@@ -38,6 +38,12 @@ const appRoutes: Routes = [
         .then(mod => mod.TechnologyTransferCentersModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'scientists_experts', loadChildren:
+      () => import( './modules/pages/expert/expert.module')
+        .then(mod => mod.ExpertModule),
+    canActivate: [AuthGuard]
+  },
 
 ];
 
