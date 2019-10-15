@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
-  MatButtonModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule, MatExpansionModule,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatExpansionModule,
   MatFormFieldModule, MatGridListModule,
   MatIconModule, MatInputModule,
   MatListModule,
@@ -42,7 +42,8 @@ import {
     MatAutocompleteModule,
     MatTabsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatChipsModule
   ],
   exports: [
     MatSidenavModule,
@@ -71,7 +72,8 @@ import {
     MatAutocompleteModule,
     MatTabsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule {

@@ -59,44 +59,12 @@ export const updateQrjMutation = gql`
 export const createQrjMutation = gql`
     mutation CreateQrjMutation(
         $year:String
-        $pub_num1:String
-        $pub_num1_address_ka:String
-        $pub_num1_address_en:String
-        $pub_num2:String
-        $pub_num2_address_ka:String
-        $pub_num2_address_en:String
+        $journal:[JournalInput]
     ){
         createQrj(
             input:{
                 year:$year
-                journal:[
-                    {
-                        pub_num:$pub_num1,
-                        translation:[
-                            {
-                                address:$pub_num1_address_ka
-                                language:KA
-                            },
-                            {
-                                address:$pub_num1_address_en
-                                language:EN
-                            }
-                        ]
-                    },
-                    {
-                        pub_num:$pub_num2,
-                        translation:[
-                            {
-                                address:$pub_num2_address_ka
-                                language:KA
-                            },
-                            {
-                                address:$pub_num2_address_en
-                                language:EN
-                            }
-                        ]
-                    }
-                ]
+                journal:$journal
             }
         ){
             id

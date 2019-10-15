@@ -14,6 +14,7 @@ export class InputTextComponent implements OnInit {
   @Input() placeholder: string;
   @Input() name: string;
   @Input() required: boolean = false;
+  @Input() type: string = 'text';
 
   constructor() {
   }

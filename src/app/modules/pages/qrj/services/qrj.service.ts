@@ -61,12 +61,34 @@ export class QrjService {
       .mutate<CreateQrjMutation>({
         variables: {
           year: input.year,
-          pub_num1: input.journal[0].pubNumber,
-          pub_num1_address_ka: input.journal[0].translation[0].address,
-          pub_num1_address_en: input.journal[0].translation[1].address,
-          pub_num2: input.journal[1].pubNumber,
-          pub_num2_address_ka: input.journal[1].translation[0].address,
-          pub_num2_address_en: input.journal[1].translation[1].address,
+          journal: [
+            {
+              pub_num: input.journal[0].pubNumber,
+              translation: [
+                {
+                  address: input.journal[0].translation[0].address,
+                  language: 'KA'
+                },
+                {
+                  address: input.journal[0].translation[1].address,
+                  language: 'EN'
+                }
+              ]
+            },
+            {
+              pub_num: input.journal[1].pubNumber,
+              translation: [
+                {
+                  address: input.journal[1].translation[0].address,
+                  language: 'KA'
+                },
+                {
+                  address: input.journal[1].translation[1].address,
+                  language: 'EN'
+                }
+              ]
+            }
+          ],
         },
         mutation: createQrjMutation
       })

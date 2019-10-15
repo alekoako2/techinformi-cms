@@ -22,7 +22,10 @@
        class="publication-wrapper mat-elevation-z1 padding-2 padding-bottom-5 padding-top-0 border-radius-1">
     <div>
       <div class="index-wrapper" fxLayoutAlign="start" fxFlex="80">
-        <h3>{{item[schema.header].length > 25 ? item[schema.header].substr(0, 25) + '...' : item[schema.header] }}</h3>
+        <h3
+          *ngIf="schema.header!==undefined">
+          <span>{{item[schema.header] !== null && item[schema.header].length > 25 ? item[schema.header].substr(0, 25) + '...' : item[schema.header] }}</span>
+        </h3>
       </div>
       <div fxLayoutAlign="end" fxFlex="20">
         <button mat-icon-button color="primary" fxFlexAlign="center" (click)="openDialogForUpdate(item.id)">
