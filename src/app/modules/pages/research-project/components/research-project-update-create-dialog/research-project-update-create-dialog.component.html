@@ -1,0 +1,502 @@
+<app-dialog>
+  <div header *ngIf="!showCreate">სამეცნიერო-კვლევითი პროექტის ცვლილება</div>
+  <div header *ngIf="showCreate">ახალი სამეცნიერო-კვლევითი პროექტის დამატება</div>
+  <div body>
+
+    <form #myForm="ngForm" novalidate>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="შეტანის თარიღი"
+          name="inpDate"
+          required="true"
+          [(inputModel)]="researchProjectData.inpDate"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="რეგისტრაციის თარიღი"
+          name="regDate"
+          required="true"
+          [(inputModel)]="researchProjectData.regDate"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="დაწყების თარიღი"
+          name="startDate"
+          required="true"
+          [(inputModel)]="researchProjectData.startDate"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="დასრულების თარიღი"
+          name="endDate"
+          required="true"
+          [(inputModel)]="researchProjectData.endDate"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="რეგისტრაციის ნომერი"
+          name="regNumb"
+          required="true"
+          [(inputModel)]="researchProjectData.regNumb"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="კვლევა"
+          name="research"
+          required="true"
+          [(inputModel)]="researchProjectData.research"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="კვლევის მიმდინარეობა"
+          name="researchDirection"
+          required="true"
+          [(inputModel)]="researchProjectData.researchDirection"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="სამუშაოს შესრულების საფუძველი"
+          name="researchExecutionBasis"
+          required="true"
+          [(inputModel)]="researchProjectData.researchExecutionBasis"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="რეფერატი"
+          name="abstract"
+          required="true"
+          [(inputModel)]="researchProjectData.abstract"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ანოტაცია"
+          name="annotation"
+          required="true"
+          [(inputModel)]="researchProjectData.annotation"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ბიუჯეტი"
+          name="budget"
+          required="true"
+          type="number"
+          [(inputModel)]="researchProjectData.budget"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ორგანიზაციის დასახელება"
+          name="organizationName"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationName"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ორგანიზაციის მოკლე დასახელება"
+          name="organizationShortName"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationShortName"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ორგანიზაციის კოდი"
+          name="organizationCode"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationCode"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ორგანიზაციის ხელმძღვანელი"
+          name="organizationHead"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationHead"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ორგანიზაციის ქალაქი"
+          name="organizationCity"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationCity"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ორგანიზაციის მისამართი"
+          name="organizationAddress"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationAddress"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ორგანიზაციის ინდექსი"
+          name="organizationIndex"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationIndex"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ორგანიზაციის ტელეფონი"
+          name="organizationTel"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationTel"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ორგანიზაციის ვებგვერდი"
+          name="organizationWeb"
+          required="true"
+          [(inputModel)]="researchProjectData.organizationWeb"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="თანამონაწილე ორგანიზაციის სახელი"
+          name="participatingInstitutionName"
+          required="true"
+          [(inputModel)]="researchProjectData.participatingInstitutionName"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="თანამონაწილე ორგანიზაციის ქვეყანა/ქალაქი"
+          name="participatingInstitutionCountryCity"
+          required="true"
+          [(inputModel)]="researchProjectData.participatingInstitutionCountryCity"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="თანამონაწილე ორგანიზაციის ტელეფონი"
+          name="participatingInstitutionTel"
+          required="true"
+          [(inputModel)]="researchProjectData.participatingInstitutionTel"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="თანამონაწილე ორგანიზაციის ელ.ფოსტა"
+          name="participatingInstitutionEmail"
+          required="true"
+          [(inputModel)]="researchProjectData.participatingInstitutionEmail"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="თანამონაწილე ორგანიზაციის ვებგვერდი"
+          name="participatingInstitutionWeb"
+          required="true"
+          [(inputModel)]="researchProjectData.participatingInstitutionWeb"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ხელმძღვანელის სახელი"
+          name="leaderName"
+          required="true"
+          [(inputModel)]="researchProjectData.leaderName"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ხელმძღვანელის თანამდებობა"
+          name="leaderPosition"
+          required="true"
+          [(inputModel)]="researchProjectData.leaderPosition"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ხელმძღვანელის სამეცნიერო ხარისხი"
+          name="leaderAcademicDegree"
+          required="true"
+          [(inputModel)]="researchProjectData.leaderAcademicDegree"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ხელმძღვანელის ტელეფონი"
+          name="leaderTel"
+          required="true"
+          [(inputModel)]="researchProjectData.leaderTel"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="ხელმძღვანელის მობილური"
+          name="leaderMobile"
+          required="true"
+          [(inputModel)]="researchProjectData.leaderMobile"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="ხელმძღვანელის ელ.ფოსტა"
+          name="leaderEmail"
+          required="true"
+          [(inputModel)]="researchProjectData.leaderEmail"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="კვლევითი სამუშაოს შემსრულებლები"
+          name="researchExecutors"
+          required="true"
+          [(inputModel)]="researchProjectData.researchExecutors"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="დაფინანსება"
+          name="financing"
+          required="true"
+          [(inputModel)]="researchProjectData.financing"
+        ></app-input-text>
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-left-2"
+          placeholder="პინკოდი"
+          name="pincode"
+          required="true"
+          [(inputModel)]="researchProjectData.pincode"
+        ></app-input-text>
+
+      </div>
+
+      <div class="overflow-auto publication-input-wrapper">
+
+        <app-input-text
+          fxFlex="50"
+          class="margin-right-2"
+          placeholder="შენიშვნა"
+          name="note"
+          required="true"
+          [(inputModel)]="researchProjectData.note"
+        ></app-input-text>
+
+        <app-input-multiple-select
+          fxFlex="50"
+          class="margin-left-2"
+          name="oecds"
+          required="true"
+          placeholder="კლასიფიკატორი (OECD)"
+          listFieldName="code"
+          listFieldValueName="code"
+          [inputModel]="researchProjectData.oecds"
+          (inputModelChange)="researchProjectData.oecds=$event"
+          [list]="oecdList"
+        >
+
+        </app-input-multiple-select>
+
+      </div>
+
+      <div class="margin-top-2">
+
+        <mat-tab-group>
+          <mat-tab label="ქართული">
+
+            <div>
+
+              <app-input-text
+                fxFlex="100"
+                placeholder="სათაური"
+                name="title"
+                required="true"
+                [inputModel]="researchProjectData.translation[0]?.title"
+                (inputModelChange)="researchProjectData.translation[0].title=$event"
+              >
+              </app-input-text>
+
+            </div>
+
+            <div>
+              <app-input-chips
+                fxFlex="100"
+                placeholder="საძიებო სიტყვები"
+                name="key"
+                required="true"
+                [inputModel]="researchProjectData?.translation[0]?.key"
+                (inputModelChange)="researchProjectData.translation[0].key=$event">
+
+              </app-input-chips>
+
+            </div>
+
+          </mat-tab>
+
+          <mat-tab label="English">
+
+            <div>
+
+              <app-input-text
+                fxFlex="100"
+                placeholder="title"
+                name="titleEng"
+                required="true"
+                [inputModel]="researchProjectData.translation[1]?.title"
+                (inputModelChange)="researchProjectData.translation[1].title=$event"
+              >
+              </app-input-text>
+
+            </div>
+
+            <div>
+              <app-input-chips
+                fxFlex="100"
+                placeholder="keyword"
+                name="keyEng"
+                required="true"
+                [inputModel]="researchProjectData?.translation[1]?.key"
+                (inputModelChange)="researchProjectData.translation[1].key=$event">
+
+              </app-input-chips>
+
+            </div>
+
+          </mat-tab>
+        </mat-tab-group>
+
+      </div>
+
+    </form>
+
+  </div>
+  <div footer class="margin-left-4">
+    <button mat-raised-button
+            color="accent"
+            type="submit"
+            *ngIf="!showCreate"
+            (click)="update()"
+            [disabled]="!myForm.valid"
+    >
+      შენახვა
+    </button>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            *ngIf="showCreate"
+            (click)="create()"
+            [disabled]="!myForm.valid"
+    >
+      დამატება
+    </button>
+  </div>
+</app-dialog>

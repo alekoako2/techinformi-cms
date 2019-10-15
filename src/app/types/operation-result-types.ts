@@ -977,6 +977,378 @@ export interface QrjsQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateResearchProjectMutation
+// ====================================================
+
+export interface UpdateResearchProjectMutation_updateResearchProject_translation {
+  title: string | null;
+  key: (string | null)[] | null;
+}
+
+export interface UpdateResearchProjectMutation_updateResearchProject_oecds {
+  code: string | null;
+}
+
+export interface UpdateResearchProjectMutation_updateResearchProject {
+  id: string | null;
+  inpDate: string | null;
+  regDate: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  regNumb: string | null;
+  research: string | null;
+  researchDirection: string | null;
+  researchExecutionBasis: string | null;
+  abstract: string | null;
+  annotation: string | null;
+  budget: number | null;
+  organizationName: string | null;
+  organizationShortName: string | null;
+  organizationCode: string | null;
+  organizationHead: string | null;
+  organizationCity: string | null;
+  organizationAddress: string | null;
+  organizationIndex: string | null;
+  organizationTel: string | null;
+  organizationWeb: string | null;
+  participatingInstitutionName: string | null;
+  participatingInstitutionCountryCity: string | null;
+  participatingInstitutionTel: string | null;
+  participatingInstitutionEmail: string | null;
+  participatingInstitutionWeb: string | null;
+  leaderName: string | null;
+  leaderPosition: string | null;
+  leaderAcademicDegree: string | null;
+  leaderTel: string | null;
+  leaderMobile: string | null;
+  leaderEmail: string | null;
+  researchExecutors: string | null;
+  financing: string | null;
+  note: string | null;
+  pincode: string | null;
+  translation: (UpdateResearchProjectMutation_updateResearchProject_translation | null)[] | null;
+  oecds: (UpdateResearchProjectMutation_updateResearchProject_oecds | null)[] | null;
+}
+
+export interface UpdateResearchProjectMutation {
+  updateResearchProject: UpdateResearchProjectMutation_updateResearchProject | null;
+}
+
+export interface UpdateResearchProjectMutationVariables {
+  id: string;
+  inpDate?: string | null;
+  regDate?: string | null;
+  startDate?: string | null;
+  endDate?: string | null;
+  regNumb?: string | null;
+  research?: string | null;
+  researchDirection?: string | null;
+  researchExecutionBasis?: string | null;
+  abstract?: string | null;
+  annotation?: string | null;
+  budget?: number | null;
+  organizationName?: string | null;
+  organizationShortName?: string | null;
+  organizationCode?: string | null;
+  organizationHead?: string | null;
+  organizationCity?: string | null;
+  organizationAddress?: string | null;
+  organizationIndex?: string | null;
+  organizationTel?: string | null;
+  organizationWeb?: string | null;
+  participatingInstitutionName?: string | null;
+  participatingInstitutionCountryCity?: string | null;
+  participatingInstitutionTel?: string | null;
+  participatingInstitutionEmail?: string | null;
+  participatingInstitutionWeb?: string | null;
+  leaderName?: string | null;
+  leaderPosition?: string | null;
+  leaderAcademicDegree?: string | null;
+  leaderTel?: string | null;
+  leaderMobile?: string | null;
+  leaderEmail?: string | null;
+  researchExecutors?: string | null;
+  financing?: string | null;
+  note?: string | null;
+  pincode?: string | null;
+  translation?: (ResearchProjectTranslationInput | null)[] | null;
+  oecds?: (OecdInput | null)[] | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateResearchProjectMutation
+// ====================================================
+
+export interface CreateResearchProjectMutation_createResearchProject_translation {
+  title: string | null;
+  key: (string | null)[] | null;
+}
+
+export interface CreateResearchProjectMutation_createResearchProject_oecds {
+  code: string | null;
+}
+
+export interface CreateResearchProjectMutation_createResearchProject {
+  id: string | null;
+  inpDate: string | null;
+  regDate: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  regNumb: string | null;
+  research: string | null;
+  researchDirection: string | null;
+  researchExecutionBasis: string | null;
+  abstract: string | null;
+  annotation: string | null;
+  budget: number | null;
+  organizationName: string | null;
+  organizationShortName: string | null;
+  organizationCode: string | null;
+  organizationHead: string | null;
+  organizationCity: string | null;
+  organizationAddress: string | null;
+  organizationIndex: string | null;
+  organizationTel: string | null;
+  organizationWeb: string | null;
+  participatingInstitutionName: string | null;
+  participatingInstitutionCountryCity: string | null;
+  participatingInstitutionTel: string | null;
+  participatingInstitutionEmail: string | null;
+  participatingInstitutionWeb: string | null;
+  leaderName: string | null;
+  leaderPosition: string | null;
+  leaderAcademicDegree: string | null;
+  leaderTel: string | null;
+  leaderMobile: string | null;
+  leaderEmail: string | null;
+  researchExecutors: string | null;
+  financing: string | null;
+  note: string | null;
+  pincode: string | null;
+  translation: (CreateResearchProjectMutation_createResearchProject_translation | null)[] | null;
+  oecds: (CreateResearchProjectMutation_createResearchProject_oecds | null)[] | null;
+}
+
+export interface CreateResearchProjectMutation {
+  createResearchProject: CreateResearchProjectMutation_createResearchProject | null;
+}
+
+export interface CreateResearchProjectMutationVariables {
+  inpDate?: string | null;
+  regDate?: string | null;
+  startDate?: string | null;
+  endDate?: string | null;
+  regNumb?: string | null;
+  research?: string | null;
+  researchDirection?: string | null;
+  researchExecutionBasis?: string | null;
+  abstract?: string | null;
+  annotation?: string | null;
+  budget?: number | null;
+  organizationName?: string | null;
+  organizationShortName?: string | null;
+  organizationCode?: string | null;
+  organizationHead?: string | null;
+  organizationCity?: string | null;
+  organizationAddress?: string | null;
+  organizationIndex?: string | null;
+  organizationTel?: string | null;
+  organizationWeb?: string | null;
+  participatingInstitutionName?: string | null;
+  participatingInstitutionCountryCity?: string | null;
+  participatingInstitutionTel?: string | null;
+  participatingInstitutionEmail?: string | null;
+  participatingInstitutionWeb?: string | null;
+  leaderName?: string | null;
+  leaderPosition?: string | null;
+  leaderAcademicDegree?: string | null;
+  leaderTel?: string | null;
+  leaderMobile?: string | null;
+  leaderEmail?: string | null;
+  researchExecutors?: string | null;
+  financing?: string | null;
+  note?: string | null;
+  pincode?: string | null;
+  translation?: (ResearchProjectTranslationInput | null)[] | null;
+  oecds?: (OecdInput | null)[] | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteResearchProjectMutation
+// ====================================================
+
+export interface DeleteResearchProjectMutation_deleteResearchProject {
+  id: string | null;
+}
+
+export interface DeleteResearchProjectMutation {
+  deleteResearchProject: DeleteResearchProjectMutation_deleteResearchProject | null;
+}
+
+export interface DeleteResearchProjectMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountResearchProjectsQuery
+// ====================================================
+
+export interface CountResearchProjectsQuery {
+  countResearchProjects: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ResearchProjectQuery
+// ====================================================
+
+export interface ResearchProjectQuery_researchProject_translation {
+  title: string | null;
+  key: (string | null)[] | null;
+}
+
+export interface ResearchProjectQuery_researchProject_oecds {
+  code: string | null;
+}
+
+export interface ResearchProjectQuery_researchProject {
+  id: string | null;
+  inpDate: string | null;
+  regDate: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  regNumb: string | null;
+  research: string | null;
+  researchDirection: string | null;
+  researchExecutionBasis: string | null;
+  abstract: string | null;
+  annotation: string | null;
+  budget: number | null;
+  organizationName: string | null;
+  organizationShortName: string | null;
+  organizationCode: string | null;
+  organizationHead: string | null;
+  organizationCity: string | null;
+  organizationAddress: string | null;
+  organizationIndex: string | null;
+  organizationTel: string | null;
+  organizationWeb: string | null;
+  participatingInstitutionName: string | null;
+  participatingInstitutionCountryCity: string | null;
+  participatingInstitutionTel: string | null;
+  participatingInstitutionEmail: string | null;
+  participatingInstitutionWeb: string | null;
+  leaderName: string | null;
+  leaderPosition: string | null;
+  leaderAcademicDegree: string | null;
+  leaderTel: string | null;
+  leaderMobile: string | null;
+  leaderEmail: string | null;
+  researchExecutors: string | null;
+  financing: string | null;
+  note: string | null;
+  pincode: string | null;
+  translation: (ResearchProjectQuery_researchProject_translation | null)[] | null;
+  oecds: (ResearchProjectQuery_researchProject_oecds | null)[] | null;
+}
+
+export interface ResearchProjectQuery {
+  researchProject: ResearchProjectQuery_researchProject;
+}
+
+export interface ResearchProjectQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ResearchProjectsQuery
+// ====================================================
+
+export interface ResearchProjectsQuery_researchProjects_translation {
+  title: string | null;
+  key: (string | null)[] | null;
+}
+
+export interface ResearchProjectsQuery_researchProjects_oecds {
+  code: string | null;
+}
+
+export interface ResearchProjectsQuery_researchProjects {
+  id: string | null;
+  inpDate: string | null;
+  regDate: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  regNumb: string | null;
+  research: string | null;
+  researchDirection: string | null;
+  researchExecutionBasis: string | null;
+  abstract: string | null;
+  annotation: string | null;
+  budget: number | null;
+  organizationName: string | null;
+  organizationShortName: string | null;
+  organizationCode: string | null;
+  organizationHead: string | null;
+  organizationCity: string | null;
+  organizationAddress: string | null;
+  organizationIndex: string | null;
+  organizationTel: string | null;
+  organizationWeb: string | null;
+  participatingInstitutionName: string | null;
+  participatingInstitutionCountryCity: string | null;
+  participatingInstitutionTel: string | null;
+  participatingInstitutionEmail: string | null;
+  participatingInstitutionWeb: string | null;
+  leaderName: string | null;
+  leaderPosition: string | null;
+  leaderAcademicDegree: string | null;
+  leaderTel: string | null;
+  leaderMobile: string | null;
+  leaderEmail: string | null;
+  researchExecutors: string | null;
+  financing: string | null;
+  note: string | null;
+  pincode: string | null;
+  translation: (ResearchProjectsQuery_researchProjects_translation | null)[] | null;
+  oecds: (ResearchProjectsQuery_researchProjects_oecds | null)[] | null;
+}
+
+export interface ResearchProjectsQuery {
+  researchProjects: ResearchProjectsQuery_researchProjects[];
+}
+
+export interface ResearchProjectsQueryVariables {
+  languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: UpdateTechnologyTransferAndInnovationOrganizationMutation
 // ====================================================
 
@@ -1301,6 +1673,13 @@ export interface JournalInput {
 // null
 export interface QrjTranslationInput {
   address?: string | null;
+  language?: LanguageCode | null;
+}
+
+// null
+export interface ResearchProjectTranslationInput {
+  title?: string | null;
+  key?: (string | null)[] | null;
   language?: LanguageCode | null;
 }
 

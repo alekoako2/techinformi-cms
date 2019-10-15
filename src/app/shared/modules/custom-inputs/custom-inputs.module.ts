@@ -9,6 +9,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {LayoutContainerModule} from '../layout-container/layout-container.module';
 import {InputAutoCompleteComponent} from './input-auto-complete/input-auto-complete.component';
 import {InputMultipleSelectComponent} from './input-multiple-select/input-multiple-select.component';
+import {InputChipsComponent} from './input-chips/input-chips.component';
 
 
 @NgModule({
@@ -17,14 +18,16 @@ import {InputMultipleSelectComponent} from './input-multiple-select/input-multip
     InputTextAreaComponent,
     InputSelectComponent,
     InputAutoCompleteComponent,
-    InputMultipleSelectComponent
+    InputMultipleSelectComponent,
+    InputChipsComponent
   ],
   exports: [
     InputTextComponent,
     InputTextAreaComponent,
     InputSelectComponent,
     InputAutoCompleteComponent,
-    InputMultipleSelectComponent
+    InputMultipleSelectComponent,
+    InputChipsComponent
   ],
   imports: [
     CommonModule,
