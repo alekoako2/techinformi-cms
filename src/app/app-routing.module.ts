@@ -50,6 +50,12 @@ const appRoutes: Routes = [
         .then(mod => mod.ResearchProjectModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'news', loadChildren:
+      () => import( './modules/pages/news/news.module')
+        .then(mod => mod.NewsModule),
+    canActivate: [AuthGuard]
+  },
 
 ];
 

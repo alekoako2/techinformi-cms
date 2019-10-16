@@ -719,6 +719,35 @@
         </context-group>
         <target>Reset Password</target>
       </trans-unit>
+      <trans-unit id="technology_transfer_networks" datatype="html">
+        <source>
+          ტექნოლოგიის ტრანსფერის ქსელები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/sidenav-list/sidenav-list.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/pages/technology-transfer-centers/pages/main/main.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <target>technology transfer networks</target>
+      </trans-unit>
+      <trans-unit id="technology_transfer_and_innovation_organizations" datatype="html">
+        <source>ტექნოლოგიის
+          ტრანსფერის და ინოვაციების
+          ხელშემწყობი ორგანიზაციები
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/sidenav-list/sidenav-list.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/pages/technology-transfer-centers/pages/main/main.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <target>Technology Transfer And Innovation Organizations</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

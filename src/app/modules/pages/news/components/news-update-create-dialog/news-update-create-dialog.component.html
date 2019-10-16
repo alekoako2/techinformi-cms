@@ -1,0 +1,106 @@
+<app-dialog>
+  <div header *ngIf="!showCreate">მეცნიერი/ექსპერტის ცვლილება</div>
+  <div header *ngIf="showCreate">ახალი მეცნიერები/ექსპერტების დამატება</div>
+  <div body>
+
+    <form #myForm="ngForm" novalidate>
+
+      <div class="margin-top-2">
+
+        <mat-tab-group>
+          <mat-tab label="ქართული">
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="სათაური"
+                name="title"
+                required="true"
+                [inputModel]="newsData.translation[0]?.title"
+                (inputModelChange)="newsData.translation[0].title=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="აღწერა"
+                name="description"
+                required="true"
+                [inputModel]="newsData.translation[0]?.description"
+                (inputModelChange)="newsData.translation[0].description=$event"
+              ></app-input-text>
+
+            </div>
+            <div>
+              <quill-editor
+                name="content"
+                [(ngModel)]="newsData.translation[0].content"
+              ></quill-editor>
+            </div>
+
+          </mat-tab>
+
+          <mat-tab label="English">
+
+            <div>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-right-2"
+                placeholder="Title"
+                name="titleEng"
+                required="true"
+                [inputModel]="newsData.translation[1]?.title"
+                (inputModelChange)="newsData.translation[1].title=$event"
+              ></app-input-text>
+
+              <app-input-text
+                fxFlex="50"
+                class="margin-left-2"
+                placeholder="Description"
+                name="descriptionEng"
+                required="true"
+                [inputModel]="newsData.translation[1]?.description"
+                (inputModelChange)="newsData.translation[1].description=$event"
+              ></app-input-text>
+
+            </div>
+
+            <div>
+              <quill-editor
+                name="contentEng"
+                [(ngModel)]="newsData.translation[1].content"
+              ></quill-editor>
+            </div>
+
+          </mat-tab>
+        </mat-tab-group>
+
+      </div>
+
+    </form>
+
+  </div>
+  <div footer class="margin-left-4">
+    <button mat-raised-button
+            color="accent"
+            type="submit"
+            *ngIf="!showCreate"
+            (click)="update()"
+            [disabled]="!myForm.valid"
+    >
+      შენახვა
+    </button>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            *ngIf="showCreate"
+            (click)="create()"
+            [disabled]="!myForm.valid"
+    >
+      დამატება
+    </button>
+  </div>
+</app-dialog>

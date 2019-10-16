@@ -240,6 +240,150 @@ export interface ExpertsQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateNewsMutation
+// ====================================================
+
+export interface UpdateNewsMutation_updateNews_translation {
+  title: string | null;
+  description: string | null;
+  content: string | null;
+}
+
+export interface UpdateNewsMutation_updateNews {
+  id: string;
+  translation: (UpdateNewsMutation_updateNews_translation | null)[] | null;
+}
+
+export interface UpdateNewsMutation {
+  updateNews: UpdateNewsMutation_updateNews | null;
+}
+
+export interface UpdateNewsMutationVariables {
+  id: string;
+  translation?: (NewsTranslationInput | null)[] | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateNewsMutation
+// ====================================================
+
+export interface CreateNewsMutation_createNews_translation {
+  title: string | null;
+  description: string | null;
+  content: string | null;
+}
+
+export interface CreateNewsMutation_createNews {
+  id: string;
+  translation: (CreateNewsMutation_createNews_translation | null)[] | null;
+}
+
+export interface CreateNewsMutation {
+  createNews: CreateNewsMutation_createNews | null;
+}
+
+export interface CreateNewsMutationVariables {
+  translation?: (NewsTranslationInput | null)[] | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteNewsMutation
+// ====================================================
+
+export interface DeleteNewsMutation_deleteNews {
+  id: string;
+}
+
+export interface DeleteNewsMutation {
+  deleteNews: DeleteNewsMutation_deleteNews | null;
+}
+
+export interface DeleteNewsMutationVariables {
+  id?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: CountNewsesQuery
+// ====================================================
+
+export interface CountNewsesQuery {
+  countNewses: number | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: NewsQuery
+// ====================================================
+
+export interface NewsQuery_news_translation {
+  title: string | null;
+  description: string | null;
+  content: string | null;
+}
+
+export interface NewsQuery_news {
+  id: string;
+  translation: (NewsQuery_news_translation | null)[] | null;
+}
+
+export interface NewsQuery {
+  news: NewsQuery_news;
+}
+
+export interface NewsQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: NewsesQuery
+// ====================================================
+
+export interface NewsesQuery_newses_translation {
+  title: string | null;
+  description: string | null;
+  content: string | null;
+}
+
+export interface NewsesQuery_newses {
+  id: string;
+  translation: (NewsesQuery_newses_translation | null)[] | null;
+}
+
+export interface NewsesQuery {
+  newses: NewsesQuery_newses[];
+}
+
+export interface NewsesQueryVariables {
+  languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: string | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: UpdateOecdMutation
 // ====================================================
 
@@ -1661,6 +1805,14 @@ export interface OecdTranslationInput {
 // null
 export interface LanguageInput {
   code?: string | null;
+}
+
+// null
+export interface NewsTranslationInput {
+  title?: string | null;
+  description?: string | null;
+  content?: string | null;
+  language?: LanguageCode | null;
 }
 
 // null
