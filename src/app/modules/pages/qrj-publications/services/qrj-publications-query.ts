@@ -38,7 +38,7 @@ export const qrjPublicationQuery = gql`
 `;
 
 export const qrjPublicationsQuery = gql`
-    query QrjPublicationsQuery($languageCode:LanguageCode, $first:Int, $skip:Int, $query:String){
+    query QrjPublicationsQuery($languageCode:LanguageCode, $first:Int, $skip:Int, $query:qrjPublicationQueryInput){
         qrjPublications(query:$query, first:$first, skip:$skip){
             id
             index

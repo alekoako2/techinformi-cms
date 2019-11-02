@@ -3,7 +3,7 @@ import {
   ResearchProjectQuery_researchProject,
   ResearchProjectQuery_researchProject_oecds,
   ResearchProjectQuery_researchProject_translation, OecdsQuery,
-  OecdsQuery_oecds
+  OecdsQuery_oecds, ResearchProjectQuery_researchProject_translation_key
 } from '../../../../../types/operation-result-types';
 import {Store} from '@ngxs/store';
 import {OecdService} from '../../../oecd/OecdService/oecd.service';
@@ -31,9 +31,9 @@ export class ResearchProjectUpdateCreateDialogComponent implements OnInit {
     this.researchProjectData.translation = <ResearchProjectQuery_researchProject_translation[]> {};
     this.researchProjectData.translation[0] = <ResearchProjectQuery_researchProject_translation> {};
     this.researchProjectData.translation[1] = <ResearchProjectQuery_researchProject_translation> {};
-    this.researchProjectData.translation[0].key = <string[]> [];
-    this.researchProjectData.translation[1].key = <string[]> [];
-    
+    this.researchProjectData.translation[0].key = <ResearchProjectQuery_researchProject_translation_key[]> [];
+    this.researchProjectData.translation[1].key = <ResearchProjectQuery_researchProject_translation_key[]> [];
+
     this.researchProjectData.oecds = <ResearchProjectQuery_researchProject_oecds[]> [];
 
     if (data) {
@@ -43,8 +43,8 @@ export class ResearchProjectUpdateCreateDialogComponent implements OnInit {
         this.researchProjectData.translation = <ResearchProjectQuery_researchProject_translation[]> {};
         this.researchProjectData.translation[0] = <ResearchProjectQuery_researchProject_translation> {};
         this.researchProjectData.translation[1] = <ResearchProjectQuery_researchProject_translation> {};
-        this.researchProjectData.translation[0].key = <string[]> [];
-        this.researchProjectData.translation[1].key = <string[]> [];
+        this.researchProjectData.translation[0].key = <ResearchProjectQuery_researchProject_translation_key[]> [];
+        this.researchProjectData.translation[1].key = <ResearchProjectQuery_researchProject_translation_key[]> [];
       }
     }
   }

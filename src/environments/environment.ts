@@ -4,7 +4,7 @@
 
 
 export const environment = {
-  production: false,
+  production: true,
   graphqlLink: 'http://localhost:4000/graphql',
   firebase: {
     apiKey: 'AIzaSyCjE7e6B4NnhJPxZQChlaLZDHg54YwunKE',

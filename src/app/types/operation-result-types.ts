@@ -213,6 +213,7 @@ export interface ExpertsQuery_experts_languages {
 
 export interface ExpertsQuery_experts {
   id: string;
+  workExperience: string | null;
   inpDate: string | null;
   email: string | null;
   web: string | null;
@@ -232,7 +233,7 @@ export interface ExpertsQueryVariables {
   languageCode?: LanguageCode | null;
   first?: number | null;
   skip?: number | null;
-  query?: string | null;
+  query?: expertQueryInput | null;
 }
 
 
@@ -946,7 +947,7 @@ export interface QrjPublicationsQueryVariables {
   languageCode?: LanguageCode | null;
   first?: number | null;
   skip?: number | null;
-  query?: string | null;
+  query?: qrjPublicationQueryInput | null;
 }
 
 
@@ -1124,9 +1125,13 @@ export interface QrjsQueryVariables {
 // GraphQL mutation operation: UpdateResearchProjectMutation
 // ====================================================
 
+export interface UpdateResearchProjectMutation_updateResearchProject_translation_key {
+  name: string | null;
+}
+
 export interface UpdateResearchProjectMutation_updateResearchProject_translation {
   title: string | null;
-  key: (string | null)[] | null;
+  key: (UpdateResearchProjectMutation_updateResearchProject_translation_key | null)[] | null;
 }
 
 export interface UpdateResearchProjectMutation_updateResearchProject_oecds {
@@ -1227,9 +1232,13 @@ export interface UpdateResearchProjectMutationVariables {
 // GraphQL mutation operation: CreateResearchProjectMutation
 // ====================================================
 
+export interface CreateResearchProjectMutation_createResearchProject_translation_key {
+  name: string | null;
+}
+
 export interface CreateResearchProjectMutation_createResearchProject_translation {
   title: string | null;
-  key: (string | null)[] | null;
+  key: (CreateResearchProjectMutation_createResearchProject_translation_key | null)[] | null;
 }
 
 export interface CreateResearchProjectMutation_createResearchProject_oecds {
@@ -1361,9 +1370,13 @@ export interface CountResearchProjectsQuery {
 // GraphQL query operation: ResearchProjectQuery
 // ====================================================
 
+export interface ResearchProjectQuery_researchProject_translation_key {
+  name: string | null;
+}
+
 export interface ResearchProjectQuery_researchProject_translation {
   title: string | null;
-  key: (string | null)[] | null;
+  key: (ResearchProjectQuery_researchProject_translation_key | null)[] | null;
 }
 
 export interface ResearchProjectQuery_researchProject_oecds {
@@ -1427,9 +1440,13 @@ export interface ResearchProjectQueryVariables {
 // GraphQL query operation: ResearchProjectsQuery
 // ====================================================
 
+export interface ResearchProjectsQuery_researchProjects_translation_key {
+  name: string | null;
+}
+
 export interface ResearchProjectsQuery_researchProjects_translation {
   title: string | null;
-  key: (string | null)[] | null;
+  key: (ResearchProjectsQuery_researchProjects_translation_key | null)[] | null;
 }
 
 export interface ResearchProjectsQuery_researchProjects_oecds {
@@ -1485,7 +1502,7 @@ export interface ResearchProjectsQueryVariables {
   languageCode?: LanguageCode | null;
   first?: number | null;
   skip?: number | null;
-  query?: string | null;
+  query?: ResearchProjectQueryInput | null;
 }
 
 
@@ -1808,11 +1825,29 @@ export interface LanguageInput {
 }
 
 // null
+export interface expertQueryInput {
+  fullName?: string | null;
+  oecd?: string | null;
+  specialization?: string | null;
+}
+
+// null
 export interface NewsTranslationInput {
   title?: string | null;
   description?: string | null;
   content?: string | null;
   language?: LanguageCode | null;
+}
+
+// null
+export interface qrjPublicationQueryInput {
+  author?: string | null;
+  title?: string | null;
+  qrjJournal?: string | null;
+  oecd?: string | null;
+  keywords?: (string | null)[] | null;
+  yearStart?: string | null;
+  yearEnd?: string | null;
 }
 
 // null
@@ -1833,6 +1868,15 @@ export interface ResearchProjectTranslationInput {
   title?: string | null;
   key?: (string | null)[] | null;
   language?: LanguageCode | null;
+}
+
+// null
+export interface ResearchProjectQueryInput {
+  title?: string | null;
+  researchExecutors?: string | null;
+  keyword?: string | null;
+  organizationName?: string | null;
+  oecd?: string | null;
 }
 
 //==============================================================

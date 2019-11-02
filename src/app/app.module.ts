@@ -12,13 +12,14 @@ import {MaterialModule} from './shared/modules/material/material.module';
 import {HeaderModule} from './core/header/header.module';
 import {HideMissingLanguageElementModule} from './shared/modules/hide-missing-language-element/hide-missing-language-element.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {registerLocaleData} from '@angular/common';
+import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
 import localeKa from '@angular/common/locales/ka';
 import {GraphQLModule} from './graphql.module';
 import {NgxsFormPluginModule} from '@ngxs/form-plugin';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
 import {NgxsModule} from '@ngxs/store';
+import {environment} from '../environments/environment';
 
 registerLocaleData(localeKa, 'KA');
 
@@ -39,12 +40,12 @@ registerLocaleData(localeKa, 'KA');
     HeaderModule,
     HideMissingLanguageElementModule,
     GraphQLModule,
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([], {developmentMode: !environment.production}),
     NgxsFormPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot()
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

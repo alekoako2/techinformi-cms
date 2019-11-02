@@ -4,7 +4,6 @@ import {HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {HttpClientModule, HttpHeaders} from '@angular/common/http';
 import {ApolloLink} from 'apollo-link';
-import {AuthService} from './core/services/AuthService/auth.service';
 
 const uri = 'http://localhost:4000/graphql';
 
@@ -40,7 +39,4 @@ export function createApollo(httpLink: HttpLink) {
   ],
 })
 export class GraphQLModule {
-
-  constructor(private authService: AuthService) {
-  }
 }
