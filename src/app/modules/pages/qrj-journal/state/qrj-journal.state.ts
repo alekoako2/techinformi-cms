@@ -44,8 +44,7 @@ export class QrjJournalState {
     let searchText = action.payload.searchText;
     let index = action.payload.index;
     let limit = action.payload.limit;
-
-    return this.qrjJournalService.loadQrjJournals(searchText, index, limit).pipe(take(1), tap(res => {
+    return this.qrjJournalService.loadQrjJournals({searchText, index, limit}).pipe(take(1), tap(res => {
 
 
       patchState({qrjJournals: res.qrjJournals});

@@ -1,46 +1,62 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {OecdsQuery, OecdsQuery_oecds} from '../../../../types/operation-result-types';
-import {OecdService} from '../../../../modules/pages/oecd/OecdService/oecd.service';
 import {map, startWith} from 'rxjs/operators';
+import {QrjJournalsQuery} from '../../../../types/operation-result-types';
 
 @Component({
   selector: 'app-input-auto-complete',
   templateUrl: './input-auto-complete.component.html',
   styleUrls: ['./input-auto-complete.component.scss']
 })
-export class InputAutoCompleteComponent implements OnChanges {
+export class InputAutoCompleteComponent implements OnInit {
 
-  @Input() inputModel: string;
-  @Output() inputModelChange = new EventEmitter<string>();
+  @Input() inputModel: any;
+  @Output() inputModelChange = new EventEmitter<any>();
 
   @Input() placeholder: string;
-  
+
+  @Input() listName: string;
+
   @Input() name: string;
   @Input() required: boolean = false;
 
   @Input() list;
 
+  options = [];
+
   inputControl = new FormControl();
 
-  filteredInputOptions: Observable<OecdsQuery_oecds[]>;
+  filteredInputOptions: Observable<string[]>;
 
   constructor() {
   }
 
-  ngOnChanges() {
-    this.filteredInputOptions = this.inputControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value, this.list))
-      );
-  }
+  ngOnInit() {
 
-  private _filter(value: string, array): any[] {
-    if (array) {
-      const filterValue = value.toLowerCase();
-      return array.filter(item => item.code.toLowerCase().includes(filterValue));
+    if (this.list) {
+      this.list.subscribe(res => {
+        this.options = res[this.listName];
+        this.filteredInputOptions = this.inputControl.valueChanges
+          .pipe(
+            startWith(''),
+            map(value => typeof value === 'string' ? value : value.name),
+            map(name => name ? this._filter(name) : this.options.slice())
+          );
+        this.inputControl.setValue(this.inputModel);
+      });
     }
   }
+
+
+  displayFn(item?: any): string | undefined {
+    return item ? item.translation[0].name : undefined;
+  }
+
+  private _filter(name: string): any[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.translation[0].name.toLowerCase().indexOf(filterValue) === 0);
+  }
+
 }

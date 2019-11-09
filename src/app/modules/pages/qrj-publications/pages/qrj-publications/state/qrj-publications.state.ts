@@ -45,7 +45,13 @@ export class QrjPublicationsState {
     let limit = action.payload.limit;
 
 
-    return this.qrjPublicationsService.loadQrjPublications(searchText, index, limit).pipe(take(1), tap(res => {
+    console.log(searchText);
+
+    return this.qrjPublicationsService.loadQrjPublications({
+      query: {title: searchText, oecd: '', author: '', qrjJournal: ''},
+      index,
+      limit
+    }).pipe(take(1), tap(res => {
 
 
       patchState({qrjPublications: res.qrjPublications});

@@ -16,13 +16,14 @@
         ></app-input-text>
 
         <app-input-auto-complete
+          listName="oecds"
           fxFlex="50"
           class="margin-left-2"
           name="oecd"
           required="true"
           placeholder="კლასიფიკატორი (OECD)"
-          [inputModel]="publicationData.oecd?.code"
-          (inputModelChange)="publicationData.oecd.code=$event"
+          [inputModel]="publicationData.oecd"
+          (inputModelChange)="publicationData.oecd=$event"
           [list]="oecdList"
         >
 
@@ -32,14 +33,14 @@
 
       <div>
         <app-input-auto-complete
+          listName="qrjJournals"
           fxFlex="50"
           class="margin-right-2"
           name="oecd"
           required="true"
           placeholder="ჟურნალის დასახელება"
-          (journalModelChange)="publicationData.journal.code=$event"
-          [inputModel]="publicationData.journal?.code"
-          (inputModelChange)="publicationData.journal.code=$event"
+          [inputModel]="publicationData.journal"
+          (inputModelChange)="publicationData.journal=$event"
           [list]="qrjJournalList"
         >
         </app-input-auto-complete>

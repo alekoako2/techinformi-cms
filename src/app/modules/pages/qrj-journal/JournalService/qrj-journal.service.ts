@@ -32,7 +32,7 @@ export class QrjJournalService {
       );
   }
 
-  loadQrjJournals(searchText = '', index = 0, limit = 10) {
+  loadQrjJournals({searchText = '', index = 0, limit = undefined} = {}) {
     return this.apollo
       .watchQuery<QrjJournalsQuery>({
         variables: {

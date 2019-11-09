@@ -50,7 +50,7 @@ export class ResearchProjectUpdateCreateDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.oecdService.loadOecds('', 0, 500)
+    this.oecdService.loadOecds()
       .subscribe((res: OecdsQuery) => {
         this.oecdList = res.oecds;
       });

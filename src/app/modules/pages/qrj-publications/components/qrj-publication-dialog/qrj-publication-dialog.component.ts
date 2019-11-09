@@ -25,8 +25,8 @@ export class QrjPublicationDialogComponent implements OnInit {
 
   showCreate: boolean = true;
   publicationData: QrjPublicationQuery_qrjPublication;
-  oecdList: OecdsQuery_oecds[];
-  qrjJournalList: QrjJournalsQuery_qrjJournals[];
+  oecdList: Observable<OecdsQuery>;
+  qrjJournalList: Observable<QrjJournalsQuery>;
 
   constructor(
     private store: Store,
@@ -51,14 +51,9 @@ export class QrjPublicationDialogComponent implements OnInit {
 
   ngOnInit() {
 
-    this.oecdService.loadOecds()
-      .subscribe((res: OecdsQuery) => {
-        this.oecdList = res.oecds;
-      });
-    this.qrjJournalService.loadQrjJournals()
-      .subscribe((res: QrjJournalsQuery) => {
-        this.qrjJournalList = res.qrjJournals;
-      });
+    this.oecdList = this.oecdService.loadOecds();
+
+    this.qrjJournalList = this.qrjJournalService.loadQrjJournals();
 
   }
 
