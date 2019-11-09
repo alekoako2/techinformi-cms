@@ -30,14 +30,14 @@ export class ResearchProjectService {
       );
   }
 
-  loadResearchProjects(searchText = '', index = 0, limit = 10) {
+  loadResearchProjects(query = {title: '', researchExecutors: '', keyword: '', organizationName: '', oecd: ''}, index = 0, limit = 10) {
     return this.apollo
       .watchQuery<ResearchProjectsQuery>({
         variables: {
           languageCode: this.localeId.toUpperCase(),
           first: limit,
           skip: index * limit,
-          query: searchText
+          query: {...query}
         },
         query: researchProjectsQuery
       }).valueChanges.pipe(map(researchProjectsData => researchProjectsData.data));
@@ -118,7 +118,6 @@ export class ResearchProjectService {
   }
 
   updateResearchProject(input: UpdateResearchProjectMutation_updateResearchProject) {
-    console.log(input.id);
     return this.apollo
       .mutate<UpdateResearchProjectMutation>({
         variables: {

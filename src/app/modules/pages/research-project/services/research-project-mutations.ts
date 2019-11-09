@@ -121,7 +121,9 @@ export const updateResearchProjectMutation = gql`
             pincode
             translation{
                 title
-                key
+                key{
+                    name
+                }
             }
             oecds{
                 code
@@ -248,7 +250,9 @@ export const createResearchProjectMutation = gql`
             pincode
             translation{
                 title
-                key
+                key{
+                    name
+                }
             }
             oecds{
                 code

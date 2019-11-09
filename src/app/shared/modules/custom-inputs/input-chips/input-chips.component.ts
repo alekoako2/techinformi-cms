@@ -15,6 +15,7 @@ export class InputChipsComponent implements OnInit {
   @Input() inputModel: string[] = [];
   @Output() inputModelChange = new EventEmitter<string[]>();
   @Input() placeholder: string;
+  @Input() fieldName: string;
   @Input() name: string;
   @Input() required: boolean = false;
 
@@ -28,8 +29,8 @@ export class InputChipsComponent implements OnInit {
     const input = event.input;
     const value = event.value;
 
-
     if ((value || '').trim()) {
+      console.log(value);
       this.inputModel.push(value.trim());
     }
     if (input) {

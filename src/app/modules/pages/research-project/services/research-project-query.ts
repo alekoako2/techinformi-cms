@@ -47,7 +47,9 @@ export const researchProjectQuery = gql`
             pincode
             translation{
                 title
-                key
+                key{
+                    name
+                }
             }
             oecds{
                 code
@@ -57,7 +59,7 @@ export const researchProjectQuery = gql`
 `;
 
 export const researchProjectsQuery = gql`
-    query ResearchProjectsQuery($languageCode:LanguageCode, $first:Int, $skip:Int, $query:String){
+    query ResearchProjectsQuery($languageCode:LanguageCode, $first:Int, $skip:Int, $query:ResearchProjectQueryInput){
         researchProjects(query:$query, first:$first, skip:$skip){
             id
             inpDate
@@ -97,7 +99,9 @@ export const researchProjectsQuery = gql`
             pincode
             translation(language:$languageCode){
                 title
-                key
+                key{
+                    name
+                }
             }
             oecds{
                 code

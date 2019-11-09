@@ -29,14 +29,14 @@ export class ExpertService {
       );
   }
 
-  loadExperts(searchText = '', index = 0, limit = 10) {
+  loadExperts(query = {fullName: '', oecd: '', specialization: ''}, index = 0, limit = 10) {
     return this.apollo
       .watchQuery<ExpertsQuery>({
         variables: {
           languageCode: this.localeId.toUpperCase(),
           first: limit,
           skip: index * limit,
-          query: searchText
+          query: {...query}
         },
         query: expertsQuery
       }).valueChanges.pipe(map(expertsData => expertsData.data));

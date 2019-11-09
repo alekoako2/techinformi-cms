@@ -35,7 +35,7 @@ export class OecdState {
     let index = action.payload.index;
     let limit = action.payload.limit;
 
-    return this.oecdService.loadOecds(searchText, index, limit).pipe(take(1), tap(res => {
+    return this.oecdService.loadOecds({searchText, index, limit}).pipe(take(1), tap(res => {
 
 
       patchState({oecds: res.oecds});

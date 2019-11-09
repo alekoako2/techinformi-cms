@@ -30,7 +30,7 @@ export class OecdService {
       );
   }
 
-  loadOecds(searchText = '', index = 0, limit = 10) {
+  loadOecds({searchText = '', index = 0, limit = undefined} = {}) {
     return this.apollo
       .watchQuery<OecdsQuery>({
         variables: {

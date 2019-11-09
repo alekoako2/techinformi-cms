@@ -35,9 +35,10 @@ export const expertQuery = gql`
 `;
 
 export const expertsQuery = gql`
-    query ExpertsQuery($languageCode:LanguageCode, $first:Int, $skip:Int, $query:String){
+    query ExpertsQuery($languageCode:LanguageCode, $first:Int, $skip:Int, $query:expertQueryInput){
         experts(query:$query, first:$first, skip:$skip){
             id
+            workExperience
             inpDate
             email
             web
