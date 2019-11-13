@@ -3419,6 +3419,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "index",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "author",
               "description": null,
               "type": {

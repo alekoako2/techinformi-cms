@@ -22,7 +22,7 @@ export class QrjPublicationService {
       }).valueChanges.pipe(map(count => count.data));
   }
 
-  loadQrjPublications({query = {author: '', title: '', oecd: '', qrjJournal: ''}, index = 0, limit = undefined} = {}) {
+  loadQrjPublications({query = {index: '', author: '', title: '', oecd: '', qrjJournal: ''}, index = 0, limit = undefined} = {}) {
 
     return this.apollo
       .watchQuery<QrjPublicationsQuery>({
