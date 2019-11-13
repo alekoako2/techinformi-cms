@@ -48,7 +48,7 @@ export class QrjPublicationsState {
     console.log(searchText);
 
     return this.qrjPublicationsService.loadQrjPublications({
-      query: {title: searchText, oecd: '', author: '', qrjJournal: ''},
+      query: {index: searchText, title: '', oecd: '', author: '', qrjJournal: ''},
       index,
       limit
     }).pipe(take(1), tap(res => {

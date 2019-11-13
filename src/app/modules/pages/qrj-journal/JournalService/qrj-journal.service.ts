@@ -81,9 +81,11 @@ export class QrjJournalService {
       .mutate<UpdateQrjJournalMutation>({
         variables: {
           id: input.id,
-          index: input.code,
+          code: input.code,
           name: input.translation[0].name,
+          address: input.translation[0].address,
           nameEng: input.translation[1].name,
+          addressEng: input.translation[1].address,
         },
         mutation: updateQrjJournalMutation
       })
