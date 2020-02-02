@@ -95,7 +95,6 @@ export class QrjJournalService {
   }
 
   deleteQrjJournal(id: string) {
-    console.log(id);
     return this.apollo
       .mutate<DeleteQrjJournalMutation>({
         variables: {

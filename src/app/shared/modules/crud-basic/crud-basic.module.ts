@@ -13,9 +13,8 @@ import {SharedModule} from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule,
     FormsModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class CrudBasicModule {

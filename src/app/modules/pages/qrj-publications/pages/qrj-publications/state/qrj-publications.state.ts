@@ -44,9 +44,6 @@ export class QrjPublicationsState {
     let index = action.payload.index;
     let limit = action.payload.limit;
 
-
-    console.log(searchText);
-
     return this.qrjPublicationsService.loadQrjPublications({
       query: {index: searchText, title: '', oecd: '', author: '', qrjJournal: ''},
       index,

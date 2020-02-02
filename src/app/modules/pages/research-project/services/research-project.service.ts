@@ -179,7 +179,6 @@ export class ResearchProjectService {
   }
 
   deleteResearchProject(id: string) {
-    console.log(id);
     return this.apollo
       .mutate<DeleteResearchProjectMutation>({
         variables: {

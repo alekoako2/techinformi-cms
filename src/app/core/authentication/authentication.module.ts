@@ -8,10 +8,11 @@ import {ForgotPasswordComponent} from './pages/forgot-password/forgot-password.c
 import {FormsModule} from '@angular/forms';
 import {SharedModule} from '../../shared/modules/shared/shared.module';
 import {LanguageChangerModule} from '../../shared/modules/language-changer/language-changer.module';
-import { LayoutComponent } from './components/layout/layout.component';
+import {LayoutComponent} from './components/layout/layout.component';
+import {ErrorsComponent} from './components/errors/errors.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, LayoutComponent],
+  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, LayoutComponent, ErrorsComponent],
   imports: [
     CommonModule,
     SharedModule,

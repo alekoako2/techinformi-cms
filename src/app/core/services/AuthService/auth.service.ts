@@ -3,6 +3,8 @@ import {Apollo} from 'apollo-angular';
 import {loginMutation} from './login.mutation';
 import {Tokens} from '../../../shared/models/tokens/tokens';
 import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material';
+import {ErrorsComponent} from '../../authentication/components/errors/errors.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +15,10 @@ export class AuthService {
   private readonly USER = 'USER';
   private loggedUser: any;
 
-  constructor(private apollo: Apollo, @Inject(LOCALE_ID) public localeId: string, private router: Router) {
+  constructor(private apollo: Apollo, @Inject(LOCALE_ID) public localeId: string, private router: Router, private _snackBar: MatSnackBar) {
   }
 
   login(email: string, password: string) {
-
     this.apollo
       .mutate({
         variables: {
@@ -28,14 +29,20 @@ export class AuthService {
         mutation: loginMutation
       })
       .subscribe(res => {
-        this.doLoginUser(res.data.login.user, res.data.login.token);
-        this.router.navigate(['/home']);
+        console.log(res);
+        this.doLoginUser(res.data['login'].user, res.data['login'].token);
+        this.apollo.getClient().resetStore();
+      }, (error: Error) => {
+        this._snackBar.openFromComponent(ErrorsComponent, {
+          data: error.message.replace('GraphQL error: ', ''),
+          duration: 5000
+        });
       });
   }
 
   logout() {
+    this.apollo.getClient().resetStore();
     this.doLogoutUser();
-    this.router.navigate(['/auth/login']);
     // return this.http.post<any>(`${config.apiUrl}/logout`, {
     //   'refreshToken': this.getRefreshToken()
     // }).pipe(
@@ -93,12 +100,14 @@ export class AuthService {
   private storeTokens(user, tokens) {
     localStorage.setItem(this.JWT_TOKEN, tokens);
     localStorage.setItem(this.USER, JSON.stringify(user));
+    location.reload();
     // localStorage.setItem(this.REFRESH_TOKEN, tokens.refreshToken);
   }
 
   private removeTokens() {
     localStorage.removeItem(this.JWT_TOKEN);
-    localStorage.removeItem(this.REFRESH_TOKEN);
+    localStorage.removeItem(this.USER);
+    location.reload();
   }
 
 }

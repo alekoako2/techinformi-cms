@@ -20,6 +20,7 @@ import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
 import {NgxsModule} from '@ngxs/store';
 import {environment} from '../environments/environment';
+import {ErrorsComponent} from './core/authentication/components/errors/errors.component';
 
 registerLocaleData(localeKa, 'KA');
 
@@ -42,11 +43,14 @@ registerLocaleData(localeKa, 'KA');
     GraphQLModule,
     NgxsModule.forRoot([], {developmentMode: !environment.production}),
     NgxsFormPluginModule.forRoot(),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot()
+    NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
+    NgxsLoggerPluginModule.forRoot({disabled: environment.production})
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ErrorsComponent
+  ]
 })
 export class AppModule {
 }
