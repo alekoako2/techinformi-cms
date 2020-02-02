@@ -118,7 +118,6 @@ export class QrjService {
   }
 
   deleteQrj(id: string) {
-    console.log(id);
     return this.apollo
       .mutate<DeleteQrjMutation>({
         variables: {

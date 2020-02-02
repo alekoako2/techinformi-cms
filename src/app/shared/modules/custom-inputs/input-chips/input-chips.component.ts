@@ -30,7 +30,6 @@ export class InputChipsComponent implements OnInit {
     const value = event.value;
 
     if ((value || '').trim()) {
-      console.log(value);
       this.inputModel.push(value.trim());
     }
     if (input) {

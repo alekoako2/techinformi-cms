@@ -138,7 +138,6 @@ export class ExpertService {
   }
 
   deleteExpert(id: string) {
-    console.log(id);
     return this.apollo
       .mutate<DeleteExpertMutation>({
         variables: {

@@ -31,7 +31,6 @@ export class OecdAutoCompleteInputComponent implements OnInit {
     // this.res.oecds = <OecdsQuery_oecds[]> [];
     // this.list.subscribe((res) => {
     this.list.subscribe((res) => {
-      console.log(res);
     });
     // this.filteredOecdOptions = this
     //   .oecdControl
@@ -49,7 +48,6 @@ export class OecdAutoCompleteInputComponent implements OnInit {
   }
 
   private _filter(value: string, array): any[] {
-    console.log(array);
     if (array) {
       const filterValue = value.toLowerCase();
       return array.filter(item => item.code.toLowerCase().includes(filterValue));

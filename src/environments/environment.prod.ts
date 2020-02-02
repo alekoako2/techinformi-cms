@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  graphqlLink: 'http://api.ui.ge/graphql',
+  graphqlLink: 'https://api.techinformi.ge/graphql',
   firebase: {
     apiKey: 'AIzaSyCjE7e6B4NnhJPxZQChlaLZDHg54YwunKE',
     authDomain: 'techinform-40dd4.firebaseapp.com',

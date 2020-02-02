@@ -89,7 +89,6 @@ export class OecdService {
   }
 
   deleteOecd(id: string) {
-    console.log(id);
     return this.apollo
       .mutate<DeleteOecdMutation>({
         variables: {

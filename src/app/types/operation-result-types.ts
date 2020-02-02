@@ -28,6 +28,7 @@ export interface UpdateExpertMutation_updateExpert {
   id: string;
   inpDate: string | null;
   email: string | null;
+  workExperience: string | null;
   web: string | null;
   tel: string | null;
   mobile: string | null;
@@ -82,6 +83,7 @@ export interface CreateExpertMutation_createExpert_languages {
 export interface CreateExpertMutation_createExpert {
   id: string;
   inpDate: string | null;
+  workExperience: string | null;
   email: string | null;
   web: string | null;
   tel: string | null;
@@ -168,6 +170,7 @@ export interface ExpertQuery_expert_languages {
 export interface ExpertQuery_expert {
   id: string;
   inpDate: string | null;
+  workExperience: string | null;
   email: string | null;
   web: string | null;
   tel: string | null;
@@ -712,6 +715,7 @@ export interface UpdateQrjPublicationMutation_updateQrjPublication_translation {
 export interface UpdateQrjPublicationMutation_updateQrjPublication {
   id: string;
   index: string | null;
+  edited: boolean | null;
   year: string | null;
   number: string | null;
   pages: string | null;
@@ -779,6 +783,7 @@ export interface CreateQrjPublicationMutation_createQrjPublication_translation {
 export interface CreateQrjPublicationMutation_createQrjPublication {
   id: string;
   index: string | null;
+  edited: boolean | null;
   year: string | null;
   number: string | null;
   pages: string | null;
@@ -877,6 +882,7 @@ export interface QrjPublicationQuery_qrjPublication_translation {
 export interface QrjPublicationQuery_qrjPublication {
   id: string;
   index: string | null;
+  edited: boolean | null;
   year: string | null;
   number: string | null;
   pages: string | null;
@@ -930,6 +936,7 @@ export interface QrjPublicationsQuery_qrjPublications_translation {
 export interface QrjPublicationsQuery_qrjPublications {
   id: string;
   index: string | null;
+  edited: boolean | null;
   year: string | null;
   number: string | null;
   pages: string | null;

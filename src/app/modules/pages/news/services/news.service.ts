@@ -109,7 +109,6 @@ export class NewsService {
   }
 
   deleteNews(id: string) {
-    console.log(id);
     return this.apollo
       .mutate<DeleteNewsMutation>({
         variables: {

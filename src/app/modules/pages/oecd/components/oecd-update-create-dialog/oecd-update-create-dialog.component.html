@@ -11,7 +11,6 @@
           class="margin-right-2"
           placeholder="ინდექსი"
           name="code"
-          required="true"
           [(inputModel)]="oecdData.code"
         ></app-input-text>
 
@@ -27,7 +26,6 @@
                 fxFlex="100"
                 placeholder="სათაური"
                 name="name"
-                required="true"
                 [inputModel]="oecdData.translation[0]?.name"
                 (inputModelChange)="oecdData.translation[0].name=$event"
               ></app-input-text>
@@ -43,7 +41,6 @@
                 fxFlex="100"
                 placeholder="Title"
                 name="nameEng"
-                required="true"
                 [inputModel]="oecdData.translation[1]?.name"
                 (inputModelChange)="oecdData.translation[1].name=$event"
               ></app-input-text>

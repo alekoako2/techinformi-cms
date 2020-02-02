@@ -24,7 +24,6 @@ export class InputMultipleSelectComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.inputModel);
     for (let i = 0; i < this.inputModel.length; i++) {
       this.inputModel2.push(this.inputModel[i][this.listFieldValueName]);
     }

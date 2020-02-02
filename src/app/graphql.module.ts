@@ -23,7 +23,7 @@ export function createApollo(httpLink: HttpLink) {
     link = middleware.concat(link);
   }
 
-  const cache = new InMemoryCache({addTypename: false});
+  const cache = new InMemoryCache();
 
   return {link, cache};
 

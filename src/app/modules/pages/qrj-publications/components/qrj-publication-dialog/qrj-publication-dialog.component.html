@@ -11,7 +11,6 @@
           class="margin-right-2"
           placeholder="ინდექსი"
           name="index"
-          required="true"
           [(inputModel)]="publicationData.index"
         ></app-input-text>
 
@@ -20,7 +19,6 @@
           fxFlex="50"
           class="margin-left-2"
           name="oecd"
-          required="true"
           placeholder="კლასიფიკატორი (OECD)"
           [inputModel]="publicationData.oecd"
           (inputModelChange)="publicationData.oecd=$event"
@@ -34,39 +32,34 @@
       <div>
         <app-input-auto-complete
           listName="qrjJournals"
-          fxFlex="50"
           class="margin-right-2"
           name="oecd"
-          required="true"
           placeholder="ჟურნალის დასახელება"
           [inputModel]="publicationData.journal"
           (inputModelChange)="publicationData.journal=$event"
           [list]="qrjJournalList"
         >
         </app-input-auto-complete>
+      </div>
 
+
+      <div>
         <app-input-select
           fxFlex="50"
           class="margin-left-2"
           label="წელი"
           [array]="arrayThree(25, 2000)"
           name="year"
-          required="true"
           [inputSelectModel]="publicationData.year"
           (inputSelectModelChange)="publicationData.year=$event"
         >
         </app-input-select>
-
-      </div>
-
-      <div>
 
         <app-input-text
           fxFlex="50"
           class="margin-right-2"
           placeholder="ნომერი"
           name="number"
-          required="true"
           [(inputModel)]="publicationData.number"
         ></app-input-text>
 
@@ -75,7 +68,6 @@
           class="margin-left-2"
           placeholder="გვერდები"
           name="pages"
-          required="true"
           [(inputModel)]="publicationData.pages"
         ></app-input-text>
 
@@ -90,7 +82,6 @@
                 fxFlex="100"
                 placeholder="სათაური"
                 name="title"
-                required="true"
                 [inputModel]="publicationData.translation[0]?.title"
                 (inputModelChange)="publicationData.translation[0].title=$event"
               ></app-input-text>
@@ -102,7 +93,6 @@
                 fxFlex="100"
                 placeholder="ავტორი"
                 name="publicationAuthor"
-                required="true"
                 [inputModel]="publicationData.translation[0]?.publicationAuthor"
                 (inputModelChange)="publicationData.translation[0].publicationAuthor=$event"
               ></app-input-text>
@@ -113,7 +103,6 @@
                 fxFlex="100"
                 placeholder="ენები"
                 name="publicationLang"
-                required="true"
                 [inputModel]="publicationData.translation[0]?.publicationLang"
                 (inputModelChange)="publicationData.translation[0].publicationLang=$event"
               ></app-input-text>
@@ -124,7 +113,6 @@
                 fxFlex="100"
                 placeholder="რეფერატი"
                 name="abstract"
-                required="true"
                 [inputTextAreaModel]="publicationData.translation[0]?.abstract"
                 (inputTextAreaModelChange)="publicationData.translation[0].abstract=$event"
               ></app-input-text-area>
@@ -139,7 +127,6 @@
                 fxFlex="100"
                 placeholder="Title"
                 name="titleEng"
-                required="true"
                 [inputModel]="publicationData.translation[1]?.title"
                 (inputModelChange)="publicationData.translation[1].title=$event"
               ></app-input-text>
@@ -150,7 +137,6 @@
                 fxFlex="100"
                 placeholder="Author"
                 name="publicationAuthorEng"
-                required="true"
                 [inputModel]="publicationData.translation[1]?.publicationAuthor"
                 (inputModelChange)="publicationData.translation[1].publicationAuthor=$event"
               ></app-input-text>
@@ -161,7 +147,6 @@
                 fxFlex="100"
                 placeholder="Languages"
                 name="publicationLangEng"
-                required="true"
                 [inputModel]="publicationData.translation[1]?.publicationLang"
                 (inputModelChange)="publicationData.translation[1].publicationLang=$event"
               ></app-input-text>
@@ -172,7 +157,6 @@
                 fxFlex="100"
                 placeholder="Abstract"
                 name="abstractEng"
-                required="true"
                 [inputTextAreaModel]="publicationData.translation[1]?.abstract"
                 (inputTextAreaModelChange)="publicationData.translation[1].abstract=$event"
               ></app-input-text-area>

@@ -43,7 +43,9 @@ export class InputAutoCompleteComponent implements OnInit {
             map(value => typeof value === 'string' ? value : value.name),
             map(name => name ? this._filter(name) : this.options.slice())
           );
-        this.inputControl.setValue(this.inputModel);
+        if (Object.keys(this.inputModel).length !== 0) {
+          this.inputControl.setValue(this.inputModel);
+        }
       });
     }
   }

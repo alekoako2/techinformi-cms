@@ -57,7 +57,6 @@ export class QrjPublicationDialogComponent implements OnInit {
 
   }
 
-
   arrayThree(n: number, startFrom: number): number[] {
     return [...Array(n).keys()].map(i => i + startFrom);
   }
