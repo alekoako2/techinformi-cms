@@ -23,8 +23,8 @@ export class OrderHistoryComponent implements OnInit {
   displayedColumns: string[] = ['order_id', 'name', 'price', 'status'];
   dataSource: MatTableDataSource<UserData>;
 
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor() {
     // Create 100 users
