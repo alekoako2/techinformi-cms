@@ -3,7 +3,7 @@ import {Apollo} from 'apollo-angular';
 import {loginMutation} from './login.mutation';
 import {Tokens} from '../../../shared/models/tokens/tokens';
 import {Router} from '@angular/router';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {ErrorsComponent} from '../../authentication/components/errors/errors.component';
 
 @Injectable({

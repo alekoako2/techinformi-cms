@@ -6,7 +6,7 @@ import {
   ExpertQuery_expert_translation, OecdsQuery, OecdsQuery_oecds
 } from '../../../../../types/operation-result-types';
 import {Store} from '@ngxs/store';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {CreateExpert, UpdateExpert} from '../../../expert/state/expert.actions';
 import {OecdService} from '../../../oecd/OecdService/oecd.service';
 

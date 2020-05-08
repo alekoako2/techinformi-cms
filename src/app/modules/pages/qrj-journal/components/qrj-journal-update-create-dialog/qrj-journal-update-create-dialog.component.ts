@@ -6,7 +6,7 @@ import {
   QrjJournalQuery_qrjJournal_translation
 } from '../../../../../types/operation-result-types';
 import {Store} from '@ngxs/store';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {CreateOecd, UpdateOecd} from '../../../oecd/state/oecd.actions';
 import {CreateQrjJournal, UpdateQrjJournal} from '../../state/qrj-journal.actions';
 

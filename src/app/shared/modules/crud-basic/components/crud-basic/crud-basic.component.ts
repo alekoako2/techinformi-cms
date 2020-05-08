@@ -3,7 +3,7 @@ import {
   GetQrjPublication,
 } from '../../../../../modules/pages/qrj-publications/pages/qrj-publications/state/qrj-publications.actions';
 import {Store} from '@ngxs/store';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 export interface NestedArray {
   name: string,

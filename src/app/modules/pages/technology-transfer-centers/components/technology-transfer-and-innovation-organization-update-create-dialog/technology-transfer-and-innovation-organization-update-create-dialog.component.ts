@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {TechnologyTransferAndInnovationOrganizationQuery_technologyTransferAndInnovationOrganization} from '../../../../../types/operation-result-types';
 import {Store} from '@ngxs/store';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {
   CreateTechnologyTransferAndInnovationOrganization,
   UpdateTechnologyTransferAndInnovationOrganization

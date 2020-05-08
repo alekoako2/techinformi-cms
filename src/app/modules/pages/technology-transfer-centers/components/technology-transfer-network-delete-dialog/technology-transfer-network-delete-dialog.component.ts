@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {Store} from '@ngxs/store';
 import {DeleteQrj} from '../../../qrj/state/qrj.actions';
 import {DeleteTechnologyTransferNetwork} from '../../pages/technology-transfer-network/state/technology-transfer-network.actions';

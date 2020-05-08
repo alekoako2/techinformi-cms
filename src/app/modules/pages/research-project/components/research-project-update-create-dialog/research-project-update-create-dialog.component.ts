@@ -7,7 +7,7 @@ import {
 } from '../../../../../types/operation-result-types';
 import {Store} from '@ngxs/store';
 import {OecdService} from '../../../oecd/OecdService/oecd.service';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {CreateResearchProject, UpdateResearchProject} from '../../state/research-project.actions';
 
 @Component({

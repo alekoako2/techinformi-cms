@@ -1,5 +1,5 @@
 import {Directive, HostListener, Input} from '@angular/core';
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Directive({
   selector: '[appSnackbar]'

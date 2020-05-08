@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {QrjQuery_qrj, QrjQuery_qrj_journal, QrjQuery_qrj_journal_translation} from '../../../../../types/operation-result-types';
 import {Store} from '@ngxs/store';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {CreateQrj, UpdateQrj} from '../../state/qrj.actions';
 
 @Component({

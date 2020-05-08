@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {Store} from '@ngxs/store';
 import {DeleteQrjPublication} from '../../pages/qrj-publications/state/qrj-publications.actions';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {QrjPublicationQuery_qrjPublication} from '../../../../../types/operation-result-types';
 
 @Component({
