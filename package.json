@@ -56,7 +56,7 @@
     "@angular/compiler-cli": "~9.1.5",
     "@angular/language-service": "~9.1.5",
     "@ngxs/cli": "^2.0.0",
-    "@ngxs/devtools-plugin": "^3.5.0",
+    "@ngxs/devtools-plugin": "^3.6.2",
     "@ngxs/logger-plugin": "^3.5.0",
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.3",
