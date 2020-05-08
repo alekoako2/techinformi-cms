@@ -1151,10 +1151,10 @@
     rxjs "6.5.4"
     webpack-sources "1.4.3"
 
-"@ngxs/cli@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ngxs/cli/-/cli-1.0.0.tgz#13455a7444840d4071d7ccb153afc525aa8202a7"
-  integrity sha512-wL8Eq7HXd7uEQ5+VOTH8Oaqh0a/MrV9MCevNmo3El1t4BsPVwcU7gSszN92Yp9nNWL/Pv8jXlBLV7PnEIFdSmg==
+"@ngxs/cli@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ngxs/cli/-/cli-2.0.0.tgz#1bf156bc0338278f011aa5179cdd585ed8f74de1"
+  integrity sha512-XhbUUnb3ueGnBgJd0mYHPhirOz8/nTrq48yiz6ccXp5SEqWpl4vukDSa5s+F+3uyltvjijdLbwJ1a2V/U24okA==
   dependencies:
     colors "^1.3.1"
     command-line-args "^5.0.2"
