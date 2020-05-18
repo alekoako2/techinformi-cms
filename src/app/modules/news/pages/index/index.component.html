@@ -1,0 +1,17 @@
+<layout-container [flexWidth]="100">
+  <page-title-bar title="მეცნიერები/ექსპერტები"></page-title-bar>
+  <app-crud-basic
+    [length]="countNewses$"
+    [create_update_dialog_component]="NewsUpdateCreateDialogComponent"
+    [delete_dialog_component]="NewsDeleteDialogComponent"
+    [list]="newses$"
+    [schema]="{
+      header: 'id',
+      nested: { title: 'title', name: 'translation' }
+    }"
+    [loadState]="LoadNewses"
+    [getSingleItemState]="GetNews"
+    [countState]="CountNewses"
+  >
+  </app-crud-basic>
+</layout-container>

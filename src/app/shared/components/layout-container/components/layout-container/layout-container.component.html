@@ -1,0 +1,10 @@
+<div [class]="backgroundColor" fxLayoutAlign="center">
+  <div
+    [fxLayout]="layoutStyle"
+    [fxFlex.lt-lg]="ltLg"
+    [fxFlex]="flexWidth"
+    [fxLayoutGap]="layoutGap"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+{
+  "main": "snackbar.directive.ts",
+  "typings": "snackbar.directive.ts"
+}

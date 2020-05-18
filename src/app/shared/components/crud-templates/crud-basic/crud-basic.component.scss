@@ -1,0 +1,13 @@
+.flex-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+  .item-wrapper {
+    margin: 20px;
+    overflow: hidden;
+
+    ::ng-deep .mat-card-header-text {
+      margin: 0;
+    }
+  }
+}

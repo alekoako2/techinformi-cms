@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>
+  <ng-content select="[title]"></ng-content>
+</h1>
+<div mat-dialog-content>
+  <ng-content select="[content]"></ng-content>
+</div>
+<div fxLayoutAlign="end" fxLayoutGap="16px">
+  <button (click)="onNoClick()" mat-raised-button i18n="@@close">
+    დახურვა
+  </button>
+  <ng-content select="[actions]"></ng-content>
+</div>

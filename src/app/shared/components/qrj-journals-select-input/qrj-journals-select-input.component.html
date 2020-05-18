@@ -1,0 +1,8 @@
+<input-select-with-key i18n-label="@@publication_name"
+              label="გამოცემის დასახელება"
+              name="qrjJournal"
+              (inputSelectModelChange)="qrjJournalChange.emit($event)"
+              [(inputSelectModel)]="qrjJournal"
+              (selectstart)="loadQrjJournalsSelectList()"
+              [list]="qrjJournalsSelectList">
+</input-select-with-key>

@@ -1,0 +1,4 @@
+{
+  "main": "custom-dialog.module.ts",
+  "typings": "custom-dialog.module.ts"
+}

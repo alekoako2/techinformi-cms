@@ -1,20 +1,18 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 
 @Component({
   selector: 'app-responsive-search',
   templateUrl: './responsive-search.component.html',
-  styleUrls: ['./responsive-search.component.scss']
+  styleUrls: ['./responsive-search.component.scss'],
 })
 export class ResponsiveSearchComponent implements OnInit {
-  @Output() closeSearch = new EventEmitter();
+  @Output() closeSearch = new EventEmitter()
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onCloseResponsiveSearch() {
-    this.closeSearch.emit();
+    this.closeSearch.emit()
   }
 }

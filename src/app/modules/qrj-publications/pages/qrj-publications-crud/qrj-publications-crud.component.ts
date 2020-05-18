@@ -1,0 +1,94 @@
+import { Component } from '@angular/core'
+import { DeleteQrjPublicationDialogComponent } from '../../components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component'
+import { UpsertQrjPublicationDialogComponent } from '../../components/upsert-qrj-publication-dialog/upsert-qrj-publication-dialog.component'
+import { LoadQrjPublications } from '../../states/qrj-publications-crud-state/qrj-publications-crud.actions'
+import { Store } from '@ngxs/store'
+import { QrjPublication, Scalars } from '@graphql'
+import {
+  BasicCrud,
+  BasicCrudListItem,
+  BasicCrudPagination,
+} from '@shared/components/crud-templates/crud-basic/crud-basic.component'
+import { MatDialog } from '@angular/material/dialog'
+
+@Component({
+  selector: 'qrj-publications-crud',
+  templateUrl: './qrj-publications-crud.component.html',
+  styleUrls: ['./qrj-publications-crud.component.scss'],
+})
+export class QrjPublicationsCrudComponent implements BasicCrud {
+  DeleteQrjPublicationDialogComponent = DeleteQrjPublicationDialogComponent
+  QrjPublicationDialogComponent = UpsertQrjPublicationDialogComponent
+
+  searchText = ''
+  pagination: BasicCrudPagination = {
+    length: 0,
+    pageIndex: 0,
+    pageSize: 10,
+  }
+  list: BasicCrudListItem[]
+
+  constructor(private store: Store, private dialog: MatDialog) {
+    this.loadQrjPublications()
+    this.store
+      .select((states) => states.qrjPublications)
+      .subscribe(
+        ({
+          qrjPublications,
+          countQrjPublications,
+        }: {
+          qrjPublications: QrjPublication[]
+          countQrjPublications: number
+        }) => {
+          this.pagination.length = countQrjPublications
+          this.list = qrjPublications.map(
+            (qrjPublication: QrjPublication): BasicCrudListItem => ({
+              id: qrjPublication.id,
+              title: qrjPublication.index,
+              subtitle: qrjPublication.translation[0].title,
+              content: qrjPublication.translation[0].abstract,
+              edited: qrjPublication.edited,
+            })
+          )
+        }
+      )
+  }
+
+  paginationToChange = (pagination: BasicCrudPagination): void => {
+    this.pagination = pagination
+    this.loadQrjPublications()
+  }
+
+  addNewToPressed = (): void => {
+    this.dialog.open(UpsertQrjPublicationDialogComponent, { width: '900px' })
+  }
+
+  searchInputToTyped = (searchText: string): void => {
+    this.searchText = searchText
+    this.pagination.pageIndex = 0
+    this.loadQrjPublications()
+  }
+
+  editToPressed = (id: Scalars['ID']): void => {
+    this.dialog.open(UpsertQrjPublicationDialogComponent, {
+      width: '900px',
+      data: { id },
+    })
+  }
+
+  deleteToPressed = (id: Scalars['ID']): void => {
+    this.dialog.open(DeleteQrjPublicationDialogComponent, {
+      data: { id },
+    })
+  }
+
+  loadQrjPublications = (): void => {
+    this.store.dispatch(
+      new LoadQrjPublications({
+        searchText: this.searchText,
+        pageIndex: this.pagination.pageIndex,
+        pageSize: this.pagination.pageSize,
+      })
+    )
+  }
+}

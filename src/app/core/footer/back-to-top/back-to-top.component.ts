@@ -1,20 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-back-to-top',
   templateUrl: './back-to-top.component.html',
-  styleUrls: ['./back-to-top.component.scss']
+  styleUrls: ['./back-to-top.component.scss'],
 })
 export class BackToTopComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toTop() {
-    document.getElementById('sidenav-content').scrollTo(0, 0);
+    document.getElementById('sidenav-content').scrollTo(0, 0)
   }
-
 }

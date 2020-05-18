@@ -1,0 +1,22 @@
+<mat-form-field>
+  <label>
+    <textarea (ngModelChange)="inputTextAreaModelChange.emit($event)"
+              [ngModel]="inputTextAreaModel"
+              [placeholder]="placeholder"
+              [required]="required"
+              [name]="name"
+              #autosize="cdkTextareaAutosize"
+              #input="ngModel"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"
+              cdkTextareaAutosize
+              matInput>
+    </textarea>
+  </label>
+
+  <mat-error *ngIf="!input.valid && input.touched">
+    გთხოვთ შეავსოთ ველი
+  </mat-error>
+
+</mat-form-field>
+

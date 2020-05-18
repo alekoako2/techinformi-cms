@@ -1,0 +1,4 @@
+{
+  "main": "progress-bar.service.ts",
+  "typings": "progress-bar.service.ts"
+}

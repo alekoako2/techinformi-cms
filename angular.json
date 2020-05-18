@@ -5,10 +5,11 @@
   "projects": {
     "techinform-cms": {
       "i18n": {
+        "sourceLocale": "ka",
         "locales": {
           "en": {
             "translation": "src/locale/messages.en.xlf",
-            "baseHref": ""
+            "baseHref": "en/"
           }
         }
       },
@@ -31,35 +32,43 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/styles/scss/styles.scss",
               {
                 "input": "src/assets/styles/scss/main-theme.scss"
               }
             ],
-            "scripts": [
-              "node_modules/hammerjs/hammer.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "aot": true
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
             },
             "en": {
               "budgets": [
@@ -68,10 +77,9 @@
                   "maximumWarning": "6kb"
                 }
               ],
-            "localize": [
-              "en"
-            ],
-              "outputPath": "dist/cms",
+              "localize": ["en"],
+              "outputPath": "dist/en/",
+              "i18nMissingTranslation": "error",
               "aot": true
             },
             "ka": {
@@ -81,10 +89,8 @@
                   "maximumWarning": "6kb"
                 }
               ],
-            "localize": [
-              "ka"
-            ],
-              "outputPath": "dist/cms/ka/",
+              "localize": ["ka"],
+              "outputPath": "dist/ka/",
               "aot": true
             }
           }
@@ -99,9 +105,11 @@
               "browserTarget": "techinform-cms:build:production"
             },
             "ka": {
+              "hmr": true,
               "browserTarget": "techinform-cms:build:ka"
             },
             "en": {
+              "hmr": true,
               "browserTarget": "techinform-cms:build:en"
             }
           }
@@ -119,13 +127,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -137,9 +140,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -151,26 +152,6 @@
           "configurations": {
             "production": {
               "devServerTarget": "techinform-cms:serve:production"
-            }
-          }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "sourceMap": false,
-              "optimization": true
             }
           }
         }

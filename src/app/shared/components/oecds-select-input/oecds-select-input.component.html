@@ -1,0 +1,10 @@
+<input-select-with-key matTooltip="სამეცნიერო მიმართულება (OECD)"
+              i18n-matTooltip="@@scientific_direction_oecd"
+              i18n-label="@@scientific_direction_oecd"
+              label="სამეცნიერო მიმართულება (OECD)"
+              name="oecd"
+              (inputSelectModelChange)="oecdChange.emit($event)"
+              [(inputSelectModel)]="oecd"
+              (selectstart)="loadOecdsSelectList()"
+              [list]="oecdsSelectList">
+</input-select-with-key>

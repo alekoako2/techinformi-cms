@@ -1,0 +1,4 @@
+{
+  "main": "experts.service.ts",
+  "typings": "experts.service.ts"
+}

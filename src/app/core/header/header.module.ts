@@ -1,20 +1,24 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {SidenavListComponent} from './sidenav-list/sidenav-list.component';
-import {TopToolbarComponent} from './toolbars/top-toolbar/top-toolbar.component';
-import {BottomToolbarComponent} from './toolbars/bottom-toolbar/bottom-toolbar.component';
-import {MaterialModule} from '../../shared/modules/material/material.module';
-import {LogoComponent} from './toolbars/top-toolbar/logo/logo.component';
-import {SearchComponent} from './toolbars/top-toolbar/search/search.component';
-import {UserToolsComponent} from './toolbars/top-toolbar/user-tools/user-tools.component';
-import {ShoppingCartComponent} from './toolbars/top-toolbar/user-tools/shopping-cart/shopping-cart.component';
-import {ProfileComponent} from './toolbars/top-toolbar/user-tools/profile/profile.component';
-import {RouterModule} from '@angular/router';
-import {ResponsiveSearchComponent} from './toolbars/top-toolbar/responsive-search/responsive-search.component';
-import {HideNotImplementedModule} from '../../shared/modules/hide-not-implemented/hide-not-implemented.module';
-import {HideMissingLanguageElementModule} from '../../shared/modules/hide-missing-language-element/hide-missing-language-element.module';
-import {SharedModule} from '../../shared/modules/shared/shared.module';
-import {LanguageChangerModule} from '../../shared/modules/language-changer/language-changer.module';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { SidenavListComponent } from './sidenav-list/sidenav-list.component'
+import { TopToolbarComponent } from './toolbars/top-toolbar/top-toolbar.component'
+import { BottomToolbarComponent } from './toolbars/bottom-toolbar/bottom-toolbar.component'
+import { LogoComponent } from './toolbars/top-toolbar/logo/logo.component'
+import { SearchComponent } from './toolbars/top-toolbar/search/search.component'
+import { UserToolsComponent } from './toolbars/top-toolbar/user-tools/user-tools.component'
+import { ProfileComponent } from './toolbars/top-toolbar/user-tools/profile/profile.component'
+import { RouterModule } from '@angular/router'
+import { ResponsiveSearchComponent } from './toolbars/top-toolbar/responsive-search/responsive-search.component'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
+import { MatMenuModule } from '@angular/material/menu'
+import { LayoutContainerModule } from '@shared/components/layout-container'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { HideMissingLanguageElementModule } from '@shared/directives/hide-missing-language-element/hide-missing-language-element.module'
+import { HideNotImplementedModule } from '@shared/directives/hide-not-implemented'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -24,23 +28,23 @@ import {LanguageChangerModule} from '../../shared/modules/language-changer/langu
     LogoComponent,
     SearchComponent,
     UserToolsComponent,
-    ShoppingCartComponent,
     ProfileComponent,
-    ResponsiveSearchComponent
+    ResponsiveSearchComponent,
   ],
   imports: [
     CommonModule,
-    SharedModule,
     RouterModule,
-    HideNotImplementedModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatMenuModule,
+    LayoutContainerModule,
+    MatToolbarModule,
     HideMissingLanguageElementModule,
-    LanguageChangerModule
+    HideNotImplementedModule,
+    FlexLayoutModule,
+    MatExpansionModule,
   ],
-  exports: [
-    SidenavListComponent,
-    TopToolbarComponent,
-    BottomToolbarComponent,
-  ]
+  exports: [SidenavListComponent, TopToolbarComponent, BottomToolbarComponent],
 })
-export class HeaderModule {
-}
+export class HeaderModule {}

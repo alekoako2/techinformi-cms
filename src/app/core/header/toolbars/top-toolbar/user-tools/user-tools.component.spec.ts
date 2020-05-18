@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { UserToolsComponent } from './user-tools.component';
+import { UserToolsComponent } from './user-tools.component'
 
 describe('UserToolsComponent', () => {
-  let component: UserToolsComponent;
-  let fixture: ComponentFixture<UserToolsComponent>;
+  let component: UserToolsComponent
+  let fixture: ComponentFixture<UserToolsComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserToolsComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [UserToolsComponent],
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserToolsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(UserToolsComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

@@ -1,24 +1,28 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "strict": false,
     "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es5",
+    "emitDecoratorMetadata": true,
     "downlevelIteration": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom",
-      "esnext.asynciterable"
-    ]
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "declaration": false,
+    "sourceMap": true,
+    "outDir": "./dist/out-tsc",
+    "module": "esnext",
+    "target": "ES6",
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "jest"],
+    "lib": ["ES6", "dom", "esnext.asynciterable"],
+    "baseUrl": "./",
+    "paths": {
+      "@graphql": ["src/app/shared/models/generated/graphql.ts"],
+      "@shared/*": ["src/app/shared/*"],
+      "@services/*": ["src/app/shared/services/*"],
+      "@http/*": ["src/app/core/http/*"],
+      "@env": ["src/environments/environment.ts"],
+      "@models/*": ["src/app/shared/models/*"]
+    }
   }
 }

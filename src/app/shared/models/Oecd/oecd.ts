@@ -1,4 +1,4 @@
 export class Oecd {
-  code: string;
-  translatedData: {};
+  code: string
+  translatedData: {}
 }

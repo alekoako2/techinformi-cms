@@ -1,100 +1,207 @@
-<app-layout-container [ltLg]="100" [backgroundColor]="'bg-white'">
-
+<layout-container [ltLg]="100" [backgroundColor]="'bg-white'">
   <mat-toolbar class="bg-white">
     <div fxLayout="row" class="height-100">
-
-      <button mat-button [matMenuTriggerFor]="about_us" i18n="@@about_us">ჩვენს შესახებ</button>
+      <button mat-button [matMenuTriggerFor]="about_us" i18n="@@about_us">
+        ჩვენს შესახებ
+      </button>
       <mat-menu #about_us="matMenu" class="mat-menu-buttons-wrapper">
-        <button mat-menu-item routerLink="/about-us/general" i18n="@@general">ზოგადი</button>
-        <button mat-menu-item routerLink="/about-us/regulation" i18n="@@regulation">დებულება</button>
-        <button mat-menu-item routerLink="/about-us/employees-structure" i18n="@@structure">სტრუქტურა</button>
-        <button mat-menu-item routerLink="/about-us/employees" i18n="@@employees">თანამშრომლები</button>
-        <button mat-menu-item routerLink="/about-us/normative-documentation" i18n="@@normative_documentation">ნორმატიული
-          დოკუმენტაცია
+        <button mat-menu-item routerLink="/about-us/general" i18n="@@general">
+          ზოგადი
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/about-us/regulation"
+          i18n="@@regulation"
+        >
+          დებულება
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/about-us/employees-structure"
+          i18n="@@structure"
+        >
+          სტრუქტურა
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/about-us/employees"
+          i18n="@@employees"
+        >
+          თანამშრომლები
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/about-us/normative-documentation"
+          i18n="@@normative_documentation"
+        >
+          ნორმატიული დოკუმენტაცია
         </button>
       </mat-menu>
 
-      <button mat-button [matMenuTriggerFor]="research_activities" i18n="@@scientific_activity">სამეცნიერო საქმიანობა
+      <button
+        mat-button
+        [matMenuTriggerFor]="research_activities"
+        i18n="@@scientific_activity"
+      >
+        სამეცნიერო საქმიანობა
       </button>
       <mat-menu #research_activities="matMenu" class="mat-menu-buttons-wrapper">
-        <button mat-menu-item routerLink="/scientific-activity/scientific-directions" i18n="@@scientific_directions">
-          სამეცნიერო
-          მიმართულებები
+        <button
+          mat-menu-item
+          routerLink="/scientific-activity/scientific-directions"
+          i18n="@@scientific_directions"
+        >
+          სამეცნიერო მიმართულებები
         </button>
-        <button mat-menu-item routerLink="/scientific-activity/projects" i18n="@@projects"
-                appHideMissingLanguageElement>
+        <button
+          mat-menu-item
+          routerLink="/scientific-activity/projects"
+          i18n="@@projects"
+          hideMissingLanguageElement
+        >
           პროექტები
         </button>
-        <button mat-menu-item routerLink="/scientific-activity/publications" i18n="@@publications"
-                appHideMissingLanguageElement>პუბლიკაციები
+        <button
+          mat-menu-item
+          routerLink="/scientific-activity/publications"
+          i18n="@@publications"
+          hideMissingLanguageElement
+        >
+          პუბლიკაციები
         </button>
       </mat-menu>
 
-      <button mat-button [matMenuTriggerFor]="resources" i18n="@@resources">რესურსები</button>
+      <button mat-button [matMenuTriggerFor]="resources" i18n="@@resources">
+        რესურსები
+      </button>
       <mat-menu #resources="matMenu" class="mat-menu-buttons-wrapper">
-        <button mat-menu-item i18n="@@electronic_resources" [matMenuTriggerFor]="el_resources">ელექტრონული რესურსები
+        <button
+          mat-menu-item
+          i18n="@@electronic_resources"
+          [matMenuTriggerFor]="el_resources"
+        >
+          ელექტრონული რესურსები
         </button>
-        <button mat-menu-item i18n="@@printed_resources" [matMenuTriggerFor]="printed_resources" appHideNotImplemented>
+        <button
+          mat-menu-item
+          i18n="@@printed_resources"
+          [matMenuTriggerFor]="printed_resources"
+          hideNotImplemented
+        >
           ბეჭდური რესურსები
         </button>
       </mat-menu>
 
       <mat-menu #el_resources="matMenu" class="mat-menu-buttons-wrapper">
-        <button mat-menu-item i18n="@@databases" [matMenuTriggerFor]="databases">მონაცემთა ბაზები</button>
-        <button mat-menu-item i18n="@@electronic_collections" [matMenuTriggerFor]="el_funds" appHideNotImplemented>
+        <button
+          mat-menu-item
+          i18n="@@databases"
+          [matMenuTriggerFor]="databases"
+        >
+          მონაცემთა ბაზები
+        </button>
+        <button
+          mat-menu-item
+          i18n="@@electronic_collections"
+          [matMenuTriggerFor]="el_funds"
+          hideNotImplemented
+        >
           ელექტრონული ფონდები
         </button>
-        <button mat-menu-item i18n="@@ram_discs" [matMenuTriggerFor]="el_discs" appHideNotImplemented>ელექტრონული
-          დისკები
+        <button
+          mat-menu-item
+          i18n="@@ram_discs"
+          [matMenuTriggerFor]="el_discs"
+          hideNotImplemented
+        >
+          ელექტრონული დისკები
         </button>
       </mat-menu>
 
       <mat-menu #printed_resources="matMenu" class="mat-menu-buttons-wrapper">
-        <button mat-menu-item>საქართველოში დაცული დისერტაციების ავტორეფერატები</button>
+        <button mat-menu-item>
+          საქართველოში დაცული დისერტაციების ავტორეფერატები
+        </button>
         <button mat-menu-item>FAO-ს სადეპოზიტო ბიბლიოთეკის ფონდი</button>
         <button mat-menu-item>დეპონირებული შრომების ფონდი</button>
         <button mat-menu-item>წიგნადი ფონდი</button>
       </mat-menu>
 
       <mat-menu #databases="matMenu" class="mat-menu-buttons-wrapper">
-        <button mat-menu-item i18n="@@research_projects">სამეცნიერო-კვლევითი პროექტები</button>
-        <button mat-menu-item i18n="@@scientists_experts">მეცნიერები/ექსპერტები</button>
-        <button mat-menu-item i18n="@@georgian_scientific_publications">საქართველოს სამეცნიერო პუბლიკაციები</button>
-        <button mat-menu-item i18n="@@research_organizations">სამეცნიერო ორგანიზაციები</button>
-        <button mat-menu-item i18n="@@georgian_scientists_publications_in_high_ranking_foreign_journals"
-                [matMenuTriggerFor]="scientific_publications_high_rating_foreign_journals">
-          საქართველოს
-          მეცნიერთა პუბლიკაციები მაღალი რეიტინგის უცხოურ ჟურნალებში
+        <button mat-menu-item i18n="@@research_projects">
+          სამეცნიერო-კვლევითი პროექტები
+        </button>
+        <button mat-menu-item i18n="@@scientists_experts">
+          მეცნიერები/ექსპერტები
+        </button>
+        <button mat-menu-item i18n="@@georgian_scientific_publications">
+          საქართველოს სამეცნიერო პუბლიკაციები
+        </button>
+        <button mat-menu-item i18n="@@research_organizations">
+          სამეცნიერო ორგანიზაციები
+        </button>
+        <button
+          mat-menu-item
+          i18n="
+            @@georgian_scientists_publications_in_high_ranking_foreign_journals"
+          [matMenuTriggerFor]="
+            scientific_publications_high_rating_foreign_journals
+          "
+        >
+          საქართველოს მეცნიერთა პუბლიკაციები მაღალი რეიტინგის უცხოურ ჟურნალებში
         </button>
       </mat-menu>
 
       <mat-menu #el_funds="matMenu" class="mat-menu-buttons-wrapper">
-        <button mat-menu-item i18n="@@abstracts_of_theses_defended_in_georgia">საქართველოში დაცული დისერტაციების
-          ავტორეფერატები (ბიბლიოგრაფია,
-          ხელმძღვანელები,
-          ოპონენტები)
+        <button mat-menu-item i18n="@@abstracts_of_theses_defended_in_georgia">
+          საქართველოში დაცული დისერტაციების ავტორეფერატები (ბიბლიოგრაფია,
+          ხელმძღვანელები, ოპონენტები)
         </button>
-        <button mat-menu-item i18n="@@deposited_works_of_georgian_scientists">საქართველოს მეცნიერთა დეპონირებული შრომები
+        <button mat-menu-item i18n="@@deposited_works_of_georgian_scientists">
+          საქართველოს მეცნიერთა დეპონირებული შრომები
         </button>
       </mat-menu>
 
       <mat-menu #el_discs="matMenu" class="mat-menu-buttons-wrapper">
         <button mat-menu-item>Your Georgia</button>
-        <button mat-menu-item i18n="@@research_organizations">სამეცნიერო ორგანიზაციები</button>
+        <button mat-menu-item i18n="@@research_organizations">
+          სამეცნიერო ორგანიზაციები
+        </button>
         <button mat-menu-item>საქმიანი საქართველო</button>
       </mat-menu>
 
-      <mat-menu #scientific_publications_high_rating_foreign_journals="matMenu" class="mat-menu-buttons-wrapper">
+      <mat-menu
+        #scientific_publications_high_rating_foreign_journals="matMenu"
+        class="mat-menu-buttons-wrapper"
+      >
         <button mat-menu-item>Wos Core Collection</button>
         <button mat-menu-item>WOS Full</button>
       </mat-menu>
 
-      <button mat-button class="nav-main-menu" routerLink="/services" i18n="@@service">მომსახურება</button>
-      <button mat-button class="nav-main-menu" routerLink="/partnership" i18n="@@partnership">თანამშრომლობა
+      <button
+        mat-button
+        class="nav-main-menu"
+        routerLink="/services"
+        i18n="@@service"
+      >
+        მომსახურება
       </button>
-      <button mat-button class="nav-main-menu" routerLink="/contact" i18n="@@contact">კონტაქტი</button>
-
+      <button
+        mat-button
+        class="nav-main-menu"
+        routerLink="/partnership"
+        i18n="@@partnership"
+      >
+        თანამშრომლობა
+      </button>
+      <button
+        mat-button
+        class="nav-main-menu"
+        routerLink="/contact"
+        i18n="@@contact"
+      >
+        კონტაქტი
+      </button>
     </div>
   </mat-toolbar>
-
-</app-layout-container>
+</layout-container>

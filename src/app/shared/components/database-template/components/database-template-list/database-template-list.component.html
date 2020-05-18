@@ -1,0 +1,15 @@
+<div class="list-wrapper padding-x-1">
+
+  <div *ngIf="count === 0">
+    ჩანაწერები ვერ მოინახა
+  </div>
+  <div *ngIf="skeleton">
+    <ngx-skeleton-loader *ngFor="let index of arr"
+                         [theme]="theme">
+    </ngx-skeleton-loader>
+  </div>
+
+  <div *ngIf="!skeleton">
+    <ng-content></ng-content>
+  </div>
+</div>

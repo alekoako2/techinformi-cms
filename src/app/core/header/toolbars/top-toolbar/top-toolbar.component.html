@@ -1,13 +1,15 @@
-<app-layout-container [flexWidth]="100" [ltLg]="100">
-
+<layout-container [flexWidth]="100" [ltLg]="100">
   <mat-toolbar>
-
     <mat-toolbar-row fxLayoutAlign="center" id="top-toolbar" class="padding-0">
       <div fxFlex="100" fxFlexAlign="center">
         <div fxFlex="50">
-          <div style="height: 100%">
-            <button mat-button aria-label="Expend left navigation bar" style="height: 100%"
-                    (click)="onToggleSidenav()">
+          <div style="height: 100%;">
+            <button
+              mat-button
+              aria-label="Expend left navigation bar"
+              style="height: 100%;"
+              (click)="onToggleSidenav()"
+            >
               <mat-icon>menu</mat-icon>
             </button>
           </div>
@@ -15,6 +17,5 @@
         <app-user-tools fxLayoutAlign="end" fxFlex="50"></app-user-tools>
       </div>
     </mat-toolbar-row>
-
   </mat-toolbar>
-</app-layout-container>
+</layout-container>

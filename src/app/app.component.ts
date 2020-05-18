@@ -1,21 +1,17 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {AuthService} from './core/services/AuthService/auth.service';
+import { Component, OnInit } from '@angular/core'
+import { AuthService } from './core/http/AuthService/auth.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-
-
 export class AppComponent implements OnInit {
-  title = 'techinform-cms';
+  title = 'techinform-cms'
 
-  constructor(public authService: AuthService) {
-  }
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.setUser(JSON.parse(localStorage.getItem('USER')));
+    this.authService.setUser(JSON.parse(localStorage.getItem('USER')))
   }
-
 }

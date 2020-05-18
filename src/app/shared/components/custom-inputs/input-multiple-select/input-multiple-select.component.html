@@ -1,0 +1,22 @@
+<mat-form-field fxFlex="100">
+  <mat-label>
+    {{placeholder}}
+  </mat-label>
+  <mat-select (ngModelChange)="onChange($event)"
+              [ngModel]="inputModel2"
+              [required]="required"
+              #input="ngModel"
+              [name]="name"
+              multiple>
+    <mat-option [value]='item[listFieldValueName]'
+                *ngFor="let item of list">
+      {{item[listFieldName]}}
+    </mat-option>
+
+  </mat-select>
+
+  <mat-error *ngIf="!input.valid && input.touched">
+    გთხოვთ შეავსოთ ველი
+  </mat-error>
+
+</mat-form-field>

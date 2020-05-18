@@ -1,0 +1,4 @@
+{
+  "main": "firebase.module.ts",
+  "typings": "firebase.module.ts"
+}
