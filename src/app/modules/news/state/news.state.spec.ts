@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing'
 import { NgxsModule, Store } from '@ngxs/store'
-import { NewsState } from './news.states'
+import { NewsState } from './news.store'
 import { NewsAction } from './news.actions'
 
 describe('News actions', () => {

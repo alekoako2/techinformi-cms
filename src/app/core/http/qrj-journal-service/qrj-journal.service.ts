@@ -1,7 +1,7 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import { map } from 'rxjs/operators'
-import { qrjJournalsQuery } from './gql/journal-query'
+import { qrjJournalsQuery } from './gql/journal.queries'
 import { Observable } from 'rxjs'
 import {
   QrjJournal,

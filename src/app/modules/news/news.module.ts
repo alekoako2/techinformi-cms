@@ -8,7 +8,7 @@
 // import { NewsDeleteDialogComponent } from './components/news-delete-custom-dialog/news-delete-custom-dialog.component'
 // import { NewsUpdateCreateDialogComponent } from './components/news-update-create-custom-dialog/news-update-create-custom-dialog.component'
 // import { IndexComponent } from './pages/qrj-publications/qrj-publications.component'
-// import { NewsState } from './states/news.states'
+// import { NewsState } from './store/news.store'
 // import { QuillModule } from 'ngx-quill'
 //
 // @NgModule({

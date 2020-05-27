@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'
+import { ErrorHandler, NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
@@ -25,6 +25,7 @@ import { NgxsModule } from '@ngxs/store'
 import { environment } from '@env'
 import { ErrorsComponent } from './core/authentication/components/errors/errors.component'
 import { MatSidenavModule } from '@angular/material/sidenav'
+import { GlobalErrorHandler } from './global-error-handler'
 
 registerLocaleData(localeKa, 'ka', localeKaExtra)
 
@@ -49,7 +50,10 @@ registerLocaleData(localeKa, 'ka', localeKaExtra)
     NgxsLoggerPluginModule.forRoot({ disabled: environment.production }),
     MatSidenavModule,
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    // { provide: ErrorHandler, useClass: GlobalErrorHandler },
+  ],
   bootstrap: [AppComponent],
   entryComponents: [ErrorsComponent],
 })

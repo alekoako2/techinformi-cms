@@ -17,12 +17,15 @@
     "lib": ["ES6", "dom", "esnext.asynciterable"],
     "baseUrl": "./",
     "paths": {
-      "@graphql": ["src/app/shared/models/generated/graphql.ts"],
+      "@graphql": ["src/app/shared/types/graphql/generated/graphql.types.ts"],
       "@shared/*": ["src/app/shared/*"],
       "@services/*": ["src/app/shared/services/*"],
       "@http/*": ["src/app/core/http/*"],
       "@env": ["src/environments/environment.ts"],
-      "@models/*": ["src/app/shared/models/*"]
+      "@models/*": ["src/app/shared/models/*"],
+      "@types/*": ["src/app/shared/types/*"],
+      "@interfaces/*": ["src/app/shared/interfaces/*"],
+      "@utils/*": ["src/app/shared/utils/*"]
     }
   }
 }

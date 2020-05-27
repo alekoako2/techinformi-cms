@@ -14,8 +14,8 @@ import { LanguageService } from '@services/language-service'
 import { ApolloQueryResult } from 'apollo-client'
 import {
   researchProjectQuery,
-  researchProjectsQuery,
-} from './gql/research-projects-query'
+  researchProjectsQueries,
+} from './gql/research-projects.queries'
 
 @Injectable({
   providedIn: 'root',
@@ -48,7 +48,7 @@ export class ResearchProjectsService {
           skip: index * limit,
           query: { ...query },
         },
-        query: researchProjectsQuery,
+        query: researchProjectsQueries,
       })
       .valueChanges.pipe(
         map(

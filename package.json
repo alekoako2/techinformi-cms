@@ -14,7 +14,7 @@
     "lint": "yarn stylelint && yarn eslint",
     "e2e": "ng e2e",
     "translate": "ng xi18n --output-path src/locale",
-    "codegen": "graphql-codegen --config codegen.yml && eslint src/app/shared/models/generated/graphql.ts --fix"
+    "codegen": "graphql-codegen --config codegen.yml && eslint src/app/shared/types/graphql/generated/graphql.types.ts --fix"
   },
   "private": true,
   "dependencies": {

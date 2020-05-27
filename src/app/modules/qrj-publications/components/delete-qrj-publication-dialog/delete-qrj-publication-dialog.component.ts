@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core'
 import { Store } from '@ngxs/store'
-import { DeleteQrjPublication } from '../../states/qrj-publications-crud-state/qrj-publications-crud.actions'
+import { DeleteQrjPublication } from '../../store/action/qrj-publications-crud.actions'
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
 
 @Component({
@@ -8,7 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
   templateUrl: './delete-qrj-publication-dialog.component.html',
   styleUrls: ['./delete-qrj-publication-dialog.component.scss'],
 })
-export class DeleteQrjPublicationDialogComponent implements OnInit {
+export class DeleteQrjPublicationDialogComponent {
   id: string
 
   constructor(
@@ -19,9 +19,7 @@ export class DeleteQrjPublicationDialogComponent implements OnInit {
     this.id = id
   }
 
-  ngOnInit() {}
-
-  deleteQrjPublication() {
+  deleteQrjPublication = (): void => {
     this.store.dispatch(new DeleteQrjPublication({ id: this.id }))
     this.dialogRef.close()
   }

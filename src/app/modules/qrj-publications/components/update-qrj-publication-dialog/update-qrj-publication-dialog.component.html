@@ -1,0 +1,19 @@
+<custom-dialog>
+  <div title>არსებული პუბლიკაციის შეცვლა</div>
+  <div content>
+    <qrj-publication-form
+      [qrjPublicationForm]="qrjPublicationUpdateForm"
+    ></qrj-publication-form>
+  </div>
+  <div actions>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      (click)="update()"
+      [disabled]="qrjPublicationUpdateForm?.invalid"
+    >
+      შენახვა
+    </button>
+  </div>
+</custom-dialog>

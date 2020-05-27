@@ -1,7 +1,7 @@
 // Native Modules
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 // Library Modules
 import { FlexLayoutModule } from '@angular/flex-layout'
@@ -27,6 +27,7 @@ import { InputSelectComponent } from './input-select.component'
     // Material Modules
     MatFormFieldModule,
     MatSelectModule,
+    ReactiveFormsModule,
   ],
   exports: [
     // Components

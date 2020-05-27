@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { DeleteQrjPublicationDialogComponent } from '../../components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component'
-import { UpsertQrjPublicationDialogComponent } from '../../components/upsert-qrj-publication-dialog/upsert-qrj-publication-dialog.component'
-import { LoadQrjPublications } from '../../states/qrj-publications-crud-state/qrj-publications-crud.actions'
+import { CreateQrjPublicationDialogComponent } from '../../components/create-qrj-publication-dialog/create-qrj-publication-dialog.component'
+import { LoadQrjPublications } from '../../store/action/qrj-publications-crud.actions'
 import { Store } from '@ngxs/store'
 import { QrjPublication, Scalars } from '@graphql'
 import {
@@ -10,6 +10,7 @@ import {
   BasicCrudPagination,
 } from '@shared/components/crud-templates/crud-basic/crud-basic.component'
 import { MatDialog } from '@angular/material/dialog'
+import { UpdateQrjPublicationDialogComponent } from '../../components/update-qrj-publication-dialog/update-qrj-publication-dialog.component'
 
 @Component({
   selector: 'qrj-publications-crud',
@@ -18,7 +19,7 @@ import { MatDialog } from '@angular/material/dialog'
 })
 export class QrjPublicationsCrudComponent implements BasicCrud {
   DeleteQrjPublicationDialogComponent = DeleteQrjPublicationDialogComponent
-  QrjPublicationDialogComponent = UpsertQrjPublicationDialogComponent
+  QrjPublicationDialogComponent = CreateQrjPublicationDialogComponent
 
   searchText = ''
   pagination: BasicCrudPagination = {
@@ -45,8 +46,8 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
             (qrjPublication: QrjPublication): BasicCrudListItem => ({
               id: qrjPublication.id,
               title: qrjPublication.index,
-              subtitle: qrjPublication.translation[0].title,
-              content: qrjPublication.translation[0].abstract,
+              subtitle: qrjPublication.translation[0]?.title,
+              content: qrjPublication.translation[0]?.abstract,
               edited: qrjPublication.edited,
             })
           )
@@ -60,7 +61,7 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
   }
 
   addNewToPressed = (): void => {
-    this.dialog.open(UpsertQrjPublicationDialogComponent, { width: '900px' })
+    this.dialog.open(CreateQrjPublicationDialogComponent, { width: '900px' })
   }
 
   searchInputToTyped = (searchText: string): void => {
@@ -70,7 +71,7 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
   }
 
   editToPressed = (id: Scalars['ID']): void => {
-    this.dialog.open(UpsertQrjPublicationDialogComponent, {
+    this.dialog.open(UpdateQrjPublicationDialogComponent, {
       width: '900px',
       data: { id },
     })
@@ -78,7 +79,7 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
 
   deleteToPressed = (id: Scalars['ID']): void => {
     this.dialog.open(DeleteQrjPublicationDialogComponent, {
-      data: { id },
+      data: id,
     })
   }
 

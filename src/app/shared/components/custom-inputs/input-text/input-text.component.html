@@ -1,26 +1,23 @@
-<mat-form-field fxFlex="100">
+<mat-form-field fxFlex="100" [formGroup]="inputFormGroup">
   <input
-    (ngModelChange)="inputModelChange.emit($event)"
     [placeholder]="placeholder"
-    [ngModel]="inputModel"
     [required]="required"
-    #input="ngModel"
-    [name]="name"
+    [formControlName]="formCtrlName"
     [type]="type"
     matInput
   />
   <button
-    mat-button
-    *ngIf="inputModel"
     matSuffix
+    mat-button
     mat-icon-button
     aria-label="Clear"
-    (click)="inputModel = ''; inputModelChange.emit('')"
+    *ngIf="this.inputFormGroup?.get(this.formCtrlName)?.value"
+    (click)="this.inputFormGroup?.get(this.formCtrlName)?.reset('')"
   >
     <mat-icon>close</mat-icon>
   </button>
 
-  <mat-error *ngIf="!input.valid && input.touched">
+  <mat-error *ngIf="inputFormGroup?.get(formCtrlName)?.invalid">
     გთხოვთ შეავსოთ ველი
   </mat-error>
 </mat-form-field>

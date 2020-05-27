@@ -1,0 +1,107 @@
+<form [formGroup]="qrjPublicationForm" *ngIf="qrjPublicationForm">
+  <!--  id-->
+  <input
+    type="text"
+    formControlName="id"
+    hidden
+    *ngIf="qrjPublicationForm.get('id')"
+  />
+
+  <!--  Index & OECD-->
+  <div fxLayout fxLayoutGap="16px">
+    <input-text
+      fxFlex
+      placeholder="ინდექსი"
+      formCtrlName="index"
+      [inputFormGroup]="qrjPublicationForm"
+      i18n-placeholder="@@index"
+    ></input-text>
+
+    <oecds-input-display-value-filter-autocomplete
+      fxFlex
+      [inputFormGroup]="qrjPublicationForm"
+    >
+    </oecds-input-display-value-filter-autocomplete>
+  </div>
+
+  <!--  Qrj Journal-->
+  <qrj-journals-input-display-value-filter-autocomplete
+    [inputFormGroup]="qrjPublicationForm"
+  >
+  </qrj-journals-input-display-value-filter-autocomplete>
+
+  <!--  Year, Number & Pages-->
+  <div fxLayout fxLayoutGap="16px">
+    <input-select
+      fxFlex
+      formCtrlName="year"
+      [inputFormGroup]="qrjPublicationForm"
+      [options]="numbersRange(2000, 25)"
+    ></input-select>
+    <input-text
+      fxFlex
+      formCtrlName="number"
+      [inputFormGroup]="qrjPublicationForm"
+      placeholder="ნომერი"
+    ></input-text>
+    <input-text
+      fxFlex
+      formCtrlName="pages"
+      [inputFormGroup]="qrjPublicationForm"
+      placeholder="გვერდები"
+    ></input-text>
+  </div>
+
+  <!--  Translations of Title, Publication Author, Publications Languages & Abstract-->
+  <mat-tab-group>
+    <mat-tab label="ქართული">
+      <input-text
+        [inputFormGroup]="translationFormGroupKA"
+        formCtrlName="title"
+        placeholder="სათაური"
+      ></input-text>
+
+      <input-text
+        formCtrlName="publicationAuthor"
+        [inputFormGroup]="translationFormGroupKA"
+        placeholder="ავტორი"
+      ></input-text>
+
+      <input-text
+        formCtrlName="publicationLang"
+        [inputFormGroup]="translationFormGroupKA"
+        placeholder="ენები"
+      ></input-text>
+
+      <input-text-area
+        formCtrlName="abstract"
+        [inputFormGroup]="translationFormGroupKA"
+        placeholder="რეფერატი"
+      ></input-text-area>
+    </mat-tab>
+
+    <mat-tab label="English">
+      <input-text
+        [inputFormGroup]="translationFormGroupEN"
+        formCtrlName="title"
+        placeholder="Title"
+      ></input-text>
+      <input-text
+        formCtrlName="publicationAuthor"
+        [inputFormGroup]="translationFormGroupEN"
+        placeholder="Author"
+      ></input-text>
+      <input-text
+        formCtrlName="publicationLang"
+        [inputFormGroup]="translationFormGroupEN"
+        placeholder="Languages"
+      ></input-text>
+
+      <input-text-area
+        formCtrlName="abstract"
+        [inputFormGroup]="translationFormGroupEN"
+        placeholder="Abstract"
+      ></input-text-area>
+    </mat-tab>
+  </mat-tab-group>
+</form>

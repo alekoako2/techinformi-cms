@@ -38,7 +38,7 @@
   <!--  List Items-->
   <div class="flex-wrapper bg-white">
     <!--    List Item-->
-    <mat-card *ngFor="let item of list" class="item-wrapper">
+    <mat-card *ngFor="let item of list">
       <!--      Edited, Title, Subtitle-->
       <mat-card-header>
         <mat-card-title fxLayout fxLayoutGap="8px">
@@ -53,12 +53,14 @@
           </div>
         </mat-card-subtitle>
       </mat-card-header>
+
       <mat-divider></mat-divider>
 
       <!--      Content-->
       <mat-card-content>
         <p class="text-overflow-ellipses-5 margin-top-3">{{ item.content }}</p>
       </mat-card-content>
+
       <mat-divider></mat-divider>
 
       <!--      Edit,Delete Buttons-->

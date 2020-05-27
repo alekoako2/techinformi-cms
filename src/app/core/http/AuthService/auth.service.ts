@@ -1,6 +1,6 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { signInMutation } from './gql/auth-mutation'
+import { signInMutation } from './gql/auth.mutations'
 import { Router } from '@angular/router'
 import { ErrorsComponent } from '../../authentication/components/errors/errors.component'
 import { Tokens } from '@models/tokens/tokens'

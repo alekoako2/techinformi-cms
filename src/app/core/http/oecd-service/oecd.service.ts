@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { oecdsQuery } from './gql/oecd-query'
-import { map } from 'rxjs/operators'
+import { oecdsQuery } from './gql/oecd.queries'
+import { map, tap } from 'rxjs/operators'
 import { Observable } from 'rxjs'
 import { Oecd, OecdsQuery, OecdsQueryVariables } from '@graphql'
 import { ApolloQueryResult } from 'apollo-client'
@@ -16,13 +16,13 @@ export class OecdService {
     private languageService: LanguageService
   ) {}
 
-  loadOecds(
+  loadOecds = (
     searchText = '',
     index?: number,
     limit?: number,
     orderBy?: string
-  ): Observable<Oecd[]> {
-    return this.apollo
+  ): Observable<Oecd[]> =>
+    this.apollo
       .watchQuery<OecdsQuery, OecdsQueryVariables>({
         variables: {
           languageCode: this.languageService.currentLanguage,
@@ -36,5 +36,4 @@ export class OecdService {
       .valueChanges.pipe(
         map((res: ApolloQueryResult<OecdsQuery>) => res.data.oecds)
       )
-  }
 }

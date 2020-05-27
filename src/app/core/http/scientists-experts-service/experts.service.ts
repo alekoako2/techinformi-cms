@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import { map } from 'rxjs/operators'
-import { expertQuery, expertsQuery } from './gql/experts-query'
+import { expertQuery, expertsQueries } from './gql/experts.queries'
 import {
   Expert,
   ExpertQuery,
@@ -37,7 +37,7 @@ export class ExpertsService {
           skip: index * limit,
           query,
         },
-        query: expertsQuery,
+        query: expertsQueries,
       })
       .valueChanges.pipe(
         map((expertsData: ApolloQueryResult<ExpertsQuery>) => expertsData.data)
