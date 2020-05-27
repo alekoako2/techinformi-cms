@@ -1,14 +1,22 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "strict": false,
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "baseUrl": "./",
+    "paths": {
+      "@graphql": ["src/app/shared/types/graphql/generated/graphql.types.ts"],
+      "@shared/*": ["src/app/shared/*"],
+      "@services/*": ["src/app/shared/services/*"],
+      "@http/*": ["src/app/core/http/*"],
+      "@env": ["src/environments/environment.ts"],
+      "@models/*": ["src/app/shared/models/*"],
+      "@types/*": ["src/app/shared/types/*"],
+      "@interfaces/*": ["src/app/shared/interfaces/*"],
+      "@utils/*": ["src/app/shared/utils/*"]
+    }
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "src/test.ts",
-    "src/**/*.spec.ts"
-  ]
+  "include": ["src/**/*.d.ts"],
+  "files": ["src/main.ts", "src/polyfills.ts"]
 }

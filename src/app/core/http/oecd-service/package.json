@@ -1,0 +1,4 @@
+{
+  "main": "oecd.service.ts",
+  "typings": "oecd.service.ts"
+}

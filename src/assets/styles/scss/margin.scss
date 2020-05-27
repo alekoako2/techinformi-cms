@@ -1,181 +1,186 @@
+$zero: 0;
+$one: 4px;
+$two: 8px;
+$three: 16px;
+$four: 32px;
+$five: 64px;
+
 .margin-0 {
-  margin: 0 !important;
+  margin: $zero !important;
 }
 
 .margin-1 {
-  margin: 5px !important;
+  margin: $one !important;
 }
 
 .margin-2 {
-  margin: 10px !important;
+  margin: $two !important;
 }
 
 .margin-3 {
-  margin: 15px !important;
+  margin: $three !important;
 }
 
 .margin-4 {
-  margin: 20px !important;
+  margin: $four !important;
 }
 
 .margin-5 {
-  margin: 25px !important;
+  margin: $five !important;
 }
 
 .margin-x-0 {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: $zero !important;
+  margin-right: $zero !important;
 }
 
 .margin-x-1 {
-  margin-left: 5px !important;
-  margin-right: 5px !important;
+  margin-left: $one !important;
+  margin-right: $one !important;
 }
 
 .margin-x-2 {
-  margin-left: 10px !important;
-  margin-right: 10px !important;
+  margin-left: $two !important;
+  margin-right: $two !important;
 }
 
 .margin-x-3 {
-  margin-left: 15px !important;
-  margin-right: 15px !important;
+  margin-left: $three !important;
+  margin-right: $three !important;
 }
 
 .margin-x-4 {
-  margin-left: 20px !important;
-  margin-right: 20px !important;
+  margin-left: $four !important;
+  margin-right: $four !important;
 }
 
 .margin-x-5 {
-  margin-left: 25px !important;
-  margin-right: 25px !important;
+  margin-left: $five !important;
+  margin-right: $five !important;
 }
 
 .margin-y-0 {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-top: $zero !important;
+  margin-bottom: $zero !important;
 }
 
 .margin-y-1 {
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
+  margin-top: $one !important;
+  margin-bottom: $one !important;
 }
 
 .margin-y-2 {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
+  margin-top: $two !important;
+  margin-bottom: $two !important;
 }
 
 .margin-y-3 {
-  margin-top: 15px !important;
-  margin-bottom: 15px !important;
+  margin-top: $three !important;
+  margin-bottom: $three !important;
 }
 
 .margin-y-4 {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
+  margin-top: $four !important;
+  margin-bottom: $four !important;
 }
 
 .margin-y-5 {
-  margin-top: 25px !important;
-  margin-bottom: 25px !important;
+  margin-top: $five !important;
+  margin-bottom: $five !important;
 }
 
 .margin-top-0 {
-  margin-top: 0 !important;
+  margin-top: $zero !important;
 }
 
 .margin-top-1 {
-  margin-top: 5px !important;
+  margin-top: $one !important;
 }
 
 .margin-top-2 {
-  margin-top: 10px !important;
+  margin-top: $two !important;
 }
 
 .margin-top-3 {
-  margin-top: 15px !important;
+  margin-top: $three !important;
 }
 
 .margin-top-4 {
-  margin-top: 20px !important;
+  margin-top: $four !important;
 }
 
 .margin-top-5 {
-  margin-top: 25px !important;
+  margin-top: $five !important;
 }
 
 .margin-bottom-0 {
-  margin-bottom: 0 !important;
+  margin-bottom: $zero !important;
 }
 
 .margin-bottom-1 {
-  margin-bottom: 5px !important;
+  margin-bottom: $one !important;
 }
 
 .margin-bottom-2 {
-  margin-bottom: 10px !important;
+  margin-bottom: $two !important;
 }
 
 .margin-bottom-3 {
-  margin-bottom: 15px !important;
+  margin-bottom: $three !important;
 }
 
 .margin-bottom-4 {
-  margin-bottom: 20px !important;
+  margin-bottom: $four !important;
 }
 
 .margin-bottom-5 {
-  margin-bottom: 25px !important;
+  margin-bottom: $five !important;
 }
 
-
 .margin-right-0 {
-  margin-right: 0 !important;
+  margin-right: $zero !important;
 }
 
 .margin-right-1 {
-  margin-right: 5px !important;
+  margin-right: $one !important;
 }
 
 .margin-right-2 {
-  margin-right: 10px !important;
+  margin-right: $two !important;
 }
 
 .margin-right-3 {
-  margin-right: 15px !important;
+  margin-right: $three !important;
 }
 
 .margin-right-4 {
-  margin-right: 20px !important;
+  margin-right: $four !important;
 }
 
 .margin-right-5 {
-  margin-right: 25px !important;
+  margin-right: $five !important;
 }
 
-
 .margin-left-0 {
-  margin-left: 0 !important;
+  margin-left: $zero !important;
 }
 
 .margin-left-1 {
-  margin-left: 5px !important;
+  margin-left: $one !important;
 }
 
 .margin-left-2 {
-  margin-left: 10px !important;
+  margin-left: $two !important;
 }
 
 .margin-left-3 {
-  margin-left: 15px !important;
+  margin-left: $three !important;
 }
 
 .margin-left-4 {
-  margin-left: 20px !important;
+  margin-left: $four !important;
 }
 
 .margin-left-5 {
-  margin-left: 25px !important;
+  margin-left: $five !important;
 }

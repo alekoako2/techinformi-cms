@@ -1,182 +1,186 @@
+$zero: 0;
+$one: 4px;
+$two: 8px;
+$three: 16px;
+$four: 32px;
+$five: 64px;
+
 .padding-0 {
-  padding: 0 !important;
+  padding: $zero !important;
 }
 
 .padding-1 {
-  padding: 5px !important;
+  padding: $one !important;
 }
 
 .padding-2 {
-  padding: 10px !important;
+  padding: $two !important;
 }
 
 .padding-3 {
-  padding: 15px !important;
+  padding: $three !important;
 }
 
 .padding-4 {
-  padding: 20px !important;
+  padding: $four !important;
 }
 
 .padding-5 {
-  padding: 25px !important;
+  padding: $five !important;
 }
 
 .padding-x-0 {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding-left: $zero !important;
+  padding-right: $zero !important;
 }
 
 .padding-x-1 {
-  padding-left: 5px !important;
-  padding-right: 5px !important;
+  padding-left: $one !important;
+  padding-right: $one !important;
 }
 
 .padding-x-2 {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  padding-left: $two !important;
+  padding-right: $two !important;
 }
 
 .padding-x-3 {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  padding-left: $three !important;
+  padding-right: $three !important;
 }
 
 .padding-x-4 {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: $four !important;
+  padding-right: $four !important;
 }
 
 .padding-x-5 {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: $five;
+  padding-right: $five;
 }
 
 .padding-y-0 {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-top: $zero !important;
+  padding-bottom: $zero !important;
 }
 
 .padding-y-1 {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
+  padding-top: $one !important;
+  padding-bottom: $one !important;
 }
 
 .padding-y-2 {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding-top: $two !important;
+  padding-bottom: $two !important;
 }
 
 .padding-y-3 {
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
+  padding-top: $three !important;
+  padding-bottom: $three !important;
 }
 
 .padding-y-4 {
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
+  padding-top: $four !important;
+  padding-bottom: $four !important;
 }
 
 .padding-y-5 {
-  padding-top: 25px !important;
-  padding-bottom: 25px !important;
+  padding-top: $five !important;
+  padding-bottom: $five !important;
 }
 
-
 .padding-top-0 {
-  padding-top: 0 !important;
+  padding-top: $zero !important;
 }
 
 .padding-top-1 {
-  padding-top: 5px !important;
+  padding-top: $one !important;
 }
 
 .padding-top-2 {
-  padding-top: 10px !important;
+  padding-top: $two !important;
 }
 
 .padding-top-3 {
-  padding-top: 15px !important;
+  padding-top: $three !important;
 }
 
 .padding-top-4 {
-  padding-top: 20px !important;
+  padding-top: $four !important;
 }
 
 .padding-top-5 {
-  padding-top: 25px !important;
+  padding-top: $five !important;
 }
 
 .padding-bottom-0 {
-  padding-bottom: 0 !important;
+  padding-bottom: $zero !important;
 }
 
 .padding-bottom-1 {
-  padding-bottom: 5px !important;
+  padding-bottom: $one !important;
 }
 
 .padding-bottom-2 {
-  padding-bottom: 10px !important;
+  padding-bottom: $two !important;
 }
 
 .padding-bottom-3 {
-  padding-bottom: 15px !important;
+  padding-bottom: $three !important;
 }
 
 .padding-bottom-4 {
-  padding-bottom: 20px !important;
+  padding-bottom: $four !important;
 }
 
 .padding-bottom-5 {
-  padding-bottom: 25px !important;
+  padding-bottom: $five !important;
 }
 
-
 .padding-right-0 {
-  padding-right: 0 !important;
+  padding-right: $zero !important;
 }
 
 .padding-right-1 {
-  padding-right: 5px !important;
+  padding-right: $one !important;
 }
 
 .padding-right-2 {
-  padding-right: 10px !important;
+  padding-right: $two !important;
 }
 
 .padding-right-3 {
-  padding-right: 15px !important;
+  padding-right: $three !important;
 }
 
 .padding-right-4 {
-  padding-right: 20px !important;
+  padding-right: $four !important;
 }
 
 .padding-right-5 {
-  padding-right: 25px !important;
+  padding-right: $five !important;
 }
 
-
 .padding-left-0 {
-  padding-left: 0 !important;
+  padding-left: $zero !important;
 }
 
 .padding-left-1 {
-  padding-left: 5px !important;
+  padding-left: $one !important;
 }
 
 .padding-left-2 {
-  padding-left: 10px !important;
+  padding-left: $two !important;
 }
 
 .padding-left-3 {
-  padding-left: 15px !important;
+  padding-left: $three !important;
 }
 
 .padding-left-4 {
-  padding-left: 20px !important;
+  padding-left: $four !important;
 }
 
 .padding-left-5 {
-  padding-left: 25px !important;
+  padding-left: $five !important;
 }

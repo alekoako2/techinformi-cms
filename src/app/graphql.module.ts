@@ -1,32 +1,34 @@
-import {NgModule} from '@angular/core';
-import {ApolloModule, APOLLO_OPTIONS} from 'apollo-angular';
-import {HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
-import {InMemoryCache} from 'apollo-cache-inmemory';
-import {HttpClientModule, HttpHeaders} from '@angular/common/http';
-import {ApolloLink} from 'apollo-link';
-import {environment} from '../environments/environment';
+import { NgModule } from '@angular/core'
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular'
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { HttpClientModule, HttpHeaders } from '@angular/common/http'
+import { ApolloLink } from 'apollo-link'
+import { environment } from '@env'
 
-const uri = environment.graphqlLink; // <-- add the URL of the GraphQL server here
+const uri = environment.graphqlLink // <-- add the URL of the GraphQL server here
 
 export function createApollo(httpLink: HttpLink) {
-  let link: ApolloLink = httpLink.create({uri});
+  let link: ApolloLink = httpLink.create({ uri })
 
   if (localStorage.getItem('JWT_TOKEN')) {
     const middleware = new ApolloLink((operation, forward) => {
       operation.setContext({
-        headers: new HttpHeaders().set('Authorization', localStorage.getItem('JWT_TOKEN') || null)
-      });
+        headers: new HttpHeaders().set(
+          'Authorization',
+          localStorage.getItem('JWT_TOKEN') || null
+        ),
+      })
 
-      return forward(operation);
-    });
+      return forward(operation)
+    })
 
-    link = middleware.concat(link);
+    link = middleware.concat(link)
   }
 
-  const cache = new InMemoryCache();
+  const cache = new InMemoryCache()
 
-  return {link, cache};
-
+  return { link, cache }
 }
 
 @NgModule({
@@ -39,5 +41,4 @@ export function createApollo(httpLink: HttpLink) {
     },
   ],
 })
-export class GraphQLModule {
-}
+export class GraphQLModule {}

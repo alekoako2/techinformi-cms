@@ -1,0 +1,6 @@
+<mat-paginator (page)="loadPressed.emit({pageIndex:$event.pageIndex,pageSize:$event.pageSize})"
+               [pageSizeOptions]="[10, 20, 40, 80]"
+               [pageIndex]="pageIndex"
+               [pageSize]="pageSize"
+               [length]="length">
+</mat-paginator>

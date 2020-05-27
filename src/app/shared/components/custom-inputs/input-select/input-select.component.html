@@ -1,0 +1,17 @@
+<mat-form-field fxFlex="100" [formGroup]="inputFormGroup">
+  <mat-label>
+    {{ label }}
+  </mat-label>
+  <mat-select [required]="required" [formControlName]="formCtrlName">
+    <mat-option>
+      -
+    </mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-select>
+
+  <!--  <mat-error *ngIf="!input.valid && input.touched">-->
+  <!--    გთხოვთ შეავსოთ ველი-->
+  <!--  </mat-error>-->
+</mat-form-field>

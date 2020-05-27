@@ -1,0 +1,11 @@
+<div class="padding-x-2 bg-medium-light-gray padding-y-5" ngClass.lt-md="border-radius-1">
+  <layout-container flexWidth="100">
+    <h1 class="mtavruli margin-0 text-align-center">
+      {{title}}
+    </h1>
+    <p [innerHTML]="description"></p>
+    <div>
+      <ng-content></ng-content>
+    </div>
+  </layout-container>
+</div>

@@ -1,0 +1,88 @@
+<layout-container flexWidth="100">
+  <!--  Create New and Search Input-->
+  <div class="padding-x-3 margin-bottom-3">
+    <!--    Create New Button-->
+    <div fxFlexAlign="end" fxFlex>
+      <button mat-raised-button color="primary" (click)="addNewPressed.emit()">
+        ახლის დამატება
+      </button>
+    </div>
+
+    <!--    Search Input-->
+    <div fxLayoutAlign="end" fxFlex>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="ძიება..."
+          type="text"
+          (keyup)="searchInputTyped.emit($event.target['value'])"
+        />
+        <mat-hint align="start">
+          <strong>ჩაწერეთ საძიებო სიტყვა</strong>
+        </mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <mat-paginator
+    [length]="pagination.length"
+    [pageIndex]="pagination.pageIndex"
+    [pageSize]="pagination.pageSize"
+    [pageSizeOptions]="[10, 20, 40, 80]"
+    (page)="pageChanged($event)"
+  >
+  </mat-paginator>
+
+  <!--  List Items-->
+  <div class="flex-wrapper bg-white">
+    <!--    List Item-->
+    <mat-card *ngFor="let item of list">
+      <!--      Edited, Title, Subtitle-->
+      <mat-card-header>
+        <mat-card-title fxLayout fxLayoutGap="8px">
+          <mat-icon *ngIf="item.edited" color="primary" fxFlexAlign="center">
+            done
+          </mat-icon>
+          <span>{{ item.title }}</span>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <div class="text-overflow-ellipses-2">
+            {{ item.subtitle }}
+          </div>
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-divider></mat-divider>
+
+      <!--      Content-->
+      <mat-card-content>
+        <p class="text-overflow-ellipses-5 margin-top-3">{{ item.content }}</p>
+      </mat-card-content>
+
+      <mat-divider></mat-divider>
+
+      <!--      Edit,Delete Buttons-->
+      <mat-card-actions>
+        <button
+          mat-button
+          color="primary"
+          fxFlexAlign="center"
+          (click)="editPressed.emit(item.id)"
+        >
+          შეცვლა
+        </button>
+        <button
+          mat-button
+          color="warn"
+          fxFlexAlign="center"
+          (click)="deletePressed.emit(item.id)"
+        >
+          წაშლა
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <mat-divider></mat-divider>
+</layout-container>

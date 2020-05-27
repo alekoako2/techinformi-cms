@@ -1,4 +1,10 @@
-import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core'
 
 @Component({
   selector: 'app-bottom-toolbar',
@@ -7,11 +13,7 @@ import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angul
   encapsulation: ViewEncapsulation.None,
 })
 export class BottomToolbarComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

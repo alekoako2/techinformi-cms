@@ -1,0 +1,28 @@
+<mat-form-field>
+  <mat-label>
+    {{label}}
+  </mat-label>
+  <input [matDatepicker]="picker"
+         [ngModel]="date"
+         [min]="minDate"
+         [max]="maxDate"
+         [required]="required"
+         [name]="name"
+         #input="ngModel"
+         matInput>
+  <mat-datepicker-toggle matSuffix
+                         [for]="picker">
+  </mat-datepicker-toggle>
+  <mat-datepicker (yearSelected)="chosenYearHandler($event,picker)"
+                  startView="multi-year"
+                  #picker>
+  </mat-datepicker>
+  <button mat-button *ngIf="date" matSuffix mat-icon-button aria-label="Clear" (click)="date=null;dateChange.emit(null)">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-error *ngIf="!input.valid && input.touched">
+    გთხოვთ შეავსოთ ველი
+  </mat-error>
+
+</mat-form-field>

@@ -1,0 +1,19 @@
+<custom-dialog>
+  <div title>ახალი პუბლიკაციის დამატება</div>
+  <div content>
+    <qrj-publication-form
+      [qrjPublicationForm]="qrjPublicationCreateForm"
+    ></qrj-publication-form>
+  </div>
+  <div actions>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="create()"
+      [disabled]="qrjPublicationCreateForm.invalid"
+    >
+      დამატება
+    </button>
+  </div>
+</custom-dialog>

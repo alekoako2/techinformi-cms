@@ -1,0 +1,17 @@
+<database-template-paginator (loadPressed)="loadPressed.emit($event)"
+                             [pageIndex]="pageIndex"
+                             [pageSize]="pageSize"
+                             [length]="length">
+
+</database-template-paginator>
+<div fxLayout="row" fxLayoutGap="16px">
+  <database-template-filters fxFlex="30"
+  (searchPressed)="searchPressed.emit()">
+    <ng-content select="[filters]"></ng-content>
+  </database-template-filters>
+  <database-template-list fxFlex="70"
+                          [count]="length"
+                          [skeleton]="skeleton">
+    <ng-content select="[list]"></ng-content>
+  </database-template-list>
+</div>

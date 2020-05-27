@@ -15,28 +15,23 @@
   src: url(../fonts/bpg_nino_mtavruli_normal.ttf);
 }
 
-body {
-  background: #fafafa;
-}
-
-@import "border-radius";
-@import "border";
-@import "border-color";
-@import "margin";
-@import "padding";
-@import "shadow";
-@import "animate";
-@import "background";
-@import "overflow";
-@import "text-decoration";
-@import "color";
-@import "font";
-@import "outline";
-@import "cursor";
-@import "snackbar";
-@import "text-align";
-@import "list";
-@import "dimension";
+@import 'border-radius';
+@import 'margin';
+@import 'padding';
+@import 'shadow';
+@import 'animate';
+@import 'background';
+@import 'overflow';
+@import 'text-decoration';
+@import 'color';
+@import 'font';
+@import 'outline';
+@import 'cursor';
+@import 'snackbar';
+@import 'text-align';
+@import 'list';
+@import 'dimension';
+@import 'button';
 
 body {
   margin: 0;

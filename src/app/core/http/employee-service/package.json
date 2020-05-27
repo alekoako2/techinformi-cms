@@ -1,0 +1,4 @@
+{
+  "main": "employees.service.ts",
+  "typings": "employees.service.ts"
+}

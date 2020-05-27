@@ -1,0 +1,13 @@
+div {
+  ::ng-deep {
+    h3 {
+      font-family: mtavruli, sans-serif !important;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    span {
+      color: #646464;
+    }
+  }
+}

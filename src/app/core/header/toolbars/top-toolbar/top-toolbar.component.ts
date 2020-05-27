@@ -1,21 +1,19 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 
 @Component({
   selector: 'app-top-toolbar',
   templateUrl: './top-toolbar.component.html',
-  styleUrls: ['./top-toolbar.component.scss']
+  styleUrls: ['./top-toolbar.component.scss'],
 })
 export class TopToolbarComponent implements OnInit {
-  @Output() sidenavToggle = new EventEmitter();
-  hidden = true;
+  @Output() sidenavToggle = new EventEmitter()
+  hidden = true
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onToggleSidenav() {
-    this.sidenavToggle.emit();
+    this.sidenavToggle.emit()
   }
 }

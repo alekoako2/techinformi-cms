@@ -1,0 +1,27 @@
+<mat-form-field fxFlex="100" [formGroup]="inputFormGroup">
+  <textarea
+    [formControlName]="formCtrlName"
+    [placeholder]="placeholder"
+    [required]="required"
+    #autosize="cdkTextareaAutosize"
+    cdkAutosizeMinRows="1"
+    cdkAutosizeMaxRows="5"
+    cdkTextareaAutosize
+    matInput
+  >
+  </textarea>
+  <button
+    matSuffix
+    mat-button
+    mat-icon-button
+    aria-label="Clear"
+    *ngIf="this.inputFormGroup.get(this.formCtrlName).value"
+    (click)="this.inputFormGroup.get(this.formCtrlName).reset('')"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-error *ngIf="inputFormGroup.get(formCtrlName).invalid">
+    გთხოვთ შეავსოთ ველი
+  </mat-error>
+</mat-form-field>

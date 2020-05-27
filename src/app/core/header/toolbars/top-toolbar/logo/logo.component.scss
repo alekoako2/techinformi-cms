@@ -3,31 +3,22 @@ a {
   display: block;
   height: 100%;
 
-
   div {
     width: 70px;
     position: relative;
 
     img {
-
       display: block;
       height: 60px;
       //height: 100%;
       top: -10px;
       position: absolute;
-
     }
-
   }
 
   h1 {
     font-size: 42px;
     line-height: 42px;
     color: white;
-
   }
-
 }
-
-
-

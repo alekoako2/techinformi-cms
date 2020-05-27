@@ -1,0 +1,19 @@
+.flex-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+  mat-card {
+    margin: 20px;
+    overflow: hidden;
+
+    mat-card-header {
+      min-height: 77px;
+      ::ng-deep .mat-card-header-text {
+        margin: 0;
+      }
+    }
+    mat-card-content {
+      min-height: 80px;
+    }
+  }
+}

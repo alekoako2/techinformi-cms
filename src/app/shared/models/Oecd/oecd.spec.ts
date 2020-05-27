@@ -1,7 +1,7 @@
-import { Oecd } from './oecd';
+import { Oecd } from './oecd'
 
 describe('Oecd', () => {
   it('should create an instance', () => {
-    expect(new Oecd()).toBeTruthy();
-  });
-});
+    expect(new Oecd()).toBeTruthy()
+  })
+})

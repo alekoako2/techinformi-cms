@@ -1,0 +1,4 @@
+{
+  "main": "sanitize-html.pipe.ts",
+  "typings": "sanitize-html.pipe.ts"
+}

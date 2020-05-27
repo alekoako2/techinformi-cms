@@ -1,0 +1,4 @@
+{
+  "main": "language.service.ts",
+  "typings": "language.service.ts"
+}

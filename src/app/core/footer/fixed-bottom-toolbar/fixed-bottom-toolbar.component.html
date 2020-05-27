@@ -1,14 +1,34 @@
 <mat-toolbar fxLayoutAlign="center" color="primary">
   <div fxFlex="80" fxLayout="row" fxLayoutAlign="center">
     <button mat-button routerLink="/qrj" class="bold" i18n="@@qrj">ქრჟ</button>
-    <button mat-button routerLink="/agro-information" class="bold" i18n="@@agro_information">აგროინფორმაცია</button>
-    <button mat-button routerLink="/databases" class="bold" i18n="@@databases">მონაცემთა ბაზები</button>
-    <button mat-button routerLink="/publications" class="bold" i18n="@@publications" appHideMissingLanguageElement>
+    <button
+      mat-button
+      routerLink="/agro-information"
+      class="bold"
+      i18n="@@agro_information"
+    >
+      აგროინფორმაცია
+    </button>
+    <button mat-button routerLink="/databases" class="bold" i18n="@@databases">
+      მონაცემთა ბაზები
+    </button>
+    <button
+      mat-button
+      routerLink="/publications"
+      class="bold"
+      i18n="@@publications"
+      hideMissingLanguageElement
+    >
       გამოცემები
     </button>
-    <a mat-button href="https://techinformi.ge/old/GEO/index.html" fxFlexAlign="center" fxLayoutAlign="center"
-       class="mtavruli bold"
-       i18n="@@old_website">
+    <a
+      mat-button
+      href="https://techinformi.ge/old/GEO/index.html"
+      fxFlexAlign="center"
+      fxLayoutAlign="center"
+      class="mtavruli bold"
+      i18n="@@old_website"
+    >
       ძველი საიტი
     </a>
   </div>
