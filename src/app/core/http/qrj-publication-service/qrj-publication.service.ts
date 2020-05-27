@@ -22,7 +22,7 @@ import {
   deleteQrjPublicationMutation,
   updateQrjPublicationMutation,
 } from './gql/qrj-publication.mutations'
-import { CrudService } from '@interfaces/crud/crud-service.interfaces'
+import { CrudService } from '../../../shared/Interfaces/crud/crud-service.interfaces'
 import {
   crudFetchAll,
   crudFetchSingle,

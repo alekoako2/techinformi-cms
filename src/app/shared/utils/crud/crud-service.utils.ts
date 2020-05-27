@@ -14,7 +14,7 @@ import {
   FetchAllQueryVariables,
   FetchSingleQueryVariables,
   UpdateMutationVariables,
-} from '@interfaces/crud/crud-service.interfaces'
+} from '../../Interfaces/crud/crud-service.interfaces'
 
 export const crudFetchAll = <QueryInput, Query>(
   apollo: Apollo,
