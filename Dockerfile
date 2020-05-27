@@ -1,13 +1,14 @@
-FROM node:12.14.1 as node
+FROM node:12.16.2-alpine as node
 WORKDIR /app
 COPY package.json yarn.lock /app/
-RUN npm install @angular/cli@8.3.17 -g
+RUN yarn global add @angular/cli@9.1.1
 RUN cd /app && yarn install
 COPY .  /app
 
-RUN cd /app && yarn build-locale
+RUN cd /app && yarn build
 
-FROM nginx:alpine
+FROM nginx:1.17.10-alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=node /app/dist /usr/share/nginx/html
+
