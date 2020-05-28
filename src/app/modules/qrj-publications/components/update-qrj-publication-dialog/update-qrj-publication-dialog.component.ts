@@ -45,7 +45,15 @@ export class UpdateQrjPublicationDialogComponent implements OnInit {
   setQrjPublicationForm = async (): Promise<void> => {
     const { qrjPublication } = await this.loadQrjPublication()
 
-    const { index, oecd, qrjJournal, year, number, pages } = qrjPublication
+    const {
+      index,
+      oecd,
+      qrjJournal,
+      year,
+      number,
+      pages,
+      doiUrl,
+    } = qrjPublication
 
     const { translation } = qrjPublication
 
@@ -78,6 +86,7 @@ export class UpdateQrjPublicationDialogComponent implements OnInit {
       year: [year],
       number: [number],
       pages: [pages],
+      doiUrl: [doiUrl],
       translation: this.fb.array([
         translationFormGroupKA,
         translationFormGroupEN,

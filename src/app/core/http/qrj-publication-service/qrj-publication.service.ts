@@ -78,7 +78,6 @@ export class QrjPublicationService
   create = (
     input: QrjPublicationCreateInput
   ): Observable<CreateQrjPublicationMutation> => {
-    console.log(input)
     return crudCreate<QrjPublicationCreateInput, CreateQrjPublicationMutation>(
       this.apollo,
       this.languageService.currentLanguage,
@@ -90,7 +89,6 @@ export class QrjPublicationService
   update = (
     input: QrjPublicationUpdateInput
   ): Observable<UpdateQrjPublicationMutation> => {
-    console.log(input)
     return crudUpdate<QrjPublicationUpdateInput, UpdateQrjPublicationMutation>(
       this.apollo,
       this.languageService.currentLanguage,

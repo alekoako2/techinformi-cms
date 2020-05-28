@@ -38,7 +38,6 @@ export const crudFetchAll = <QueryInput, Query>(
     })
     .valueChanges.pipe(
       map((res: ApolloQueryResult<Query>) => {
-        console.log(res)
         return res.data
       })
     )

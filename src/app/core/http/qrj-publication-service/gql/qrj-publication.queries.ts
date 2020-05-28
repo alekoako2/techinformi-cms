@@ -33,6 +33,7 @@ export const qrjPublicationQueries = gql`
       number
       pages
       inputDate
+      doiUrl
       qrjJournal {
         code
         translation(language: $languageCode) {

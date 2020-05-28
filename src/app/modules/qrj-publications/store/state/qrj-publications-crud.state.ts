@@ -89,7 +89,6 @@ export class QrjPublicationsCrudState {
     return this.qrjPublicationsService.update(qrjPublicationUpdateInput).pipe(
       first(),
       tap(({ updateQrjPublication }: UpdateQrjPublicationMutation) => {
-        console.log(updateQrjPublication)
         setState(
           patch({
             qrjPublications: updateItem<QrjPublication>(

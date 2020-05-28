@@ -1884,6 +1884,18 @@
             "deprecationReason": null
           },
           {
+            "name": "doiUrl",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "qrjJournal",
             "description": null,
             "args": [],
@@ -5404,6 +5416,16 @@
             "defaultValue": null
           },
           {
+            "name": "doiUrl",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "qrjJournal",
             "description": null,
             "type": {
@@ -5518,6 +5540,16 @@
           },
           {
             "name": "pages",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "doiUrl",
             "description": null,
             "type": {
               "kind": "SCALAR",
