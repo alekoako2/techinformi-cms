@@ -34,7 +34,6 @@ export class AuthService {
       })
       .subscribe(
         (res) => {
-          console.log(res)
           this.doLoginUser(res.data['signIn'].user, res.data['signIn'].token)
           this.apollo.getClient().resetStore()
         },
@@ -86,7 +85,6 @@ export class AuthService {
   }
 
   private doLoginUser(user: string, tokens: Tokens) {
-    console.log('asd')
     this.loggedUser = user
     this.storeTokens(user, tokens)
   }

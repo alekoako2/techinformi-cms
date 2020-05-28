@@ -56,6 +56,7 @@ export class CreateQrjPublicationDialogComponent {
       year: [null],
       number: [null],
       pages: [null],
+      doiUrl: [null],
       translation: this.fb.array([
         translationFormGroupKA,
         translationFormGroupEN,

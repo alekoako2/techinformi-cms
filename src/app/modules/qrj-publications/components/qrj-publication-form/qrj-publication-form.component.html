@@ -7,7 +7,7 @@
     *ngIf="qrjPublicationForm.get('id')"
   />
 
-  <!--  Index & OECD-->
+  <!--  Index & Doi-URL-->
   <div fxLayout fxLayoutGap="16px">
     <input-text
       fxFlex
@@ -17,18 +17,29 @@
       i18n-placeholder="@@index"
     ></input-text>
 
+    <input-text
+      fxFlex
+      placeholder="DOI"
+      type="url"
+      formCtrlName="doiUrl"
+      [inputFormGroup]="qrjPublicationForm"
+    ></input-text>
+  </div>
+
+  <!--  OECD & Qrj Journal-->
+  <div fxLayout fxLayoutGap="16px">
     <oecds-input-display-value-filter-autocomplete
       fxFlex
       [inputFormGroup]="qrjPublicationForm"
     >
     </oecds-input-display-value-filter-autocomplete>
-  </div>
 
-  <!--  Qrj Journal-->
-  <qrj-journals-input-display-value-filter-autocomplete
-    [inputFormGroup]="qrjPublicationForm"
-  >
-  </qrj-journals-input-display-value-filter-autocomplete>
+    <qrj-journals-input-display-value-filter-autocomplete
+      fxFlex
+      [inputFormGroup]="qrjPublicationForm"
+    >
+    </qrj-journals-input-display-value-filter-autocomplete>
+  </div>
 
   <!--  Year, Number & Pages-->
   <div fxLayout fxLayoutGap="16px">

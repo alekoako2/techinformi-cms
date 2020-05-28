@@ -492,6 +492,7 @@ export type QrjPublication = {
   number?: Maybe<Scalars['String']>;
   pages?: Maybe<Scalars['String']>;
   inputDate?: Maybe<Scalars['String']>;
+  doiUrl?: Maybe<Scalars['String']>;
   qrjJournal?: Maybe<QrjJournal>;
   oecd?: Maybe<Oecd>;
   translation?: Maybe<Array<Maybe<QrjPublicationTranslation>>>;
@@ -508,6 +509,7 @@ export type QrjPublicationCreateInput = {
   edited?: Maybe<Scalars['Boolean']>;
   number?: Maybe<Scalars['String']>;
   pages?: Maybe<Scalars['String']>;
+  doiUrl?: Maybe<Scalars['String']>;
   qrjJournal?: Maybe<Scalars['String']>;
   inputDate?: Maybe<Scalars['String']>;
   oecd?: Maybe<Scalars['String']>;
@@ -548,6 +550,7 @@ export type QrjPublicationUpdateInput = {
   edited?: Maybe<Scalars['Boolean']>;
   number?: Maybe<Scalars['String']>;
   pages?: Maybe<Scalars['String']>;
+  doiUrl?: Maybe<Scalars['String']>;
   qrjJournal?: Maybe<Scalars['String']>;
   inputDate?: Maybe<Scalars['String']>;
   oecd?: Maybe<Scalars['String']>;
@@ -1138,7 +1141,7 @@ export type QrjPublicationQuery = (
   { __typename?: 'Query' }
   & { qrjPublication: (
     { __typename?: 'QrjPublication' }
-    & Pick<QrjPublication, 'index' | 'year' | 'number' | 'pages' | 'inputDate'>
+    & Pick<QrjPublication, 'index' | 'year' | 'number' | 'pages' | 'inputDate' | 'doiUrl'>
     & { qrjJournal?: Maybe<(
       { __typename?: 'QrjJournal' }
       & Pick<QrjJournal, 'code'>
@@ -1417,6 +1420,7 @@ export const QrjPublicationDocument = gql`
     number
     pages
     inputDate
+    doiUrl
     qrjJournal {
       code
       translation(language: $languageCode) {
@@ -1687,6 +1691,7 @@ export const QrjPublication = gql`
     number
     pages
     inputDate
+    doiUrl
     qrjJournal {
       code
       translation(language: $languageCode) {
