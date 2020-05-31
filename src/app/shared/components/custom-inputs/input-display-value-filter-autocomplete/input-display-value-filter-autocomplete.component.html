@@ -1,5 +1,5 @@
-<mat-form-field fxFlex [formGroup]="inputFormGroup">
-  <input type="text" [formControlName]="formCtrlName" hidden />
+<mat-form-field fxFlex>
+  <input type="text" [formControl]="formControl" hidden />
 
   <input
     type="text"
@@ -15,10 +15,9 @@
     mat-button
     mat-icon-button
     aria-label="Clear"
-    *ngIf="inputFormGroup?.get(formCtrlName)?.value"
+    *ngIf="inputAbstractControl?.value"
     (click)="
-      inputFormGroup?.get(formCtrlName)?.reset('');
-      autocompleteInputControl.reset('')
+      inputAbstractControl?.reset(''); autocompleteInputControl.reset('')
     "
   >
     <mat-icon>close</mat-icon>

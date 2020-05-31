@@ -1,0 +1,4 @@
+{
+  "main": "authentication.module.ts",
+  "typings": "authentication.module.ts"
+}

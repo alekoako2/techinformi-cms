@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core'
 import { Store } from '@ngxs/store'
-import { DeleteQrjPublication } from '../../store/action/qrj-publications-crud.actions'
+import { DeleteQrjPublication } from '../../store/actions/qrj-publications-crud.actions'
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
 
 @Component({

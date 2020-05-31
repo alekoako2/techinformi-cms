@@ -3,7 +3,7 @@ import { Oecd } from '@graphql'
 import { first } from 'rxjs/operators'
 import { OecdService } from '@http/oecd-service'
 import { InputFilterAutocompleteListItem } from '@shared/components/custom-inputs/input-display-value-filter-autocomplete/input-display-value-filter-autocomplete.component'
-import { FormGroup } from '@angular/forms'
+import { AbstractControl, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'oecds-input-display-value-filter-autocomplete',
@@ -11,7 +11,7 @@ import { FormGroup } from '@angular/forms'
   styleUrls: ['./oecds-input-display-value-filter-autocomplete.component.scss'],
 })
 export class OecdsInputDisplayValueFilterAutocompleteComponent {
-  @Input() inputFormGroup: FormGroup
+  @Input() inputAbstractControl: AbstractControl
 
   oecdsSelectList: InputFilterAutocompleteListItem[] = []
 

@@ -145,7 +145,7 @@ export enum Gender {
 
 export type Journal = {
    __typename?: 'Journal';
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
   pubNumber?: Maybe<Scalars['String']>;
   translation?: Maybe<Array<Maybe<QrjTranslation>>>;
 };
@@ -156,7 +156,7 @@ export type JournalTranslationArgs = {
 };
 
 export type JournalInput = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
   pub_num?: Maybe<Scalars['String']>;
   translation?: Maybe<Array<QrjTranslationInput>>;
 };
@@ -342,13 +342,12 @@ export type MutationDeleteExpertArgs = {
 
 
 export type MutationCreateNewsArgs = {
-  input?: Maybe<NewsInput>;
+  input?: Maybe<NewsCreateInput>;
 };
 
 
 export type MutationUpdateNewsArgs = {
-  id: Scalars['ID'];
-  input?: Maybe<NewsInput>;
+  input?: Maybe<NewsUpdateInput>;
 };
 
 
@@ -374,9 +373,8 @@ export type MutationDeleteQrjArgs = {
 
 export type News = {
    __typename?: 'News';
-  id: Scalars['ID'];
+  id?: Maybe<Scalars['ID']>;
   translation?: Maybe<Array<Maybe<NewsTranslation>>>;
-  author: User;
 };
 
 
@@ -384,23 +382,34 @@ export type NewsTranslationArgs = {
   language?: Maybe<LanguageCode>;
 };
 
-export type NewsInput = {
+export type NewsCreateInput = {
   translation?: Maybe<Array<Maybe<NewsTranslationInput>>>;
+};
+
+export type NewsQueryInput = {
+  translation?: Maybe<NewsTranslationInput>;
 };
 
 export type NewsTranslation = {
    __typename?: 'NewsTranslation';
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
-  language: Language;
+  language?: Maybe<Language>;
 };
 
 export type NewsTranslationInput = {
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
   language?: Maybe<LanguageCode>;
+};
+
+export type NewsUpdateInput = {
+  id: Scalars['ID'];
+  translation?: Maybe<Array<Maybe<NewsTranslationInput>>>;
 };
 
 export type Oecd = {
@@ -528,6 +537,7 @@ export type QrjPublicationQueryInput = {
 
 export type QrjPublicationTranslation = {
    __typename?: 'QrjPublicationTranslation';
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
   publicationAuthor?: Maybe<Scalars['String']>;
   publicationLang?: Maybe<Scalars['String']>;
@@ -536,6 +546,7 @@ export type QrjPublicationTranslation = {
 };
 
 export type QrjPublicationTranslationInput = {
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
   publicationAuthor?: Maybe<Scalars['String']>;
   publicationLang?: Maybe<Scalars['String']>;
@@ -621,7 +632,7 @@ export type QueryQrjJournalsArgs = {
 
 
 export type QueryQrjJournalArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -639,7 +650,7 @@ export type QueryQrjPublicationsArgs = {
 
 
 export type QueryQrjPublicationArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -657,7 +668,7 @@ export type QueryOecdsArgs = {
 
 
 export type QueryOecdArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -669,7 +680,7 @@ export type QueryTechnologyTransferAndInnovationOrganizationsArgs = {
 
 
 export type QueryTechnologyTransferAndInnovationOrganizationArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -698,7 +709,7 @@ export type QueryCountResearchProjectsArgs = {
 
 
 export type QueryResearchProjectArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -722,19 +733,25 @@ export type QueryExpertsArgs = {
 
 
 export type QueryExpertArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryCountNewsesArgs = {
+  query?: Maybe<NewsQueryInput>;
 };
 
 
 export type QueryNewsesArgs = {
-  query?: Maybe<Scalars['String']>;
+  query?: Maybe<NewsQueryInput>;
   first?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
 };
 
 
 export type QueryNewsArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -746,7 +763,7 @@ export type QueryQrjsArgs = {
 
 
 export type QueryQrjArgs = {
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 export type ResearchProject = {
@@ -1018,6 +1035,94 @@ export type SignInMutation = (
   ) }
 );
 
+export type UpdateNewsMutationVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<NewsUpdateInput>;
+};
+
+
+export type UpdateNewsMutation = (
+  { __typename?: 'Mutation' }
+  & { updateNews?: Maybe<(
+    { __typename?: 'News' }
+    & Pick<News, 'id'>
+    & { translation?: Maybe<Array<Maybe<(
+      { __typename?: 'NewsTranslation' }
+      & Pick<NewsTranslation, 'title' | 'description' | 'content'>
+    )>>> }
+  )> }
+);
+
+export type CreateNewsMutationVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<NewsCreateInput>;
+};
+
+
+export type CreateNewsMutation = (
+  { __typename?: 'Mutation' }
+  & { createNews?: Maybe<(
+    { __typename?: 'News' }
+    & Pick<News, 'id'>
+    & { translation?: Maybe<Array<Maybe<(
+      { __typename?: 'NewsTranslation' }
+      & Pick<NewsTranslation, 'title' | 'description' | 'content'>
+    )>>> }
+  )> }
+);
+
+export type DeleteNewsMutationVariables = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type DeleteNewsMutation = (
+  { __typename?: 'Mutation' }
+  & { deleteNews?: Maybe<(
+    { __typename?: 'News' }
+    & Pick<News, 'id'>
+  )> }
+);
+
+export type NewsesQueryVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  query?: Maybe<NewsQueryInput>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+};
+
+
+export type NewsesQuery = (
+  { __typename?: 'Query' }
+  & Pick<Query, 'countNewses'>
+  & { newses: Array<(
+    { __typename?: 'News' }
+    & Pick<News, 'id'>
+    & { translation?: Maybe<Array<Maybe<(
+      { __typename?: 'NewsTranslation' }
+      & Pick<NewsTranslation, 'title' | 'description' | 'content'>
+    )>>> }
+  )> }
+);
+
+export type NewsQueryVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type NewsQuery = (
+  { __typename?: 'Query' }
+  & { news: (
+    { __typename?: 'News' }
+    & { translation?: Maybe<Array<Maybe<(
+      { __typename?: 'NewsTranslation' }
+      & Pick<NewsTranslation, 'id' | 'title' | 'description' | 'content'>
+    )>>> }
+  ) }
+);
+
 export type OecdsQueryVariables = {
   first?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
@@ -1133,7 +1238,7 @@ export type QrjPublicationsQuery = (
 
 export type QrjPublicationQueryVariables = {
   languageCode?: Maybe<LanguageCode>;
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -1158,7 +1263,7 @@ export type QrjPublicationQuery = (
       )> }
     )>, translation?: Maybe<Array<Maybe<(
       { __typename?: 'QrjPublicationTranslation' }
-      & Pick<QrjPublicationTranslation, 'title' | 'publicationAuthor' | 'publicationLang' | 'abstract'>
+      & Pick<QrjPublicationTranslation, 'id' | 'title' | 'publicationAuthor' | 'publicationLang' | 'abstract'>
     )>>> }
   ) }
 );
@@ -1190,7 +1295,7 @@ export type ResearchProjectsQuery = (
 
 export type ResearchProjectQueryVariables = {
   languageCode?: Maybe<LanguageCode>;
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -1246,7 +1351,7 @@ export type ExpertsQuery = (
 
 export type ExpertQueryVariables = {
   languageCode?: Maybe<LanguageCode>;
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
 };
 
 
@@ -1292,6 +1397,102 @@ export const SignInDocument = gql`
   })
   export class SignInGQL extends Apollo.Mutation<SignInMutation, SignInMutationVariables> {
     document = SignInDocument;
+    
+  }
+export const UpdateNewsDocument = gql`
+    mutation UpdateNews($languageCode: LanguageCode, $input: NewsUpdateInput) {
+  updateNews(input: $input) {
+    id
+    translation(language: $languageCode) {
+      title
+      description
+      content
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class UpdateNewsGQL extends Apollo.Mutation<UpdateNewsMutation, UpdateNewsMutationVariables> {
+    document = UpdateNewsDocument;
+    
+  }
+export const CreateNewsDocument = gql`
+    mutation CreateNews($languageCode: LanguageCode, $input: NewsCreateInput) {
+  createNews(input: $input) {
+    id
+    translation(language: $languageCode) {
+      title
+      description
+      content
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CreateNewsGQL extends Apollo.Mutation<CreateNewsMutation, CreateNewsMutationVariables> {
+    document = CreateNewsDocument;
+    
+  }
+export const DeleteNewsDocument = gql`
+    mutation DeleteNews($id: ID) {
+  deleteNews(id: $id) {
+    id
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class DeleteNewsGQL extends Apollo.Mutation<DeleteNewsMutation, DeleteNewsMutationVariables> {
+    document = DeleteNewsDocument;
+    
+  }
+export const NewsesDocument = gql`
+    query Newses($languageCode: LanguageCode, $query: NewsQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  newses(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    translation(language: $languageCode) {
+      title
+      description
+      content
+    }
+  }
+  countNewses(query: $query)
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class NewsesGQL extends Apollo.Query<NewsesQuery, NewsesQueryVariables> {
+    document = NewsesDocument;
+    
+  }
+export const NewsDocument = gql`
+    query News($languageCode: LanguageCode, $id: ID) {
+  news(id: $id) {
+    translation(language: $languageCode) {
+      id
+      title
+      description
+      content
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class NewsGQL extends Apollo.Query<NewsQuery, NewsQueryVariables> {
+    document = NewsDocument;
     
   }
 export const OecdsDocument = gql`
@@ -1413,7 +1614,7 @@ export const QrjPublicationsDocument = gql`
     
   }
 export const QrjPublicationDocument = gql`
-    query QrjPublication($languageCode: LanguageCode, $id: String) {
+    query QrjPublication($languageCode: LanguageCode, $id: ID) {
   qrjPublication(id: $id) {
     index
     year
@@ -1435,6 +1636,7 @@ export const QrjPublicationDocument = gql`
       }
     }
     translation {
+      id
       title
       publicationAuthor
       publicationLang
@@ -1478,7 +1680,7 @@ export const ResearchProjectsDocument = gql`
     
   }
 export const ResearchProjectDocument = gql`
-    query ResearchProject($languageCode: LanguageCode, $id: String) {
+    query ResearchProject($languageCode: LanguageCode, $id: ID) {
   researchProject(id: $id) {
     inpDate
     regDate
@@ -1565,7 +1767,7 @@ export const ExpertsDocument = gql`
     
   }
 export const ExpertDocument = gql`
-    query Expert($languageCode: LanguageCode, $id: String) {
+    query Expert($languageCode: LanguageCode, $id: ID) {
   expert(id: $id) {
     email
     publications
@@ -1610,6 +1812,62 @@ export const SignIn = gql`
       }
     }
     token
+  }
+}
+    `;
+export const UpdateNews = gql`
+    mutation UpdateNews($languageCode: LanguageCode, $input: NewsUpdateInput) {
+  updateNews(input: $input) {
+    id
+    translation(language: $languageCode) {
+      title
+      description
+      content
+    }
+  }
+}
+    `;
+export const CreateNews = gql`
+    mutation CreateNews($languageCode: LanguageCode, $input: NewsCreateInput) {
+  createNews(input: $input) {
+    id
+    translation(language: $languageCode) {
+      title
+      description
+      content
+    }
+  }
+}
+    `;
+export const DeleteNews = gql`
+    mutation DeleteNews($id: ID) {
+  deleteNews(id: $id) {
+    id
+  }
+}
+    `;
+export const Newses = gql`
+    query Newses($languageCode: LanguageCode, $query: NewsQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  newses(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    translation(language: $languageCode) {
+      title
+      description
+      content
+    }
+  }
+  countNewses(query: $query)
+}
+    `;
+export const News = gql`
+    query News($languageCode: LanguageCode, $id: ID) {
+  news(id: $id) {
+    translation(language: $languageCode) {
+      id
+      title
+      description
+      content
+    }
   }
 }
     `;
@@ -1684,7 +1942,7 @@ export const QrjPublications = gql`
 }
     `;
 export const QrjPublication = gql`
-    query QrjPublication($languageCode: LanguageCode, $id: String) {
+    query QrjPublication($languageCode: LanguageCode, $id: ID) {
   qrjPublication(id: $id) {
     index
     year
@@ -1706,6 +1964,7 @@ export const QrjPublication = gql`
       }
     }
     translation {
+      id
       title
       publicationAuthor
       publicationLang
@@ -1733,7 +1992,7 @@ export const ResearchProjects = gql`
 }
     `;
 export const ResearchProject = gql`
-    query ResearchProject($languageCode: LanguageCode, $id: String) {
+    query ResearchProject($languageCode: LanguageCode, $id: ID) {
   researchProject(id: $id) {
     inpDate
     regDate
@@ -1804,7 +2063,7 @@ export const Experts = gql`
 }
     `;
 export const Expert = gql`
-    query Expert($languageCode: LanguageCode, $id: String) {
+    query Expert($languageCode: LanguageCode, $id: ID) {
   expert(id: $id) {
     email
     publications

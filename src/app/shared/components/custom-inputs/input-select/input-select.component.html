@@ -3,7 +3,7 @@
     {{ label }}
   </mat-label>
   <mat-select [required]="required" [formControlName]="formCtrlName">
-    <mat-option>
+    <mat-option value="">
       -
     </mat-option>
     <mat-option *ngFor="let option of options" [value]="option">

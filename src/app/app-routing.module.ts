@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core'
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router'
 import { AuthGuard } from '@shared/guards/auth.guard'
 import { AuthPageGuard } from '@shared/guards/AuthPage/auth-page.guard'
+import { HomeModule } from './modules/home'
+import { AuthenticationModule } from './core/authentication'
+import { QrjPublicationsModule } from './modules/qrj-publications'
+import { NewsModule } from './modules/news'
 
 const appRoutes: Routes = [
   {
@@ -11,22 +15,20 @@ const appRoutes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () =>
-      import('./core/authentication/authentication.module').then(
-        (mod) => mod.AuthenticationModule
-      ),
+    loadChildren: (): Promise<AuthenticationModule> =>
+      import('./core/authentication').then((mod) => mod.AuthenticationModule),
     canActivate: [AuthPageGuard],
   },
   {
     path: 'home',
-    loadChildren: () =>
-      import('./modules/home/home.module').then((mod) => mod.HomeModule),
+    loadChildren: (): Promise<HomeModule> =>
+      import('./modules/home').then((mod) => mod.HomeModule),
     canActivate: [AuthGuard],
   },
   {
     path: 'qrj-publications',
-    loadChildren: () =>
-      import('./modules/qrj-publications/qrj-publications.module').then(
+    loadChildren: (): Promise<QrjPublicationsModule> =>
+      import('./modules/qrj-publications').then(
         (mod) => mod.QrjPublicationsModule
       ),
     canActivate: [AuthGuard],
@@ -59,12 +61,12 @@ const appRoutes: Routes = [
   //     ),
   //   canActivate: [AuthGuard],
   // },
-  // {
-  //   path: 'news',
-  //   loadChildren: () =>
-  //     import('./modules/news/news.module').then((mod) => mod.NewsModule),
-  //   canActivate: [AuthGuard],
-  // },
+  {
+    path: 'news',
+    loadChildren: (): Promise<NewsModule> =>
+      import('./modules/news').then((mod) => mod.NewsModule),
+    canActivate: [AuthGuard],
+  },
 ]
 
 @NgModule({

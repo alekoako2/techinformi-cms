@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-export const qrjPublicationsQuery = gql`
+export const qrjPublicationsQueries = gql`
   query QrjPublications(
     $languageCode: LanguageCode
     $query: QrjPublicationQueryInput
@@ -25,8 +25,9 @@ export const qrjPublicationsQuery = gql`
     countQrjPublications(query: $query)
   }
 `
-export const qrjPublicationQueries = gql`
-  query QrjPublication($languageCode: LanguageCode, $id: String) {
+
+export const qrjPublicationQuery = gql`
+  query QrjPublication($languageCode: LanguageCode, $id: ID) {
     qrjPublication(id: $id) {
       index
       year
@@ -48,6 +49,7 @@ export const qrjPublicationQueries = gql`
         }
       }
       translation {
+        id
         title
         publicationAuthor
         publicationLang

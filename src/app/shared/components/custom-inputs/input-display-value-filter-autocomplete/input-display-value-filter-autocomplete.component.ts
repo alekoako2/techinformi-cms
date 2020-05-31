@@ -9,6 +9,7 @@ import {
 import { MatChipInputEvent } from '@angular/material/chips'
 import { COMMA, ENTER } from '@angular/cdk/keycodes'
 import {
+  AbstractControl,
   ControlContainer,
   FormControl,
   FormGroup,
@@ -31,8 +32,7 @@ export interface InputFilterAutocompleteListItem {
 })
 export class InputDisplayValueFilterAutocompleteComponent
   implements OnInit, OnChanges {
-  @Input() inputFormGroup: FormGroup
-  @Input() formCtrlName: string
+  @Input() inputAbstractControl: AbstractControl
 
   @Input()
   options: InputFilterAutocompleteListItem[]
@@ -40,15 +40,19 @@ export class InputDisplayValueFilterAutocompleteComponent
   @Input() placeholder: string
   @Input() required = false
 
+  formControl: FormControl
+
   autocompleteInputControl = new FormControl()
   filteredOptions: Observable<InputFilterAutocompleteListItem[]>
 
   ngOnInit(): void {
+    this.formControl = this.inputAbstractControl as FormControl
+
     this.initializeFilteredOptions()
   }
 
   ngOnChanges(): void {
-    const selectedValue = this.inputFormGroup?.get(this.formCtrlName)?.value
+    const selectedValue = this.inputAbstractControl?.value
     if (selectedValue) {
       const selectedOption = this.options.filter(
         (option) => option.value === selectedValue
@@ -81,6 +85,6 @@ export class InputDisplayValueFilterAutocompleteComponent
     item ? item.content : undefined
 
   optionSelected = ({ option }: MatAutocompleteSelectedEvent): void => {
-    this.inputFormGroup.get(this.formCtrlName).setValue(option.value.value)
+    this.inputAbstractControl.setValue(option.value.value)
   }
 }

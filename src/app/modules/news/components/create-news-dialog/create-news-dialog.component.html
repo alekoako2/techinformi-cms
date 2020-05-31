@@ -1,0 +1,17 @@
+<custom-dialog>
+  <div title>ახალი პუბლიკაციის დამატება</div>
+  <div content>
+    <news-form [newsForm]="newsCreateForm"></news-form>
+  </div>
+  <div actions>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="create()"
+      [disabled]="newsCreateForm.invalid"
+    >
+      დამატება
+    </button>
+  </div>
+</custom-dialog>

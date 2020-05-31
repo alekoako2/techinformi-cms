@@ -1,14 +1,14 @@
 import { Component } from '@angular/core'
 import { DeleteQrjPublicationDialogComponent } from '../../components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component'
 import { CreateQrjPublicationDialogComponent } from '../../components/create-qrj-publication-dialog/create-qrj-publication-dialog.component'
-import { LoadQrjPublications } from '../../store/action/qrj-publications-crud.actions'
+import { LoadQrjPublications } from '../../store/actions/qrj-publications-crud.actions'
 import { Store } from '@ngxs/store'
 import { QrjPublication, Scalars } from '@graphql'
 import {
   BasicCrud,
   BasicCrudListItem,
   BasicCrudPagination,
-} from '@shared/components/crud-templates/crud-basic/crud-basic.component'
+} from '@shared/modules/crud/components/crud-basic/crud-basic.component'
 import { MatDialog } from '@angular/material/dialog'
 import { UpdateQrjPublicationDialogComponent } from '../../components/update-qrj-publication-dialog/update-qrj-publication-dialog.component'
 
@@ -18,9 +18,6 @@ import { UpdateQrjPublicationDialogComponent } from '../../components/update-qrj
   styleUrls: ['./qrj-publications-crud.component.scss'],
 })
 export class QrjPublicationsCrudComponent implements BasicCrud {
-  DeleteQrjPublicationDialogComponent = DeleteQrjPublicationDialogComponent
-  QrjPublicationDialogComponent = CreateQrjPublicationDialogComponent
-
   searchText = ''
   pagination: BasicCrudPagination = {
     length: 0,
