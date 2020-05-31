@@ -1,0 +1,17 @@
+<custom-dialog>
+  <div title>არსებული პუბლიკაციის შეცვლა</div>
+  <div content>
+    <news-form [newsForm]="newsUpdateForm"></news-form>
+  </div>
+  <div actions>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      (click)="update()"
+      [disabled]="newsUpdateForm?.invalid"
+    >
+      შენახვა
+    </button>
+  </div>
+</custom-dialog>

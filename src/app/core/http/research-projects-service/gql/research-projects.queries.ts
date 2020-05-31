@@ -26,7 +26,7 @@ export const researchProjectsQueries = gql`
 `
 
 export const researchProjectQuery = gql`
-  query ResearchProject($languageCode: LanguageCode, $id: String) {
+  query ResearchProject($languageCode: LanguageCode, $id: ID) {
     researchProject(id: $id) {
       inpDate
       regDate

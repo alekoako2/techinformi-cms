@@ -1,0 +1,4 @@
+{
+  "main": "account.module.ts",
+  "typings": "account.module.ts"
+}

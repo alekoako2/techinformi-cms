@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core'
 import { QrjJournal } from '@graphql'
 import { first } from 'rxjs/operators'
 import { InputFilterAutocompleteListItem } from '@shared/components/custom-inputs/input-display-value-filter-autocomplete/input-display-value-filter-autocomplete.component'
-import { FormGroup } from '@angular/forms'
+import { AbstractControl, FormGroup } from '@angular/forms'
 import { QrjJournalService } from '@http/qrj-journal-service'
 
 @Component({
@@ -14,7 +14,7 @@ import { QrjJournalService } from '@http/qrj-journal-service'
   ],
 })
 export class QrjJournalsInputDisplayValueFilterAutocompleteComponent {
-  @Input() inputFormGroup: FormGroup
+  @Input() inputAbstractControl: AbstractControl
 
   qrjJournalsSelectList: InputFilterAutocompleteListItem[] = []
 

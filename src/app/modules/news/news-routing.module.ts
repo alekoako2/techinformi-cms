@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { IndexComponent } from './pages/index/index.component'
+import { NewsesCrudComponent } from './pages/newses-crud/newses-crud.component'
 
 const routes: Routes = [
   {
@@ -8,7 +8,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: IndexComponent,
+        component: NewsesCrudComponent,
       },
     ],
   },

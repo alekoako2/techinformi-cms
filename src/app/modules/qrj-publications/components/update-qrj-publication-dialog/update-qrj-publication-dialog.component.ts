@@ -9,13 +9,12 @@ import {
   Scalars,
 } from '@graphql'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { InputFilterAutocompleteListItem } from '@shared/components/custom-inputs/input-display-value-filter-autocomplete/input-display-value-filter-autocomplete.component'
 import { first } from 'rxjs/operators'
 import { QrjPublicationService } from '@http/qrj-publication-service'
 import { Store } from '@ngxs/store'
-import { UpdateQrjPublication } from '../../store/action'
-import { FormModel } from '../qrj-publication-form/qrj-publication-form.component'
+import { UpdateQrjPublication } from '../../store/actions'
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { FormModel } from '@shared/modules/crud/types/crud-form-model.types'
 
 @Component({
   selector: 'update-qrj-publication-dialog',
@@ -61,6 +60,7 @@ export class UpdateQrjPublicationDialogComponent implements OnInit {
     const qrjJournalCode = qrjJournal ? qrjJournal.code : null
 
     const translationFormKA: FormModel<QrjPublicationTranslationInput> = {
+      id: [translation[0].id],
       title: [translation[0].title],
       publicationAuthor: [translation[0].publicationAuthor],
       publicationLang: [translation[0].publicationLang],
@@ -68,6 +68,7 @@ export class UpdateQrjPublicationDialogComponent implements OnInit {
       language: [LanguageCode.KA],
     }
     const translationFormEN: FormModel<QrjPublicationTranslationInput> = {
+      id: [translation[1].id],
       title: [translation[1].title],
       publicationAuthor: [translation[1].publicationAuthor],
       publicationLang: [translation[1].publicationLang],

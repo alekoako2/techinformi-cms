@@ -25,7 +25,7 @@ export const expertsQueries = gql`
 `
 
 export const expertQuery = gql`
-  query Expert($languageCode: LanguageCode, $id: String) {
+  query Expert($languageCode: LanguageCode, $id: ID) {
     expert(id: $id) {
       email
       publications

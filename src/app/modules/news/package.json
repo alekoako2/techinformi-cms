@@ -1,0 +1,4 @@
+{
+  "main": "news.module.ts",
+  "typings": "news.module.ts"
+}

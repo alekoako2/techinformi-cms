@@ -1,8 +1,8 @@
-<mat-form-field fxFlex="100" [formGroup]="inputFormGroup">
+<mat-form-field fxFlex="100">
   <input
     [placeholder]="placeholder"
     [required]="required"
-    [formControlName]="formCtrlName"
+    [formControl]="formControl"
     [type]="type"
     matInput
   />
@@ -11,13 +11,13 @@
     mat-button
     mat-icon-button
     aria-label="Clear"
-    *ngIf="this.inputFormGroup?.get(this.formCtrlName)?.value"
-    (click)="this.inputFormGroup?.get(this.formCtrlName)?.reset('')"
+    *ngIf="formControl?.value"
+    (click)="formControl?.reset('')"
   >
     <mat-icon>close</mat-icon>
   </button>
 
-  <mat-error *ngIf="inputFormGroup?.get(formCtrlName)?.invalid">
+  <mat-error *ngIf="formControl?.invalid">
     გთხოვთ შეავსოთ ველი
   </mat-error>
 </mat-form-field>

@@ -1,0 +1,63 @@
+<form [formGroup]="newsForm" *ngIf="newsForm">
+  <!--  ID-->
+  <input-text
+    fxShow="false"
+    *ngIf="newsForm.get('id') as newsIDControl"
+    [inputAbstractControl]="newsIDControl"
+  >
+  </input-text>
+
+  <!--  Translations of Title, Description & Content-->
+  <mat-tab-group>
+    <mat-tab label="ქართული">
+      <!--      ID-->
+      <input-text
+        fxShow="false"
+        *ngIf="translationFormGroupKA.get('id') as translationKAIDControl"
+        [inputAbstractControl]="translationKAIDControl"
+      >
+      </input-text>
+
+      <!--      Title-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('title')"
+        placeholder="სათაური"
+      ></input-text>
+      <!--      Description-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('description')"
+        placeholder="აღწერა"
+      ></input-text>
+      <!--      Content-->
+      <quill-editor
+        [formControl]="translationFormGroupKA.get('content')"
+      ></quill-editor>
+    </mat-tab>
+
+    <mat-tab label="English">
+      <!--      ID-->
+      <input-text
+        fxShow="false"
+        *ngIf="translationFormGroupEN.get('id') as translationENIDControl"
+        [inputAbstractControl]="translationENIDControl"
+      >
+      </input-text>
+
+      <!--      Title-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupEN.get('title')"
+        placeholder="Title"
+      ></input-text>
+      <!--      Description-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupEN.get('description')"
+        placeholder="Description"
+      ></input-text>
+      <!--      Content-->
+      <input-text-area
+        [inputAbstractControl]="translationFormGroupEN.get('content')"
+        placeholder="Content"
+      ></input-text-area>
+    </mat-tab>
+  </mat-tab-group>
+</form>

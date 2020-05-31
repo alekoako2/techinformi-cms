@@ -3,7 +3,7 @@ import { Component } from '@angular/core'
 import { MatDialogRef } from '@angular/material/dialog'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Store } from '@ngxs/store'
-import { AddQrjPublication } from '../../store/action'
+import { AddQrjPublication } from '../../store/actions'
 import {
   LanguageCode,
   QrjPublicationCreateInput,
@@ -11,7 +11,7 @@ import {
 } from '@graphql'
 import { first } from 'rxjs/operators'
 import { MatSnackBar } from '@angular/material/snack-bar'
-import { FormModel } from '../qrj-publication-form/qrj-publication-form.component'
+import { FormModel } from '@shared/modules/crud/types/crud-form-model.types'
 
 @Component({
   selector: 'create-qrj-publication-dialog',

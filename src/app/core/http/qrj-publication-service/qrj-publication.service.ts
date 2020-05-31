@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import {
-  qrjPublicationQueries,
-  qrjPublicationsQuery,
+  qrjPublicationQuery,
+  qrjPublicationsQueries,
 } from './gql/qrj-publication.queries'
 import { Observable } from 'rxjs'
 import {
@@ -22,14 +22,14 @@ import {
   deleteQrjPublicationMutation,
   updateQrjPublicationMutation,
 } from './gql/qrj-publication.mutations'
-import { CrudService } from '../../../shared/Interfaces/crud/crud-service.interfaces'
+import { CrudService } from '@shared/modules/crud/interfaces/crud.service.interfaces'
 import {
-  crudFetchAll,
-  crudFetchSingle,
   crudCreate,
   crudDelete,
+  crudFetchAll,
+  crudFetchSingle,
   crudUpdate,
-} from '@utils/crud/crud-service.utils'
+} from '@shared/modules/crud/utils/crud.utils'
 
 @Injectable({
   providedIn: 'root',
@@ -59,7 +59,7 @@ export class QrjPublicationService
     return crudFetchAll<QrjPublicationQueryInput, QrjPublicationsQuery>(
       this.apollo,
       this.languageService.currentLanguage,
-      qrjPublicationsQuery,
+      qrjPublicationsQueries,
       query,
       pageIndex,
       pageSize
@@ -70,7 +70,7 @@ export class QrjPublicationService
     return crudFetchSingle<QrjPublicationQuery>(
       this.apollo,
       this.languageService.currentLanguage,
-      qrjPublicationQueries,
+      qrjPublicationQuery,
       id
     )
   }

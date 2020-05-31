@@ -1,19 +1,18 @@
 <form [formGroup]="qrjPublicationForm" *ngIf="qrjPublicationForm">
-  <!--  id-->
-  <input
-    type="text"
-    formControlName="id"
-    hidden
-    *ngIf="qrjPublicationForm.get('id')"
-  />
+  <!--  ID-->
+  <input-text
+    fxShow="false"
+    *ngIf="qrjPublicationForm.get('id') as qrjPublicationIDControl"
+    [inputAbstractControl]="qrjPublicationIDControl"
+  >
+  </input-text>
 
   <!--  Index & Doi-URL-->
   <div fxLayout fxLayoutGap="16px">
     <input-text
       fxFlex
       placeholder="ინდექსი"
-      formCtrlName="index"
-      [inputFormGroup]="qrjPublicationForm"
+      [inputAbstractControl]="qrjPublicationForm.get('index')"
       i18n-placeholder="@@index"
     ></input-text>
 
@@ -21,8 +20,7 @@
       fxFlex
       placeholder="DOI"
       type="url"
-      formCtrlName="doiUrl"
-      [inputFormGroup]="qrjPublicationForm"
+      [inputAbstractControl]="qrjPublicationForm.get('doiUrl')"
     ></input-text>
   </div>
 
@@ -30,13 +28,13 @@
   <div fxLayout fxLayoutGap="16px">
     <oecds-input-display-value-filter-autocomplete
       fxFlex
-      [inputFormGroup]="qrjPublicationForm"
+      [inputAbstractControl]="qrjPublicationForm.get('oecd')"
     >
     </oecds-input-display-value-filter-autocomplete>
 
     <qrj-journals-input-display-value-filter-autocomplete
       fxFlex
-      [inputFormGroup]="qrjPublicationForm"
+      [inputAbstractControl]="qrjPublicationForm.get('qrjJournal')"
     >
     </qrj-journals-input-display-value-filter-autocomplete>
   </div>
@@ -51,14 +49,12 @@
     ></input-select>
     <input-text
       fxFlex
-      formCtrlName="number"
-      [inputFormGroup]="qrjPublicationForm"
+      [inputAbstractControl]="qrjPublicationForm.get('number')"
       placeholder="ნომერი"
     ></input-text>
     <input-text
       fxFlex
-      formCtrlName="pages"
-      [inputFormGroup]="qrjPublicationForm"
+      [inputAbstractControl]="qrjPublicationForm.get('pages')"
       placeholder="გვერდები"
     ></input-text>
   </div>
@@ -66,51 +62,63 @@
   <!--  Translations of Title, Publication Author, Publications Languages & Abstract-->
   <mat-tab-group>
     <mat-tab label="ქართული">
+      <!--      ID-->
       <input-text
-        [inputFormGroup]="translationFormGroupKA"
-        formCtrlName="title"
+        fxShow="false"
+        *ngIf="translationFormGroupKA.get('id') as translationKAIDControl"
+        [inputAbstractControl]="translationKAIDControl"
+      >
+      </input-text>
+
+      <!--      Title-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('title')"
         placeholder="სათაური"
       ></input-text>
-
+      <!--      Publication Author-->
       <input-text
-        formCtrlName="publicationAuthor"
-        [inputFormGroup]="translationFormGroupKA"
+        [inputAbstractControl]="translationFormGroupKA.get('publicationAuthor')"
         placeholder="ავტორი"
       ></input-text>
-
+      <!--      Publications Languages-->
       <input-text
-        formCtrlName="publicationLang"
-        [inputFormGroup]="translationFormGroupKA"
+        [inputAbstractControl]="translationFormGroupKA.get('publicationLang')"
         placeholder="ენები"
       ></input-text>
-
+      <!--      Abstract-->
       <input-text-area
-        formCtrlName="abstract"
-        [inputFormGroup]="translationFormGroupKA"
+        [inputAbstractControl]="translationFormGroupKA.get('abstract')"
         placeholder="რეფერატი"
       ></input-text-area>
     </mat-tab>
 
     <mat-tab label="English">
+      <!--  ID-->
       <input-text
-        [inputFormGroup]="translationFormGroupEN"
-        formCtrlName="title"
+        fxShow="false"
+        *ngIf="translationFormGroupEN.get('id') as translationENIDControl"
+        [inputAbstractControl]="translationENIDControl"
+      >
+      </input-text>
+
+      <!--      Title-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupEN.get('title')"
         placeholder="Title"
       ></input-text>
+      <!--      Publication Author-->
       <input-text
-        formCtrlName="publicationAuthor"
-        [inputFormGroup]="translationFormGroupEN"
+        [inputAbstractControl]="translationFormGroupEN.get('publicationAuthor')"
         placeholder="Author"
       ></input-text>
+      <!--      Publications Languages-->
       <input-text
-        formCtrlName="publicationLang"
-        [inputFormGroup]="translationFormGroupEN"
+        [inputAbstractControl]="translationFormGroupEN.get('publicationLang')"
         placeholder="Languages"
       ></input-text>
-
+      <!--      Abstract-->
       <input-text-area
-        formCtrlName="abstract"
-        [inputFormGroup]="translationFormGroupEN"
+        [inputAbstractControl]="translationFormGroupEN.get('abstract')"
         placeholder="Abstract"
       ></input-text-area>
     </mat-tab>
