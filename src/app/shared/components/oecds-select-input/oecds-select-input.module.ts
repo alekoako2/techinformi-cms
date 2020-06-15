@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon'
 // Components
 import { OecdsSelectInputComponent } from '@shared/components/oecds-select-input/oecds-select-input.component'
 import { InputSelectWithKeyModule } from '@shared/components/custom-inputs/input-select-with-key'
+import { MatTooltipModule } from '@angular/material/tooltip'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { InputSelectWithKeyModule } from '@shared/components/custom-inputs/input
     MatChipsModule,
     MatIconModule,
     InputSelectWithKeyModule,
+    MatTooltipModule,
   ],
   exports: [
     // Components

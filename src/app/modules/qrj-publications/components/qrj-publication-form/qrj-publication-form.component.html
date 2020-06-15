@@ -24,20 +24,17 @@
     ></input-text>
   </div>
 
-  <!--  OECD & Qrj Journal-->
-  <div fxLayout fxLayoutGap="16px">
-    <oecds-input-display-value-filter-autocomplete
-      fxFlex
-      [inputAbstractControl]="qrjPublicationForm.get('oecd')"
-    >
-    </oecds-input-display-value-filter-autocomplete>
+  <!--  OECD-->
+  <oecds-input-display-value-filter-autocomplete
+    [inputAbstractControl]="qrjPublicationForm.get('oecd')"
+  >
+  </oecds-input-display-value-filter-autocomplete>
 
-    <qrj-journals-input-display-value-filter-autocomplete
-      fxFlex
-      [inputAbstractControl]="qrjPublicationForm.get('qrjJournal')"
-    >
-    </qrj-journals-input-display-value-filter-autocomplete>
-  </div>
+  <!--  Qrj Journal-->
+  <qrj-journals-input-display-value-filter-autocomplete
+    [inputAbstractControl]="qrjPublicationForm.get('qrjJournal')"
+  >
+  </qrj-journals-input-display-value-filter-autocomplete>
 
   <!--  Year, Number & Pages-->
   <div fxLayout fxLayoutGap="16px">
@@ -45,7 +42,7 @@
       fxFlex
       formCtrlName="year"
       [inputFormGroup]="qrjPublicationForm"
-      [options]="numbersRange(2000, 25)"
+      [options]="numbersRange(2025, 25)"
     ></input-select>
     <input-text
       fxFlex
