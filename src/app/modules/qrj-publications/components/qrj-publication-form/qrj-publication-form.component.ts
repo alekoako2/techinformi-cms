@@ -24,5 +24,5 @@ export class QrjPublicationFormComponent implements OnChanges {
   }
 
   numbersRange = (startFrom: number, n: number): string[] =>
-    [...Array(n).keys()].map((i) => (i + startFrom).toString())
+    [...Array(n).keys()].map((i) => (startFrom - i).toString())
 }
