@@ -1,5 +1,5 @@
 export const environment = {
   hmr: false,
   production: true,
-  graphqlLink: 'https://api.techinformi.ge/graphql',
+  graphqlLink: 'https://prisma.api.techinformi.ge/graphql',
 }
