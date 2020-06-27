@@ -9,7 +9,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  Date: any;
 };
 
 
@@ -19,7 +18,6 @@ export type AuthPayload = {
   token: Scalars['String'];
   user: User;
 };
-
 
 export type Department = {
    __typename?: 'Department';
@@ -161,11 +159,6 @@ export type JournalInput = {
   translation?: Maybe<Array<QrjTranslationInput>>;
 };
 
-export type Keyword = {
-   __typename?: 'Keyword';
-  name?: Maybe<Scalars['String']>;
-};
-
 export type Language = {
    __typename?: 'Language';
   code?: Maybe<LanguageCode>;
@@ -205,9 +198,6 @@ export type Mutation = {
   createTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>;
   updateTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>;
   deleteTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>;
-  updateResearchProject?: Maybe<ResearchProject>;
-  createResearchProject?: Maybe<ResearchProject>;
-  deleteResearchProject?: Maybe<ResearchProject>;
   createExpert?: Maybe<Expert>;
   updateExpert?: Maybe<Expert>;
   deleteExpert?: Maybe<Expert>;
@@ -231,13 +221,12 @@ export type MutationSignInArgs = {
 
 
 export type MutationCreateQrjJournalArgs = {
-  input?: Maybe<QrjJournalInput>;
+  input?: Maybe<QrjJournalCreateInput>;
 };
 
 
 export type MutationUpdateQrjJournalArgs = {
-  id: Scalars['ID'];
-  input?: Maybe<QrjJournalInput>;
+  input?: Maybe<QrjJournalUpdateInput>;
 };
 
 
@@ -305,22 +294,6 @@ export type MutationUpdateTechnologyTransferNetworkArgs = {
 
 
 export type MutationDeleteTechnologyTransferNetworkArgs = {
-  id?: Maybe<Scalars['ID']>;
-};
-
-
-export type MutationUpdateResearchProjectArgs = {
-  id: Scalars['ID'];
-  input?: Maybe<ResearchProjectInput>;
-};
-
-
-export type MutationCreateResearchProjectArgs = {
-  input?: Maybe<ResearchProjectInput>;
-};
-
-
-export type MutationDeleteResearchProjectArgs = {
   id?: Maybe<Scalars['ID']>;
 };
 
@@ -469,27 +442,35 @@ export type QrjJournalTranslationArgs = {
   language?: Maybe<LanguageCode>;
 };
 
-export type QrjJournalInput = {
+export type QrjJournalCreateInput = {
   code?: Maybe<Scalars['String']>;
   translation?: Maybe<Array<QrjJournalTranslationInput>>;
 };
 
-export type QrjJournalsQueryInput = {
+export type QrjJournalQueryInput = {
   code?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
 };
 
 export type QrjJournalTranslation = {
    __typename?: 'QrjJournalTranslation';
+  id?: Maybe<Scalars['ID']>;
   name?: Maybe<Scalars['String']>;
   address?: Maybe<Scalars['String']>;
   language?: Maybe<Language>;
 };
 
 export type QrjJournalTranslationInput = {
+  id?: Maybe<Scalars['ID']>;
   name?: Maybe<Scalars['String']>;
   address?: Maybe<Scalars['String']>;
   language?: Maybe<LanguageCode>;
+};
+
+export type QrjJournalUpdateInput = {
+  id: Scalars['ID'];
+  code?: Maybe<Scalars['String']>;
+  translation?: Maybe<Array<QrjJournalTranslationInput>>;
 };
 
 export type QrjPublication = {
@@ -597,9 +578,6 @@ export type Query = {
   countTechnologyTransferNetworks?: Maybe<Scalars['Int']>;
   technologyTransferNetworks: Array<TechnologyTransferNetwork>;
   technologyTransferNetwork: TechnologyTransferNetwork;
-  researchProjects: Array<ResearchProject>;
-  countResearchProjects?: Maybe<Scalars['Int']>;
-  researchProject: ResearchProject;
   employees: Array<Employee>;
   countExperts?: Maybe<Scalars['Int']>;
   experts: Array<Expert>;
@@ -610,6 +588,9 @@ export type Query = {
   countQrjs?: Maybe<Scalars['Int']>;
   qrjs: Array<Qrj>;
   qrj: Qrj;
+  countResearchProjects?: Maybe<Scalars['Int']>;
+  researchProjects: Array<ResearchProject>;
+  researchProject: ResearchProject;
 };
 
 
@@ -619,12 +600,12 @@ export type QueryMeArgs = {
 
 
 export type QueryCountQrjJournalsArgs = {
-  query?: Maybe<QrjJournalsQueryInput>;
+  query?: Maybe<QrjJournalQueryInput>;
 };
 
 
 export type QueryQrjJournalsArgs = {
-  query?: Maybe<QrjJournalsQueryInput>;
+  query?: Maybe<QrjJournalQueryInput>;
   first?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Scalars['String']>;
@@ -696,23 +677,6 @@ export type QueryTechnologyTransferNetworkArgs = {
 };
 
 
-export type QueryResearchProjectsArgs = {
-  query?: Maybe<ResearchProjectQueryInput>;
-  first?: Maybe<Scalars['Int']>;
-  skip?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryCountResearchProjectsArgs = {
-  query?: Maybe<ResearchProjectQueryInput>;
-};
-
-
-export type QueryResearchProjectArgs = {
-  id?: Maybe<Scalars['ID']>;
-};
-
-
 export type QueryEmployeesArgs = {
   first?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
@@ -766,117 +730,96 @@ export type QueryQrjArgs = {
   id?: Maybe<Scalars['ID']>;
 };
 
-export type ResearchProject = {
-   __typename?: 'ResearchProject';
-  translation?: Maybe<Array<Maybe<ResearchProjectTranslation>>>;
-  participatingInstitutionCountryCity?: Maybe<Scalars['String']>;
-  participatingInstitutionEmail?: Maybe<Scalars['String']>;
-  participatingInstitutionName?: Maybe<Scalars['String']>;
-  participatingInstitutionTel?: Maybe<Scalars['String']>;
-  participatingInstitutionWeb?: Maybe<Scalars['String']>;
-  researchExecutionBasis?: Maybe<Scalars['String']>;
-  organizationShortName?: Maybe<Scalars['String']>;
-  leaderAcademicDegree?: Maybe<Scalars['String']>;
-  organizationAddress?: Maybe<Scalars['String']>;
-  researchDirection?: Maybe<Scalars['String']>;
-  organizationIndex?: Maybe<Scalars['String']>;
-  researchExecutors?: Maybe<Scalars['String']>;
-  organizationName?: Maybe<Scalars['String']>;
-  organizationCode?: Maybe<Scalars['String']>;
-  organizationHead?: Maybe<Scalars['String']>;
-  organizationCity?: Maybe<Scalars['String']>;
-  organizationTel?: Maybe<Scalars['String']>;
-  organizationWeb?: Maybe<Scalars['String']>;
-  leaderPosition?: Maybe<Scalars['String']>;
-  leaderMobile?: Maybe<Scalars['String']>;
-  leaderEmail?: Maybe<Scalars['String']>;
-  annotation?: Maybe<Scalars['String']>;
-  leaderName?: Maybe<Scalars['String']>;
-  startDate?: Maybe<Scalars['String']>;
-  leaderTel?: Maybe<Scalars['String']>;
-  financing?: Maybe<Scalars['String']>;
-  research?: Maybe<Scalars['String']>;
-  abstract?: Maybe<Scalars['String']>;
-  inpDate?: Maybe<Scalars['String']>;
-  regDate?: Maybe<Scalars['String']>;
-  endDate?: Maybe<Scalars['String']>;
-  regNumb?: Maybe<Scalars['String']>;
-  pincode?: Maybe<Scalars['String']>;
-  oecds?: Maybe<Array<Maybe<Oecd>>>;
-  note?: Maybe<Scalars['String']>;
-  budget?: Maybe<Scalars['Int']>;
-  author?: Maybe<User>;
-  id?: Maybe<Scalars['ID']>;
+
+export type QueryCountResearchProjectsArgs = {
+  query?: Maybe<ResearchProjectQueryInput>;
 };
 
 
-export type ResearchProjectTranslationArgs = {
+export type QueryResearchProjectsArgs = {
+  language?: Maybe<LanguageCode>;
+  query?: Maybe<ResearchProjectQueryInput>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryResearchProjectArgs = {
+  id?: Maybe<Scalars['String']>;
   language?: Maybe<LanguageCode>;
 };
 
-export type ResearchProjectInput = {
-  researchExecutionBasis?: Maybe<Scalars['String']>;
-  researchDirection?: Maybe<Scalars['String']>;
-  startDate?: Maybe<Scalars['String']>;
-  inpDate?: Maybe<Scalars['String']>;
-  regDate?: Maybe<Scalars['String']>;
-  endDate?: Maybe<Scalars['String']>;
-  regNumb?: Maybe<Scalars['String']>;
-  research?: Maybe<Scalars['String']>;
-  abstract?: Maybe<Scalars['String']>;
-  annotation?: Maybe<Scalars['String']>;
-  budget?: Maybe<Scalars['Int']>;
-  organizationName?: Maybe<Scalars['String']>;
-  organizationShortName?: Maybe<Scalars['String']>;
-  organizationCode?: Maybe<Scalars['String']>;
-  organizationHead?: Maybe<Scalars['String']>;
-  organizationCity?: Maybe<Scalars['String']>;
-  organizationAddress?: Maybe<Scalars['String']>;
-  organizationIndex?: Maybe<Scalars['String']>;
-  organizationTel?: Maybe<Scalars['String']>;
-  organizationWeb?: Maybe<Scalars['String']>;
-  participatingInstitutionName?: Maybe<Scalars['String']>;
-  participatingInstitutionCountryCity?: Maybe<Scalars['String']>;
-  participatingInstitutionTel?: Maybe<Scalars['String']>;
-  participatingInstitutionEmail?: Maybe<Scalars['String']>;
-  participatingInstitutionWeb?: Maybe<Scalars['String']>;
-  leaderName?: Maybe<Scalars['String']>;
-  leaderPosition?: Maybe<Scalars['String']>;
-  leaderAcademicDegree?: Maybe<Scalars['String']>;
-  leaderTel?: Maybe<Scalars['String']>;
-  leaderMobile?: Maybe<Scalars['String']>;
-  leaderEmail?: Maybe<Scalars['String']>;
-  researchExecutors?: Maybe<Scalars['String']>;
+export type ResearchProject = {
+   __typename?: 'ResearchProject';
+  id?: Maybe<Scalars['String']>;
+  toYear?: Maybe<Scalars['String']>;
+  eWords?: Maybe<Scalars['String']>;
+  final?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  author?: Maybe<Scalars['String']>;
+  organization?: Maybe<Scalars['String']>;
+  fromYear?: Maybe<Scalars['String']>;
+  inp_tarigi?: Maybe<Scalars['String']>;
+  reg_tarigi?: Maybe<Scalars['String']>;
+  reg_numb?: Maybe<Scalars['String']>;
+  geo_dasaxeleba?: Maybe<Scalars['String']>;
+  eng_dasaxeleba?: Maybe<Scalars['String']>;
+  kvleva?: Maybe<Scalars['String']>;
+  kvlev_mimart?: Maybe<Scalars['String']>;
+  kvlev_mimart_kodi?: Maybe<Scalars['String']>;
+  kvlev_mimart_kodi2?: Maybe<Scalars['String']>;
+  kvlev_mimart_kodi3?: Maybe<Scalars['String']>;
+  geo_key?: Maybe<Scalars['String']>;
+  eng_key?: Maybe<Scalars['String']>;
+  safudz?: Maybe<Scalars['String']>;
+  referati?: Maybe<Scalars['String']>;
+  anotaciaeng?: Maybe<Scalars['String']>;
+  start_samushao_tarigi?: Maybe<Scalars['String']>;
+  end_samushao_tarigi?: Maybe<Scalars['String']>;
+  biujeti?: Maybe<Scalars['String']>;
+  org_dasaxeleba?: Maybe<Scalars['String']>;
+  org_short_dasaxeleba?: Maybe<Scalars['String']>;
+  org_kodi?: Maybe<Scalars['String']>;
+  org_ufrosi?: Maybe<Scalars['String']>;
+  org_qalaqi?: Maybe<Scalars['String']>;
+  org_misamarti?: Maybe<Scalars['String']>;
+  org_indexi?: Maybe<Scalars['String']>;
+  org_telefoni?: Maybe<Scalars['String']>;
+  org_webi?: Maybe<Scalars['String']>;
+  tan_dasaxeleba?: Maybe<Scalars['String']>;
+  tan_qvekana_qalaqi?: Maybe<Scalars['String']>;
+  tan_telefoni?: Maybe<Scalars['String']>;
+  tan_email?: Maybe<Scalars['String']>;
+  tan_webi?: Maybe<Scalars['String']>;
+  xel_gvari_saxeli?: Maybe<Scalars['String']>;
+  xel_tanamdeboba?: Maybe<Scalars['String']>;
+  xel_xarisxi?: Maybe<Scalars['String']>;
+  xel_bin_telefoni?: Maybe<Scalars['String']>;
+  xel_sam_telefoni?: Maybe<Scalars['String']>;
+  xel_email?: Maybe<Scalars['String']>;
+  shemsruleblebis?: Maybe<Scalars['String']>;
   financing?: Maybe<Scalars['String']>;
-  note?: Maybe<Scalars['String']>;
-  pincode?: Maybe<Scalars['String']>;
-  translation?: Maybe<Array<Maybe<ResearchProjectTranslationInput>>>;
-  oecds?: Maybe<Array<Maybe<OecdInput>>>;
-  languages?: Maybe<Array<Maybe<LanguageInput>>>;
+  shenishvna?: Maybe<Scalars['String']>;
+  PINCODE?: Maybe<Scalars['String']>;
+  username?: Maybe<Scalars['String']>;
+  oecd1?: Maybe<Scalars['String']>;
+  oecd2?: Maybe<Scalars['String']>;
+  oecd3?: Maybe<Scalars['String']>;
+  org_dasaxeleba_eng?: Maybe<Scalars['String']>;
+  org_short_dasaxeleba_eng?: Maybe<Scalars['String']>;
+  org_email?: Maybe<Scalars['String']>;
+  xel_gvari_saxeli_eng?: Maybe<Scalars['String']>;
 };
 
 export type ResearchProjectQueryInput = {
-  principalExecutingOrganization?: Maybe<Scalars['String']>;
-  yearResearchProgressStartOrEndYear?: Maybe<Scalars['Date']>;
-  leaderExecutors?: Maybe<Scalars['String']>;
-  keywords?: Maybe<Scalars['String']>;
-  fromYear?: Maybe<Scalars['Date']>;
-  title?: Maybe<Scalars['String']>;
-  oecd?: Maybe<Scalars['String']>;
-  toYear?: Maybe<Scalars['Date']>;
-};
-
-export type ResearchProjectTranslation = {
-   __typename?: 'ResearchProjectTranslation';
-  language?: Maybe<Language>;
-  key?: Maybe<Array<Maybe<Keyword>>>;
-  title?: Maybe<Scalars['String']>;
-};
-
-export type ResearchProjectTranslationInput = {
-  title?: Maybe<Scalars['String']>;
-  key?: Maybe<Array<Maybe<Scalars['String']>>>;
-  language?: Maybe<LanguageCode>;
+  eTitle?: Maybe<Scalars['String']>;
+  eAuthor?: Maybe<Scalars['String']>;
+  eWords?: Maybe<Scalars['String']>;
+  eOrganization?: Maybe<Scalars['String']>;
+  eCodes?: Maybe<Scalars['String']>;
+  fromYear?: Maybe<Scalars['String']>;
+  toYear?: Maybe<Scalars['String']>;
 };
 
 export enum Role {
@@ -943,7 +886,6 @@ export type User = {
   oecds: Array<Oecd>;
   technologyTransferAndInnovationOrganizations: Array<TechnologyTransferAndInnovationOrganization>;
   technologyTransferNetworks: Array<TechnologyTransferNetwork>;
-  researchProjects: Array<ResearchProject>;
   experts: Array<Expert>;
   newses: Array<News>;
   qrjs: Array<Qrj>;
@@ -976,11 +918,6 @@ export type UserTechnologyTransferAndInnovationOrganizationsArgs = {
 
 
 export type UserTechnologyTransferNetworksArgs = {
-  language: LanguageCode;
-};
-
-
-export type UserResearchProjectsArgs = {
   language: LanguageCode;
 };
 
@@ -1107,7 +1044,6 @@ export type NewsesQuery = (
 );
 
 export type NewsQueryVariables = {
-  languageCode?: Maybe<LanguageCode>;
   id?: Maybe<Scalars['ID']>;
 };
 
@@ -1144,18 +1080,15 @@ export type OecdsQuery = (
   )> }
 );
 
-export type QrjJournalsQueryVariables = {
-  first?: Maybe<Scalars['Int']>;
-  skip?: Maybe<Scalars['Int']>;
-  orderBy?: Maybe<Scalars['String']>;
-  query?: Maybe<QrjJournalsQueryInput>;
+export type UpdateQrjJournalMutationVariables = {
   languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<QrjJournalUpdateInput>;
 };
 
 
-export type QrjJournalsQuery = (
-  { __typename?: 'Query' }
-  & { qrjJournals: Array<(
+export type UpdateQrjJournalMutation = (
+  { __typename?: 'Mutation' }
+  & { updateQrjJournal?: Maybe<(
     { __typename?: 'QrjJournal' }
     & Pick<QrjJournal, 'id' | 'code'>
     & { translation: Array<(
@@ -1163,6 +1096,76 @@ export type QrjJournalsQuery = (
       & Pick<QrjJournalTranslation, 'name' | 'address'>
     )> }
   )> }
+);
+
+export type CreateQrjJournalMutationVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<QrjJournalCreateInput>;
+};
+
+
+export type CreateQrjJournalMutation = (
+  { __typename?: 'Mutation' }
+  & { createQrjJournal?: Maybe<(
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id' | 'code'>
+    & { translation: Array<(
+      { __typename?: 'QrjJournalTranslation' }
+      & Pick<QrjJournalTranslation, 'name' | 'address'>
+    )> }
+  )> }
+);
+
+export type DeleteQrjJournalMutationVariables = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type DeleteQrjJournalMutation = (
+  { __typename?: 'Mutation' }
+  & { deleteQrjJournal?: Maybe<(
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id'>
+  )> }
+);
+
+export type QrjJournalsQueryVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  query?: Maybe<QrjJournalQueryInput>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+};
+
+
+export type QrjJournalsQuery = (
+  { __typename?: 'Query' }
+  & Pick<Query, 'countQrjJournals'>
+  & { qrjJournals: Array<(
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id' | 'code'>
+    & { translation: Array<(
+      { __typename?: 'QrjJournalTranslation' }
+      & Pick<QrjJournalTranslation, 'id' | 'name' | 'address'>
+    )> }
+  )> }
+);
+
+export type QrjJournalQueryVariables = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QrjJournalQuery = (
+  { __typename?: 'Query' }
+  & { qrjJournal: (
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id' | 'code'>
+    & { translation: Array<(
+      { __typename?: 'QrjJournalTranslation' }
+      & Pick<QrjJournalTranslation, 'id' | 'name' | 'address'>
+    )> }
+  ) }
 );
 
 export type UpdateQrjPublicationMutationVariables = {
@@ -1264,60 +1267,6 @@ export type QrjPublicationQuery = (
     )>, translation?: Maybe<Array<Maybe<(
       { __typename?: 'QrjPublicationTranslation' }
       & Pick<QrjPublicationTranslation, 'id' | 'title' | 'publicationAuthor' | 'publicationLang' | 'abstract'>
-    )>>> }
-  ) }
-);
-
-export type ResearchProjectsQueryVariables = {
-  languageCode?: Maybe<LanguageCode>;
-  first?: Maybe<Scalars['Int']>;
-  skip?: Maybe<Scalars['Int']>;
-  query?: Maybe<ResearchProjectQueryInput>;
-};
-
-
-export type ResearchProjectsQuery = (
-  { __typename?: 'Query' }
-  & Pick<Query, 'countResearchProjects'>
-  & { researchProjects: Array<(
-    { __typename?: 'ResearchProject' }
-    & Pick<ResearchProject, 'id' | 'leaderName' | 'researchExecutors' | 'organizationName' | 'endDate'>
-    & { translation?: Maybe<Array<Maybe<(
-      { __typename?: 'ResearchProjectTranslation' }
-      & Pick<ResearchProjectTranslation, 'title'>
-      & { key?: Maybe<Array<Maybe<(
-        { __typename?: 'Keyword' }
-        & Pick<Keyword, 'name'>
-      )>>> }
-    )>>> }
-  )> }
-);
-
-export type ResearchProjectQueryVariables = {
-  languageCode?: Maybe<LanguageCode>;
-  id?: Maybe<Scalars['ID']>;
-};
-
-
-export type ResearchProjectQuery = (
-  { __typename?: 'Query' }
-  & { researchProject: (
-    { __typename?: 'ResearchProject' }
-    & Pick<ResearchProject, 'inpDate' | 'regDate' | 'startDate' | 'endDate' | 'regNumb' | 'research' | 'researchDirection' | 'researchExecutionBasis' | 'abstract' | 'annotation' | 'budget' | 'organizationName' | 'organizationShortName' | 'organizationCode' | 'organizationHead' | 'organizationCity' | 'organizationAddress' | 'organizationIndex' | 'organizationTel' | 'organizationWeb' | 'participatingInstitutionName' | 'participatingInstitutionCountryCity' | 'participatingInstitutionTel' | 'participatingInstitutionEmail' | 'participatingInstitutionWeb' | 'leaderName' | 'leaderPosition' | 'leaderAcademicDegree' | 'leaderTel' | 'leaderMobile' | 'leaderEmail' | 'researchExecutors' | 'financing' | 'note' | 'pincode'>
-    & { translation?: Maybe<Array<Maybe<(
-      { __typename?: 'ResearchProjectTranslation' }
-      & Pick<ResearchProjectTranslation, 'title'>
-      & { key?: Maybe<Array<Maybe<(
-        { __typename?: 'Keyword' }
-        & Pick<Keyword, 'name'>
-      )>>> }
-    )>>>, oecds?: Maybe<Array<Maybe<(
-      { __typename?: 'Oecd' }
-      & Pick<Oecd, 'code'>
-      & { translation: Array<(
-        { __typename?: 'OecdTranslation' }
-        & Pick<OecdTranslation, 'name'>
-      )> }
     )>>> }
   ) }
 );
@@ -1476,9 +1425,9 @@ export const NewsesDocument = gql`
     
   }
 export const NewsDocument = gql`
-    query News($languageCode: LanguageCode, $id: ID) {
+    query News($id: ID) {
   news(id: $id) {
-    translation(language: $languageCode) {
+    translation {
       id
       title
       description
@@ -1514,9 +1463,9 @@ export const OecdsDocument = gql`
     document = OecdsDocument;
     
   }
-export const QrjJournalsDocument = gql`
-    query QrjJournals($first: Int, $skip: Int, $orderBy: String, $query: QrjJournalsQueryInput, $languageCode: LanguageCode) {
-  qrjJournals(first: $first, skip: $skip, orderBy: $orderBy, query: $query) {
+export const UpdateQrjJournalDocument = gql`
+    mutation UpdateQrjJournal($languageCode: LanguageCode, $input: QrjJournalUpdateInput) {
+  updateQrjJournal(input: $input) {
     id
     code
     translation(language: $languageCode) {
@@ -1530,8 +1479,86 @@ export const QrjJournalsDocument = gql`
   @Injectable({
     providedIn: 'root'
   })
+  export class UpdateQrjJournalGQL extends Apollo.Mutation<UpdateQrjJournalMutation, UpdateQrjJournalMutationVariables> {
+    document = UpdateQrjJournalDocument;
+    
+  }
+export const CreateQrjJournalDocument = gql`
+    mutation CreateQrjJournal($languageCode: LanguageCode, $input: QrjJournalCreateInput) {
+  createQrjJournal(input: $input) {
+    id
+    code
+    translation(language: $languageCode) {
+      name
+      address
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CreateQrjJournalGQL extends Apollo.Mutation<CreateQrjJournalMutation, CreateQrjJournalMutationVariables> {
+    document = CreateQrjJournalDocument;
+    
+  }
+export const DeleteQrjJournalDocument = gql`
+    mutation DeleteQrjJournal($id: ID) {
+  deleteQrjJournal(id: $id) {
+    id
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class DeleteQrjJournalGQL extends Apollo.Mutation<DeleteQrjJournalMutation, DeleteQrjJournalMutationVariables> {
+    document = DeleteQrjJournalDocument;
+    
+  }
+export const QrjJournalsDocument = gql`
+    query QrjJournals($languageCode: LanguageCode, $query: QrjJournalQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  qrjJournals(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    code
+    translation(language: $languageCode) {
+      id
+      name
+      address
+    }
+  }
+  countQrjJournals(query: $query)
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
   export class QrjJournalsGQL extends Apollo.Query<QrjJournalsQuery, QrjJournalsQueryVariables> {
     document = QrjJournalsDocument;
+    
+  }
+export const QrjJournalDocument = gql`
+    query QrjJournal($id: ID) {
+  qrjJournal(id: $id) {
+    id
+    code
+    translation {
+      id
+      name
+      address
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class QrjJournalGQL extends Apollo.Query<QrjJournalQuery, QrjJournalQueryVariables> {
+    document = QrjJournalDocument;
     
   }
 export const UpdateQrjPublicationDocument = gql`
@@ -1651,93 +1678,6 @@ export const QrjPublicationDocument = gql`
   })
   export class QrjPublicationGQL extends Apollo.Query<QrjPublicationQuery, QrjPublicationQueryVariables> {
     document = QrjPublicationDocument;
-    
-  }
-export const ResearchProjectsDocument = gql`
-    query ResearchProjects($languageCode: LanguageCode, $first: Int, $skip: Int, $query: ResearchProjectQueryInput) {
-  researchProjects(query: $query, first: $first, skip: $skip) {
-    id
-    leaderName
-    researchExecutors
-    organizationName
-    endDate
-    translation(language: $languageCode) {
-      title
-      key {
-        name
-      }
-    }
-  }
-  countResearchProjects(query: $query)
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class ResearchProjectsGQL extends Apollo.Query<ResearchProjectsQuery, ResearchProjectsQueryVariables> {
-    document = ResearchProjectsDocument;
-    
-  }
-export const ResearchProjectDocument = gql`
-    query ResearchProject($languageCode: LanguageCode, $id: ID) {
-  researchProject(id: $id) {
-    inpDate
-    regDate
-    startDate
-    endDate
-    regNumb
-    research
-    researchDirection
-    researchExecutionBasis
-    abstract
-    annotation
-    budget
-    organizationName
-    organizationShortName
-    organizationCode
-    organizationHead
-    organizationCity
-    organizationAddress
-    organizationIndex
-    organizationTel
-    organizationWeb
-    participatingInstitutionName
-    participatingInstitutionCountryCity
-    participatingInstitutionTel
-    participatingInstitutionEmail
-    participatingInstitutionWeb
-    leaderName
-    leaderPosition
-    leaderAcademicDegree
-    leaderTel
-    leaderMobile
-    leaderEmail
-    researchExecutors
-    financing
-    note
-    pincode
-    translation(language: $languageCode) {
-      title
-      key {
-        name
-      }
-    }
-    oecds {
-      code
-      translation(language: $languageCode) {
-        name
-      }
-    }
-  }
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class ResearchProjectGQL extends Apollo.Query<ResearchProjectQuery, ResearchProjectQueryVariables> {
-    document = ResearchProjectDocument;
     
   }
 export const ExpertsDocument = gql`
@@ -1860,9 +1800,9 @@ export const Newses = gql`
 }
     `;
 export const News = gql`
-    query News($languageCode: LanguageCode, $id: ID) {
+    query News($id: ID) {
   news(id: $id) {
-    translation(language: $languageCode) {
+    translation {
       id
       title
       description
@@ -1882,12 +1822,58 @@ export const Oecds = gql`
   }
 }
     `;
-export const QrjJournals = gql`
-    query QrjJournals($first: Int, $skip: Int, $orderBy: String, $query: QrjJournalsQueryInput, $languageCode: LanguageCode) {
-  qrjJournals(first: $first, skip: $skip, orderBy: $orderBy, query: $query) {
+export const UpdateQrjJournal = gql`
+    mutation UpdateQrjJournal($languageCode: LanguageCode, $input: QrjJournalUpdateInput) {
+  updateQrjJournal(input: $input) {
     id
     code
     translation(language: $languageCode) {
+      name
+      address
+    }
+  }
+}
+    `;
+export const CreateQrjJournal = gql`
+    mutation CreateQrjJournal($languageCode: LanguageCode, $input: QrjJournalCreateInput) {
+  createQrjJournal(input: $input) {
+    id
+    code
+    translation(language: $languageCode) {
+      name
+      address
+    }
+  }
+}
+    `;
+export const DeleteQrjJournal = gql`
+    mutation DeleteQrjJournal($id: ID) {
+  deleteQrjJournal(id: $id) {
+    id
+  }
+}
+    `;
+export const QrjJournals = gql`
+    query QrjJournals($languageCode: LanguageCode, $query: QrjJournalQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  qrjJournals(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    code
+    translation(language: $languageCode) {
+      id
+      name
+      address
+    }
+  }
+  countQrjJournals(query: $query)
+}
+    `;
+export const QrjJournal = gql`
+    query QrjJournal($id: ID) {
+  qrjJournal(id: $id) {
+    id
+    code
+    translation {
+      id
       name
       address
     }
@@ -1969,77 +1955,6 @@ export const QrjPublication = gql`
       publicationAuthor
       publicationLang
       abstract
-    }
-  }
-}
-    `;
-export const ResearchProjects = gql`
-    query ResearchProjects($languageCode: LanguageCode, $first: Int, $skip: Int, $query: ResearchProjectQueryInput) {
-  researchProjects(query: $query, first: $first, skip: $skip) {
-    id
-    leaderName
-    researchExecutors
-    organizationName
-    endDate
-    translation(language: $languageCode) {
-      title
-      key {
-        name
-      }
-    }
-  }
-  countResearchProjects(query: $query)
-}
-    `;
-export const ResearchProject = gql`
-    query ResearchProject($languageCode: LanguageCode, $id: ID) {
-  researchProject(id: $id) {
-    inpDate
-    regDate
-    startDate
-    endDate
-    regNumb
-    research
-    researchDirection
-    researchExecutionBasis
-    abstract
-    annotation
-    budget
-    organizationName
-    organizationShortName
-    organizationCode
-    organizationHead
-    organizationCity
-    organizationAddress
-    organizationIndex
-    organizationTel
-    organizationWeb
-    participatingInstitutionName
-    participatingInstitutionCountryCity
-    participatingInstitutionTel
-    participatingInstitutionEmail
-    participatingInstitutionWeb
-    leaderName
-    leaderPosition
-    leaderAcademicDegree
-    leaderTel
-    leaderMobile
-    leaderEmail
-    researchExecutors
-    financing
-    note
-    pincode
-    translation(language: $languageCode) {
-      title
-      key {
-        name
-      }
-    }
-    oecds {
-      code
-      translation(language: $languageCode) {
-        name
-      }
     }
   }
 }

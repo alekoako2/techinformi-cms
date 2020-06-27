@@ -1,0 +1,4 @@
+{
+  "main": "qrj-journals-cruds.actions.ts",
+  "typings": "qrj-journal-cruds.actions.ts"
+}

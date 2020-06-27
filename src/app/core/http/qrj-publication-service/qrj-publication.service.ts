@@ -51,6 +51,25 @@ export class QrjPublicationService
     private languageService: LanguageService
   ) {}
 
+  create = (
+    input: QrjPublicationCreateInput
+  ): Observable<CreateQrjPublicationMutation> => {
+    return crudCreate<QrjPublicationCreateInput, CreateQrjPublicationMutation>(
+      this.apollo,
+      this.languageService.currentLanguage,
+      createQrjPublicationMutation,
+      input
+    )
+  }
+
+  delete = (id: Scalars['ID']): Observable<DeleteQrjPublicationMutation> => {
+    return crudDelete<DeleteQrjPublicationMutation>(
+      this.apollo,
+      deleteQrjPublicationMutation,
+      id
+    )
+  }
+
   fetchAll = (
     query: QrjPublicationQueryInput,
     pageIndex: 0,
@@ -75,17 +94,6 @@ export class QrjPublicationService
     )
   }
 
-  create = (
-    input: QrjPublicationCreateInput
-  ): Observable<CreateQrjPublicationMutation> => {
-    return crudCreate<QrjPublicationCreateInput, CreateQrjPublicationMutation>(
-      this.apollo,
-      this.languageService.currentLanguage,
-      createQrjPublicationMutation,
-      input
-    )
-  }
-
   update = (
     input: QrjPublicationUpdateInput
   ): Observable<UpdateQrjPublicationMutation> => {
@@ -94,14 +102,6 @@ export class QrjPublicationService
       this.languageService.currentLanguage,
       updateQrjPublicationMutation,
       input
-    )
-  }
-
-  delete = (id: Scalars['ID']): Observable<DeleteQrjPublicationMutation> => {
-    return crudDelete<DeleteQrjPublicationMutation>(
-      this.apollo,
-      deleteQrjPublicationMutation,
-      id
     )
   }
 }
