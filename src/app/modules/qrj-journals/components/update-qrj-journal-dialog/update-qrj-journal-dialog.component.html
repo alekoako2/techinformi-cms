@@ -1,0 +1,19 @@
+<custom-dialog>
+  <div title>არსებული ჟურნალის შეცვლა</div>
+  <div content>
+    <qrj-journal-form
+      [qrjJournalForm]="qrjJournalUpdateForm"
+    ></qrj-journal-form>
+  </div>
+  <div actions>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      (click)="update()"
+      [disabled]="qrjJournalUpdateForm?.invalid"
+    >
+      შენახვა
+    </button>
+  </div>
+</custom-dialog>

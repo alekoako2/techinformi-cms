@@ -1,0 +1,12 @@
+<page-title-bar title="ჟურნალები" i18n-title="@@publications"> </page-title-bar>
+<app-crud-basic
+  [pagination]="pagination"
+  [searchText]="searchText"
+  [list]="list"
+  (paginationChanged)="paginationToChange($event)"
+  (addNewPressed)="addNewToPressed()"
+  (searchInputTyped)="searchInputToTyped($event)"
+  (editPressed)="editToPressed($event)"
+  (deletePressed)="deleteToPressed($event)"
+>
+</app-crud-basic>

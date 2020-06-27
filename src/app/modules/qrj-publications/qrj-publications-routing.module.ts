@@ -15,13 +15,13 @@ const routes: Routes = [
         path: 'qrj-publications-crud',
         component: QrjPublicationsCrudComponent,
       },
-      // {
-      //   path: 'qrj-journals',
-      //   loadChildren: () =>
-      //     import('../qrj-journal/journal.module').then(
-      //       (mod) => mod.JournalModule
-      //     ),
-      // },
+      {
+        path: 'qrj-journals-crud',
+        loadChildren: () =>
+          import('../qrj-journals/qrj-journals.module').then(
+            (mod) => mod.QrjJournalsModule
+          ),
+      },
       // {
       //   path: 'qrj',
       //   loadChildren: () =>

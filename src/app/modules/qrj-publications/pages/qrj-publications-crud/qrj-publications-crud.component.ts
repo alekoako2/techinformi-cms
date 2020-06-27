@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { DeleteQrjPublicationDialogComponent } from '../../components/delete-qrj-publication-dialog/delete-qrj-publication-dialog.component'
 import { CreateQrjPublicationDialogComponent } from '../../components/create-qrj-publication-dialog/create-qrj-publication-dialog.component'
-import { LoadQrjPublications } from '../../store/actions/qrj-publications-crud.actions'
+import { LoadQrjPublications } from '../../store/actions'
 import { Store } from '@ngxs/store'
 import { QrjPublication, Scalars } from '@graphql'
 import {
@@ -27,7 +27,7 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
   list: BasicCrudListItem[]
 
   constructor(private store: Store, private dialog: MatDialog) {
-    this.loadQrjPublications()
+    this.loadItems()
     this.store
       .select((states) => states.qrjPublications)
       .subscribe(
@@ -54,7 +54,7 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
 
   paginationToChange = (pagination: BasicCrudPagination): void => {
     this.pagination = pagination
-    this.loadQrjPublications()
+    this.loadItems()
   }
 
   addNewToPressed = (): void => {
@@ -64,7 +64,7 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
   searchInputToTyped = (searchText: string): void => {
     this.searchText = searchText
     this.pagination.pageIndex = 0
-    this.loadQrjPublications()
+    this.loadItems()
   }
 
   editToPressed = (id: Scalars['ID']): void => {
@@ -80,7 +80,7 @@ export class QrjPublicationsCrudComponent implements BasicCrud {
     })
   }
 
-  loadQrjPublications = (): void => {
+  loadItems = (): void => {
     this.store.dispatch(
       new LoadQrjPublications({
         searchText: this.searchText,

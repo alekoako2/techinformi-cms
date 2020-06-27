@@ -1,0 +1,19 @@
+<custom-dialog>
+  <div title>ახალი ჟურნალის დამატება</div>
+  <div content>
+    <qrj-journal-form
+      [qrjJournalForm]="qrjJournalCreateForm"
+    ></qrj-journal-form>
+  </div>
+  <div actions>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="create()"
+      [disabled]="qrjJournalCreateForm.invalid"
+    >
+      დამატება
+    </button>
+  </div>
+</custom-dialog>
