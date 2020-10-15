@@ -5,7 +5,7 @@ export const qrjJournalsQuery = gql`
     $first: Int
     $skip: Int
     $orderBy: String
-    $query: QrjJournalsQueryInput
+    $query: QrjJournalQueryInput
     $languageCode: LanguageCode
   ) {
     qrjJournals(first: $first, skip: $skip, orderBy: $orderBy, query: $query) {

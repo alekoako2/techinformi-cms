@@ -1,0 +1,106 @@
+<form [formGroup]="depositedForm" *ngIf="depositedForm">
+  <!--  ID-->
+  <input-text
+    fxShow="false"
+    *ngIf="depositedForm.get('id') as depositedIDControl"
+    [inputAbstractControl]="depositedIDControl"
+  >
+  </input-text>
+
+  <!--  Index & Doi-URL-->
+  <div fxLayout fxLayoutGap="16px">
+    <input-text
+      fxFlex
+      placeholder="ინდექსი"
+      [inputAbstractControl]="depositedForm.get('index')"
+      i18n-placeholder="@@index"
+    ></input-text>
+
+    <input-text
+      fxFlex
+      placeholder="uak"
+      [inputAbstractControl]="depositedForm.get('uak')"
+    ></input-text>
+  </div>
+
+  <!--  OECD-->
+  <oecds-input-display-value-filter-autocomplete
+    [inputAbstractControl]="depositedForm.get('oecd')"
+  >
+  </oecds-input-display-value-filter-autocomplete>
+
+  <!--  Year, Number & Pages-->
+  <div fxLayout fxLayoutGap="16px">
+    <input-select
+      fxFlex
+      formCtrlName="year"
+      [inputFormGroup]="depositedForm"
+      [options]="numbersRange(2025, 100)"
+    ></input-select>
+  </div>
+
+  <!--  Translations of Title, Publication Author, Publications Languages & Abstract-->
+  <mat-tab-group>
+    <mat-tab label="ქართული">
+      <!--      ID-->
+      <input-text
+        fxShow="false"
+        *ngIf="translationFormGroupKA.get('id') as translationKAIDControl"
+        [inputAbstractControl]="translationKAIDControl"
+      >
+      </input-text>
+
+      <!--      Title-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('title')"
+        placeholder="სათაური"
+      ></input-text>
+      <!--      Publication Author-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('author')"
+        placeholder="ავტორი"
+      ></input-text>
+      <!--      Publications Languages-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('institute')"
+        placeholder="ინსტიტუტი"
+      ></input-text>
+      <!--      Abstract-->
+      <input-text-area
+        [inputAbstractControl]="translationFormGroupKA.get('resume')"
+        placeholder="რეზუმე"
+      ></input-text-area>
+    </mat-tab>
+
+    <mat-tab label="Russian">
+      <!--  ID-->
+      <input-text
+        fxShow="false"
+        *ngIf="translationFormGroupRU.get('id') as translationRUIDControl"
+        [inputAbstractControl]="translationRUIDControl"
+      >
+      </input-text>
+
+      <!--      Title-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupRU.get('title')"
+        placeholder="Title"
+      ></input-text>
+      <!--      Publication Author-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupRU.get('author')"
+        placeholder="Author"
+      ></input-text>
+      <!--      Publications Languages-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupRU.get('institute')"
+        placeholder="Institute"
+      ></input-text>
+      <!--      Abstract-->
+      <input-text-area
+        [inputAbstractControl]="translationFormGroupRU.get('resume')"
+        placeholder="resume"
+      ></input-text-area>
+    </mat-tab>
+  </mat-tab-group>
+</form>

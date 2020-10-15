@@ -6,6 +6,7 @@ import { HomeModule } from './modules/home'
 import { AuthenticationModule } from './core/authentication'
 import { QrjPublicationsModule } from './modules/qrj-publications'
 import { NewsModule } from './modules/news'
+import { DepositedsModule } from './modules/depositeds'
 
 const appRoutes: Routes = [
   {
@@ -31,6 +32,12 @@ const appRoutes: Routes = [
       import('./modules/qrj-publications').then(
         (mod) => mod.QrjPublicationsModule
       ),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'depositeds',
+    loadChildren: (): Promise<DepositedsModule> =>
+      import('./modules/depositeds').then((mod) => mod.DepositedsModule),
     canActivate: [AuthGuard],
   },
   // {

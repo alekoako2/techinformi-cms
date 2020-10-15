@@ -1,0 +1,17 @@
+<custom-dialog>
+  <div title>არსებული პუბლიკაციის შეცვლა</div>
+  <div content>
+    <deposited-form [depositedForm]="depositedUpdateForm"></deposited-form>
+  </div>
+  <div actions>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      (click)="update()"
+      [disabled]="depositedUpdateForm?.invalid"
+    >
+      შენახვა
+    </button>
+  </div>
+</custom-dialog>

@@ -1,0 +1,4 @@
+{
+  "main": "deposited-crud.actions.ts",
+  "typings": "deposited-crud.actions.ts"
+}
