@@ -13,7 +13,6 @@ export interface BasicCrud {
   addNewToPressed()
   editToPressed(id: Scalars['ID'])
   deleteToPressed(id: Scalars['ID'])
-  loadItems()
 }
 
 export interface BasicCrudListItem {
