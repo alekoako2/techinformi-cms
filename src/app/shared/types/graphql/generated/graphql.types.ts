@@ -1196,18 +1196,15 @@ export type OecdsQuery = (
   )> }
 );
 
-export type QrjJournalsQueryVariables = {
-  first?: Maybe<Scalars['Int']>;
-  skip?: Maybe<Scalars['Int']>;
-  orderBy?: Maybe<Scalars['String']>;
-  query?: Maybe<QrjJournalQueryInput>;
+export type UpdateQrjJournalMutationVariables = {
   languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<QrjJournalUpdateInput>;
 };
 
 
-export type QrjJournalsQuery = (
-  { __typename?: 'Query' }
-  & { qrjJournals: Array<(
+export type UpdateQrjJournalMutation = (
+  { __typename?: 'Mutation' }
+  & { updateQrjJournal?: Maybe<(
     { __typename?: 'QrjJournal' }
     & Pick<QrjJournal, 'id' | 'code'>
     & { translation: Array<(
@@ -1215,6 +1212,76 @@ export type QrjJournalsQuery = (
       & Pick<QrjJournalTranslation, 'name' | 'address'>
     )> }
   )> }
+);
+
+export type CreateQrjJournalMutationVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<QrjJournalCreateInput>;
+};
+
+
+export type CreateQrjJournalMutation = (
+  { __typename?: 'Mutation' }
+  & { createQrjJournal?: Maybe<(
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id' | 'code'>
+    & { translation: Array<(
+      { __typename?: 'QrjJournalTranslation' }
+      & Pick<QrjJournalTranslation, 'name' | 'address'>
+    )> }
+  )> }
+);
+
+export type DeleteQrjJournalMutationVariables = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type DeleteQrjJournalMutation = (
+  { __typename?: 'Mutation' }
+  & { deleteQrjJournal?: Maybe<(
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id'>
+  )> }
+);
+
+export type QrjJournalsQueryVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  query?: Maybe<QrjJournalQueryInput>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+};
+
+
+export type QrjJournalsQuery = (
+  { __typename?: 'Query' }
+  & Pick<Query, 'countQrjJournals'>
+  & { qrjJournals: Array<(
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id' | 'code'>
+    & { translation: Array<(
+      { __typename?: 'QrjJournalTranslation' }
+      & Pick<QrjJournalTranslation, 'id' | 'name' | 'address'>
+    )> }
+  )> }
+);
+
+export type QrjJournalQueryVariables = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QrjJournalQuery = (
+  { __typename?: 'Query' }
+  & { qrjJournal: (
+    { __typename?: 'QrjJournal' }
+    & Pick<QrjJournal, 'id' | 'code'>
+    & { translation: Array<(
+      { __typename?: 'QrjJournalTranslation' }
+      & Pick<QrjJournalTranslation, 'id' | 'name' | 'address'>
+    )> }
+  ) }
 );
 
 export type UpdateQrjPublicationMutationVariables = {
@@ -1618,9 +1685,9 @@ export const OecdsDocument = gql`
     document = OecdsDocument;
     
   }
-export const QrjJournalsDocument = gql`
-    query QrjJournals($first: Int, $skip: Int, $orderBy: String, $query: QrjJournalQueryInput, $languageCode: LanguageCode) {
-  qrjJournals(first: $first, skip: $skip, orderBy: $orderBy, query: $query) {
+export const UpdateQrjJournalDocument = gql`
+    mutation UpdateQrjJournal($languageCode: LanguageCode, $input: QrjJournalUpdateInput) {
+  updateQrjJournal(input: $input) {
     id
     code
     translation(language: $languageCode) {
@@ -1634,8 +1701,86 @@ export const QrjJournalsDocument = gql`
   @Injectable({
     providedIn: 'root'
   })
+  export class UpdateQrjJournalGQL extends Apollo.Mutation<UpdateQrjJournalMutation, UpdateQrjJournalMutationVariables> {
+    document = UpdateQrjJournalDocument;
+    
+  }
+export const CreateQrjJournalDocument = gql`
+    mutation CreateQrjJournal($languageCode: LanguageCode, $input: QrjJournalCreateInput) {
+  createQrjJournal(input: $input) {
+    id
+    code
+    translation(language: $languageCode) {
+      name
+      address
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CreateQrjJournalGQL extends Apollo.Mutation<CreateQrjJournalMutation, CreateQrjJournalMutationVariables> {
+    document = CreateQrjJournalDocument;
+    
+  }
+export const DeleteQrjJournalDocument = gql`
+    mutation DeleteQrjJournal($id: ID) {
+  deleteQrjJournal(id: $id) {
+    id
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class DeleteQrjJournalGQL extends Apollo.Mutation<DeleteQrjJournalMutation, DeleteQrjJournalMutationVariables> {
+    document = DeleteQrjJournalDocument;
+    
+  }
+export const QrjJournalsDocument = gql`
+    query QrjJournals($languageCode: LanguageCode, $query: QrjJournalQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  qrjJournals(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    code
+    translation(language: $languageCode) {
+      id
+      name
+      address
+    }
+  }
+  countQrjJournals(query: $query)
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
   export class QrjJournalsGQL extends Apollo.Query<QrjJournalsQuery, QrjJournalsQueryVariables> {
     document = QrjJournalsDocument;
+    
+  }
+export const QrjJournalDocument = gql`
+    query QrjJournal($id: ID) {
+  qrjJournal(id: $id) {
+    id
+    code
+    translation {
+      id
+      name
+      address
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class QrjJournalGQL extends Apollo.Query<QrjJournalQuery, QrjJournalQueryVariables> {
+    document = QrjJournalDocument;
     
   }
 export const UpdateQrjPublicationDocument = gql`
@@ -1965,12 +2110,58 @@ export const Oecds = gql`
   }
 }
     `;
-export const QrjJournals = gql`
-    query QrjJournals($first: Int, $skip: Int, $orderBy: String, $query: QrjJournalQueryInput, $languageCode: LanguageCode) {
-  qrjJournals(first: $first, skip: $skip, orderBy: $orderBy, query: $query) {
+export const UpdateQrjJournal = gql`
+    mutation UpdateQrjJournal($languageCode: LanguageCode, $input: QrjJournalUpdateInput) {
+  updateQrjJournal(input: $input) {
     id
     code
     translation(language: $languageCode) {
+      name
+      address
+    }
+  }
+}
+    `;
+export const CreateQrjJournal = gql`
+    mutation CreateQrjJournal($languageCode: LanguageCode, $input: QrjJournalCreateInput) {
+  createQrjJournal(input: $input) {
+    id
+    code
+    translation(language: $languageCode) {
+      name
+      address
+    }
+  }
+}
+    `;
+export const DeleteQrjJournal = gql`
+    mutation DeleteQrjJournal($id: ID) {
+  deleteQrjJournal(id: $id) {
+    id
+  }
+}
+    `;
+export const QrjJournals = gql`
+    query QrjJournals($languageCode: LanguageCode, $query: QrjJournalQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  qrjJournals(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    code
+    translation(language: $languageCode) {
+      id
+      name
+      address
+    }
+  }
+  countQrjJournals(query: $query)
+}
+    `;
+export const QrjJournal = gql`
+    query QrjJournal($id: ID) {
+  qrjJournal(id: $id) {
+    id
+    code
+    translation {
+      id
       name
       address
     }

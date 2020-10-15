@@ -1,0 +1,63 @@
+<form [formGroup]="qrjJournalForm" *ngIf="qrjJournalForm">
+  <!--  ID-->
+  <input-text
+    fxShow="false"
+    *ngIf="qrjJournalForm.get('id') as qrjJournalIDControl"
+    [inputAbstractControl]="qrjJournalIDControl"
+  >
+  </input-text>
+
+  <!--  Code -->
+  <div>
+    <input-text
+      fxFlex
+      placeholder="კოდი"
+      [inputAbstractControl]="qrjJournalForm.get('code')"
+      i18n-placeholder="@@code"
+    ></input-text>
+  </div>
+  <!--  Translations of Name & Address-->
+  <mat-tab-group>
+    <mat-tab label="ქართული">
+      <!--      ID-->
+      <input-text
+        fxShow="false"
+        *ngIf="translationFormGroupKA.get('id') as translationKAIDControl"
+        [inputAbstractControl]="translationKAIDControl"
+      >
+      </input-text>
+
+      <!--      Name-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('name')"
+        placeholder="სათაური"
+      ></input-text>
+      <!--      Address-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupKA.get('address')"
+        placeholder="მისამართი"
+      ></input-text>
+    </mat-tab>
+
+    <mat-tab label="English">
+      <!--  ID-->
+      <input-text
+        fxShow="false"
+        *ngIf="translationFormGroupEN.get('id') as translationENIDControl"
+        [inputAbstractControl]="translationENIDControl"
+      >
+      </input-text>
+
+      <!--      Name-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupEN.get('name')"
+        placeholder="სათაური"
+      ></input-text>
+      <!--      Address-->
+      <input-text
+        [inputAbstractControl]="translationFormGroupEN.get('address')"
+        placeholder="მისამართი"
+      ></input-text>
+    </mat-tab>
+  </mat-tab-group>
+</form>
