@@ -13,6 +13,16 @@ export type Scalars = {
 
 
 
+export type _Service = {
+   __typename?: '_Service';
+  /**
+   * The sdl representing the federated service capabilities. Includes federation
+   * directives, removes federation types, and includes rest of full schema after
+   * schema directives have been applied
+   */
+  sdl?: Maybe<Scalars['String']>;
+};
+
 export type AuthPayload = {
    __typename?: 'AuthPayload';
   token: Scalars['String'];
@@ -33,6 +43,65 @@ export type DepartmentTranslation = {
    __typename?: 'DepartmentTranslation';
   name?: Maybe<Scalars['String']>;
   language: Language;
+};
+
+export type Deposited = {
+   __typename?: 'Deposited';
+  id?: Maybe<Scalars['ID']>;
+  index?: Maybe<Scalars['String']>;
+  uak?: Maybe<Scalars['String']>;
+  year?: Maybe<Scalars['String']>;
+  oecd?: Maybe<Oecd>;
+  translation?: Maybe<Array<Maybe<DepositedTranslation>>>;
+};
+
+
+export type DepositedTranslationArgs = {
+  language?: Maybe<LanguageCode>;
+};
+
+export type DepositedCreateInput = {
+  index: Scalars['String'];
+  year?: Maybe<Scalars['String']>;
+  uak?: Maybe<Scalars['String']>;
+  oecd?: Maybe<Scalars['String']>;
+  translation?: Maybe<Array<Maybe<DepositedTranslationInput>>>;
+};
+
+export type DepositedQueryInput = {
+  index?: Maybe<Scalars['String']>;
+  uak?: Maybe<Scalars['String']>;
+  year?: Maybe<Scalars['String']>;
+  translation?: Maybe<DepositedTranslationInput>;
+  oecd?: Maybe<Scalars['String']>;
+};
+
+export type DepositedTranslation = {
+   __typename?: 'DepositedTranslation';
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  author?: Maybe<Scalars['String']>;
+  institute?: Maybe<Scalars['String']>;
+  resume?: Maybe<Scalars['String']>;
+  language?: Maybe<Language>;
+};
+
+export type DepositedTranslationInput = {
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  author?: Maybe<Scalars['String']>;
+  institute?: Maybe<Scalars['String']>;
+  resume?: Maybe<Scalars['String']>;
+  language?: Maybe<LanguageCode>;
+};
+
+export type DepositedUpdateInput = {
+  id: Scalars['ID'];
+  index: Scalars['String'];
+  year?: Maybe<Scalars['String']>;
+  uak?: Maybe<Scalars['String']>;
+  oecd?: Maybe<Scalars['String']>;
+  translation?: Maybe<Array<Maybe<DepositedTranslationInput>>>;
 };
 
 export type Employee = {
@@ -189,6 +258,9 @@ export type Mutation = {
   createQrjPublication?: Maybe<QrjPublication>;
   updateQrjPublication?: Maybe<QrjPublication>;
   deleteQrjPublication?: Maybe<QrjPublication>;
+  createDeposited?: Maybe<Deposited>;
+  updateDeposited?: Maybe<Deposited>;
+  deleteDeposited?: Maybe<Deposited>;
   createOecd?: Maybe<Oecd>;
   updateOecd?: Maybe<Oecd>;
   deleteOecd?: Maybe<Oecd>;
@@ -246,6 +318,21 @@ export type MutationUpdateQrjPublicationArgs = {
 
 
 export type MutationDeleteQrjPublicationArgs = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type MutationCreateDepositedArgs = {
+  input?: Maybe<DepositedCreateInput>;
+};
+
+
+export type MutationUpdateDepositedArgs = {
+  input?: Maybe<DepositedUpdateInput>;
+};
+
+
+export type MutationDeleteDepositedArgs = {
   id?: Maybe<Scalars['ID']>;
 };
 
@@ -562,6 +649,7 @@ export type QrjTranslationInput = {
 
 export type Query = {
    __typename?: 'Query';
+  _service: _Service;
   me?: Maybe<User>;
   countQrjJournals?: Maybe<Scalars['Int']>;
   qrjJournals: Array<QrjJournal>;
@@ -569,6 +657,9 @@ export type Query = {
   countQrjPublications?: Maybe<Scalars['Int']>;
   qrjPublications: Array<QrjPublication>;
   qrjPublication: QrjPublication;
+  countDepositeds?: Maybe<Scalars['Int']>;
+  depositeds: Array<Deposited>;
+  deposited: Deposited;
   countOecds?: Maybe<Scalars['Int']>;
   oecds: Array<Oecd>;
   oecd: Oecd;
@@ -588,9 +679,6 @@ export type Query = {
   countQrjs?: Maybe<Scalars['Int']>;
   qrjs: Array<Qrj>;
   qrj: Qrj;
-  countResearchProjects?: Maybe<Scalars['Int']>;
-  researchProjects: Array<ResearchProject>;
-  researchProject: ResearchProject;
 };
 
 
@@ -631,6 +719,24 @@ export type QueryQrjPublicationsArgs = {
 
 
 export type QueryQrjPublicationArgs = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryCountDepositedsArgs = {
+  query?: Maybe<DepositedQueryInput>;
+};
+
+
+export type QueryDepositedsArgs = {
+  query?: Maybe<DepositedQueryInput>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryDepositedArgs = {
   id?: Maybe<Scalars['ID']>;
 };
 
@@ -730,98 +836,6 @@ export type QueryQrjArgs = {
   id?: Maybe<Scalars['ID']>;
 };
 
-
-export type QueryCountResearchProjectsArgs = {
-  query?: Maybe<ResearchProjectQueryInput>;
-};
-
-
-export type QueryResearchProjectsArgs = {
-  language?: Maybe<LanguageCode>;
-  query?: Maybe<ResearchProjectQueryInput>;
-  first?: Maybe<Scalars['Int']>;
-  skip?: Maybe<Scalars['Int']>;
-  orderBy?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryResearchProjectArgs = {
-  id?: Maybe<Scalars['String']>;
-  language?: Maybe<LanguageCode>;
-};
-
-export type ResearchProject = {
-   __typename?: 'ResearchProject';
-  id?: Maybe<Scalars['String']>;
-  toYear?: Maybe<Scalars['String']>;
-  eWords?: Maybe<Scalars['String']>;
-  final?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
-  organization?: Maybe<Scalars['String']>;
-  fromYear?: Maybe<Scalars['String']>;
-  inp_tarigi?: Maybe<Scalars['String']>;
-  reg_tarigi?: Maybe<Scalars['String']>;
-  reg_numb?: Maybe<Scalars['String']>;
-  geo_dasaxeleba?: Maybe<Scalars['String']>;
-  eng_dasaxeleba?: Maybe<Scalars['String']>;
-  kvleva?: Maybe<Scalars['String']>;
-  kvlev_mimart?: Maybe<Scalars['String']>;
-  kvlev_mimart_kodi?: Maybe<Scalars['String']>;
-  kvlev_mimart_kodi2?: Maybe<Scalars['String']>;
-  kvlev_mimart_kodi3?: Maybe<Scalars['String']>;
-  geo_key?: Maybe<Scalars['String']>;
-  eng_key?: Maybe<Scalars['String']>;
-  safudz?: Maybe<Scalars['String']>;
-  referati?: Maybe<Scalars['String']>;
-  anotaciaeng?: Maybe<Scalars['String']>;
-  start_samushao_tarigi?: Maybe<Scalars['String']>;
-  end_samushao_tarigi?: Maybe<Scalars['String']>;
-  biujeti?: Maybe<Scalars['String']>;
-  org_dasaxeleba?: Maybe<Scalars['String']>;
-  org_short_dasaxeleba?: Maybe<Scalars['String']>;
-  org_kodi?: Maybe<Scalars['String']>;
-  org_ufrosi?: Maybe<Scalars['String']>;
-  org_qalaqi?: Maybe<Scalars['String']>;
-  org_misamarti?: Maybe<Scalars['String']>;
-  org_indexi?: Maybe<Scalars['String']>;
-  org_telefoni?: Maybe<Scalars['String']>;
-  org_webi?: Maybe<Scalars['String']>;
-  tan_dasaxeleba?: Maybe<Scalars['String']>;
-  tan_qvekana_qalaqi?: Maybe<Scalars['String']>;
-  tan_telefoni?: Maybe<Scalars['String']>;
-  tan_email?: Maybe<Scalars['String']>;
-  tan_webi?: Maybe<Scalars['String']>;
-  xel_gvari_saxeli?: Maybe<Scalars['String']>;
-  xel_tanamdeboba?: Maybe<Scalars['String']>;
-  xel_xarisxi?: Maybe<Scalars['String']>;
-  xel_bin_telefoni?: Maybe<Scalars['String']>;
-  xel_sam_telefoni?: Maybe<Scalars['String']>;
-  xel_email?: Maybe<Scalars['String']>;
-  shemsruleblebis?: Maybe<Scalars['String']>;
-  financing?: Maybe<Scalars['String']>;
-  shenishvna?: Maybe<Scalars['String']>;
-  PINCODE?: Maybe<Scalars['String']>;
-  username?: Maybe<Scalars['String']>;
-  oecd1?: Maybe<Scalars['String']>;
-  oecd2?: Maybe<Scalars['String']>;
-  oecd3?: Maybe<Scalars['String']>;
-  org_dasaxeleba_eng?: Maybe<Scalars['String']>;
-  org_short_dasaxeleba_eng?: Maybe<Scalars['String']>;
-  org_email?: Maybe<Scalars['String']>;
-  xel_gvari_saxeli_eng?: Maybe<Scalars['String']>;
-};
-
-export type ResearchProjectQueryInput = {
-  eTitle?: Maybe<Scalars['String']>;
-  eAuthor?: Maybe<Scalars['String']>;
-  eWords?: Maybe<Scalars['String']>;
-  eOrganization?: Maybe<Scalars['String']>;
-  eCodes?: Maybe<Scalars['String']>;
-  fromYear?: Maybe<Scalars['String']>;
-  toYear?: Maybe<Scalars['String']>;
-};
-
 export enum Role {
   ADMIN = 'ADMIN',
   EDITOR = 'EDITOR',
@@ -883,6 +897,7 @@ export type User = {
   translation?: Maybe<Array<UserTranslation>>;
   qrjJournals: Array<QrjJournal>;
   qrjPublications: Array<QrjPublication>;
+  depositeds: Array<Deposited>;
   oecds: Array<Oecd>;
   technologyTransferAndInnovationOrganizations: Array<TechnologyTransferAndInnovationOrganization>;
   technologyTransferNetworks: Array<TechnologyTransferNetwork>;
@@ -903,6 +918,11 @@ export type UserQrjJournalsArgs = {
 
 
 export type UserQrjPublicationsArgs = {
+  language: LanguageCode;
+};
+
+
+export type UserDepositedsArgs = {
   language: LanguageCode;
 };
 
@@ -969,6 +989,102 @@ export type SignInMutation = (
         & Pick<UserTranslation, 'firstName' | 'lastName'>
       )>> }
     ) }
+  ) }
+);
+
+export type UpdateDepositedMutationVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<DepositedUpdateInput>;
+};
+
+
+export type UpdateDepositedMutation = (
+  { __typename?: 'Mutation' }
+  & { updateDeposited?: Maybe<(
+    { __typename?: 'Deposited' }
+    & Pick<Deposited, 'id' | 'index'>
+    & { translation?: Maybe<Array<Maybe<(
+      { __typename?: 'DepositedTranslation' }
+      & Pick<DepositedTranslation, 'title' | 'resume'>
+    )>>> }
+  )> }
+);
+
+export type CreateDepositedMutationVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  input?: Maybe<DepositedCreateInput>;
+};
+
+
+export type CreateDepositedMutation = (
+  { __typename?: 'Mutation' }
+  & { createDeposited?: Maybe<(
+    { __typename?: 'Deposited' }
+    & Pick<Deposited, 'id' | 'index'>
+    & { translation?: Maybe<Array<Maybe<(
+      { __typename?: 'DepositedTranslation' }
+      & Pick<DepositedTranslation, 'title' | 'resume'>
+    )>>> }
+  )> }
+);
+
+export type DeleteDepositedMutationVariables = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type DeleteDepositedMutation = (
+  { __typename?: 'Mutation' }
+  & { deleteDeposited?: Maybe<(
+    { __typename?: 'Deposited' }
+    & Pick<Deposited, 'index'>
+  )> }
+);
+
+export type DepositedsQueryVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  query?: Maybe<DepositedQueryInput>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+};
+
+
+export type DepositedsQuery = (
+  { __typename?: 'Query' }
+  & Pick<Query, 'countDepositeds'>
+  & { depositeds: Array<(
+    { __typename?: 'Deposited' }
+    & Pick<Deposited, 'id' | 'index'>
+    & { translation?: Maybe<Array<Maybe<(
+      { __typename?: 'DepositedTranslation' }
+      & Pick<DepositedTranslation, 'title' | 'resume'>
+    )>>> }
+  )> }
+);
+
+export type DepositedQueryVariables = {
+  languageCode?: Maybe<LanguageCode>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type DepositedQuery = (
+  { __typename?: 'Query' }
+  & { deposited: (
+    { __typename?: 'Deposited' }
+    & Pick<Deposited, 'index' | 'year' | 'uak'>
+    & { oecd?: Maybe<(
+      { __typename?: 'Oecd' }
+      & Pick<Oecd, 'code'>
+      & { translation: Array<(
+        { __typename?: 'OecdTranslation' }
+        & Pick<OecdTranslation, 'name'>
+      )> }
+    )>, translation?: Maybe<Array<Maybe<(
+      { __typename?: 'DepositedTranslation' }
+      & Pick<DepositedTranslation, 'id' | 'title' | 'author' | 'institute' | 'resume'>
+    )>>> }
   ) }
 );
 
@@ -1346,6 +1462,112 @@ export const SignInDocument = gql`
   })
   export class SignInGQL extends Apollo.Mutation<SignInMutation, SignInMutationVariables> {
     document = SignInDocument;
+    
+  }
+export const UpdateDepositedDocument = gql`
+    mutation UpdateDeposited($languageCode: LanguageCode, $input: DepositedUpdateInput) {
+  updateDeposited(input: $input) {
+    id
+    index
+    translation(language: $languageCode) {
+      title
+      resume
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class UpdateDepositedGQL extends Apollo.Mutation<UpdateDepositedMutation, UpdateDepositedMutationVariables> {
+    document = UpdateDepositedDocument;
+    
+  }
+export const CreateDepositedDocument = gql`
+    mutation CreateDeposited($languageCode: LanguageCode, $input: DepositedCreateInput) {
+  createDeposited(input: $input) {
+    id
+    index
+    translation(language: $languageCode) {
+      title
+      resume
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CreateDepositedGQL extends Apollo.Mutation<CreateDepositedMutation, CreateDepositedMutationVariables> {
+    document = CreateDepositedDocument;
+    
+  }
+export const DeleteDepositedDocument = gql`
+    mutation DeleteDeposited($id: ID) {
+  deleteDeposited(id: $id) {
+    index
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class DeleteDepositedGQL extends Apollo.Mutation<DeleteDepositedMutation, DeleteDepositedMutationVariables> {
+    document = DeleteDepositedDocument;
+    
+  }
+export const DepositedsDocument = gql`
+    query Depositeds($languageCode: LanguageCode, $query: DepositedQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  depositeds(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    index
+    translation(language: $languageCode) {
+      title
+      resume
+    }
+  }
+  countDepositeds(query: $query)
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class DepositedsGQL extends Apollo.Query<DepositedsQuery, DepositedsQueryVariables> {
+    document = DepositedsDocument;
+    
+  }
+export const DepositedDocument = gql`
+    query Deposited($languageCode: LanguageCode, $id: ID) {
+  deposited(id: $id) {
+    index
+    year
+    uak
+    oecd {
+      code
+      translation(language: $languageCode) {
+        name
+      }
+    }
+    translation {
+      id
+      title
+      author
+      institute
+      resume
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class DepositedGQL extends Apollo.Query<DepositedQuery, DepositedQueryVariables> {
+    document = DepositedDocument;
     
   }
 export const UpdateNewsDocument = gql`
@@ -1752,6 +1974,72 @@ export const SignIn = gql`
       }
     }
     token
+  }
+}
+    `;
+export const UpdateDeposited = gql`
+    mutation UpdateDeposited($languageCode: LanguageCode, $input: DepositedUpdateInput) {
+  updateDeposited(input: $input) {
+    id
+    index
+    translation(language: $languageCode) {
+      title
+      resume
+    }
+  }
+}
+    `;
+export const CreateDeposited = gql`
+    mutation CreateDeposited($languageCode: LanguageCode, $input: DepositedCreateInput) {
+  createDeposited(input: $input) {
+    id
+    index
+    translation(language: $languageCode) {
+      title
+      resume
+    }
+  }
+}
+    `;
+export const DeleteDeposited = gql`
+    mutation DeleteDeposited($id: ID) {
+  deleteDeposited(id: $id) {
+    index
+  }
+}
+    `;
+export const Depositeds = gql`
+    query Depositeds($languageCode: LanguageCode, $query: DepositedQueryInput, $first: Int, $skip: Int, $orderBy: String) {
+  depositeds(query: $query, first: $first, skip: $skip, orderBy: $orderBy) {
+    id
+    index
+    translation(language: $languageCode) {
+      title
+      resume
+    }
+  }
+  countDepositeds(query: $query)
+}
+    `;
+export const Deposited = gql`
+    query Deposited($languageCode: LanguageCode, $id: ID) {
+  deposited(id: $id) {
+    index
+    year
+    uak
+    oecd {
+      code
+      translation(language: $languageCode) {
+        name
+      }
+    }
+    translation {
+      id
+      title
+      author
+      institute
+      resume
+    }
   }
 }
     `;

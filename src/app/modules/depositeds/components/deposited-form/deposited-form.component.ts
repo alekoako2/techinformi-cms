@@ -7,23 +7,23 @@ import {
 import { FormGroup } from '@angular/forms'
 
 @Component({
-  selector: 'qrj-publication-form',
-  templateUrl: './qrj-publication-form.component.html',
-  styleUrls: ['./qrj-publication-form.component.scss'],
+  selector: 'deposited-form',
+  templateUrl: './deposited-form.component.html',
+  styleUrls: ['./deposited-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QrjPublicationFormComponent implements OnChanges {
-  @Input() qrjPublicationForm: FormGroup
+export class DepositedFormComponent implements OnChanges {
+  @Input() depositedForm: FormGroup
 
   translationFormGroupKA: FormGroup
-  translationFormGroupEN: FormGroup
+  translationFormGroupRU: FormGroup
 
   ngOnChanges(): void {
-    if (this.qrjPublicationForm) {
-      this.translationFormGroupKA = this.qrjPublicationForm
+    if (this.depositedForm) {
+      this.translationFormGroupKA = this.depositedForm
         ?.get('translation')
         ?.get('0') as FormGroup
-      this.translationFormGroupEN = this.qrjPublicationForm
+      this.translationFormGroupRU = this.depositedForm
         ?.get('translation')
         ?.get('1') as FormGroup
     }

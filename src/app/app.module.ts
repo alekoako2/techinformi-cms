@@ -1,11 +1,11 @@
-import { ErrorHandler, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { BackToTopComponent } from './core/footer/back-to-top/back-to-top.component'
-import { NotFoundComponent } from './shared/components/not-found/not-found.component'
+import { NotFoundComponent } from '@shared/components/not-found/not-found.component'
 import { FooterComponent } from './core/footer/footer.component'
 import { FixedBottomToolbarComponent } from './core/footer/fixed-bottom-toolbar/fixed-bottom-toolbar.component'
 import { HeaderModule } from './core/header/header.module'
@@ -25,7 +25,6 @@ import { NgxsModule } from '@ngxs/store'
 import { environment } from '@env'
 import { ErrorsComponent } from './core/authentication/components/errors/errors.component'
 import { MatSidenavModule } from '@angular/material/sidenav'
-import { GlobalErrorHandler } from './global-error-handler'
 
 registerLocaleData(localeKa, 'ka', localeKaExtra)
 
@@ -50,10 +49,7 @@ registerLocaleData(localeKa, 'ka', localeKaExtra)
     NgxsLoggerPluginModule.forRoot({ disabled: environment.production }),
     MatSidenavModule,
   ],
-  providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-    // { provide: ErrorHandler, useClass: GlobalErrorHandler },
-  ],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
   entryComponents: [ErrorsComponent],
 })

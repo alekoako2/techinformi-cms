@@ -15,7 +15,6 @@ import { MatDividerModule } from '@angular/material/divider'
 import { LayoutContainerModule } from '@shared/components/layout-container'
 import { MatButtonModule } from '@angular/material/button'
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader'
 import { MatPaginatorModule } from '@angular/material/paginator'
 
 @NgModule({
@@ -34,7 +33,6 @@ import { MatPaginatorModule } from '@angular/material/paginator'
     LayoutContainerModule,
     MatButtonModule,
     FlexLayoutModule,
-    NgxSkeletonLoaderModule,
     MatPaginatorModule,
   ],
   exports: [
